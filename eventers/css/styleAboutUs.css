@@ -1,0 +1,53 @@
+body{
+	font-family: Arial;
+}
+
+a{
+	text-decoration: none;
+	color: blue;
+}
+
+a:visited{
+	color: blue;
+}
+
+.container{
+	margin: 0px 10px;
+}
+
+.members{
+	float: right;
+	width: 87%;
+
+	padding: 0px 1%;
+
+	background-color: #ddd;
+}
+
+.details{
+	float: left;
+	width: 80%;
+}
+
+.picture{
+	float: right;
+	width: 20%;
+}
+
+.leftPane{
+	float: left;
+	width: 10%;
+
+	pading: 0px 10%;
+
+	background-color: #eee;
+}
+
+.leftPane h3{
+	text-align: center;
+}
+
+.leftPane ul{
+	padding: 0px 20px;
+	list-style: none;
+}
