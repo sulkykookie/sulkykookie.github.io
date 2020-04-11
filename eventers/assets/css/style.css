@@ -1056,6 +1056,17 @@ body.mobile-nav-active #mobile-nav-toggle {
   text-transform: uppercase;
 }
 
+#handsOn .container button[type="submit"] {
+  background: #18d26e;
+  border: 0;
+  margin-top: 50px;
+  margin-left: 43%;
+  padding: 10px 30px;
+  color: #fff;
+  transition: 0.4s;
+  cursor: pointer;
+}
+
 /* Clients Section
 --------------------------------*/
 #clients {
