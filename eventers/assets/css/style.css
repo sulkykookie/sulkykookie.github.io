@@ -1060,7 +1060,7 @@ body.mobile-nav-active #mobile-nav-toggle {
   background: #18d26e;
   border: 0;
   margin-top: 50px;
-  margin-left: 43%;
+  margin-left: auto;
   padding: 10px 30px;
   color: #fff;
   transition: 0.4s;
