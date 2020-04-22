@@ -1,0 +1,469 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head><meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+<title>TTYResources xref</title>
+<link type="text/css" rel="stylesheet" href="../../../../../../stylesheet.css" />
+</head>
+<body>
+<pre>
+<a class="jxr_linenumber" name="L1" href="#L1">1</a>   <em class="jxr_comment">/*</em>
+<a class="jxr_linenumber" name="L2" href="#L2">2</a>   <em class="jxr_comment"> * Copyright (c) 2001, 2010, Oracle and/or its affiliates. All rights reserved.</em>
+<a class="jxr_linenumber" name="L3" href="#L3">3</a>   <em class="jxr_comment"> * DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS FILE HEADER.</em>
+<a class="jxr_linenumber" name="L4" href="#L4">4</a>   <em class="jxr_comment"> *</em>
+<a class="jxr_linenumber" name="L5" href="#L5">5</a>   <em class="jxr_comment"> * This code is free software; you can redistribute it and/or modify it</em>
+<a class="jxr_linenumber" name="L6" href="#L6">6</a>   <em class="jxr_comment"> * under the terms of the GNU General Public License version 2 only, as</em>
+<a class="jxr_linenumber" name="L7" href="#L7">7</a>   <em class="jxr_comment"> * published by the Free Software Foundation.  Oracle designates this</em>
+<a class="jxr_linenumber" name="L8" href="#L8">8</a>   <em class="jxr_comment"> * particular file as subject to the "Classpath" exception as provided</em>
+<a class="jxr_linenumber" name="L9" href="#L9">9</a>   <em class="jxr_comment"> * by Oracle in the LICENSE file that accompanied this code.</em>
+<a class="jxr_linenumber" name="L10" href="#L10">10</a>  <em class="jxr_comment"> *</em>
+<a class="jxr_linenumber" name="L11" href="#L11">11</a>  <em class="jxr_comment"> * This code is distributed in the hope that it will be useful, but WITHOUT</em>
+<a class="jxr_linenumber" name="L12" href="#L12">12</a>  <em class="jxr_comment"> * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or</em>
+<a class="jxr_linenumber" name="L13" href="#L13">13</a>  <em class="jxr_comment"> * FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License</em>
+<a class="jxr_linenumber" name="L14" href="#L14">14</a>  <em class="jxr_comment"> * version 2 for more details (a copy is included in the LICENSE file that</em>
+<a class="jxr_linenumber" name="L15" href="#L15">15</a>  <em class="jxr_comment"> * accompanied this code).</em>
+<a class="jxr_linenumber" name="L16" href="#L16">16</a>  <em class="jxr_comment"> *</em>
+<a class="jxr_linenumber" name="L17" href="#L17">17</a>  <em class="jxr_comment"> * You should have received a copy of the GNU General Public License version</em>
+<a class="jxr_linenumber" name="L18" href="#L18">18</a>  <em class="jxr_comment"> * 2 along with this work; if not, write to the Free Software Foundation,</em>
+<a class="jxr_linenumber" name="L19" href="#L19">19</a>  <em class="jxr_comment"> * Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301 USA.</em>
+<a class="jxr_linenumber" name="L20" href="#L20">20</a>  <em class="jxr_comment"> *</em>
+<a class="jxr_linenumber" name="L21" href="#L21">21</a>  <em class="jxr_comment"> * Please contact Oracle, 500 Oracle Parkway, Redwood Shores, CA 94065 USA</em>
+<a class="jxr_linenumber" name="L22" href="#L22">22</a>  <em class="jxr_comment"> * or visit www.oracle.com if you need additional information or have any</em>
+<a class="jxr_linenumber" name="L23" href="#L23">23</a>  <em class="jxr_comment"> * questions.</em>
+<a class="jxr_linenumber" name="L24" href="#L24">24</a>  <em class="jxr_comment"> */</em>
+<a class="jxr_linenumber" name="L25" href="#L25">25</a>  
+<a class="jxr_linenumber" name="L26" href="#L26">26</a>  <strong class="jxr_keyword">package</strong> com.sun.tools.example.debug.tty;
+<a class="jxr_linenumber" name="L27" href="#L27">27</a>  
+<a class="jxr_linenumber" name="L28" href="#L28">28</a>  <em class="jxr_javadoccomment">/**</em>
+<a class="jxr_linenumber" name="L29" href="#L29">29</a>  <em class="jxr_javadoccomment"> * &lt;p&gt; This class represents the &lt;code&gt;ResourceBundle&lt;/code&gt;</em>
+<a class="jxr_linenumber" name="L30" href="#L30">30</a>  <em class="jxr_javadoccomment"> * for the following package(s):</em>
+<a class="jxr_linenumber" name="L31" href="#L31">31</a>  <em class="jxr_javadoccomment"> *</em>
+<a class="jxr_linenumber" name="L32" href="#L32">32</a>  <em class="jxr_javadoccomment"> * &lt;ol&gt;</em>
+<a class="jxr_linenumber" name="L33" href="#L33">33</a>  <em class="jxr_javadoccomment"> * &lt;li&gt; com.sun.tools.example.debug.tty</em>
+<a class="jxr_linenumber" name="L34" href="#L34">34</a>  <em class="jxr_javadoccomment"> * &lt;/ol&gt;</em>
+<a class="jxr_linenumber" name="L35" href="#L35">35</a>  <em class="jxr_javadoccomment"> *</em>
+<a class="jxr_linenumber" name="L36" href="#L36">36</a>  <em class="jxr_javadoccomment"> */</em>
+<a class="jxr_linenumber" name="L37" href="#L37">37</a>  <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">class</strong> TTYResources <strong class="jxr_keyword">extends</strong> java.util.ListResourceBundle {
+<a class="jxr_linenumber" name="L38" href="#L38">38</a>  
+<a class="jxr_linenumber" name="L39" href="#L39">39</a>  
+<a class="jxr_linenumber" name="L40" href="#L40">40</a>      <em class="jxr_javadoccomment">/**</em>
+<a class="jxr_linenumber" name="L41" href="#L41">41</a>  <em class="jxr_javadoccomment">     * Returns the contents of this &lt;code&gt;ResourceBundle&lt;/code&gt;.</em>
+<a class="jxr_linenumber" name="L42" href="#L42">42</a>  <em class="jxr_javadoccomment">     *</em>
+<a class="jxr_linenumber" name="L43" href="#L43">43</a>  <em class="jxr_javadoccomment">     * &lt;p&gt;</em>
+<a class="jxr_linenumber" name="L44" href="#L44">44</a>  <em class="jxr_javadoccomment">     *</em>
+<a class="jxr_linenumber" name="L45" href="#L45">45</a>  <em class="jxr_javadoccomment">     * @return the contents of this &lt;code&gt;ResourceBundle&lt;/code&gt;.</em>
+<a class="jxr_linenumber" name="L46" href="#L46">46</a>  <em class="jxr_javadoccomment">     */</em>
+<a class="jxr_linenumber" name="L47" href="#L47">47</a>      @Override
+<a class="jxr_linenumber" name="L48" href="#L48">48</a>      <strong class="jxr_keyword">public</strong> Object[][] getContents() {
+<a class="jxr_linenumber" name="L49" href="#L49">49</a>          Object[][] temp = <strong class="jxr_keyword">new</strong> Object[][] {
+<a class="jxr_linenumber" name="L50" href="#L50">50</a>          <em class="jxr_comment">// NOTE: The value strings in this file containing "{0}" are</em>
+<a class="jxr_linenumber" name="L51" href="#L51">51</a>          <em class="jxr_comment">//       processed by the java.text.MessageFormat class.  Any</em>
+<a class="jxr_linenumber" name="L52" href="#L52">52</a>          <em class="jxr_comment">//       single quotes appearing in these strings need to be</em>
+<a class="jxr_linenumber" name="L53" href="#L53">53</a>          <em class="jxr_comment">//       doubled up.</em>
+<a class="jxr_linenumber" name="L54" href="#L54">54</a>          <em class="jxr_comment">//</em>
+<a class="jxr_linenumber" name="L55" href="#L55">55</a>          <em class="jxr_comment">// LOCALIZE THIS</em>
+<a class="jxr_linenumber" name="L56" href="#L56">56</a>          {<span class="jxr_string">"** classes list **"</span>, <span class="jxr_string">"** classes list **\n{0}"</span>},
+<a class="jxr_linenumber" name="L57" href="#L57">57</a>          {<span class="jxr_string">"** fields list **"</span>, <span class="jxr_string">"** fields list **\n{0}"</span>},
+<a class="jxr_linenumber" name="L58" href="#L58">58</a>          {<span class="jxr_string">"** methods list **"</span>, <span class="jxr_string">"** methods list **\n{0}"</span>},
+<a class="jxr_linenumber" name="L59" href="#L59">59</a>          {<span class="jxr_string">"*** Reading commands from"</span>, <span class="jxr_string">"*** Reading commands from {0}"</span>},
+<a class="jxr_linenumber" name="L60" href="#L60">60</a>          {<span class="jxr_string">"All threads resumed."</span>, <span class="jxr_string">"All threads resumed."</span>},
+<a class="jxr_linenumber" name="L61" href="#L61">61</a>          {<span class="jxr_string">"All threads suspended."</span>, <span class="jxr_string">"All threads suspended."</span>},
+<a class="jxr_linenumber" name="L62" href="#L62">62</a>          {<span class="jxr_string">"Argument is not defined for connector:"</span>, <span class="jxr_string">"Argument {0} is not defined for connector: {1}"</span>},
+<a class="jxr_linenumber" name="L63" href="#L63">63</a>          {<span class="jxr_string">"Arguments match no method"</span>, <span class="jxr_string">"Arguments match no method"</span>},
+<a class="jxr_linenumber" name="L64" href="#L64">64</a>          {<span class="jxr_string">"Array:"</span>, <span class="jxr_string">"Array: {0}"</span>},
+<a class="jxr_linenumber" name="L65" href="#L65">65</a>          {<span class="jxr_string">"Array element is not a method"</span>, <span class="jxr_string">"Array element is not a method"</span>},
+<a class="jxr_linenumber" name="L66" href="#L66">66</a>          {<span class="jxr_string">"Array index must be a integer type"</span>, <span class="jxr_string">"Array index must be a integer type"</span>},
+<a class="jxr_linenumber" name="L67" href="#L67">67</a>          {<span class="jxr_string">"base directory:"</span>, <span class="jxr_string">"base directory: {0}"</span>},
+<a class="jxr_linenumber" name="L68" href="#L68">68</a>          {<span class="jxr_string">"bootclasspath:"</span>, <span class="jxr_string">"bootclasspath: {0}"</span>},
+<a class="jxr_linenumber" name="L69" href="#L69">69</a>          {<span class="jxr_string">"Breakpoint hit:"</span>, <span class="jxr_string">"Breakpoint hit: "</span>},
+<a class="jxr_linenumber" name="L70" href="#L70">70</a>          {<span class="jxr_string">"breakpoint"</span>, <span class="jxr_string">"breakpoint {0}"</span>},
+<a class="jxr_linenumber" name="L71" href="#L71">71</a>          {<span class="jxr_string">"Breakpoints set:"</span>, <span class="jxr_string">"Breakpoints set:"</span>},
+<a class="jxr_linenumber" name="L72" href="#L72">72</a>          {<span class="jxr_string">"Breakpoints can be located only in classes."</span>, <span class="jxr_string">"Breakpoints can be located only in classes.  {0} is an interface or array."</span>},
+<a class="jxr_linenumber" name="L73" href="#L73">73</a>          {<span class="jxr_string">"Can only trace"</span>, <span class="jxr_string">"Can only trace 'methods' or 'method exit' or 'method exits'"</span>},
+<a class="jxr_linenumber" name="L74" href="#L74">74</a>          {<span class="jxr_string">"cannot redefine existing connection"</span>, <span class="jxr_string">"{0} cannot redefine existing connection"</span>},
+<a class="jxr_linenumber" name="L75" href="#L75">75</a>          {<span class="jxr_string">"Cannot assign to a method invocation"</span>, <span class="jxr_string">"Cannot assign to a method invocation"</span>},
+<a class="jxr_linenumber" name="L76" href="#L76">76</a>          {<span class="jxr_string">"Cannot specify command line with connector:"</span>, <span class="jxr_string">"Cannot specify command line with connector: {0}"</span>},
+<a class="jxr_linenumber" name="L77" href="#L77">77</a>          {<span class="jxr_string">"Cannot specify target vm arguments with connector:"</span>, <span class="jxr_string">"Cannot specify target VM arguments with connector: {0}"</span>},
+<a class="jxr_linenumber" name="L78" href="#L78">78</a>          {<span class="jxr_string">"Class containing field must be specified."</span>, <span class="jxr_string">"Class containing field must be specified."</span>},
+<a class="jxr_linenumber" name="L79" href="#L79">79</a>          {<span class="jxr_string">"Class:"</span>, <span class="jxr_string">"Class: {0}"</span>},
+<a class="jxr_linenumber" name="L80" href="#L80">80</a>          {<span class="jxr_string">"Classic VM no longer supported."</span>, <span class="jxr_string">"Classic VM no longer supported."</span>},
+<a class="jxr_linenumber" name="L81" href="#L81">81</a>          {<span class="jxr_string">"classpath:"</span>, <span class="jxr_string">"classpath: {0}"</span>},
+<a class="jxr_linenumber" name="L82" href="#L82">82</a>          {<span class="jxr_string">"colon mark"</span>, <span class="jxr_string">":"</span>},
+<a class="jxr_linenumber" name="L83" href="#L83">83</a>          {<span class="jxr_string">"colon space"</span>, <span class="jxr_string">": "</span>},
+<a class="jxr_linenumber" name="L84" href="#L84">84</a>          {<span class="jxr_string">"Command is not supported on the target VM"</span>, <span class="jxr_string">"Command ''{0}'' is not supported on the target VM"</span>},
+<a class="jxr_linenumber" name="L85" href="#L85">85</a>          {<span class="jxr_string">"Command is not supported on a read-only VM connection"</span>, <span class="jxr_string">"Command ''{0}'' is not supported on a read-only VM connection"</span>},
+<a class="jxr_linenumber" name="L86" href="#L86">86</a>          {<span class="jxr_string">"Command not valid until the VM is started with the run command"</span>, <span class="jxr_string">"Command ''{0}'' is not valid until the VM is started with the ''run'' command"</span>},
+<a class="jxr_linenumber" name="L87" href="#L87">87</a>          {<span class="jxr_string">"Condition must be boolean"</span>, <span class="jxr_string">"Condition must be boolean"</span>},
+<a class="jxr_linenumber" name="L88" href="#L88">88</a>          {<span class="jxr_string">"Connector and Transport name"</span>, <span class="jxr_string">"  Connector: {0}  Transport: {1}"</span>},
+<a class="jxr_linenumber" name="L89" href="#L89">89</a>          {<span class="jxr_string">"Connector argument nodefault"</span>, <span class="jxr_string">"    Argument: {0} (no default)"</span>},
+<a class="jxr_linenumber" name="L90" href="#L90">90</a>          {<span class="jxr_string">"Connector argument default"</span>, <span class="jxr_string">"    Argument: {0} Default value: {1}"</span>},
+<a class="jxr_linenumber" name="L91" href="#L91">91</a>          {<span class="jxr_string">"Connector description"</span>, <span class="jxr_string">"    description: {0}"</span>},
+<a class="jxr_linenumber" name="L92" href="#L92">92</a>          {<span class="jxr_string">"Connector required argument nodefault"</span>, <span class="jxr_string">"    Required Argument: {0} (no default)"</span>},
+<a class="jxr_linenumber" name="L93" href="#L93">93</a>          {<span class="jxr_string">"Connector required argument default"</span>, <span class="jxr_string">"    Required Argument: {0} Default value: {1}"</span>},
+<a class="jxr_linenumber" name="L94" href="#L94">94</a>          {<span class="jxr_string">"Connectors available"</span>, <span class="jxr_string">"Available connectors are:"</span>},
+<a class="jxr_linenumber" name="L95" href="#L95">95</a>          {<span class="jxr_string">"Constant is not a method"</span>, <span class="jxr_string">"Constant is not a method"</span>},
+<a class="jxr_linenumber" name="L96" href="#L96">96</a>          {<span class="jxr_string">"Could not open:"</span>, <span class="jxr_string">"Could not open: {0}"</span>},
+<a class="jxr_linenumber" name="L97" href="#L97">97</a>          {<span class="jxr_string">"Current method is native"</span>, <span class="jxr_string">"Current method is native"</span>},
+<a class="jxr_linenumber" name="L98" href="#L98">98</a>          {<span class="jxr_string">"Current thread died. Execution continuing..."</span>, <span class="jxr_string">"Current thread {0} died. Execution continuing..."</span>},
+<a class="jxr_linenumber" name="L99" href="#L99">99</a>          {<span class="jxr_string">"Current thread isnt suspended."</span>, <span class="jxr_string">"Current thread isn't suspended."</span>},
+<a class="jxr_linenumber" name="L100" href="#L100">100</a>         {<span class="jxr_string">"Current thread not set."</span>, <span class="jxr_string">"Current thread not set."</span>},
+<a class="jxr_linenumber" name="L101" href="#L101">101</a>         {<span class="jxr_string">"dbgtrace flag value must be an integer:"</span>, <span class="jxr_string">"dbgtrace flag value must be an integer: {0}"</span>},
+<a class="jxr_linenumber" name="L102" href="#L102">102</a>         {<span class="jxr_string">"Deferring."</span>, <span class="jxr_string">"Deferring {0}.\nIt will be set after the class is loaded."</span>},
+<a class="jxr_linenumber" name="L103" href="#L103">103</a>         {<span class="jxr_string">"End of stack."</span>, <span class="jxr_string">"End of stack."</span>},
+<a class="jxr_linenumber" name="L104" href="#L104">104</a>         {<span class="jxr_string">"Error popping frame"</span>, <span class="jxr_string">"Error popping frame - {0}"</span>},
+<a class="jxr_linenumber" name="L105" href="#L105">105</a>         {<span class="jxr_string">"Error reading file"</span>, <span class="jxr_string">"Error reading ''{0}'' - {1}"</span>},
+<a class="jxr_linenumber" name="L106" href="#L106">106</a>         {<span class="jxr_string">"Error redefining class to file"</span>, <span class="jxr_string">"Error redefining {0} to {1} - {2}"</span>},
+<a class="jxr_linenumber" name="L107" href="#L107">107</a>         {<span class="jxr_string">"exceptionSpec all"</span>, <span class="jxr_string">"all {0}"</span>},
+<a class="jxr_linenumber" name="L108" href="#L108">108</a>         {<span class="jxr_string">"exceptionSpec caught"</span>, <span class="jxr_string">"caught {0}"</span>},
+<a class="jxr_linenumber" name="L109" href="#L109">109</a>         {<span class="jxr_string">"exceptionSpec uncaught"</span>, <span class="jxr_string">"uncaught {0}"</span>},
+<a class="jxr_linenumber" name="L110" href="#L110">110</a>         {<span class="jxr_string">"Exception in expression:"</span>, <span class="jxr_string">"Exception in expression: {0}"</span>},
+<a class="jxr_linenumber" name="L111" href="#L111">111</a>         {<span class="jxr_string">"Exception occurred caught"</span>, <span class="jxr_string">"Exception occurred: {0} (to be caught at: {1})"</span>},
+<a class="jxr_linenumber" name="L112" href="#L112">112</a>         {<span class="jxr_string">"Exception occurred uncaught"</span>, <span class="jxr_string">"Exception occurred: {0} (uncaught)"</span>},
+<a class="jxr_linenumber" name="L113" href="#L113">113</a>         {<span class="jxr_string">"Exceptions caught:"</span>, <span class="jxr_string">"Break when these exceptions occur:"</span>},
+<a class="jxr_linenumber" name="L114" href="#L114">114</a>         {<span class="jxr_string">"expr is null"</span>, <span class="jxr_string">"{0} = null"</span>},
+<a class="jxr_linenumber" name="L115" href="#L115">115</a>         {<span class="jxr_string">"expr is value"</span>, <span class="jxr_string">"{0} = {1}"</span>},
+<a class="jxr_linenumber" name="L116" href="#L116">116</a>         {<span class="jxr_string">"expr is value &lt;collected&gt;"</span>, <span class="jxr_string">"  {0} = {1} &lt;collected&gt;"</span>},
+<a class="jxr_linenumber" name="L117" href="#L117">117</a>         {<span class="jxr_string">"Expression cannot be void"</span>, <span class="jxr_string">"Expression cannot be void"</span>},
+<a class="jxr_linenumber" name="L118" href="#L118">118</a>         {<span class="jxr_string">"Expression must evaluate to an object"</span>, <span class="jxr_string">"Expression must evaluate to an object"</span>},
+<a class="jxr_linenumber" name="L119" href="#L119">119</a>         {<span class="jxr_string">"extends:"</span>, <span class="jxr_string">"extends: {0}"</span>},
+<a class="jxr_linenumber" name="L120" href="#L120">120</a>         {<span class="jxr_string">"Failed reading output"</span>, <span class="jxr_string">"Failed reading output of child java interpreter."</span>},
+<a class="jxr_linenumber" name="L121" href="#L121">121</a>         {<span class="jxr_string">"Fatal error"</span>, <span class="jxr_string">"Fatal error:"</span>},
+<a class="jxr_linenumber" name="L122" href="#L122">122</a>         {<span class="jxr_string">"Field access encountered before after"</span>, <span class="jxr_string">"Field ({0}) is {1}, will be {2}: "</span>},
+<a class="jxr_linenumber" name="L123" href="#L123">123</a>         {<span class="jxr_string">"Field access encountered"</span>, <span class="jxr_string">"Field ({0}) access encountered: "</span>},
+<a class="jxr_linenumber" name="L124" href="#L124">124</a>         {<span class="jxr_string">"Field to unwatch not specified"</span>, <span class="jxr_string">"Field to unwatch not specified."</span>},
+<a class="jxr_linenumber" name="L125" href="#L125">125</a>         {<span class="jxr_string">"Field to watch not specified"</span>, <span class="jxr_string">"Field to watch not specified."</span>},
+<a class="jxr_linenumber" name="L126" href="#L126">126</a>         {<span class="jxr_string">"GC Disabled for"</span>, <span class="jxr_string">"GC Disabled for {0}:"</span>},
+<a class="jxr_linenumber" name="L127" href="#L127">127</a>         {<span class="jxr_string">"GC Enabled for"</span>, <span class="jxr_string">"GC Enabled for {0}:"</span>},
+<a class="jxr_linenumber" name="L128" href="#L128">128</a>         {<span class="jxr_string">"grouping begin character"</span>, <span class="jxr_string">"{"</span>},
+<a class="jxr_linenumber" name="L129" href="#L129">129</a>         {<span class="jxr_string">"grouping end character"</span>, <span class="jxr_string">"}"</span>},
+<a class="jxr_linenumber" name="L130" href="#L130">130</a>         {<span class="jxr_string">"Illegal Argument Exception"</span>, <span class="jxr_string">"Illegal Argument Exception"</span>},
+<a class="jxr_linenumber" name="L131" href="#L131">131</a>         {<span class="jxr_string">"Illegal connector argument"</span>, <span class="jxr_string">"Illegal connector argument: {0}"</span>},
+<a class="jxr_linenumber" name="L132" href="#L132">132</a>         {<span class="jxr_string">"implementor:"</span>, <span class="jxr_string">"implementor: {0}"</span>},
+<a class="jxr_linenumber" name="L133" href="#L133">133</a>         {<span class="jxr_string">"implements:"</span>, <span class="jxr_string">"implements: {0}"</span>},
+<a class="jxr_linenumber" name="L134" href="#L134">134</a>         {<span class="jxr_string">"Initializing progname"</span>, <span class="jxr_string">"Initializing {0} ..."</span>},
+<a class="jxr_linenumber" name="L135" href="#L135">135</a>         {<span class="jxr_string">"Input stream closed."</span>, <span class="jxr_string">"Input stream closed."</span>},
+<a class="jxr_linenumber" name="L136" href="#L136">136</a>         {<span class="jxr_string">"Interface:"</span>, <span class="jxr_string">"Interface: {0}"</span>},
+<a class="jxr_linenumber" name="L137" href="#L137">137</a>         {<span class="jxr_string">"Internal debugger error."</span>, <span class="jxr_string">"Internal debugger error."</span>},
+<a class="jxr_linenumber" name="L138" href="#L138">138</a>         {<span class="jxr_string">"Internal error: null ThreadInfo created"</span>, <span class="jxr_string">"Internal error: null ThreadInfo created"</span>},
+<a class="jxr_linenumber" name="L139" href="#L139">139</a>         {<span class="jxr_string">"Internal error; unable to set"</span>, <span class="jxr_string">"Internal error; unable to set {0}"</span>},
+<a class="jxr_linenumber" name="L140" href="#L140">140</a>         {<span class="jxr_string">"Internal exception during operation:"</span>, <span class="jxr_string">"Internal exception during operation:\n    {0}"</span>},
+<a class="jxr_linenumber" name="L141" href="#L141">141</a>         {<span class="jxr_string">"Internal exception:"</span>, <span class="jxr_string">"Internal exception:"</span>},
+<a class="jxr_linenumber" name="L142" href="#L142">142</a>         {<span class="jxr_string">"Invalid argument type name"</span>, <span class="jxr_string">"Invalid argument type name"</span>},
+<a class="jxr_linenumber" name="L143" href="#L143">143</a>         {<span class="jxr_string">"Invalid assignment syntax"</span>, <span class="jxr_string">"Invalid assignment syntax"</span>},
+<a class="jxr_linenumber" name="L144" href="#L144">144</a>         {<span class="jxr_string">"Invalid command syntax"</span>, <span class="jxr_string">"Invalid command syntax"</span>},
+<a class="jxr_linenumber" name="L145" href="#L145">145</a>         {<span class="jxr_string">"Invalid connect type"</span>, <span class="jxr_string">"Invalid connect type"</span>},
+<a class="jxr_linenumber" name="L146" href="#L146">146</a>         {<span class="jxr_string">"Invalid consecutive invocations"</span>, <span class="jxr_string">"Invalid consecutive invocations"</span>},
+<a class="jxr_linenumber" name="L147" href="#L147">147</a>         {<span class="jxr_string">"Invalid exception object"</span>, <span class="jxr_string">"Invalid exception object"</span>},
+<a class="jxr_linenumber" name="L148" href="#L148">148</a>         {<span class="jxr_string">"Invalid method specification:"</span>, <span class="jxr_string">"Invalid method specification: {0}"</span>},
+<a class="jxr_linenumber" name="L149" href="#L149">149</a>         {<span class="jxr_string">"Invalid option on class command"</span>, <span class="jxr_string">"Invalid option on class command"</span>},
+<a class="jxr_linenumber" name="L150" href="#L150">150</a>         {<span class="jxr_string">"invalid option"</span>, <span class="jxr_string">"invalid option: {0}"</span>},
+<a class="jxr_linenumber" name="L151" href="#L151">151</a>         {<span class="jxr_string">"Invalid thread status."</span>, <span class="jxr_string">"Invalid thread status."</span>},
+<a class="jxr_linenumber" name="L152" href="#L152">152</a>         {<span class="jxr_string">"Invalid transport name:"</span>, <span class="jxr_string">"Invalid transport name: {0}"</span>},
+<a class="jxr_linenumber" name="L153" href="#L153">153</a>         {<span class="jxr_string">"I/O exception occurred:"</span>, <span class="jxr_string">"I/O Exception occurred: {0}"</span>},
+<a class="jxr_linenumber" name="L154" href="#L154">154</a>         {<span class="jxr_string">"is an ambiguous method name in"</span>, <span class="jxr_string">"\&quot;{0}\&quot; is an ambiguous method name in \&quot;{1}\&quot;"</span>},
+<a class="jxr_linenumber" name="L155" href="#L155">155</a>         {<span class="jxr_string">"is an invalid line number for"</span>,  <span class="jxr_string">"{0,number,integer} is an invalid line number for {1}"</span>},
+<a class="jxr_linenumber" name="L156" href="#L156">156</a>         {<span class="jxr_string">"is not a valid class name"</span>, <span class="jxr_string">"\&quot;{0}\&quot; is not a valid class name."</span>},
+<a class="jxr_linenumber" name="L157" href="#L157">157</a>         {<span class="jxr_string">"is not a valid field name"</span>, <span class="jxr_string">"\&quot;{0}\&quot; is not a valid field name."</span>},
+<a class="jxr_linenumber" name="L158" href="#L158">158</a>         {<span class="jxr_string">"is not a valid id or class name"</span>, <span class="jxr_string">"\&quot;{0}\&quot; is not a valid id or class name."</span>},
+<a class="jxr_linenumber" name="L159" href="#L159">159</a>         {<span class="jxr_string">"is not a valid line number or method name for"</span>, <span class="jxr_string">"\&quot;{0}\&quot; is not a valid line number or method name for class \&quot;{1}\&quot;"</span>},
+<a class="jxr_linenumber" name="L160" href="#L160">160</a>         {<span class="jxr_string">"is not a valid method name"</span>, <span class="jxr_string">"\&quot;{0}\&quot; is not a valid method name."</span>},
+<a class="jxr_linenumber" name="L161" href="#L161">161</a>         {<span class="jxr_string">"is not a valid thread id"</span>, <span class="jxr_string">"\&quot;{0}\&quot; is not a valid thread id."</span>},
+<a class="jxr_linenumber" name="L162" href="#L162">162</a>         {<span class="jxr_string">"is not a valid threadgroup name"</span>, <span class="jxr_string">"\&quot;{0}\&quot; is not a valid threadgroup name."</span>},
+<a class="jxr_linenumber" name="L163" href="#L163">163</a>         {<span class="jxr_string">"jdb prompt with no current thread"</span>, <span class="jxr_string">"&gt; "</span>},
+<a class="jxr_linenumber" name="L164" href="#L164">164</a>         {<span class="jxr_string">"jdb prompt thread name and current stack frame"</span>, <span class="jxr_string">"{0}[{1,number,integer}] "</span>},
+<a class="jxr_linenumber" name="L165" href="#L165">165</a>         {<span class="jxr_string">"killed"</span>, <span class="jxr_string">"{0} killed"</span>},
+<a class="jxr_linenumber" name="L166" href="#L166">166</a>         {<span class="jxr_string">"killing thread:"</span>, <span class="jxr_string">"killing thread: {0}"</span>},
+<a class="jxr_linenumber" name="L167" href="#L167">167</a>         {<span class="jxr_string">"Line number information not available for"</span>, <span class="jxr_string">"Source line numbers not available for this location."</span>},
+<a class="jxr_linenumber" name="L168" href="#L168">168</a>         {<span class="jxr_string">"line number"</span>, <span class="jxr_string">":{0,number,integer}"</span>},
+<a class="jxr_linenumber" name="L169" href="#L169">169</a>         {<span class="jxr_string">"list field typename and name"</span>, <span class="jxr_string">"{0} {1}\n"</span>},
+<a class="jxr_linenumber" name="L170" href="#L170">170</a>         {<span class="jxr_string">"list field typename and name inherited"</span>, <span class="jxr_string">"{0} {1} (inherited from {2})\n"</span>},
+<a class="jxr_linenumber" name="L171" href="#L171">171</a>         {<span class="jxr_string">"list field typename and name hidden"</span>, <span class="jxr_string">"{0} {1} (hidden)\n"</span>},
+<a class="jxr_linenumber" name="L172" href="#L172">172</a>         {<span class="jxr_string">"Listening at address:"</span>, <span class="jxr_string">"Listening at address: {0}"</span>},
+<a class="jxr_linenumber" name="L173" href="#L173">173</a>         {<span class="jxr_string">"Local variable information not available."</span>, <span class="jxr_string">"Local variable information not available.  Compile with -g to generate variable information"</span>},
+<a class="jxr_linenumber" name="L174" href="#L174">174</a>         {<span class="jxr_string">"Local variables:"</span>, <span class="jxr_string">"Local variables:"</span>},
+<a class="jxr_linenumber" name="L175" href="#L175">175</a>         {<span class="jxr_string">"&lt;location unavailable&gt;"</span>, <span class="jxr_string">"&lt;location unavailable&gt;"</span>},
+<a class="jxr_linenumber" name="L176" href="#L176">176</a>         {<span class="jxr_string">"location"</span>, <span class="jxr_string">"\&quot;thread={0}\&quot;, {1}"</span>},
+<a class="jxr_linenumber" name="L177" href="#L177">177</a>         {<span class="jxr_string">"locationString"</span>, <span class="jxr_string">"{0}.{1}(), line={2,number,integer} bci={3,number,integer}"</span>},
+<a class="jxr_linenumber" name="L178" href="#L178">178</a>         {<span class="jxr_string">"Main class and arguments must be specified"</span>, <span class="jxr_string">"Main class and arguments must be specified"</span>},
+<a class="jxr_linenumber" name="L179" href="#L179">179</a>         {<span class="jxr_string">"Method arguments:"</span>, <span class="jxr_string">"Method arguments:"</span>},
+<a class="jxr_linenumber" name="L180" href="#L180">180</a>         {<span class="jxr_string">"Method entered:"</span>, <span class="jxr_string">"Method entered: "</span>},
+<a class="jxr_linenumber" name="L181" href="#L181">181</a>         {<span class="jxr_string">"Method exited:"</span>,  <span class="jxr_string">"Method exited"</span>},
+<a class="jxr_linenumber" name="L182" href="#L182">182</a>         {<span class="jxr_string">"Method exitedValue:"</span>, <span class="jxr_string">"Method exited: return value = {0}, "</span>},
+<a class="jxr_linenumber" name="L183" href="#L183">183</a>         {<span class="jxr_string">"Method is overloaded; specify arguments"</span>, <span class="jxr_string">"Method {0} is overloaded; specify arguments"</span>},
+<a class="jxr_linenumber" name="L184" href="#L184">184</a>         {<span class="jxr_string">"minus version"</span>, <span class="jxr_string">"This is {0} version {1,number,integer}.{2,number,integer} (Java SE version {3})"</span>},
+<a class="jxr_linenumber" name="L185" href="#L185">185</a>         {<span class="jxr_string">"Monitor information for thread"</span>, <span class="jxr_string">"Monitor information for thread {0}:"</span>},
+<a class="jxr_linenumber" name="L186" href="#L186">186</a>         {<span class="jxr_string">"Monitor information for expr"</span>, <span class="jxr_string">"Monitor information for {0} ({1}):"</span>},
+<a class="jxr_linenumber" name="L187" href="#L187">187</a>         {<span class="jxr_string">"More than one class named"</span>, <span class="jxr_string">"More than one class named: ''{0}''"</span>},
+<a class="jxr_linenumber" name="L188" href="#L188">188</a>         {<span class="jxr_string">"native method"</span>, <span class="jxr_string">"native method"</span>},
+<a class="jxr_linenumber" name="L189" href="#L189">189</a>         {<span class="jxr_string">"nested:"</span>, <span class="jxr_string">"nested: {0}"</span>},
+<a class="jxr_linenumber" name="L190" href="#L190">190</a>         {<span class="jxr_string">"No attach address specified."</span>, <span class="jxr_string">"No attach address specified."</span>},
+<a class="jxr_linenumber" name="L191" href="#L191">191</a>         {<span class="jxr_string">"No breakpoints set."</span>, <span class="jxr_string">"No breakpoints set."</span>},
+<a class="jxr_linenumber" name="L192" href="#L192">192</a>         {<span class="jxr_string">"No class named"</span>, <span class="jxr_string">"No class named ''{0}''"</span>},
+<a class="jxr_linenumber" name="L193" href="#L193">193</a>         {<span class="jxr_string">"No class specified."</span>, <span class="jxr_string">"No class specified."</span>},
+<a class="jxr_linenumber" name="L194" href="#L194">194</a>         {<span class="jxr_string">"No classpath specified."</span>, <span class="jxr_string">"No classpath specified."</span>},
+<a class="jxr_linenumber" name="L195" href="#L195">195</a>         {<span class="jxr_string">"No code at line"</span>, <span class="jxr_string">"No code at line {0,number,integer} in {1}"</span>},
+<a class="jxr_linenumber" name="L196" href="#L196">196</a>         {<span class="jxr_string">"No connect specification."</span>, <span class="jxr_string">"No connect specification."</span>},
+<a class="jxr_linenumber" name="L197" href="#L197">197</a>         {<span class="jxr_string">"No connector named:"</span>, <span class="jxr_string">"No connector named: {0}"</span>},
+<a class="jxr_linenumber" name="L198" href="#L198">198</a>         {<span class="jxr_string">"No current thread"</span>, <span class="jxr_string">"No current thread"</span>},
+<a class="jxr_linenumber" name="L199" href="#L199">199</a>         {<span class="jxr_string">"No default thread specified:"</span>, <span class="jxr_string">"No default thread specified: use the \&quot;thread\&quot; command first."</span>},
+<a class="jxr_linenumber" name="L200" href="#L200">200</a>         {<span class="jxr_string">"No exception object specified."</span>, <span class="jxr_string">"No exception object specified."</span>},
+<a class="jxr_linenumber" name="L201" href="#L201">201</a>         {<span class="jxr_string">"No exceptions caught."</span>, <span class="jxr_string">"No exceptions caught."</span>},
+<a class="jxr_linenumber" name="L202" href="#L202">202</a>         {<span class="jxr_string">"No expression specified."</span>, <span class="jxr_string">"No expression specified."</span>},
+<a class="jxr_linenumber" name="L203" href="#L203">203</a>         {<span class="jxr_string">"No field in"</span>, <span class="jxr_string">"No field {0} in {1}"</span>},
+<a class="jxr_linenumber" name="L204" href="#L204">204</a>         {<span class="jxr_string">"No frames on the current call stack"</span>, <span class="jxr_string">"No frames on the current call stack"</span>},
+<a class="jxr_linenumber" name="L205" href="#L205">205</a>         {<span class="jxr_string">"No linenumber information for"</span>, <span class="jxr_string">"No linenumber information for {0}.  Try compiling with debugging on."</span>},
+<a class="jxr_linenumber" name="L206" href="#L206">206</a>         {<span class="jxr_string">"No local variables"</span>, <span class="jxr_string">"No local variables"</span>},
+<a class="jxr_linenumber" name="L207" href="#L207">207</a>         {<span class="jxr_string">"No method in"</span>, <span class="jxr_string">"No method {0} in {1}"</span>},
+<a class="jxr_linenumber" name="L208" href="#L208">208</a>         {<span class="jxr_string">"No method specified."</span>, <span class="jxr_string">"No method specified."</span>},
+<a class="jxr_linenumber" name="L209" href="#L209">209</a>         {<span class="jxr_string">"No monitor numbered:"</span>, <span class="jxr_string">"No monitor numbered: {0}"</span>},
+<a class="jxr_linenumber" name="L210" href="#L210">210</a>         {<span class="jxr_string">"No monitors owned"</span>, <span class="jxr_string">"  No monitors owned"</span>},
+<a class="jxr_linenumber" name="L211" href="#L211">211</a>         {<span class="jxr_string">"No object specified."</span>, <span class="jxr_string">"No object specified."</span>},
+<a class="jxr_linenumber" name="L212" href="#L212">212</a>         {<span class="jxr_string">"No objects specified."</span>, <span class="jxr_string">"No objects specified."</span>},
+<a class="jxr_linenumber" name="L213" href="#L213">213</a>         {<span class="jxr_string">"No save index specified."</span>, <span class="jxr_string">"No save index specified."</span>},
+<a class="jxr_linenumber" name="L214" href="#L214">214</a>         {<span class="jxr_string">"No saved values"</span>, <span class="jxr_string">"No saved values"</span>},
+<a class="jxr_linenumber" name="L215" href="#L215">215</a>         {<span class="jxr_string">"No source information available for:"</span>, <span class="jxr_string">"No source information available for: {0}"</span>},
+<a class="jxr_linenumber" name="L216" href="#L216">216</a>         {<span class="jxr_string">"No sourcedebugextension specified"</span>, <span class="jxr_string">"No SourceDebugExtension specified"</span>},
+<a class="jxr_linenumber" name="L217" href="#L217">217</a>         {<span class="jxr_string">"No sourcepath specified."</span>, <span class="jxr_string">"No sourcepath specified."</span>},
+<a class="jxr_linenumber" name="L218" href="#L218">218</a>         {<span class="jxr_string">"No thread specified."</span>, <span class="jxr_string">"No thread specified."</span>},
+<a class="jxr_linenumber" name="L219" href="#L219">219</a>         {<span class="jxr_string">"No VM connected"</span>, <span class="jxr_string">"No VM connected"</span>},
+<a class="jxr_linenumber" name="L220" href="#L220">220</a>         {<span class="jxr_string">"No waiters"</span>, <span class="jxr_string">"  No waiters"</span>},
+<a class="jxr_linenumber" name="L221" href="#L221">221</a>         {<span class="jxr_string">"not a class"</span>, <span class="jxr_string">"{0} is not a class"</span>},
+<a class="jxr_linenumber" name="L222" href="#L222">222</a>         {<span class="jxr_string">"Not a monitor number:"</span>, <span class="jxr_string">"Not a monitor number: ''{0}''"</span>},
+<a class="jxr_linenumber" name="L223" href="#L223">223</a>         {<span class="jxr_string">"not found (try the full name)"</span>, <span class="jxr_string">"{0} not found (try the full name)"</span>},
+<a class="jxr_linenumber" name="L224" href="#L224">224</a>         {<span class="jxr_string">"Not found:"</span>, <span class="jxr_string">"Not found: {0}"</span>},
+<a class="jxr_linenumber" name="L225" href="#L225">225</a>         {<span class="jxr_string">"not found"</span>, <span class="jxr_string">"{0} not found"</span>},
+<a class="jxr_linenumber" name="L226" href="#L226">226</a>         {<span class="jxr_string">"Not owned"</span>, <span class="jxr_string">"  Not owned"</span>},
+<a class="jxr_linenumber" name="L227" href="#L227">227</a>         {<span class="jxr_string">"Not waiting for a monitor"</span>, <span class="jxr_string">"  Not waiting for a monitor"</span>},
+<a class="jxr_linenumber" name="L228" href="#L228">228</a>         {<span class="jxr_string">"Nothing suspended."</span>, <span class="jxr_string">"Nothing suspended."</span>},
+<a class="jxr_linenumber" name="L229" href="#L229">229</a>         {<span class="jxr_string">"object description and hex id"</span>, <span class="jxr_string">"({0}){1}"</span>},
+<a class="jxr_linenumber" name="L230" href="#L230">230</a>         {<span class="jxr_string">"Operation is not supported on the target VM"</span>, <span class="jxr_string">"Operation is not supported on the target VM"</span>},
+<a class="jxr_linenumber" name="L231" href="#L231">231</a>         {<span class="jxr_string">"operation not yet supported"</span>, <span class="jxr_string">"operation not yet supported"</span>},
+<a class="jxr_linenumber" name="L232" href="#L232">232</a>         {<span class="jxr_string">"Owned by:"</span>, <span class="jxr_string">"  Owned by: {0}, entry count: {1,number,integer}"</span>},
+<a class="jxr_linenumber" name="L233" href="#L233">233</a>         {<span class="jxr_string">"Owned monitor:"</span>, <span class="jxr_string">"  Owned monitor: {0}"</span>},
+<a class="jxr_linenumber" name="L234" href="#L234">234</a>         {<span class="jxr_string">"Parse exception:"</span>, <span class="jxr_string">"Parse Exception: {0}"</span>},
+<a class="jxr_linenumber" name="L235" href="#L235">235</a>         {<span class="jxr_string">"printbreakpointcommandusage"</span>, <span class="jxr_string">"Usage: {0} &lt;class&gt;:&lt;line_number&gt; or\n       {1} &lt;class&gt;.&lt;method_name&gt;[(argument_type,...)]"</span>},
+<a class="jxr_linenumber" name="L236" href="#L236">236</a>         {<span class="jxr_string">"Removed:"</span>, <span class="jxr_string">"Removed: {0}"</span>},
+<a class="jxr_linenumber" name="L237" href="#L237">237</a>         {<span class="jxr_string">"Requested stack frame is no longer active:"</span>, <span class="jxr_string">"Requested stack frame is no longer active: {0,number,integer}"</span>},
+<a class="jxr_linenumber" name="L238" href="#L238">238</a>         {<span class="jxr_string">"run &lt;args&gt; command is valid only with launched VMs"</span>, <span class="jxr_string">"'run &lt;args&gt;' command is valid only with launched VMs"</span>},
+<a class="jxr_linenumber" name="L239" href="#L239">239</a>         {<span class="jxr_string">"run"</span>, <span class="jxr_string">"run {0}"</span>},
+<a class="jxr_linenumber" name="L240" href="#L240">240</a>         {<span class="jxr_string">"saved"</span>, <span class="jxr_string">"{0} saved"</span>},
+<a class="jxr_linenumber" name="L241" href="#L241">241</a>         {<span class="jxr_string">"Set deferred"</span>, <span class="jxr_string">"Set deferred {0}"</span>},
+<a class="jxr_linenumber" name="L242" href="#L242">242</a>         {<span class="jxr_string">"Set"</span>, <span class="jxr_string">"Set {0}"</span>},
+<a class="jxr_linenumber" name="L243" href="#L243">243</a>         {<span class="jxr_string">"Source file not found:"</span>, <span class="jxr_string">"Source file not found: {0}"</span>},
+<a class="jxr_linenumber" name="L244" href="#L244">244</a>         {<span class="jxr_string">"source line number and line"</span>, <span class="jxr_string">"{0,number,integer}    {1}"</span>},
+<a class="jxr_linenumber" name="L245" href="#L245">245</a>         {<span class="jxr_string">"source line number current line and line"</span>, <span class="jxr_string">"{0,number,integer} =&gt; {1}"</span>},
+<a class="jxr_linenumber" name="L246" href="#L246">246</a>         {<span class="jxr_string">"sourcedebugextension"</span>, <span class="jxr_string">"SourceDebugExtension -- {0}"</span>},
+<a class="jxr_linenumber" name="L247" href="#L247">247</a>         {<span class="jxr_string">"Specify class and method"</span>, <span class="jxr_string">"Specify class and method"</span>},
+<a class="jxr_linenumber" name="L248" href="#L248">248</a>         {<span class="jxr_string">"Specify classes to redefine"</span>, <span class="jxr_string">"Specify classes to redefine"</span>},
+<a class="jxr_linenumber" name="L249" href="#L249">249</a>         {<span class="jxr_string">"Specify file name for class"</span>, <span class="jxr_string">"Specify file name for class {0}"</span>},
+<a class="jxr_linenumber" name="L250" href="#L250">250</a>         {<span class="jxr_string">"stack frame dump with pc"</span>, <span class="jxr_string">"  [{0,number,integer}] {1}.{2} ({3}), pc = {4}"</span>},
+<a class="jxr_linenumber" name="L251" href="#L251">251</a>         {<span class="jxr_string">"stack frame dump"</span>, <span class="jxr_string">"  [{0,number,integer}] {1}.{2} ({3})"</span>},
+<a class="jxr_linenumber" name="L252" href="#L252">252</a>         {<span class="jxr_string">"Step completed:"</span>, <span class="jxr_string">"Step completed: "</span>},
+<a class="jxr_linenumber" name="L253" href="#L253">253</a>         {<span class="jxr_string">"Stopping due to deferred breakpoint errors."</span>, <span class="jxr_string">"Stopping due to deferred breakpoint errors.\n"</span>},
+<a class="jxr_linenumber" name="L254" href="#L254">254</a>         {<span class="jxr_string">"subclass:"</span>, <span class="jxr_string">"subclass: {0}"</span>},
+<a class="jxr_linenumber" name="L255" href="#L255">255</a>         {<span class="jxr_string">"subinterface:"</span>, <span class="jxr_string">"subinterface: {0}"</span>},
+<a class="jxr_linenumber" name="L256" href="#L256">256</a>         {<span class="jxr_string">"tab"</span>, <span class="jxr_string">"\t{0}"</span>},
+<a class="jxr_linenumber" name="L257" href="#L257">257</a>         {<span class="jxr_string">"Target VM failed to initialize."</span>, <span class="jxr_string">"Target VM failed to initialize."</span>},
+<a class="jxr_linenumber" name="L258" href="#L258">258</a>         {<span class="jxr_string">"The application exited"</span>, <span class="jxr_string">"The application exited"</span>},
+<a class="jxr_linenumber" name="L259" href="#L259">259</a>         {<span class="jxr_string">"The application has been disconnected"</span>, <span class="jxr_string">"The application has been disconnected"</span>},
+<a class="jxr_linenumber" name="L260" href="#L260">260</a>         {<span class="jxr_string">"The gc command is no longer necessary."</span>, <span class="jxr_string">"The 'gc' command is no longer necessary.\n"</span> +
+<a class="jxr_linenumber" name="L261" href="#L261">261</a>          <span class="jxr_string">"All objects are garbage collected as usual. Use 'enablegc' and 'disablegc'\n"</span> +
+<a class="jxr_linenumber" name="L262" href="#L262">262</a>          <span class="jxr_string">"commands to control garbage collection of individual objects."</span>},
+<a class="jxr_linenumber" name="L263" href="#L263">263</a>         {<span class="jxr_string">"The load command is no longer supported."</span>, <span class="jxr_string">"The 'load' command is no longer supported."</span>},
+<a class="jxr_linenumber" name="L264" href="#L264">264</a>         {<span class="jxr_string">"The memory command is no longer supported."</span>, <span class="jxr_string">"The 'memory' command is no longer supported."</span>},
+<a class="jxr_linenumber" name="L265" href="#L265">265</a>         {<span class="jxr_string">"The VM does not use paths"</span>, <span class="jxr_string">"The VM does not use paths"</span>},
+<a class="jxr_linenumber" name="L266" href="#L266">266</a>         {<span class="jxr_string">"Thread is not running (no stack)."</span>, <span class="jxr_string">"Thread is not running (no stack)."</span>},
+<a class="jxr_linenumber" name="L267" href="#L267">267</a>         {<span class="jxr_string">"Thread number not specified."</span>, <span class="jxr_string">"Thread number not specified."</span>},
+<a class="jxr_linenumber" name="L268" href="#L268">268</a>         {<span class="jxr_string">"Thread:"</span>, <span class="jxr_string">"{0}:"</span>},
+<a class="jxr_linenumber" name="L269" href="#L269">269</a>         {<span class="jxr_string">"Thread Group:"</span>, <span class="jxr_string">"Group {0}:"</span>},
+<a class="jxr_linenumber" name="L270" href="#L270">270</a>         {<span class="jxr_string">"Thread description name unknownStatus BP"</span>,  <span class="jxr_string">"  {0} {1} unknown (at breakpoint)"</span>},
+<a class="jxr_linenumber" name="L271" href="#L271">271</a>         {<span class="jxr_string">"Thread description name unknownStatus"</span>,     <span class="jxr_string">"  {0} {1} unknown"</span>},
+<a class="jxr_linenumber" name="L272" href="#L272">272</a>         {<span class="jxr_string">"Thread description name zombieStatus BP"</span>,   <span class="jxr_string">"  {0} {1} zombie (at breakpoint)"</span>},
+<a class="jxr_linenumber" name="L273" href="#L273">273</a>         {<span class="jxr_string">"Thread description name zombieStatus"</span>,      <span class="jxr_string">"  {0} {1} zombie"</span>},
+<a class="jxr_linenumber" name="L274" href="#L274">274</a>         {<span class="jxr_string">"Thread description name runningStatus BP"</span>,  <span class="jxr_string">"  {0} {1} running (at breakpoint)"</span>},
+<a class="jxr_linenumber" name="L275" href="#L275">275</a>         {<span class="jxr_string">"Thread description name runningStatus"</span>,     <span class="jxr_string">"  {0} {1} running"</span>},
+<a class="jxr_linenumber" name="L276" href="#L276">276</a>         {<span class="jxr_string">"Thread description name sleepingStatus BP"</span>, <span class="jxr_string">"  {0} {1} sleeping (at breakpoint)"</span>},
+<a class="jxr_linenumber" name="L277" href="#L277">277</a>         {<span class="jxr_string">"Thread description name sleepingStatus"</span>,    <span class="jxr_string">"  {0} {1} sleeping"</span>},
+<a class="jxr_linenumber" name="L278" href="#L278">278</a>         {<span class="jxr_string">"Thread description name waitingStatus BP"</span>,  <span class="jxr_string">"  {0} {1} waiting in a monitor (at breakpoint)"</span>},
+<a class="jxr_linenumber" name="L279" href="#L279">279</a>         {<span class="jxr_string">"Thread description name waitingStatus"</span>,     <span class="jxr_string">"  {0} {1} waiting in a monitor"</span>},
+<a class="jxr_linenumber" name="L280" href="#L280">280</a>         {<span class="jxr_string">"Thread description name condWaitstatus BP"</span>, <span class="jxr_string">"  {0} {1} cond. waiting (at breakpoint)"</span>},
+<a class="jxr_linenumber" name="L281" href="#L281">281</a>         {<span class="jxr_string">"Thread description name condWaitstatus"</span>,    <span class="jxr_string">"  {0} {1} cond. waiting"</span>},
+<a class="jxr_linenumber" name="L282" href="#L282">282</a>         {<span class="jxr_string">"Thread has been resumed"</span>, <span class="jxr_string">"Thread has been resumed"</span>},
+<a class="jxr_linenumber" name="L283" href="#L283">283</a>         {<span class="jxr_string">"Thread not suspended"</span>, <span class="jxr_string">"Thread not suspended"</span>},
+<a class="jxr_linenumber" name="L284" href="#L284">284</a>         {<span class="jxr_string">"thread group number description name"</span>, <span class="jxr_string">"{0,number,integer}. {1} {2}"</span>},
+<a class="jxr_linenumber" name="L285" href="#L285">285</a>         {<span class="jxr_string">"Threadgroup name not specified."</span>, <span class="jxr_string">"Threadgroup name not specified."</span>},
+<a class="jxr_linenumber" name="L286" href="#L286">286</a>         {<span class="jxr_string">"Threads must be suspended"</span>, <span class="jxr_string">"Threads must be suspended"</span>},
+<a class="jxr_linenumber" name="L287" href="#L287">287</a>         {<span class="jxr_string">"trace method exit in effect for"</span>, <span class="jxr_string">"trace method exit in effect for {0}"</span>},
+<a class="jxr_linenumber" name="L288" href="#L288">288</a>         {<span class="jxr_string">"trace method exits in effect"</span>, <span class="jxr_string">"trace method exits in effect"</span>},
+<a class="jxr_linenumber" name="L289" href="#L289">289</a>         {<span class="jxr_string">"trace methods in effect"</span>, <span class="jxr_string">"trace methods in effect"</span>},
+<a class="jxr_linenumber" name="L290" href="#L290">290</a>         {<span class="jxr_string">"trace go method exit in effect for"</span>, <span class="jxr_string">"trace go method exit in effect for {0}"</span>},
+<a class="jxr_linenumber" name="L291" href="#L291">291</a>         {<span class="jxr_string">"trace go method exits in effect"</span>, <span class="jxr_string">"trace go method exits in effect"</span>},
+<a class="jxr_linenumber" name="L292" href="#L292">292</a>         {<span class="jxr_string">"trace go methods in effect"</span>, <span class="jxr_string">"trace go methods in effect"</span>},
+<a class="jxr_linenumber" name="L293" href="#L293">293</a>         {<span class="jxr_string">"trace not in effect"</span>, <span class="jxr_string">"trace not in effect"</span>},
+<a class="jxr_linenumber" name="L294" href="#L294">294</a>         {<span class="jxr_string">"Unable to attach to target VM."</span>, <span class="jxr_string">"Unable to attach to target VM."</span>},
+<a class="jxr_linenumber" name="L295" href="#L295">295</a>         {<span class="jxr_string">"Unable to display process output:"</span>, <span class="jxr_string">"Unable to display process output: {0}"</span>},
+<a class="jxr_linenumber" name="L296" href="#L296">296</a>         {<span class="jxr_string">"Unable to launch target VM."</span>, <span class="jxr_string">"Unable to launch target VM."</span>},
+<a class="jxr_linenumber" name="L297" href="#L297">297</a>         {<span class="jxr_string">"Unable to set deferred"</span>, <span class="jxr_string">"Unable to set deferred {0} : {1}"</span>},
+<a class="jxr_linenumber" name="L298" href="#L298">298</a>         {<span class="jxr_string">"Unable to set main class and arguments"</span>, <span class="jxr_string">"Unable to set main class and arguments"</span>},
+<a class="jxr_linenumber" name="L299" href="#L299">299</a>         {<span class="jxr_string">"Unable to set"</span>, <span class="jxr_string">"Unable to set {0} : {1}"</span>},
+<a class="jxr_linenumber" name="L300" href="#L300">300</a>         {<span class="jxr_string">"Unexpected event type"</span>, <span class="jxr_string">"Unexpected event type: {0}"</span>},
+<a class="jxr_linenumber" name="L301" href="#L301">301</a>         {<span class="jxr_string">"unknown"</span>, <span class="jxr_string">"unknown"</span>},
+<a class="jxr_linenumber" name="L302" href="#L302">302</a>         {<span class="jxr_string">"Unmonitoring"</span>, <span class="jxr_string">"Unmonitoring {0} "</span>},
+<a class="jxr_linenumber" name="L303" href="#L303">303</a>         {<span class="jxr_string">"Unrecognized command.  Try help..."</span>, <span class="jxr_string">"Unrecognized command: ''{0}''.  Try help..."</span>},
+<a class="jxr_linenumber" name="L304" href="#L304">304</a>         {<span class="jxr_string">"Usage: catch exception"</span>, <span class="jxr_string">"Usage: catch [uncaught|caught|all] &lt;class id&gt;|&lt;class pattern&gt;"</span>},
+<a class="jxr_linenumber" name="L305" href="#L305">305</a>         {<span class="jxr_string">"Usage: ignore exception"</span>, <span class="jxr_string">"Usage: ignore [uncaught|caught|all] &lt;class id&gt;|&lt;class pattern&gt;"</span>},
+<a class="jxr_linenumber" name="L306" href="#L306">306</a>         {<span class="jxr_string">"Usage: down [n frames]"</span>, <span class="jxr_string">"Usage: down [n frames]"</span>},
+<a class="jxr_linenumber" name="L307" href="#L307">307</a>         {<span class="jxr_string">"Usage: kill &lt;thread id&gt; &lt;throwable&gt;"</span>, <span class="jxr_string">"Usage: kill &lt;thread id&gt; &lt;throwable&gt;"</span>},
+<a class="jxr_linenumber" name="L308" href="#L308">308</a>         {<span class="jxr_string">"Usage: read &lt;command-filename&gt;"</span>, <span class="jxr_string">"Usage: read &lt;command-filename&gt;"</span>},
+<a class="jxr_linenumber" name="L309" href="#L309">309</a>         {<span class="jxr_string">"Usage: unmonitor &lt;monitor#&gt;"</span>, <span class="jxr_string">"Usage: unmonitor &lt;monitor#&gt;"</span>},
+<a class="jxr_linenumber" name="L310" href="#L310">310</a>         {<span class="jxr_string">"Usage: up [n frames]"</span>, <span class="jxr_string">"Usage: up [n frames]"</span>},
+<a class="jxr_linenumber" name="L311" href="#L311">311</a>         {<span class="jxr_string">"Use java minus X to see"</span>, <span class="jxr_string">"Use 'java -X' to see the available non-standard options"</span>},
+<a class="jxr_linenumber" name="L312" href="#L312">312</a>         {<span class="jxr_string">"Use stop at to set a breakpoint at a line number"</span>, <span class="jxr_string">"Use 'stop at' to set a breakpoint at a line number"</span>},
+<a class="jxr_linenumber" name="L313" href="#L313">313</a>         {<span class="jxr_string">"VM already running. use cont to continue after events."</span>, <span class="jxr_string">"VM already running. Use 'cont' to continue after events."</span>},
+<a class="jxr_linenumber" name="L314" href="#L314">314</a>         {<span class="jxr_string">"VM Started:"</span>, <span class="jxr_string">"VM Started: "</span>},
+<a class="jxr_linenumber" name="L315" href="#L315">315</a>         {<span class="jxr_string">"vmstartexception"</span>, <span class="jxr_string">"VM start exception: {0}"</span>},
+<a class="jxr_linenumber" name="L316" href="#L316">316</a>         {<span class="jxr_string">"Waiting for monitor:"</span>, <span class="jxr_string">"   Waiting for monitor: {0}"</span>},
+<a class="jxr_linenumber" name="L317" href="#L317">317</a>         {<span class="jxr_string">"Waiting thread:"</span>, <span class="jxr_string">" Waiting thread: {0}"</span>},
+<a class="jxr_linenumber" name="L318" href="#L318">318</a>         {<span class="jxr_string">"watch accesses of"</span>, <span class="jxr_string">"watch accesses of {0}.{1}"</span>},
+<a class="jxr_linenumber" name="L319" href="#L319">319</a>         {<span class="jxr_string">"watch modification of"</span>, <span class="jxr_string">"watch modification of {0}.{1}"</span>},
+<a class="jxr_linenumber" name="L320" href="#L320">320</a>         {<span class="jxr_string">"zz help text"</span>,
+<a class="jxr_linenumber" name="L321" href="#L321">321</a>              <span class="jxr_string">"** command list **\n"</span> +
+<a class="jxr_linenumber" name="L322" href="#L322">322</a>              <span class="jxr_string">"connectors                -- list available connectors and transports in this VM\n"</span> +
+<a class="jxr_linenumber" name="L323" href="#L323">323</a>              <span class="jxr_string">"\n"</span> +
+<a class="jxr_linenumber" name="L324" href="#L324">324</a>              <span class="jxr_string">"run [class [args]]        -- start execution of application's main class\n"</span> +
+<a class="jxr_linenumber" name="L325" href="#L325">325</a>              <span class="jxr_string">"\n"</span> +
+<a class="jxr_linenumber" name="L326" href="#L326">326</a>              <span class="jxr_string">"threads [threadgroup]     -- list threads\n"</span> +
+<a class="jxr_linenumber" name="L327" href="#L327">327</a>              <span class="jxr_string">"thread &lt;thread id&gt;        -- set default thread\n"</span> +
+<a class="jxr_linenumber" name="L328" href="#L328">328</a>              <span class="jxr_string">"suspend [thread id(s)]    -- suspend threads (default: all)\n"</span> +
+<a class="jxr_linenumber" name="L329" href="#L329">329</a>              <span class="jxr_string">"resume [thread id(s)]     -- resume threads (default: all)\n"</span> +
+<a class="jxr_linenumber" name="L330" href="#L330">330</a>              <span class="jxr_string">"where [&lt;thread id&gt; | all] -- dump a thread's stack\n"</span> +
+<a class="jxr_linenumber" name="L331" href="#L331">331</a>              <span class="jxr_string">"wherei [&lt;thread id&gt; | all]-- dump a thread's stack, with pc info\n"</span> +
+<a class="jxr_linenumber" name="L332" href="#L332">332</a>              <span class="jxr_string">"up [n frames]             -- move up a thread's stack\n"</span> +
+<a class="jxr_linenumber" name="L333" href="#L333">333</a>              <span class="jxr_string">"down [n frames]           -- move down a thread's stack\n"</span> +
+<a class="jxr_linenumber" name="L334" href="#L334">334</a>              <span class="jxr_string">"kill &lt;thread id&gt; &lt;expr&gt;   -- kill a thread with the given exception object\n"</span> +
+<a class="jxr_linenumber" name="L335" href="#L335">335</a>              <span class="jxr_string">"interrupt &lt;thread id&gt;     -- interrupt a thread\n"</span> +
+<a class="jxr_linenumber" name="L336" href="#L336">336</a>              <span class="jxr_string">"\n"</span> +
+<a class="jxr_linenumber" name="L337" href="#L337">337</a>              <span class="jxr_string">"print &lt;expr&gt;              -- print value of expression\n"</span> +
+<a class="jxr_linenumber" name="L338" href="#L338">338</a>              <span class="jxr_string">"dump &lt;expr&gt;               -- print all object information\n"</span> +
+<a class="jxr_linenumber" name="L339" href="#L339">339</a>              <span class="jxr_string">"eval &lt;expr&gt;               -- evaluate expression (same as print)\n"</span> +
+<a class="jxr_linenumber" name="L340" href="#L340">340</a>              <span class="jxr_string">"set &lt;lvalue&gt; = &lt;expr&gt;     -- assign new value to field/variable/array element\n"</span> +
+<a class="jxr_linenumber" name="L341" href="#L341">341</a>              <span class="jxr_string">"locals                    -- print all local variables in current stack frame\n"</span> +
+<a class="jxr_linenumber" name="L342" href="#L342">342</a>              <span class="jxr_string">"\n"</span> +
+<a class="jxr_linenumber" name="L343" href="#L343">343</a>              <span class="jxr_string">"classes                   -- list currently known classes\n"</span> +
+<a class="jxr_linenumber" name="L344" href="#L344">344</a>              <span class="jxr_string">"class &lt;class id&gt;          -- show details of named class\n"</span> +
+<a class="jxr_linenumber" name="L345" href="#L345">345</a>              <span class="jxr_string">"methods &lt;class id&gt;        -- list a class's methods\n"</span> +
+<a class="jxr_linenumber" name="L346" href="#L346">346</a>              <span class="jxr_string">"fields &lt;class id&gt;         -- list a class's fields\n"</span> +
+<a class="jxr_linenumber" name="L347" href="#L347">347</a>              <span class="jxr_string">"\n"</span> +
+<a class="jxr_linenumber" name="L348" href="#L348">348</a>              <span class="jxr_string">"threadgroups              -- list threadgroups\n"</span> +
+<a class="jxr_linenumber" name="L349" href="#L349">349</a>              <span class="jxr_string">"threadgroup &lt;name&gt;        -- set current threadgroup\n"</span> +
+<a class="jxr_linenumber" name="L350" href="#L350">350</a>              <span class="jxr_string">"\n"</span> +
+<a class="jxr_linenumber" name="L351" href="#L351">351</a>              <span class="jxr_string">"stop in &lt;class id&gt;.&lt;method&gt;[(argument_type,...)]\n"</span> +
+<a class="jxr_linenumber" name="L352" href="#L352">352</a>              <span class="jxr_string">"                          -- set a breakpoint in a method\n"</span> +
+<a class="jxr_linenumber" name="L353" href="#L353">353</a>              <span class="jxr_string">"stop at &lt;class id&gt;:&lt;line&gt; -- set a breakpoint at a line\n"</span> +
+<a class="jxr_linenumber" name="L354" href="#L354">354</a>              <span class="jxr_string">"clear &lt;class id&gt;.&lt;method&gt;[(argument_type,...)]\n"</span> +
+<a class="jxr_linenumber" name="L355" href="#L355">355</a>              <span class="jxr_string">"                          -- clear a breakpoint in a method\n"</span> +
+<a class="jxr_linenumber" name="L356" href="#L356">356</a>              <span class="jxr_string">"clear &lt;class id&gt;:&lt;line&gt;   -- clear a breakpoint at a line\n"</span> +
+<a class="jxr_linenumber" name="L357" href="#L357">357</a>              <span class="jxr_string">"clear                     -- list breakpoints\n"</span> +
+<a class="jxr_linenumber" name="L358" href="#L358">358</a>              <span class="jxr_string">"catch [uncaught|caught|all] &lt;class id&gt;|&lt;class pattern&gt;\n"</span> +
+<a class="jxr_linenumber" name="L359" href="#L359">359</a>              <span class="jxr_string">"                          -- break when specified exception occurs\n"</span> +
+<a class="jxr_linenumber" name="L360" href="#L360">360</a>              <span class="jxr_string">"ignore [uncaught|caught|all] &lt;class id&gt;|&lt;class pattern&gt;\n"</span> +
+<a class="jxr_linenumber" name="L361" href="#L361">361</a>              <span class="jxr_string">"                          -- cancel 'catch' for the specified exception\n"</span> +
+<a class="jxr_linenumber" name="L362" href="#L362">362</a>              <span class="jxr_string">"watch [access|all] &lt;class id&gt;.&lt;field name&gt;\n"</span> +
+<a class="jxr_linenumber" name="L363" href="#L363">363</a>              <span class="jxr_string">"                          -- watch access/modifications to a field\n"</span> +
+<a class="jxr_linenumber" name="L364" href="#L364">364</a>              <span class="jxr_string">"unwatch [access|all] &lt;class id&gt;.&lt;field name&gt;\n"</span> +
+<a class="jxr_linenumber" name="L365" href="#L365">365</a>              <span class="jxr_string">"                          -- discontinue watching access/modifications to a field\n"</span> +
+<a class="jxr_linenumber" name="L366" href="#L366">366</a>              <span class="jxr_string">"trace [go] methods [thread]\n"</span> +
+<a class="jxr_linenumber" name="L367" href="#L367">367</a>              <span class="jxr_string">"                          -- trace method entries and exits.\n"</span> +
+<a class="jxr_linenumber" name="L368" href="#L368">368</a>              <span class="jxr_string">"                          -- All threads are suspended unless 'go' is specified\n"</span> +
+<a class="jxr_linenumber" name="L369" href="#L369">369</a>              <span class="jxr_string">"trace [go] method exit | exits [thread]\n"</span> +
+<a class="jxr_linenumber" name="L370" href="#L370">370</a>              <span class="jxr_string">"                          -- trace the current method's exit, or all methods' exits\n"</span> +
+<a class="jxr_linenumber" name="L371" href="#L371">371</a>              <span class="jxr_string">"                          -- All threads are suspended unless 'go' is specified\n"</span> +
+<a class="jxr_linenumber" name="L372" href="#L372">372</a>              <span class="jxr_string">"untrace [methods]         -- stop tracing method entrys and/or exits\n"</span> +
+<a class="jxr_linenumber" name="L373" href="#L373">373</a>              <span class="jxr_string">"step                      -- execute current line\n"</span> +
+<a class="jxr_linenumber" name="L374" href="#L374">374</a>              <span class="jxr_string">"step up                   -- execute until the current method returns to its caller\n"</span> +
+<a class="jxr_linenumber" name="L375" href="#L375">375</a>              <span class="jxr_string">"stepi                     -- execute current instruction\n"</span> +
+<a class="jxr_linenumber" name="L376" href="#L376">376</a>              <span class="jxr_string">"next                      -- step one line (step OVER calls)\n"</span> +
+<a class="jxr_linenumber" name="L377" href="#L377">377</a>              <span class="jxr_string">"cont                      -- continue execution from breakpoint\n"</span> +
+<a class="jxr_linenumber" name="L378" href="#L378">378</a>              <span class="jxr_string">"\n"</span> +
+<a class="jxr_linenumber" name="L379" href="#L379">379</a>              <span class="jxr_string">"list [line number|method] -- print source code\n"</span> +
+<a class="jxr_linenumber" name="L380" href="#L380">380</a>              <span class="jxr_string">"use (or sourcepath) [source file path]\n"</span> +
+<a class="jxr_linenumber" name="L381" href="#L381">381</a>              <span class="jxr_string">"                          -- display or change the source path\n"</span> +
+<a class="jxr_linenumber" name="L382" href="#L382">382</a>              <span class="jxr_string">"exclude [&lt;class pattern&gt;, ... | \&quot;none\&quot;]\n"</span> +
+<a class="jxr_linenumber" name="L383" href="#L383">383</a>              <span class="jxr_string">"                          -- do not report step or method events for specified classes\n"</span> +
+<a class="jxr_linenumber" name="L384" href="#L384">384</a>              <span class="jxr_string">"classpath                 -- print classpath info from target VM\n"</span> +
+<a class="jxr_linenumber" name="L385" href="#L385">385</a>              <span class="jxr_string">"\n"</span> +
+<a class="jxr_linenumber" name="L386" href="#L386">386</a>              <span class="jxr_string">"monitor &lt;command&gt;         -- execute command each time the program stops\n"</span> +
+<a class="jxr_linenumber" name="L387" href="#L387">387</a>              <span class="jxr_string">"monitor                   -- list monitors\n"</span> +
+<a class="jxr_linenumber" name="L388" href="#L388">388</a>              <span class="jxr_string">"unmonitor &lt;monitor#&gt;      -- delete a monitor\n"</span> +
+<a class="jxr_linenumber" name="L389" href="#L389">389</a>              <span class="jxr_string">"read &lt;filename&gt;           -- read and execute a command file\n"</span> +
+<a class="jxr_linenumber" name="L390" href="#L390">390</a>              <span class="jxr_string">"\n"</span> +
+<a class="jxr_linenumber" name="L391" href="#L391">391</a>              <span class="jxr_string">"lock &lt;expr&gt;               -- print lock info for an object\n"</span> +
+<a class="jxr_linenumber" name="L392" href="#L392">392</a>              <span class="jxr_string">"threadlocks [thread id]   -- print lock info for a thread\n"</span> +
+<a class="jxr_linenumber" name="L393" href="#L393">393</a>              <span class="jxr_string">"\n"</span> +
+<a class="jxr_linenumber" name="L394" href="#L394">394</a>              <span class="jxr_string">"pop                       -- pop the stack through and including the current frame\n"</span> +
+<a class="jxr_linenumber" name="L395" href="#L395">395</a>              <span class="jxr_string">"reenter                   -- same as pop, but current frame is reentered\n"</span> +
+<a class="jxr_linenumber" name="L396" href="#L396">396</a>              <span class="jxr_string">"redefine &lt;class id&gt; &lt;class file name&gt;\n"</span> +
+<a class="jxr_linenumber" name="L397" href="#L397">397</a>              <span class="jxr_string">"                          -- redefine the code for a class\n"</span> +
+<a class="jxr_linenumber" name="L398" href="#L398">398</a>              <span class="jxr_string">"\n"</span> +
+<a class="jxr_linenumber" name="L399" href="#L399">399</a>              <span class="jxr_string">"disablegc &lt;expr&gt;          -- prevent garbage collection of an object\n"</span> +
+<a class="jxr_linenumber" name="L400" href="#L400">400</a>              <span class="jxr_string">"enablegc &lt;expr&gt;           -- permit garbage collection of an object\n"</span> +
+<a class="jxr_linenumber" name="L401" href="#L401">401</a>              <span class="jxr_string">"\n"</span> +
+<a class="jxr_linenumber" name="L402" href="#L402">402</a>              <span class="jxr_string">"!!                        -- repeat last command\n"</span> +
+<a class="jxr_linenumber" name="L403" href="#L403">403</a>              <span class="jxr_string">"&lt;n&gt; &lt;command&gt;             -- repeat command n times\n"</span> +
+<a class="jxr_linenumber" name="L404" href="#L404">404</a>              <span class="jxr_string">"# &lt;command&gt;               -- discard (no-op)\n"</span> +
+<a class="jxr_linenumber" name="L405" href="#L405">405</a>              <span class="jxr_string">"help (or ?)               -- list commands\n"</span> +
+<a class="jxr_linenumber" name="L406" href="#L406">406</a>              <span class="jxr_string">"version                   -- print version information\n"</span> +
+<a class="jxr_linenumber" name="L407" href="#L407">407</a>              <span class="jxr_string">"exit (or quit)            -- exit debugger\n"</span> +
+<a class="jxr_linenumber" name="L408" href="#L408">408</a>              <span class="jxr_string">"\n"</span> +
+<a class="jxr_linenumber" name="L409" href="#L409">409</a>              <span class="jxr_string">"&lt;class id&gt;: a full class name with package qualifiers\n"</span> +
+<a class="jxr_linenumber" name="L410" href="#L410">410</a>              <span class="jxr_string">"&lt;class pattern&gt;: a class name with a leading or trailing wildcard ('*')\n"</span> +
+<a class="jxr_linenumber" name="L411" href="#L411">411</a>              <span class="jxr_string">"&lt;thread id&gt;: thread number as reported in the 'threads' command\n"</span> +
+<a class="jxr_linenumber" name="L412" href="#L412">412</a>              <span class="jxr_string">"&lt;expr&gt;: a Java(TM) Programming Language expression.\n"</span> +
+<a class="jxr_linenumber" name="L413" href="#L413">413</a>              <span class="jxr_string">"Most common syntax is supported.\n"</span> +
+<a class="jxr_linenumber" name="L414" href="#L414">414</a>              <span class="jxr_string">"\n"</span> +
+<a class="jxr_linenumber" name="L415" href="#L415">415</a>              <span class="jxr_string">"Startup commands can be placed in either \&quot;jdb.ini\&quot; or \&quot;.jdbrc\&quot;\n"</span> +
+<a class="jxr_linenumber" name="L416" href="#L416">416</a>              <span class="jxr_string">"in user.home or user.dir"</span>},
+<a class="jxr_linenumber" name="L417" href="#L417">417</a>         {<span class="jxr_string">"zz usage text"</span>,
+<a class="jxr_linenumber" name="L418" href="#L418">418</a>              <span class="jxr_string">"Usage: {0} &lt;options&gt; &lt;class&gt; &lt;arguments&gt;\n"</span> +
+<a class="jxr_linenumber" name="L419" href="#L419">419</a>              <span class="jxr_string">"\n"</span> +
+<a class="jxr_linenumber" name="L420" href="#L420">420</a>              <span class="jxr_string">"where options include:\n"</span> +
+<a class="jxr_linenumber" name="L421" href="#L421">421</a>              <span class="jxr_string">"    -help             print out this message and exit\n"</span> +
+<a class="jxr_linenumber" name="L422" href="#L422">422</a>              <span class="jxr_string">"    -sourcepath &lt;directories separated by \&quot;{1}\&quot;&gt;\n"</span> +
+<a class="jxr_linenumber" name="L423" href="#L423">423</a>              <span class="jxr_string">"                      directories in which to look for source files\n"</span> +
+<a class="jxr_linenumber" name="L424" href="#L424">424</a>              <span class="jxr_string">"    -attach &lt;address&gt;\n"</span> +
+<a class="jxr_linenumber" name="L425" href="#L425">425</a>              <span class="jxr_string">"                      attach to a running VM at the specified address using standard connector\n"</span> +
+<a class="jxr_linenumber" name="L426" href="#L426">426</a>              <span class="jxr_string">"    -listen &lt;address&gt;\n"</span> +
+<a class="jxr_linenumber" name="L427" href="#L427">427</a>              <span class="jxr_string">"                      wait for a running VM to connect at the specified address using standard connector\n"</span> +
+<a class="jxr_linenumber" name="L428" href="#L428">428</a>              <span class="jxr_string">"    -listenany\n"</span> +
+<a class="jxr_linenumber" name="L429" href="#L429">429</a>              <span class="jxr_string">"                      wait for a running VM to connect at any available address using standard connector\n"</span> +
+<a class="jxr_linenumber" name="L430" href="#L430">430</a>              <span class="jxr_string">"    -launch\n"</span> +
+<a class="jxr_linenumber" name="L431" href="#L431">431</a>              <span class="jxr_string">"                      launch VM immediately instead of waiting for ''run'' command\n"</span> +
+<a class="jxr_linenumber" name="L432" href="#L432">432</a>              <span class="jxr_string">"    -listconnectors   list the connectors available in this VM\n"</span> +
+<a class="jxr_linenumber" name="L433" href="#L433">433</a>              <span class="jxr_string">"    -connect &lt;connector-name&gt;:&lt;name1&gt;=&lt;value1&gt;,...\n"</span> +
+<a class="jxr_linenumber" name="L434" href="#L434">434</a>              <span class="jxr_string">"                      connect to target VM using named connector with listed argument values\n"</span> +
+<a class="jxr_linenumber" name="L435" href="#L435">435</a>              <span class="jxr_string">"    -dbgtrace [flags] print info for debugging {0}\n"</span> +
+<a class="jxr_linenumber" name="L436" href="#L436">436</a>              <span class="jxr_string">"    -tclient          run the application in the HotSpot(TM) Client Compiler\n"</span> +
+<a class="jxr_linenumber" name="L437" href="#L437">437</a>              <span class="jxr_string">"    -tserver          run the application in the HotSpot(TM) Server Compiler\n"</span> +
+<a class="jxr_linenumber" name="L438" href="#L438">438</a>              <span class="jxr_string">"\n"</span> +
+<a class="jxr_linenumber" name="L439" href="#L439">439</a>              <span class="jxr_string">"options forwarded to debuggee process:\n"</span> +
+<a class="jxr_linenumber" name="L440" href="#L440">440</a>              <span class="jxr_string">"    -v -verbose[:class|gc|jni]\n"</span> +
+<a class="jxr_linenumber" name="L441" href="#L441">441</a>              <span class="jxr_string">"                      turn on verbose mode\n"</span> +
+<a class="jxr_linenumber" name="L442" href="#L442">442</a>              <span class="jxr_string">"    -D&lt;name&gt;=&lt;value&gt;  set a system property\n"</span> +
+<a class="jxr_linenumber" name="L443" href="#L443">443</a>              <span class="jxr_string">"    -classpath &lt;directories separated by \&quot;{1}\&quot;&gt;\n"</span> +
+<a class="jxr_linenumber" name="L444" href="#L444">444</a>              <span class="jxr_string">"                      list directories in which to look for classes\n"</span> +
+<a class="jxr_linenumber" name="L445" href="#L445">445</a>              <span class="jxr_string">"    -X&lt;option&gt;        non-standard target VM option\n"</span> +
+<a class="jxr_linenumber" name="L446" href="#L446">446</a>              <span class="jxr_string">"\n"</span> +
+<a class="jxr_linenumber" name="L447" href="#L447">447</a>              <span class="jxr_string">"&lt;class&gt; is the name of the class to begin debugging\n"</span> +
+<a class="jxr_linenumber" name="L448" href="#L448">448</a>              <span class="jxr_string">"&lt;arguments&gt; are the arguments passed to the main() method of &lt;class&gt;\n"</span> +
+<a class="jxr_linenumber" name="L449" href="#L449">449</a>              <span class="jxr_string">"\n"</span> +
+<a class="jxr_linenumber" name="L450" href="#L450">450</a>              <span class="jxr_string">"For command help type ''help'' at {0} prompt"</span>},
+<a class="jxr_linenumber" name="L451" href="#L451">451</a>         <em class="jxr_comment">// END OF MATERIAL TO LOCALIZE</em>
+<a class="jxr_linenumber" name="L452" href="#L452">452</a>         };
+<a class="jxr_linenumber" name="L453" href="#L453">453</a> 
+<a class="jxr_linenumber" name="L454" href="#L454">454</a>         <strong class="jxr_keyword">return</strong> temp;
+<a class="jxr_linenumber" name="L455" href="#L455">455</a>     }
+<a class="jxr_linenumber" name="L456" href="#L456">456</a> }
+</pre>
+<hr/>
+<div id="footer"></div>
+</body>
+</html>

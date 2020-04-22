@@ -1,0 +1,676 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head><meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+<title>Resources_es xref</title>
+<link type="text/css" rel="stylesheet" href="../../../stylesheet.css" />
+</head>
+<body>
+<pre>
+<a class="jxr_linenumber" name="L1" href="#L1">1</a>   <em class="jxr_comment">/*</em>
+<a class="jxr_linenumber" name="L2" href="#L2">2</a>   <em class="jxr_comment"> * Copyright (c) 2000, 2011, Oracle and/or its affiliates. All rights reserved.</em>
+<a class="jxr_linenumber" name="L3" href="#L3">3</a>   <em class="jxr_comment"> * DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS FILE HEADER.</em>
+<a class="jxr_linenumber" name="L4" href="#L4">4</a>   <em class="jxr_comment"> *</em>
+<a class="jxr_linenumber" name="L5" href="#L5">5</a>   <em class="jxr_comment"> * This code is free software; you can redistribute it and/or modify it</em>
+<a class="jxr_linenumber" name="L6" href="#L6">6</a>   <em class="jxr_comment"> * under the terms of the GNU General Public License version 2 only, as</em>
+<a class="jxr_linenumber" name="L7" href="#L7">7</a>   <em class="jxr_comment"> * published by the Free Software Foundation.  Oracle designates this</em>
+<a class="jxr_linenumber" name="L8" href="#L8">8</a>   <em class="jxr_comment"> * particular file as subject to the "Classpath" exception as provided</em>
+<a class="jxr_linenumber" name="L9" href="#L9">9</a>   <em class="jxr_comment"> * by Oracle in the LICENSE file that accompanied this code.</em>
+<a class="jxr_linenumber" name="L10" href="#L10">10</a>  <em class="jxr_comment"> *</em>
+<a class="jxr_linenumber" name="L11" href="#L11">11</a>  <em class="jxr_comment"> * This code is distributed in the hope that it will be useful, but WITHOUT</em>
+<a class="jxr_linenumber" name="L12" href="#L12">12</a>  <em class="jxr_comment"> * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or</em>
+<a class="jxr_linenumber" name="L13" href="#L13">13</a>  <em class="jxr_comment"> * FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License</em>
+<a class="jxr_linenumber" name="L14" href="#L14">14</a>  <em class="jxr_comment"> * version 2 for more details (a copy is included in the LICENSE file that</em>
+<a class="jxr_linenumber" name="L15" href="#L15">15</a>  <em class="jxr_comment"> * accompanied this code).</em>
+<a class="jxr_linenumber" name="L16" href="#L16">16</a>  <em class="jxr_comment"> *</em>
+<a class="jxr_linenumber" name="L17" href="#L17">17</a>  <em class="jxr_comment"> * You should have received a copy of the GNU General Public License version</em>
+<a class="jxr_linenumber" name="L18" href="#L18">18</a>  <em class="jxr_comment"> * 2 along with this work; if not, write to the Free Software Foundation,</em>
+<a class="jxr_linenumber" name="L19" href="#L19">19</a>  <em class="jxr_comment"> * Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301 USA.</em>
+<a class="jxr_linenumber" name="L20" href="#L20">20</a>  <em class="jxr_comment"> *</em>
+<a class="jxr_linenumber" name="L21" href="#L21">21</a>  <em class="jxr_comment"> * Please contact Oracle, 500 Oracle Parkway, Redwood Shores, CA 94065 USA</em>
+<a class="jxr_linenumber" name="L22" href="#L22">22</a>  <em class="jxr_comment"> * or visit www.oracle.com if you need additional information or have any</em>
+<a class="jxr_linenumber" name="L23" href="#L23">23</a>  <em class="jxr_comment"> * questions.</em>
+<a class="jxr_linenumber" name="L24" href="#L24">24</a>  <em class="jxr_comment"> */</em>
+<a class="jxr_linenumber" name="L25" href="#L25">25</a>  
+<a class="jxr_linenumber" name="L26" href="#L26">26</a>  <strong class="jxr_keyword">package</strong> sun.security.util;
+<a class="jxr_linenumber" name="L27" href="#L27">27</a>  
+<a class="jxr_linenumber" name="L28" href="#L28">28</a>  <em class="jxr_javadoccomment">/**</em>
+<a class="jxr_linenumber" name="L29" href="#L29">29</a>  <em class="jxr_javadoccomment"> * &lt;p&gt; This class represents the &lt;code&gt;ResourceBundle&lt;/code&gt;</em>
+<a class="jxr_linenumber" name="L30" href="#L30">30</a>  <em class="jxr_javadoccomment"> * for javax.security.auth and sun.security.</em>
+<a class="jxr_linenumber" name="L31" href="#L31">31</a>  <em class="jxr_javadoccomment"> *</em>
+<a class="jxr_linenumber" name="L32" href="#L32">32</a>  <em class="jxr_javadoccomment"> */</em>
+<a class="jxr_linenumber" name="L33" href="#L33">33</a>  <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">class</strong> Resources_es <strong class="jxr_keyword">extends</strong> java.util.ListResourceBundle {
+<a class="jxr_linenumber" name="L34" href="#L34">34</a>  
+<a class="jxr_linenumber" name="L35" href="#L35">35</a>      <strong class="jxr_keyword">private</strong> <strong class="jxr_keyword">static</strong> <strong class="jxr_keyword">final</strong> Object[][] contents = {
+<a class="jxr_linenumber" name="L36" href="#L36">36</a>  
+<a class="jxr_linenumber" name="L37" href="#L37">37</a>          <em class="jxr_comment">// shared (from jarsigner)</em>
+<a class="jxr_linenumber" name="L38" href="#L38">38</a>          {<span class="jxr_string">"SPACE"</span>, <span class="jxr_string">" "</span>},
+<a class="jxr_linenumber" name="L39" href="#L39">39</a>          {<span class="jxr_string">"2SPACE"</span>, <span class="jxr_string">"  "</span>},
+<a class="jxr_linenumber" name="L40" href="#L40">40</a>          {<span class="jxr_string">"6SPACE"</span>, <span class="jxr_string">"      "</span>},
+<a class="jxr_linenumber" name="L41" href="#L41">41</a>          {<span class="jxr_string">"COMMA"</span>, <span class="jxr_string">", "</span>},
+<a class="jxr_linenumber" name="L42" href="#L42">42</a>          <em class="jxr_comment">// shared (from keytool)</em>
+<a class="jxr_linenumber" name="L43" href="#L43">43</a>          {<span class="jxr_string">"NEWLINE"</span>, <span class="jxr_string">"\n"</span>},
+<a class="jxr_linenumber" name="L44" href="#L44">44</a>          {<span class="jxr_string">"STAR"</span>,
+<a class="jxr_linenumber" name="L45" href="#L45">45</a>                  <span class="jxr_string">"*******************************************"</span>},
+<a class="jxr_linenumber" name="L46" href="#L46">46</a>          {<span class="jxr_string">"STARNN"</span>,
+<a class="jxr_linenumber" name="L47" href="#L47">47</a>                  <span class="jxr_string">"*******************************************\n\n"</span>},
+<a class="jxr_linenumber" name="L48" href="#L48">48</a>  
+<a class="jxr_linenumber" name="L49" href="#L49">49</a>          <em class="jxr_comment">// keytool: Help part</em>
+<a class="jxr_linenumber" name="L50" href="#L50">50</a>  <em class="jxr_comment">// "Option" should be translated.</em>
+<a class="jxr_linenumber" name="L51" href="#L51">51</a>          {<span class="jxr_string">".OPTION."</span>, <span class="jxr_string">" [Opci\u00F3n]..."</span>},
+<a class="jxr_linenumber" name="L52" href="#L52">52</a>          {<span class="jxr_string">"Options."</span>, <span class="jxr_string">"Opciones:"</span>},
+<a class="jxr_linenumber" name="L53" href="#L53">53</a>          {<span class="jxr_string">"Use.keytool.help.for.all.available.commands"</span>,
+<a class="jxr_linenumber" name="L54" href="#L54">54</a>                   <span class="jxr_string">"Utilice\&quot;keytool -help\&quot; para todos los comandos disponibles"</span>},
+<a class="jxr_linenumber" name="L55" href="#L55">55</a>          {<span class="jxr_string">"Key.and.Certificate.Management.Tool"</span>,
+<a class="jxr_linenumber" name="L56" href="#L56">56</a>                   <span class="jxr_string">"Herramienta de Gesti\u00F3n de Certificados y Claves"</span>},
+<a class="jxr_linenumber" name="L57" href="#L57">57</a>          {<span class="jxr_string">"Commands."</span>, <span class="jxr_string">"Comandos:"</span>},
+<a class="jxr_linenumber" name="L58" href="#L58">58</a>          {<span class="jxr_string">"Use.keytool.command.name.help.for.usage.of.command.name"</span>,
+<a class="jxr_linenumber" name="L59" href="#L59">59</a>                  <span class="jxr_string">"Utilice \&quot;keytool -command_name -help\&quot; para la sintaxis de nombre_comando"</span>},
+<a class="jxr_linenumber" name="L60" href="#L60">60</a>          <em class="jxr_comment">// keytool: help: commands</em>
+<a class="jxr_linenumber" name="L61" href="#L61">61</a>          {<span class="jxr_string">"Generates.a.certificate.request"</span>,
+<a class="jxr_linenumber" name="L62" href="#L62">62</a>                  <span class="jxr_string">"Genera una solicitud de certificado"</span>}, <em class="jxr_comment">//-certreq</em>
+<a class="jxr_linenumber" name="L63" href="#L63">63</a>          {<span class="jxr_string">"Changes.an.entry.s.alias"</span>,
+<a class="jxr_linenumber" name="L64" href="#L64">64</a>                  <span class="jxr_string">"Cambia un alias de entrada"</span>}, <em class="jxr_comment">//-changealias</em>
+<a class="jxr_linenumber" name="L65" href="#L65">65</a>          {<span class="jxr_string">"Deletes.an.entry"</span>,
+<a class="jxr_linenumber" name="L66" href="#L66">66</a>                  <span class="jxr_string">"Suprime una entrada"</span>}, <em class="jxr_comment">//-delete</em>
+<a class="jxr_linenumber" name="L67" href="#L67">67</a>          {<span class="jxr_string">"Exports.certificate"</span>,
+<a class="jxr_linenumber" name="L68" href="#L68">68</a>                  <span class="jxr_string">"Exporta el certificado"</span>}, <em class="jxr_comment">//-exportcert</em>
+<a class="jxr_linenumber" name="L69" href="#L69">69</a>          {<span class="jxr_string">"Generates.a.key.pair"</span>,
+<a class="jxr_linenumber" name="L70" href="#L70">70</a>                  <span class="jxr_string">"Genera un par de claves"</span>}, <em class="jxr_comment">//-genkeypair</em>
+<a class="jxr_linenumber" name="L71" href="#L71">71</a>  <em class="jxr_comment">// translation of "secret" key should be different to "private" key.</em>
+<a class="jxr_linenumber" name="L72" href="#L72">72</a>          {<span class="jxr_string">"Generates.a.secret.key"</span>,
+<a class="jxr_linenumber" name="L73" href="#L73">73</a>                  <span class="jxr_string">"Genera un clave secreta"</span>}, <em class="jxr_comment">//-genseckey</em>
+<a class="jxr_linenumber" name="L74" href="#L74">74</a>          {<span class="jxr_string">"Generates.certificate.from.a.certificate.request"</span>,
+<a class="jxr_linenumber" name="L75" href="#L75">75</a>                  <span class="jxr_string">"Genera un certificado a partir de una solicitud de certificado"</span>}, <em class="jxr_comment">//-gencert</em>
+<a class="jxr_linenumber" name="L76" href="#L76">76</a>          {<span class="jxr_string">"Generates.CRL"</span>, <span class="jxr_string">"Genera CRL"</span>}, <em class="jxr_comment">//-gencrl</em>
+<a class="jxr_linenumber" name="L77" href="#L77">77</a>          {<span class="jxr_string">"Imports.entries.from.a.JDK.1.1.x.style.identity.database"</span>,
+<a class="jxr_linenumber" name="L78" href="#L78">78</a>                  <span class="jxr_string">"Importa entradas desde una base de datos de identidades JDK 1.1.x-style"</span>}, <em class="jxr_comment">//-identitydb</em>
+<a class="jxr_linenumber" name="L79" href="#L79">79</a>          {<span class="jxr_string">"Imports.a.certificate.or.a.certificate.chain"</span>,
+<a class="jxr_linenumber" name="L80" href="#L80">80</a>                  <span class="jxr_string">"Importa un certificado o una cadena de certificados"</span>}, <em class="jxr_comment">//-importcert</em>
+<a class="jxr_linenumber" name="L81" href="#L81">81</a>          {<span class="jxr_string">"Imports.one.or.all.entries.from.another.keystore"</span>,
+<a class="jxr_linenumber" name="L82" href="#L82">82</a>                  <span class="jxr_string">"Importa una o todas las entradas desde otro almac\u00E9n de claves"</span>}, <em class="jxr_comment">//-importkeystore</em>
+<a class="jxr_linenumber" name="L83" href="#L83">83</a>          {<span class="jxr_string">"Clones.a.key.entry"</span>,
+<a class="jxr_linenumber" name="L84" href="#L84">84</a>                  <span class="jxr_string">"Clona una entrada de clave"</span>}, <em class="jxr_comment">//-keyclone</em>
+<a class="jxr_linenumber" name="L85" href="#L85">85</a>          {<span class="jxr_string">"Changes.the.key.password.of.an.entry"</span>,
+<a class="jxr_linenumber" name="L86" href="#L86">86</a>                  <span class="jxr_string">"Cambia la contrase\u00F1a de clave de una entrada"</span>}, <em class="jxr_comment">//-keypasswd</em>
+<a class="jxr_linenumber" name="L87" href="#L87">87</a>          {<span class="jxr_string">"Lists.entries.in.a.keystore"</span>,
+<a class="jxr_linenumber" name="L88" href="#L88">88</a>                  <span class="jxr_string">"Enumera las entradas de un almac\u00E9n de claves"</span>}, <em class="jxr_comment">//-list</em>
+<a class="jxr_linenumber" name="L89" href="#L89">89</a>          {<span class="jxr_string">"Prints.the.content.of.a.certificate"</span>,
+<a class="jxr_linenumber" name="L90" href="#L90">90</a>                  <span class="jxr_string">"Imprime el contenido de un certificado"</span>}, <em class="jxr_comment">//-printcert</em>
+<a class="jxr_linenumber" name="L91" href="#L91">91</a>          {<span class="jxr_string">"Prints.the.content.of.a.certificate.request"</span>,
+<a class="jxr_linenumber" name="L92" href="#L92">92</a>                  <span class="jxr_string">"Imprime el contenido de una solicitud de certificado"</span>}, <em class="jxr_comment">//-printcertreq</em>
+<a class="jxr_linenumber" name="L93" href="#L93">93</a>          {<span class="jxr_string">"Prints.the.content.of.a.CRL.file"</span>,
+<a class="jxr_linenumber" name="L94" href="#L94">94</a>                  <span class="jxr_string">"Imprime el contenido de un archivo CRL"</span>}, <em class="jxr_comment">//-printcrl</em>
+<a class="jxr_linenumber" name="L95" href="#L95">95</a>          {<span class="jxr_string">"Generates.a.self.signed.certificate"</span>,
+<a class="jxr_linenumber" name="L96" href="#L96">96</a>                  <span class="jxr_string">"Genera un certificado autofirmado"</span>}, <em class="jxr_comment">//-selfcert</em>
+<a class="jxr_linenumber" name="L97" href="#L97">97</a>          {<span class="jxr_string">"Changes.the.store.password.of.a.keystore"</span>,
+<a class="jxr_linenumber" name="L98" href="#L98">98</a>                  <span class="jxr_string">"Cambia la contrase\u00F1a de almac\u00E9n de un almac\u00E9n de claves"</span>}, <em class="jxr_comment">//-storepasswd</em>
+<a class="jxr_linenumber" name="L99" href="#L99">99</a>          <em class="jxr_comment">// keytool: help: options</em>
+<a class="jxr_linenumber" name="L100" href="#L100">100</a>         {<span class="jxr_string">"alias.name.of.the.entry.to.process"</span>,
+<a class="jxr_linenumber" name="L101" href="#L101">101</a>                 <span class="jxr_string">"nombre de alias de la entrada que se va a procesar"</span>}, <em class="jxr_comment">//-alias</em>
+<a class="jxr_linenumber" name="L102" href="#L102">102</a>         {<span class="jxr_string">"destination.alias"</span>,
+<a class="jxr_linenumber" name="L103" href="#L103">103</a>                 <span class="jxr_string">"alias de destino"</span>}, <em class="jxr_comment">//-destalias</em>
+<a class="jxr_linenumber" name="L104" href="#L104">104</a>         {<span class="jxr_string">"destination.key.password"</span>,
+<a class="jxr_linenumber" name="L105" href="#L105">105</a>                 <span class="jxr_string">"contrase\u00F1a de clave de destino"</span>}, <em class="jxr_comment">//-destkeypass</em>
+<a class="jxr_linenumber" name="L106" href="#L106">106</a>         {<span class="jxr_string">"destination.keystore.name"</span>,
+<a class="jxr_linenumber" name="L107" href="#L107">107</a>                 <span class="jxr_string">"nombre de almac\u00E9n de claves de destino"</span>}, <em class="jxr_comment">//-destkeystore</em>
+<a class="jxr_linenumber" name="L108" href="#L108">108</a>         {<span class="jxr_string">"destination.keystore.password.protected"</span>,
+<a class="jxr_linenumber" name="L109" href="#L109">109</a>                 <span class="jxr_string">"almac\u00E9n de claves de destino protegido por contrase\u00F1a"</span>}, <em class="jxr_comment">//-destprotected</em>
+<a class="jxr_linenumber" name="L110" href="#L110">110</a>         {<span class="jxr_string">"destination.keystore.provider.name"</span>,
+<a class="jxr_linenumber" name="L111" href="#L111">111</a>                 <span class="jxr_string">"nombre de proveedor de almac\u00E9n de claves de destino"</span>}, <em class="jxr_comment">//-destprovidername</em>
+<a class="jxr_linenumber" name="L112" href="#L112">112</a>         {<span class="jxr_string">"destination.keystore.password"</span>,
+<a class="jxr_linenumber" name="L113" href="#L113">113</a>                 <span class="jxr_string">"contrase\u00F1a de almac\u00E9n de claves de destino"</span>}, <em class="jxr_comment">//-deststorepass</em>
+<a class="jxr_linenumber" name="L114" href="#L114">114</a>         {<span class="jxr_string">"destination.keystore.type"</span>,
+<a class="jxr_linenumber" name="L115" href="#L115">115</a>                 <span class="jxr_string">"tipo de almac\u00E9n de claves de destino"</span>}, <em class="jxr_comment">//-deststoretype</em>
+<a class="jxr_linenumber" name="L116" href="#L116">116</a>         {<span class="jxr_string">"distinguished.name"</span>,
+<a class="jxr_linenumber" name="L117" href="#L117">117</a>                 <span class="jxr_string">"nombre distintivo"</span>}, <em class="jxr_comment">//-dname</em>
+<a class="jxr_linenumber" name="L118" href="#L118">118</a>         {<span class="jxr_string">"X.509.extension"</span>,
+<a class="jxr_linenumber" name="L119" href="#L119">119</a>                 <span class="jxr_string">"extensi\u00F3n X.509"</span>}, <em class="jxr_comment">//-ext</em>
+<a class="jxr_linenumber" name="L120" href="#L120">120</a>         {<span class="jxr_string">"output.file.name"</span>,
+<a class="jxr_linenumber" name="L121" href="#L121">121</a>                 <span class="jxr_string">"nombre de archivo de salida"</span>}, <em class="jxr_comment">//-file and -outfile</em>
+<a class="jxr_linenumber" name="L122" href="#L122">122</a>         {<span class="jxr_string">"input.file.name"</span>,
+<a class="jxr_linenumber" name="L123" href="#L123">123</a>                 <span class="jxr_string">"nombre de archivo de entrada"</span>}, <em class="jxr_comment">//-file and -infile</em>
+<a class="jxr_linenumber" name="L124" href="#L124">124</a>         {<span class="jxr_string">"key.algorithm.name"</span>,
+<a class="jxr_linenumber" name="L125" href="#L125">125</a>                 <span class="jxr_string">"nombre de algoritmo de clave"</span>}, <em class="jxr_comment">//-keyalg</em>
+<a class="jxr_linenumber" name="L126" href="#L126">126</a>         {<span class="jxr_string">"key.password"</span>,
+<a class="jxr_linenumber" name="L127" href="#L127">127</a>                 <span class="jxr_string">"contrase\u00F1a de clave"</span>}, <em class="jxr_comment">//-keypass</em>
+<a class="jxr_linenumber" name="L128" href="#L128">128</a>         {<span class="jxr_string">"key.bit.size"</span>,
+<a class="jxr_linenumber" name="L129" href="#L129">129</a>                 <span class="jxr_string">"tama\u00F1o de bit de clave"</span>}, <em class="jxr_comment">//-keysize</em>
+<a class="jxr_linenumber" name="L130" href="#L130">130</a>         {<span class="jxr_string">"keystore.name"</span>,
+<a class="jxr_linenumber" name="L131" href="#L131">131</a>                 <span class="jxr_string">"nombre de almac\u00E9n de claves"</span>}, <em class="jxr_comment">//-keystore</em>
+<a class="jxr_linenumber" name="L132" href="#L132">132</a>         {<span class="jxr_string">"new.password"</span>,
+<a class="jxr_linenumber" name="L133" href="#L133">133</a>                 <span class="jxr_string">"nueva contrase\u00F1a"</span>}, <em class="jxr_comment">//-new</em>
+<a class="jxr_linenumber" name="L134" href="#L134">134</a>         {<span class="jxr_string">"do.not.prompt"</span>,
+<a class="jxr_linenumber" name="L135" href="#L135">135</a>                 <span class="jxr_string">"no solicitar"</span>}, <em class="jxr_comment">//-noprompt</em>
+<a class="jxr_linenumber" name="L136" href="#L136">136</a>         {<span class="jxr_string">"password.through.protected.mechanism"</span>,
+<a class="jxr_linenumber" name="L137" href="#L137">137</a>                 <span class="jxr_string">"contrase\u00F1a a trav\u00E9s de mecanismo protegido"</span>}, <em class="jxr_comment">//-protected</em>
+<a class="jxr_linenumber" name="L138" href="#L138">138</a>         {<span class="jxr_string">"provider.argument"</span>,
+<a class="jxr_linenumber" name="L139" href="#L139">139</a>                 <span class="jxr_string">"argumento del proveedor"</span>}, <em class="jxr_comment">//-providerarg</em>
+<a class="jxr_linenumber" name="L140" href="#L140">140</a>         {<span class="jxr_string">"provider.class.name"</span>,
+<a class="jxr_linenumber" name="L141" href="#L141">141</a>                 <span class="jxr_string">"nombre de clase del proveedor"</span>}, <em class="jxr_comment">//-providerclass</em>
+<a class="jxr_linenumber" name="L142" href="#L142">142</a>         {<span class="jxr_string">"provider.name"</span>,
+<a class="jxr_linenumber" name="L143" href="#L143">143</a>                 <span class="jxr_string">"nombre del proveedor"</span>}, <em class="jxr_comment">//-providername</em>
+<a class="jxr_linenumber" name="L144" href="#L144">144</a>         {<span class="jxr_string">"provider.classpath"</span>,
+<a class="jxr_linenumber" name="L145" href="#L145">145</a>                 <span class="jxr_string">"classpath de proveedor"</span>}, <em class="jxr_comment">//-providerpath</em>
+<a class="jxr_linenumber" name="L146" href="#L146">146</a>         {<span class="jxr_string">"output.in.RFC.style"</span>,
+<a class="jxr_linenumber" name="L147" href="#L147">147</a>                 <span class="jxr_string">"salida en estilo RFC"</span>}, <em class="jxr_comment">//-rfc</em>
+<a class="jxr_linenumber" name="L148" href="#L148">148</a>         {<span class="jxr_string">"signature.algorithm.name"</span>,
+<a class="jxr_linenumber" name="L149" href="#L149">149</a>                 <span class="jxr_string">"nombre de algoritmo de firma"</span>}, <em class="jxr_comment">//-sigalg</em>
+<a class="jxr_linenumber" name="L150" href="#L150">150</a>         {<span class="jxr_string">"source.alias"</span>,
+<a class="jxr_linenumber" name="L151" href="#L151">151</a>                 <span class="jxr_string">"alias de origen"</span>}, <em class="jxr_comment">//-srcalias</em>
+<a class="jxr_linenumber" name="L152" href="#L152">152</a>         {<span class="jxr_string">"source.key.password"</span>,
+<a class="jxr_linenumber" name="L153" href="#L153">153</a>                 <span class="jxr_string">"contrase\u00F1a de clave de origen"</span>}, <em class="jxr_comment">//-srckeypass</em>
+<a class="jxr_linenumber" name="L154" href="#L154">154</a>         {<span class="jxr_string">"source.keystore.name"</span>,
+<a class="jxr_linenumber" name="L155" href="#L155">155</a>                 <span class="jxr_string">"nombre de almac\u00E9n de claves de origen"</span>}, <em class="jxr_comment">//-srckeystore</em>
+<a class="jxr_linenumber" name="L156" href="#L156">156</a>         {<span class="jxr_string">"source.keystore.password.protected"</span>,
+<a class="jxr_linenumber" name="L157" href="#L157">157</a>                 <span class="jxr_string">"almac\u00E9n de claves de origen protegido por contrase\u00F1a"</span>}, <em class="jxr_comment">//-srcprotected</em>
+<a class="jxr_linenumber" name="L158" href="#L158">158</a>         {<span class="jxr_string">"source.keystore.provider.name"</span>,
+<a class="jxr_linenumber" name="L159" href="#L159">159</a>                 <span class="jxr_string">"nombre de proveedor de almac\u00E9n de claves de origen"</span>}, <em class="jxr_comment">//-srcprovidername</em>
+<a class="jxr_linenumber" name="L160" href="#L160">160</a>         {<span class="jxr_string">"source.keystore.password"</span>,
+<a class="jxr_linenumber" name="L161" href="#L161">161</a>                 <span class="jxr_string">"contrase\u00F1a de almac\u00E9n de claves de origen"</span>}, <em class="jxr_comment">//-srcstorepass</em>
+<a class="jxr_linenumber" name="L162" href="#L162">162</a>         {<span class="jxr_string">"source.keystore.type"</span>,
+<a class="jxr_linenumber" name="L163" href="#L163">163</a>                 <span class="jxr_string">"tipo de almac\u00E9n de claves de origen"</span>}, <em class="jxr_comment">//-srcstoretype</em>
+<a class="jxr_linenumber" name="L164" href="#L164">164</a>         {<span class="jxr_string">"SSL.server.host.and.port"</span>,
+<a class="jxr_linenumber" name="L165" href="#L165">165</a>                 <span class="jxr_string">"puerto y host del servidor SSL"</span>}, <em class="jxr_comment">//-sslserver</em>
+<a class="jxr_linenumber" name="L166" href="#L166">166</a>         {<span class="jxr_string">"signed.jar.file"</span>,
+<a class="jxr_linenumber" name="L167" href="#L167">167</a>                 <span class="jxr_string">"archivo jar firmado"</span>}, <em class="jxr_comment">//=jarfile</em>
+<a class="jxr_linenumber" name="L168" href="#L168">168</a>         {<span class="jxr_string">"certificate.validity.start.date.time"</span>,
+<a class="jxr_linenumber" name="L169" href="#L169">169</a>                 <span class="jxr_string">"fecha/hora de inicio de validez del certificado"</span>}, <em class="jxr_comment">//-startdate</em>
+<a class="jxr_linenumber" name="L170" href="#L170">170</a>         {<span class="jxr_string">"keystore.password"</span>,
+<a class="jxr_linenumber" name="L171" href="#L171">171</a>                 <span class="jxr_string">"contrase\u00F1a de almac\u00E9n de claves"</span>}, <em class="jxr_comment">//-storepass</em>
+<a class="jxr_linenumber" name="L172" href="#L172">172</a>         {<span class="jxr_string">"keystore.type"</span>,
+<a class="jxr_linenumber" name="L173" href="#L173">173</a>                 <span class="jxr_string">"tipo de almac\u00E9n de claves"</span>}, <em class="jxr_comment">//-storetype</em>
+<a class="jxr_linenumber" name="L174" href="#L174">174</a>         {<span class="jxr_string">"trust.certificates.from.cacerts"</span>,
+<a class="jxr_linenumber" name="L175" href="#L175">175</a>                 <span class="jxr_string">"certificados de protecci\u00F3n de cacerts"</span>}, <em class="jxr_comment">//-trustcacerts</em>
+<a class="jxr_linenumber" name="L176" href="#L176">176</a>         {<span class="jxr_string">"verbose.output"</span>,
+<a class="jxr_linenumber" name="L177" href="#L177">177</a>                 <span class="jxr_string">"salida detallada"</span>}, <em class="jxr_comment">//-v</em>
+<a class="jxr_linenumber" name="L178" href="#L178">178</a>         {<span class="jxr_string">"validity.number.of.days"</span>,
+<a class="jxr_linenumber" name="L179" href="#L179">179</a>                 <span class="jxr_string">"n\u00FAmero de validez de d\u00EDas"</span>}, <em class="jxr_comment">//-validity</em>
+<a class="jxr_linenumber" name="L180" href="#L180">180</a>         {<span class="jxr_string">"Serial.ID.of.cert.to.revoke"</span>,
+<a class="jxr_linenumber" name="L181" href="#L181">181</a>                  <span class="jxr_string">"identificador de serie del certificado que se va a revocar"</span>}, <em class="jxr_comment">//-id</em>
+<a class="jxr_linenumber" name="L182" href="#L182">182</a>         <em class="jxr_comment">// keytool: Running part</em>
+<a class="jxr_linenumber" name="L183" href="#L183">183</a>         {<span class="jxr_string">"keytool.error."</span>, <span class="jxr_string">"error de herramienta de claves: "</span>},
+<a class="jxr_linenumber" name="L184" href="#L184">184</a>         {<span class="jxr_string">"Illegal.option."</span>, <span class="jxr_string">"Opci\u00F3n no permitida:  "</span>},
+<a class="jxr_linenumber" name="L185" href="#L185">185</a>         {<span class="jxr_string">"Illegal.value."</span>, <span class="jxr_string">"Valor no permitido: "</span>},
+<a class="jxr_linenumber" name="L186" href="#L186">186</a>         {<span class="jxr_string">"Unknown.password.type."</span>, <span class="jxr_string">"Tipo de contrase\u00F1a desconocido: "</span>},
+<a class="jxr_linenumber" name="L187" href="#L187">187</a>         {<span class="jxr_string">"Cannot.find.environment.variable."</span>,
+<a class="jxr_linenumber" name="L188" href="#L188">188</a>                 <span class="jxr_string">"No se ha encontrado la variable del entorno: "</span>},
+<a class="jxr_linenumber" name="L189" href="#L189">189</a>         {<span class="jxr_string">"Cannot.find.file."</span>, <span class="jxr_string">"No se ha encontrado el archivo: "</span>},
+<a class="jxr_linenumber" name="L190" href="#L190">190</a>         {<span class="jxr_string">"Command.option.flag.needs.an.argument."</span>, <span class="jxr_string">"La opci\u00F3n de comando {0} necesita un argumento."</span>},
+<a class="jxr_linenumber" name="L191" href="#L191">191</a>         {<span class="jxr_string">"Warning.Different.store.and.key.passwords.not.supported.for.PKCS12.KeyStores.Ignoring.user.specified.command.value."</span>,
+<a class="jxr_linenumber" name="L192" href="#L192">192</a>                 <span class="jxr_string">"Advertencia: los almacenes de claves en formato PKCS12 no admiten contrase\u00F1as de clave y almacenamiento distintas. Se ignorar\u00E1 el valor especificado por el usuario, {0}."</span>},
+<a class="jxr_linenumber" name="L193" href="#L193">193</a>         {<span class="jxr_string">".keystore.must.be.NONE.if.storetype.is.{0}"</span>,
+<a class="jxr_linenumber" name="L194" href="#L194">194</a>                 <span class="jxr_string">"-keystore debe ser NONE si -storetype es {0}"</span>},
+<a class="jxr_linenumber" name="L195" href="#L195">195</a>         {<span class="jxr_string">"Too.many.retries.program.terminated"</span>,
+<a class="jxr_linenumber" name="L196" href="#L196">196</a>                  <span class="jxr_string">"Ha habido demasiados intentos, se ha cerrado el programa"</span>},
+<a class="jxr_linenumber" name="L197" href="#L197">197</a>         {<span class="jxr_string">".storepasswd.and.keypasswd.commands.not.supported.if.storetype.is.{0}"</span>,
+<a class="jxr_linenumber" name="L198" href="#L198">198</a>                 <span class="jxr_string">"Los comandos -storepasswd y -keypasswd no est\u00E1n soportados si -storetype es {0}"</span>},
+<a class="jxr_linenumber" name="L199" href="#L199">199</a>         {<span class="jxr_string">".keypasswd.commands.not.supported.if.storetype.is.PKCS12"</span>,
+<a class="jxr_linenumber" name="L200" href="#L200">200</a>                 <span class="jxr_string">"Los comandos -keypasswd no est\u00E1n soportados si -storetype es PKCS12"</span>},
+<a class="jxr_linenumber" name="L201" href="#L201">201</a>         {<span class="jxr_string">".keypass.and.new.can.not.be.specified.if.storetype.is.{0}"</span>,
+<a class="jxr_linenumber" name="L202" href="#L202">202</a>                 <span class="jxr_string">"-keypass y -new no se pueden especificar si -storetype es {0}"</span>},
+<a class="jxr_linenumber" name="L203" href="#L203">203</a>         {<span class="jxr_string">"if.protected.is.specified.then.storepass.keypass.and.new.must.not.be.specified"</span>,
+<a class="jxr_linenumber" name="L204" href="#L204">204</a>                 <span class="jxr_string">"si se especifica -protected, no deben especificarse -storepass, -keypass ni -new"</span>},
+<a class="jxr_linenumber" name="L205" href="#L205">205</a>         {<span class="jxr_string">"if.srcprotected.is.specified.then.srcstorepass.and.srckeypass.must.not.be.specified"</span>,
+<a class="jxr_linenumber" name="L206" href="#L206">206</a>                 <span class="jxr_string">"Si se especifica -srcprotected, no se puede especificar -srcstorepass ni -srckeypass"</span>},
+<a class="jxr_linenumber" name="L207" href="#L207">207</a>         {<span class="jxr_string">"if.keystore.is.not.password.protected.then.storepass.keypass.and.new.must.not.be.specified"</span>,
+<a class="jxr_linenumber" name="L208" href="#L208">208</a>                 <span class="jxr_string">"Si keystore no est\u00E1 protegido por contrase\u00F1a, no se deben especificar -storepass, -keypass ni -new"</span>},
+<a class="jxr_linenumber" name="L209" href="#L209">209</a>         {<span class="jxr_string">"if.source.keystore.is.not.password.protected.then.srcstorepass.and.srckeypass.must.not.be.specified"</span>,
+<a class="jxr_linenumber" name="L210" href="#L210">210</a>                 <span class="jxr_string">"Si el almac\u00E9n de claves de origen no est\u00E1 protegido por contrase\u00F1a, no se deben especificar -srcstorepass ni -srckeypass"</span>},
+<a class="jxr_linenumber" name="L211" href="#L211">211</a>         {<span class="jxr_string">"Illegal.startdate.value"</span>, <span class="jxr_string">"Valor de fecha de inicio no permitido"</span>},
+<a class="jxr_linenumber" name="L212" href="#L212">212</a>         {<span class="jxr_string">"Validity.must.be.greater.than.zero"</span>,
+<a class="jxr_linenumber" name="L213" href="#L213">213</a>                 <span class="jxr_string">"La validez debe ser mayor que cero"</span>},
+<a class="jxr_linenumber" name="L214" href="#L214">214</a>         {<span class="jxr_string">"provName.not.a.provider"</span>, <span class="jxr_string">"{0} no es un proveedor"</span>},
+<a class="jxr_linenumber" name="L215" href="#L215">215</a>         {<span class="jxr_string">"Usage.error.no.command.provided"</span>, <span class="jxr_string">"Error de sintaxis: no se ha proporcionado ning\u00FAn comando"</span>},
+<a class="jxr_linenumber" name="L216" href="#L216">216</a>         {<span class="jxr_string">"Source.keystore.file.exists.but.is.empty."</span>, <span class="jxr_string">"El archivo de almac\u00E9n de claves de origen existe, pero est\u00E1 vac\u00EDo: "</span>},
+<a class="jxr_linenumber" name="L217" href="#L217">217</a>         {<span class="jxr_string">"Please.specify.srckeystore"</span>, <span class="jxr_string">"Especifique -srckeystore"</span>},
+<a class="jxr_linenumber" name="L218" href="#L218">218</a>         {<span class="jxr_string">"Must.not.specify.both.v.and.rfc.with.list.command"</span>,
+<a class="jxr_linenumber" name="L219" href="#L219">219</a>                 <span class="jxr_string">"No se deben especificar -v y -rfc simult\u00E1neamente con el comando 'list'"</span>},
+<a class="jxr_linenumber" name="L220" href="#L220">220</a>         {<span class="jxr_string">"Key.password.must.be.at.least.6.characters"</span>,
+<a class="jxr_linenumber" name="L221" href="#L221">221</a>                 <span class="jxr_string">"La contrase\u00F1a de clave debe tener al menos 6 caracteres"</span>},
+<a class="jxr_linenumber" name="L222" href="#L222">222</a>         {<span class="jxr_string">"New.password.must.be.at.least.6.characters"</span>,
+<a class="jxr_linenumber" name="L223" href="#L223">223</a>                 <span class="jxr_string">"La nueva contrase\u00F1a debe tener al menos 6 caracteres"</span>},
+<a class="jxr_linenumber" name="L224" href="#L224">224</a>         {<span class="jxr_string">"Keystore.file.exists.but.is.empty."</span>,
+<a class="jxr_linenumber" name="L225" href="#L225">225</a>                 <span class="jxr_string">"El archivo de almac\u00E9n de claves existe, pero est\u00E1 vac\u00EDo: "</span>},
+<a class="jxr_linenumber" name="L226" href="#L226">226</a>         {<span class="jxr_string">"Keystore.file.does.not.exist."</span>,
+<a class="jxr_linenumber" name="L227" href="#L227">227</a>                 <span class="jxr_string">"El archivo de almac\u00E9n de claves no existe: "</span>},
+<a class="jxr_linenumber" name="L228" href="#L228">228</a>         {<span class="jxr_string">"Must.specify.destination.alias"</span>, <span class="jxr_string">"Se debe especificar un alias de destino"</span>},
+<a class="jxr_linenumber" name="L229" href="#L229">229</a>         {<span class="jxr_string">"Must.specify.alias"</span>, <span class="jxr_string">"Se debe especificar un alias"</span>},
+<a class="jxr_linenumber" name="L230" href="#L230">230</a>         {<span class="jxr_string">"Keystore.password.must.be.at.least.6.characters"</span>,
+<a class="jxr_linenumber" name="L231" href="#L231">231</a>                 <span class="jxr_string">"La contrase\u00F1a del almac\u00E9n de claves debe tener al menos 6 caracteres"</span>},
+<a class="jxr_linenumber" name="L232" href="#L232">232</a>         {<span class="jxr_string">"Enter.keystore.password."</span>, <span class="jxr_string">"Introduzca la contrase\u00F1a del almac\u00E9n de claves:  "</span>},
+<a class="jxr_linenumber" name="L233" href="#L233">233</a>         {<span class="jxr_string">"Enter.source.keystore.password."</span>, <span class="jxr_string">"Introduzca la contrase\u00F1a de almac\u00E9n de claves de origen:  "</span>},
+<a class="jxr_linenumber" name="L234" href="#L234">234</a>         {<span class="jxr_string">"Enter.destination.keystore.password."</span>, <span class="jxr_string">"Introduzca la contrase\u00F1a de almac\u00E9n de claves de destino:  "</span>},
+<a class="jxr_linenumber" name="L235" href="#L235">235</a>         {<span class="jxr_string">"Keystore.password.is.too.short.must.be.at.least.6.characters"</span>,
+<a class="jxr_linenumber" name="L236" href="#L236">236</a>          <span class="jxr_string">"La contrase\u00F1a del almac\u00E9n de claves es demasiado corta, debe tener al menos 6 caracteres"</span>},
+<a class="jxr_linenumber" name="L237" href="#L237">237</a>         {<span class="jxr_string">"Unknown.Entry.Type"</span>, <span class="jxr_string">"Tipo de Entrada Desconocido"</span>},
+<a class="jxr_linenumber" name="L238" href="#L238">238</a>         {<span class="jxr_string">"Too.many.failures.Alias.not.changed"</span>, <span class="jxr_string">"Demasiados fallos. No se ha cambiado el alias"</span>},
+<a class="jxr_linenumber" name="L239" href="#L239">239</a>         {<span class="jxr_string">"Entry.for.alias.alias.successfully.imported."</span>,
+<a class="jxr_linenumber" name="L240" href="#L240">240</a>                  <span class="jxr_string">"La entrada del alias {0} se ha importado correctamente."</span>},
+<a class="jxr_linenumber" name="L241" href="#L241">241</a>         {<span class="jxr_string">"Entry.for.alias.alias.not.imported."</span>, <span class="jxr_string">"La entrada del alias {0} no se ha importado."</span>},
+<a class="jxr_linenumber" name="L242" href="#L242">242</a>         {<span class="jxr_string">"Problem.importing.entry.for.alias.alias.exception.Entry.for.alias.alias.not.imported."</span>,
+<a class="jxr_linenumber" name="L243" href="#L243">243</a>                  <span class="jxr_string">"Problema al importar la entrada del alias {0}: {1}.\nNo se ha importado la entrada del alias {0}."</span>},
+<a class="jxr_linenumber" name="L244" href="#L244">244</a>         {<span class="jxr_string">"Import.command.completed.ok.entries.successfully.imported.fail.entries.failed.or.cancelled"</span>,
+<a class="jxr_linenumber" name="L245" href="#L245">245</a>                  <span class="jxr_string">"Comando de importaci\u00F3n completado: {0} entradas importadas correctamente, {1} entradas incorrectas o canceladas"</span>},
+<a class="jxr_linenumber" name="L246" href="#L246">246</a>         {<span class="jxr_string">"Warning.Overwriting.existing.alias.alias.in.destination.keystore"</span>,
+<a class="jxr_linenumber" name="L247" href="#L247">247</a>                  <span class="jxr_string">"Advertencia: se sobrescribir\u00E1 el alias {0} en el almac\u00E9n de claves de destino"</span>},
+<a class="jxr_linenumber" name="L248" href="#L248">248</a>         {<span class="jxr_string">"Existing.entry.alias.alias.exists.overwrite.no."</span>,
+<a class="jxr_linenumber" name="L249" href="#L249">249</a>                  <span class="jxr_string">"El alias de entrada existente {0} ya existe, \u00BFdesea sobrescribirlo? [no]:  "</span>},
+<a class="jxr_linenumber" name="L250" href="#L250">250</a>         {<span class="jxr_string">"Too.many.failures.try.later"</span>, <span class="jxr_string">"Demasiados fallos; int\u00E9ntelo m\u00E1s adelante"</span>},
+<a class="jxr_linenumber" name="L251" href="#L251">251</a>         {<span class="jxr_string">"Certification.request.stored.in.file.filename."</span>,
+<a class="jxr_linenumber" name="L252" href="#L252">252</a>                 <span class="jxr_string">"Solicitud de certificaci\u00F3n almacenada en el archivo &lt;{0}&gt;"</span>},
+<a class="jxr_linenumber" name="L253" href="#L253">253</a>         {<span class="jxr_string">"Submit.this.to.your.CA"</span>, <span class="jxr_string">"Enviar a la CA"</span>},
+<a class="jxr_linenumber" name="L254" href="#L254">254</a>         {<span class="jxr_string">"if.alias.not.specified.destalias.srckeypass.and.destkeypass.must.not.be.specified"</span>,
+<a class="jxr_linenumber" name="L255" href="#L255">255</a>             <span class="jxr_string">"si no se especifica el alias, no se puede especificar destalias, srckeypass ni destkeypass"</span>},
+<a class="jxr_linenumber" name="L256" href="#L256">256</a>         {<span class="jxr_string">"Certificate.stored.in.file.filename."</span>,
+<a class="jxr_linenumber" name="L257" href="#L257">257</a>                 <span class="jxr_string">"Certificado almacenado en el archivo &lt;{0}&gt;"</span>},
+<a class="jxr_linenumber" name="L258" href="#L258">258</a>         {<span class="jxr_string">"Certificate.reply.was.installed.in.keystore"</span>,
+<a class="jxr_linenumber" name="L259" href="#L259">259</a>                 <span class="jxr_string">"Se ha instalado la respuesta del certificado en el almac\u00E9n de claves"</span>},
+<a class="jxr_linenumber" name="L260" href="#L260">260</a>         {<span class="jxr_string">"Certificate.reply.was.not.installed.in.keystore"</span>,
+<a class="jxr_linenumber" name="L261" href="#L261">261</a>                 <span class="jxr_string">"No se ha instalado la respuesta del certificado en el almac\u00E9n de claves"</span>},
+<a class="jxr_linenumber" name="L262" href="#L262">262</a>         {<span class="jxr_string">"Certificate.was.added.to.keystore"</span>,
+<a class="jxr_linenumber" name="L263" href="#L263">263</a>                 <span class="jxr_string">"Se ha agregado el certificado al almac\u00E9n de claves"</span>},
+<a class="jxr_linenumber" name="L264" href="#L264">264</a>         {<span class="jxr_string">"Certificate.was.not.added.to.keystore"</span>,
+<a class="jxr_linenumber" name="L265" href="#L265">265</a>                 <span class="jxr_string">"No se ha agregado el certificado al almac\u00E9n de claves"</span>},
+<a class="jxr_linenumber" name="L266" href="#L266">266</a>         {<span class="jxr_string">".Storing.ksfname."</span>, <span class="jxr_string">"[Almacenando {0}]"</span>},
+<a class="jxr_linenumber" name="L267" href="#L267">267</a>         {<span class="jxr_string">"alias.has.no.public.key.certificate."</span>,
+<a class="jxr_linenumber" name="L268" href="#L268">268</a>                 <span class="jxr_string">"{0} no tiene clave p\u00FAblica (certificado)"</span>},
+<a class="jxr_linenumber" name="L269" href="#L269">269</a>         {<span class="jxr_string">"Cannot.derive.signature.algorithm"</span>,
+<a class="jxr_linenumber" name="L270" href="#L270">270</a>                 <span class="jxr_string">"No se puede derivar el algoritmo de firma"</span>},
+<a class="jxr_linenumber" name="L271" href="#L271">271</a>         {<span class="jxr_string">"Alias.alias.does.not.exist"</span>,
+<a class="jxr_linenumber" name="L272" href="#L272">272</a>                 <span class="jxr_string">"El alias &lt;{0}&gt; no existe"</span>},
+<a class="jxr_linenumber" name="L273" href="#L273">273</a>         {<span class="jxr_string">"Alias.alias.has.no.certificate"</span>,
+<a class="jxr_linenumber" name="L274" href="#L274">274</a>                 <span class="jxr_string">"El alias &lt;{0}&gt; no tiene certificado"</span>},
+<a class="jxr_linenumber" name="L275" href="#L275">275</a>         {<span class="jxr_string">"Key.pair.not.generated.alias.alias.already.exists"</span>,
+<a class="jxr_linenumber" name="L276" href="#L276">276</a>                 <span class="jxr_string">"No se ha generado el par de claves, el alias &lt;{0}&gt; ya existe"</span>},
+<a class="jxr_linenumber" name="L277" href="#L277">277</a>         {<span class="jxr_string">"Generating.keysize.bit.keyAlgName.key.pair.and.self.signed.certificate.sigAlgName.with.a.validity.of.validality.days.for"</span>,
+<a class="jxr_linenumber" name="L278" href="#L278">278</a>                 <span class="jxr_string">"Generando par de claves {1} de {0} bits para certificado autofirmado ({2}) con una validez de {3} d\u00EDas\n\tpara: {4}"</span>},
+<a class="jxr_linenumber" name="L279" href="#L279">279</a>         {<span class="jxr_string">"Enter.key.password.for.alias."</span>, <span class="jxr_string">"Introduzca la contrase\u00F1a de clave para &lt;{0}&gt;"</span>},
+<a class="jxr_linenumber" name="L280" href="#L280">280</a>         {<span class="jxr_string">".RETURN.if.same.as.keystore.password."</span>,
+<a class="jxr_linenumber" name="L281" href="#L281">281</a>                 <span class="jxr_string">"\t(INTRO si es la misma contrase\u00F1a que la del almac\u00E9n de claves):  "</span>},
+<a class="jxr_linenumber" name="L282" href="#L282">282</a>         {<span class="jxr_string">"Key.password.is.too.short.must.be.at.least.6.characters"</span>,
+<a class="jxr_linenumber" name="L283" href="#L283">283</a>                 <span class="jxr_string">"La contrase\u00F1a de clave es demasiado corta; debe tener al menos 6 caracteres"</span>},
+<a class="jxr_linenumber" name="L284" href="#L284">284</a>         {<span class="jxr_string">"Too.many.failures.key.not.added.to.keystore"</span>,
+<a class="jxr_linenumber" name="L285" href="#L285">285</a>                 <span class="jxr_string">"Demasiados fallos; no se ha agregado la clave al almac\u00E9n de claves"</span>},
+<a class="jxr_linenumber" name="L286" href="#L286">286</a>         {<span class="jxr_string">"Destination.alias.dest.already.exists"</span>,
+<a class="jxr_linenumber" name="L287" href="#L287">287</a>                 <span class="jxr_string">"El alias de destino &lt;{0}&gt; ya existe"</span>},
+<a class="jxr_linenumber" name="L288" href="#L288">288</a>         {<span class="jxr_string">"Password.is.too.short.must.be.at.least.6.characters"</span>,
+<a class="jxr_linenumber" name="L289" href="#L289">289</a>                 <span class="jxr_string">"La contrase\u00F1a es demasiado corta; debe tener al menos 6 caracteres"</span>},
+<a class="jxr_linenumber" name="L290" href="#L290">290</a>         {<span class="jxr_string">"Too.many.failures.Key.entry.not.cloned"</span>,
+<a class="jxr_linenumber" name="L291" href="#L291">291</a>                 <span class="jxr_string">"Demasiados fallos. No se ha clonado la entrada de clave"</span>},
+<a class="jxr_linenumber" name="L292" href="#L292">292</a>         {<span class="jxr_string">"key.password.for.alias."</span>, <span class="jxr_string">"contrase\u00F1a de clave para &lt;{0}&gt;"</span>},
+<a class="jxr_linenumber" name="L293" href="#L293">293</a>         {<span class="jxr_string">"Keystore.entry.for.id.getName.already.exists"</span>,
+<a class="jxr_linenumber" name="L294" href="#L294">294</a>                 <span class="jxr_string">"La entrada de almac\u00E9n de claves para &lt;{0}&gt; ya existe"</span>},
+<a class="jxr_linenumber" name="L295" href="#L295">295</a>         {<span class="jxr_string">"Creating.keystore.entry.for.id.getName."</span>,
+<a class="jxr_linenumber" name="L296" href="#L296">296</a>                 <span class="jxr_string">"Creando entrada de almac\u00E9n de claves para &lt;{0}&gt; ..."</span>},
+<a class="jxr_linenumber" name="L297" href="#L297">297</a>         {<span class="jxr_string">"No.entries.from.identity.database.added"</span>,
+<a class="jxr_linenumber" name="L298" href="#L298">298</a>                 <span class="jxr_string">"No se han agregado entradas de la base de datos de identidades"</span>},
+<a class="jxr_linenumber" name="L299" href="#L299">299</a>         {<span class="jxr_string">"Alias.name.alias"</span>, <span class="jxr_string">"Nombre de Alias: {0}"</span>},
+<a class="jxr_linenumber" name="L300" href="#L300">300</a>         {<span class="jxr_string">"Creation.date.keyStore.getCreationDate.alias."</span>,
+<a class="jxr_linenumber" name="L301" href="#L301">301</a>                 <span class="jxr_string">"Fecha de Creaci\u00F3n: {0,date}"</span>},
+<a class="jxr_linenumber" name="L302" href="#L302">302</a>         {<span class="jxr_string">"alias.keyStore.getCreationDate.alias."</span>,
+<a class="jxr_linenumber" name="L303" href="#L303">303</a>                 <span class="jxr_string">"{0}, {1,date}, "</span>},
+<a class="jxr_linenumber" name="L304" href="#L304">304</a>         {<span class="jxr_string">"alias."</span>, <span class="jxr_string">"{0}, "</span>},
+<a class="jxr_linenumber" name="L305" href="#L305">305</a>         {<span class="jxr_string">"Entry.type.type."</span>, <span class="jxr_string">"Tipo de Entrada: {0}"</span>},
+<a class="jxr_linenumber" name="L306" href="#L306">306</a>         {<span class="jxr_string">"Certificate.chain.length."</span>, <span class="jxr_string">"Longitud de la Cadena de Certificado: "</span>},
+<a class="jxr_linenumber" name="L307" href="#L307">307</a>         {<span class="jxr_string">"Certificate.i.1."</span>, <span class="jxr_string">"Certificado[{0,number,integer}]:"</span>},
+<a class="jxr_linenumber" name="L308" href="#L308">308</a>         {<span class="jxr_string">"Certificate.fingerprint.SHA1."</span>, <span class="jxr_string">"Huella Digital de Certificado (SHA1): "</span>},
+<a class="jxr_linenumber" name="L309" href="#L309">309</a>         {<span class="jxr_string">"Keystore.type."</span>, <span class="jxr_string">"Tipo de Almac\u00E9n de Claves: "</span>},
+<a class="jxr_linenumber" name="L310" href="#L310">310</a>         {<span class="jxr_string">"Keystore.provider."</span>, <span class="jxr_string">"Proveedor de Almac\u00E9n de Claves: "</span>},
+<a class="jxr_linenumber" name="L311" href="#L311">311</a>         {<span class="jxr_string">"Your.keystore.contains.keyStore.size.entry"</span>,
+<a class="jxr_linenumber" name="L312" href="#L312">312</a>                 <span class="jxr_string">"Su almac\u00E9n de claves contiene {0,number,integer} entrada"</span>},
+<a class="jxr_linenumber" name="L313" href="#L313">313</a>         {<span class="jxr_string">"Your.keystore.contains.keyStore.size.entries"</span>,
+<a class="jxr_linenumber" name="L314" href="#L314">314</a>                 <span class="jxr_string">"Su almac\u00E9n de claves contiene {0,number,integer} entradas"</span>},
+<a class="jxr_linenumber" name="L315" href="#L315">315</a>         {<span class="jxr_string">"Failed.to.parse.input"</span>, <span class="jxr_string">"Fallo al analizar la entrada"</span>},
+<a class="jxr_linenumber" name="L316" href="#L316">316</a>         {<span class="jxr_string">"Empty.input"</span>, <span class="jxr_string">"Entrada vac\u00EDa"</span>},
+<a class="jxr_linenumber" name="L317" href="#L317">317</a>         {<span class="jxr_string">"Not.X.509.certificate"</span>, <span class="jxr_string">"No es un certificado X.509"</span>},
+<a class="jxr_linenumber" name="L318" href="#L318">318</a>         {<span class="jxr_string">"alias.has.no.public.key"</span>, <span class="jxr_string">"{0} no tiene clave p\u00FAblica"</span>},
+<a class="jxr_linenumber" name="L319" href="#L319">319</a>         {<span class="jxr_string">"alias.has.no.X.509.certificate"</span>, <span class="jxr_string">"{0} no tiene certificado X.509"</span>},
+<a class="jxr_linenumber" name="L320" href="#L320">320</a>         {<span class="jxr_string">"New.certificate.self.signed."</span>, <span class="jxr_string">"Nuevo Certificado (Autofirmado):"</span>},
+<a class="jxr_linenumber" name="L321" href="#L321">321</a>         {<span class="jxr_string">"Reply.has.no.certificates"</span>, <span class="jxr_string">"La respuesta no tiene certificados"</span>},
+<a class="jxr_linenumber" name="L322" href="#L322">322</a>         {<span class="jxr_string">"Certificate.not.imported.alias.alias.already.exists"</span>,
+<a class="jxr_linenumber" name="L323" href="#L323">323</a>                 <span class="jxr_string">"Certificado no importado, el alias &lt;{0}&gt; ya existe"</span>},
+<a class="jxr_linenumber" name="L324" href="#L324">324</a>         {<span class="jxr_string">"Input.not.an.X.509.certificate"</span>, <span class="jxr_string">"La entrada no es un certificado X.509"</span>},
+<a class="jxr_linenumber" name="L325" href="#L325">325</a>         {<span class="jxr_string">"Certificate.already.exists.in.keystore.under.alias.trustalias."</span>,
+<a class="jxr_linenumber" name="L326" href="#L326">326</a>                 <span class="jxr_string">"El certificado ya existe en el almac\u00E9n de claves con el alias &lt;{0}&gt;"</span>},
+<a class="jxr_linenumber" name="L327" href="#L327">327</a>         {<span class="jxr_string">"Do.you.still.want.to.add.it.no."</span>,
+<a class="jxr_linenumber" name="L328" href="#L328">328</a>                 <span class="jxr_string">"\u00BFA\u00FAn desea agregarlo? [no]:  "</span>},
+<a class="jxr_linenumber" name="L329" href="#L329">329</a>         {<span class="jxr_string">"Certificate.already.exists.in.system.wide.CA.keystore.under.alias.trustalias."</span>,
+<a class="jxr_linenumber" name="L330" href="#L330">330</a>                 <span class="jxr_string">"El certificado ya existe en el almac\u00E9n de claves de la CA del sistema, con el alias &lt;{0}&gt;"</span>},
+<a class="jxr_linenumber" name="L331" href="#L331">331</a>         {<span class="jxr_string">"Do.you.still.want.to.add.it.to.your.own.keystore.no."</span>,
+<a class="jxr_linenumber" name="L332" href="#L332">332</a>                 <span class="jxr_string">"\u00BFA\u00FAn desea agregarlo a su propio almac\u00E9n de claves? [no]:  "</span>},
+<a class="jxr_linenumber" name="L333" href="#L333">333</a>         {<span class="jxr_string">"Trust.this.certificate.no."</span>, <span class="jxr_string">"\u00BFConfiar en este certificado? [no]:  "</span>},
+<a class="jxr_linenumber" name="L334" href="#L334">334</a>         {<span class="jxr_string">"YES"</span>, <span class="jxr_string">"S\u00ED"</span>},
+<a class="jxr_linenumber" name="L335" href="#L335">335</a>         {<span class="jxr_string">"New.prompt."</span>, <span class="jxr_string">"Nuevo {0}: "</span>},
+<a class="jxr_linenumber" name="L336" href="#L336">336</a>         {<span class="jxr_string">"Passwords.must.differ"</span>, <span class="jxr_string">"Las contrase\u00F1as deben ser distintas"</span>},
+<a class="jxr_linenumber" name="L337" href="#L337">337</a>         {<span class="jxr_string">"Re.enter.new.prompt."</span>, <span class="jxr_string">"Vuelva a escribir el nuevo {0}: "</span>},
+<a class="jxr_linenumber" name="L338" href="#L338">338</a>         {<span class="jxr_string">"Re.enter.new.password."</span>, <span class="jxr_string">"Volver a escribir la contrase\u00F1a nueva: "</span>},
+<a class="jxr_linenumber" name="L339" href="#L339">339</a>         {<span class="jxr_string">"They.don.t.match.Try.again"</span>, <span class="jxr_string">"No coinciden. Int\u00E9ntelo de nuevo"</span>},
+<a class="jxr_linenumber" name="L340" href="#L340">340</a>         {<span class="jxr_string">"Enter.prompt.alias.name."</span>, <span class="jxr_string">"Escriba el nombre de alias de {0}:  "</span>},
+<a class="jxr_linenumber" name="L341" href="#L341">341</a>         {<span class="jxr_string">"Enter.new.alias.name.RETURN.to.cancel.import.for.this.entry."</span>,
+<a class="jxr_linenumber" name="L342" href="#L342">342</a>                  <span class="jxr_string">"Indique el nuevo nombre de alias\t(INTRO para cancelar la importaci\u00F3n de esta entrada):  "</span>},
+<a class="jxr_linenumber" name="L343" href="#L343">343</a>         {<span class="jxr_string">"Enter.alias.name."</span>, <span class="jxr_string">"Introduzca el nombre de alias:  "</span>},
+<a class="jxr_linenumber" name="L344" href="#L344">344</a>         {<span class="jxr_string">".RETURN.if.same.as.for.otherAlias."</span>,
+<a class="jxr_linenumber" name="L345" href="#L345">345</a>                 <span class="jxr_string">"\t(INTRO si es el mismo que para &lt;{0}&gt;)"</span>},
+<a class="jxr_linenumber" name="L346" href="#L346">346</a>         {<span class="jxr_string">".PATTERN.printX509Cert"</span>,
+<a class="jxr_linenumber" name="L347" href="#L347">347</a>                 <span class="jxr_string">"Propietario: {0}\nEmisor: {1}\nN\u00FAmero de serie: {2}\nV\u00E1lido desde: {3} hasta: {4}\nHuellas digitales del Certificado:\n\t MD5: {5}\n\t SHA1: {6}\n\t SHA256: {7}\n\t Nombre del Algoritmo de Firma: {8}\n\t Versi\u00F3n: {9}"</span>},
+<a class="jxr_linenumber" name="L348" href="#L348">348</a>         {<span class="jxr_string">"What.is.your.first.and.last.name."</span>,
+<a class="jxr_linenumber" name="L349" href="#L349">349</a>                 <span class="jxr_string">"\u00BFCu\u00E1les son su nombre y su apellido?"</span>},
+<a class="jxr_linenumber" name="L350" href="#L350">350</a>         {<span class="jxr_string">"What.is.the.name.of.your.organizational.unit."</span>,
+<a class="jxr_linenumber" name="L351" href="#L351">351</a>                 <span class="jxr_string">"\u00BFCu\u00E1l es el nombre de su unidad de organizaci\u00F3n?"</span>},
+<a class="jxr_linenumber" name="L352" href="#L352">352</a>         {<span class="jxr_string">"What.is.the.name.of.your.organization."</span>,
+<a class="jxr_linenumber" name="L353" href="#L353">353</a>                 <span class="jxr_string">"\u00BFCu\u00E1l es el nombre de su organizaci\u00F3n?"</span>},
+<a class="jxr_linenumber" name="L354" href="#L354">354</a>         {<span class="jxr_string">"What.is.the.name.of.your.City.or.Locality."</span>,
+<a class="jxr_linenumber" name="L355" href="#L355">355</a>                 <span class="jxr_string">"\u00BFCu\u00E1l es el nombre de su ciudad o localidad?"</span>},
+<a class="jxr_linenumber" name="L356" href="#L356">356</a>         {<span class="jxr_string">"What.is.the.name.of.your.State.or.Province."</span>,
+<a class="jxr_linenumber" name="L357" href="#L357">357</a>                 <span class="jxr_string">"\u00BFCu\u00E1l es el nombre de su estado o provincia?"</span>},
+<a class="jxr_linenumber" name="L358" href="#L358">358</a>         {<span class="jxr_string">"What.is.the.two.letter.country.code.for.this.unit."</span>,
+<a class="jxr_linenumber" name="L359" href="#L359">359</a>                 <span class="jxr_string">"\u00BFCu\u00E1l es el c\u00F3digo de pa\u00EDs de dos letras de la unidad?"</span>},
+<a class="jxr_linenumber" name="L360" href="#L360">360</a>         {<span class="jxr_string">"Is.name.correct."</span>, <span class="jxr_string">"\u00BFEs correcto {0}?"</span>},
+<a class="jxr_linenumber" name="L361" href="#L361">361</a>         {<span class="jxr_string">"no"</span>, <span class="jxr_string">"no"</span>},
+<a class="jxr_linenumber" name="L362" href="#L362">362</a>         {<span class="jxr_string">"yes"</span>, <span class="jxr_string">"s\u00ED"</span>},
+<a class="jxr_linenumber" name="L363" href="#L363">363</a>         {<span class="jxr_string">"y"</span>, <span class="jxr_string">"s"</span>},
+<a class="jxr_linenumber" name="L364" href="#L364">364</a>         {<span class="jxr_string">".defaultValue."</span>, <span class="jxr_string">"  [{0}]:  "</span>},
+<a class="jxr_linenumber" name="L365" href="#L365">365</a>         {<span class="jxr_string">"Alias.alias.has.no.key"</span>,
+<a class="jxr_linenumber" name="L366" href="#L366">366</a>                 <span class="jxr_string">"El alias &lt;{0}&gt; no tiene clave"</span>},
+<a class="jxr_linenumber" name="L367" href="#L367">367</a>         {<span class="jxr_string">"Alias.alias.references.an.entry.type.that.is.not.a.private.key.entry.The.keyclone.command.only.supports.cloning.of.private.key"</span>,
+<a class="jxr_linenumber" name="L368" href="#L368">368</a>                  <span class="jxr_string">"El alias &lt;{0}&gt; hace referencia a un tipo de entrada que no es una clave privada. El comando -keyclone s\u00F3lo permite la clonaci\u00F3n de entradas de claves privadas"</span>},
+<a class="jxr_linenumber" name="L369" href="#L369">369</a> 
+<a class="jxr_linenumber" name="L370" href="#L370">370</a>         {<span class="jxr_string">".WARNING.WARNING.WARNING."</span>,
+<a class="jxr_linenumber" name="L371" href="#L371">371</a>             <span class="jxr_string">"*****************  Advertencia Advertencia Advertencia  *****************"</span>},
+<a class="jxr_linenumber" name="L372" href="#L372">372</a>         {<span class="jxr_string">"Signer.d."</span>, <span class="jxr_string">"#%d de Firmante:"</span>},
+<a class="jxr_linenumber" name="L373" href="#L373">373</a>         {<span class="jxr_string">"Timestamp."</span>, <span class="jxr_string">"Registro de Hora:"</span>},
+<a class="jxr_linenumber" name="L374" href="#L374">374</a>         {<span class="jxr_string">"Signature."</span>, <span class="jxr_string">"Firma:"</span>},
+<a class="jxr_linenumber" name="L375" href="#L375">375</a>         {<span class="jxr_string">"CRLs."</span>, <span class="jxr_string">"CRL:"</span>},
+<a class="jxr_linenumber" name="L376" href="#L376">376</a>         {<span class="jxr_string">"Certificate.owner."</span>, <span class="jxr_string">"Propietario del Certificado: "</span>},
+<a class="jxr_linenumber" name="L377" href="#L377">377</a>         {<span class="jxr_string">"Not.a.signed.jar.file"</span>, <span class="jxr_string">"No es un archivo jar firmado"</span>},
+<a class="jxr_linenumber" name="L378" href="#L378">378</a>         {<span class="jxr_string">"No.certificate.from.the.SSL.server"</span>,
+<a class="jxr_linenumber" name="L379" href="#L379">379</a>                 <span class="jxr_string">"Ning\u00FAn certificado del servidor SSL"</span>},
+<a class="jxr_linenumber" name="L380" href="#L380">380</a> 
+<a class="jxr_linenumber" name="L381" href="#L381">381</a>         {<span class="jxr_string">".The.integrity.of.the.information.stored.in.your.keystore."</span>,
+<a class="jxr_linenumber" name="L382" href="#L382">382</a>             <span class="jxr_string">"* La integridad de la informaci\u00F3n almacenada en el almac\u00E9n de claves  *\n* NO se ha comprobado.  Para comprobar dicha integridad, *\n* debe proporcionar la contrase\u00F1a del almac\u00E9n de claves.                  *"</span>},
+<a class="jxr_linenumber" name="L383" href="#L383">383</a>         {<span class="jxr_string">".The.integrity.of.the.information.stored.in.the.srckeystore."</span>,
+<a class="jxr_linenumber" name="L384" href="#L384">384</a>             <span class="jxr_string">"* La integridad de la informaci\u00F3n almacenada en srckeystore*\n* NO se ha comprobado.  Para comprobar dicha integridad, *\n* debe proporcionar la contrase\u00F1a de srckeystore.                *"</span>},
+<a class="jxr_linenumber" name="L385" href="#L385">385</a> 
+<a class="jxr_linenumber" name="L386" href="#L386">386</a>         {<span class="jxr_string">"Certificate.reply.does.not.contain.public.key.for.alias."</span>,
+<a class="jxr_linenumber" name="L387" href="#L387">387</a>                 <span class="jxr_string">"La respuesta de certificado no contiene una clave p\u00FAblica para &lt;{0}&gt;"</span>},
+<a class="jxr_linenumber" name="L388" href="#L388">388</a>         {<span class="jxr_string">"Incomplete.certificate.chain.in.reply"</span>,
+<a class="jxr_linenumber" name="L389" href="#L389">389</a>                 <span class="jxr_string">"Cadena de certificado incompleta en la respuesta"</span>},
+<a class="jxr_linenumber" name="L390" href="#L390">390</a>         {<span class="jxr_string">"Certificate.chain.in.reply.does.not.verify."</span>,
+<a class="jxr_linenumber" name="L391" href="#L391">391</a>                 <span class="jxr_string">"La cadena de certificado de la respuesta no verifica: "</span>},
+<a class="jxr_linenumber" name="L392" href="#L392">392</a>         {<span class="jxr_string">"Top.level.certificate.in.reply."</span>,
+<a class="jxr_linenumber" name="L393" href="#L393">393</a>                 <span class="jxr_string">"Certificado de nivel superior en la respuesta:\n"</span>},
+<a class="jxr_linenumber" name="L394" href="#L394">394</a>         {<span class="jxr_string">".is.not.trusted."</span>, <span class="jxr_string">"... no es de confianza. "</span>},
+<a class="jxr_linenumber" name="L395" href="#L395">395</a>         {<span class="jxr_string">"Install.reply.anyway.no."</span>, <span class="jxr_string">"\u00BFInstalar respuesta de todos modos? [no]:  "</span>},
+<a class="jxr_linenumber" name="L396" href="#L396">396</a>         {<span class="jxr_string">"NO"</span>, <span class="jxr_string">"No"</span>},
+<a class="jxr_linenumber" name="L397" href="#L397">397</a>         {<span class="jxr_string">"Public.keys.in.reply.and.keystore.don.t.match"</span>,
+<a class="jxr_linenumber" name="L398" href="#L398">398</a>                 <span class="jxr_string">"Las claves p\u00FAblicas en la respuesta y en el almac\u00E9n de claves no coinciden"</span>},
+<a class="jxr_linenumber" name="L399" href="#L399">399</a>         {<span class="jxr_string">"Certificate.reply.and.certificate.in.keystore.are.identical"</span>,
+<a class="jxr_linenumber" name="L400" href="#L400">400</a>                 <span class="jxr_string">"La respuesta del certificado y el certificado en el almac\u00E9n de claves son id\u00E9nticos"</span>},
+<a class="jxr_linenumber" name="L401" href="#L401">401</a>         {<span class="jxr_string">"Failed.to.establish.chain.from.reply"</span>,
+<a class="jxr_linenumber" name="L402" href="#L402">402</a>                 <span class="jxr_string">"No se ha podido definir una cadena a partir de la respuesta"</span>},
+<a class="jxr_linenumber" name="L403" href="#L403">403</a>         {<span class="jxr_string">"n"</span>, <span class="jxr_string">"n"</span>},
+<a class="jxr_linenumber" name="L404" href="#L404">404</a>         {<span class="jxr_string">"Wrong.answer.try.again"</span>, <span class="jxr_string">"Respuesta incorrecta, vuelva a intentarlo"</span>},
+<a class="jxr_linenumber" name="L405" href="#L405">405</a>         {<span class="jxr_string">"Secret.key.not.generated.alias.alias.already.exists"</span>,
+<a class="jxr_linenumber" name="L406" href="#L406">406</a>                 <span class="jxr_string">"No se ha generado la clave secreta, el alias &lt;{0}&gt; ya existe"</span>},
+<a class="jxr_linenumber" name="L407" href="#L407">407</a>         {<span class="jxr_string">"Please.provide.keysize.for.secret.key.generation"</span>,
+<a class="jxr_linenumber" name="L408" href="#L408">408</a>                 <span class="jxr_string">"Proporcione el valor de -keysize para la generaci\u00F3n de claves secretas"</span>},
+<a class="jxr_linenumber" name="L409" href="#L409">409</a> 
+<a class="jxr_linenumber" name="L410" href="#L410">410</a>         {<span class="jxr_string">"Extensions."</span>, <span class="jxr_string">"Extensiones: "</span>},
+<a class="jxr_linenumber" name="L411" href="#L411">411</a>         {<span class="jxr_string">".Empty.value."</span>, <span class="jxr_string">"(Valor vac\u00EDo)"</span>},
+<a class="jxr_linenumber" name="L412" href="#L412">412</a>         {<span class="jxr_string">"Extension.Request."</span>, <span class="jxr_string">"Solicitud de Extensi\u00F3n:"</span>},
+<a class="jxr_linenumber" name="L413" href="#L413">413</a>         {<span class="jxr_string">"PKCS.10.Certificate.Request.Version.1.0.Subject.s.Public.Key.s.format.s.key."</span>,
+<a class="jxr_linenumber" name="L414" href="#L414">414</a>                 <span class="jxr_string">"Solicitud de Certificado PKCS #10 (Versi\u00F3n 1.0)\nAsunto: %s\nClave P\u00FAblica: %s formato %s clave\n"</span>},
+<a class="jxr_linenumber" name="L415" href="#L415">415</a>         {<span class="jxr_string">"Unknown.keyUsage.type."</span>, <span class="jxr_string">"Tipo de uso de clave desconocido: "</span>},
+<a class="jxr_linenumber" name="L416" href="#L416">416</a>         {<span class="jxr_string">"Unknown.extendedkeyUsage.type."</span>, <span class="jxr_string">"Tipo de uso de clave extendida desconocido: "</span>},
+<a class="jxr_linenumber" name="L417" href="#L417">417</a>         {<span class="jxr_string">"Unknown.AccessDescription.type."</span>, <span class="jxr_string">"Tipo de descripci\u00F3n de acceso desconocido: "</span>},
+<a class="jxr_linenumber" name="L418" href="#L418">418</a>         {<span class="jxr_string">"Unrecognized.GeneralName.type."</span>, <span class="jxr_string">"Tipo de nombre general no reconocido: "</span>},
+<a class="jxr_linenumber" name="L419" href="#L419">419</a>         {<span class="jxr_string">"This.extension.cannot.be.marked.as.critical."</span>,
+<a class="jxr_linenumber" name="L420" href="#L420">420</a>                  <span class="jxr_string">"Esta extensi\u00F3n no se puede marcar como cr\u00EDtica. "</span>},
+<a class="jxr_linenumber" name="L421" href="#L421">421</a>         {<span class="jxr_string">"Odd.number.of.hex.digits.found."</span>, <span class="jxr_string">"Se ha encontrado un n\u00FAmero impar de d\u00EDgitos hexadecimales: "</span>},
+<a class="jxr_linenumber" name="L422" href="#L422">422</a>         {<span class="jxr_string">"Unknown.extension.type."</span>, <span class="jxr_string">"Tipo de extensi\u00F3n desconocida: "</span>},
+<a class="jxr_linenumber" name="L423" href="#L423">423</a>         {<span class="jxr_string">"command.{0}.is.ambiguous."</span>, <span class="jxr_string">"El comando {0} es ambiguo:"</span>},
+<a class="jxr_linenumber" name="L424" href="#L424">424</a> 
+<a class="jxr_linenumber" name="L425" href="#L425">425</a>         <em class="jxr_comment">// policytool</em>
+<a class="jxr_linenumber" name="L426" href="#L426">426</a>         {<span class="jxr_string">"Warning.A.public.key.for.alias.signers.i.does.not.exist.Make.sure.a.KeyStore.is.properly.configured."</span>,
+<a class="jxr_linenumber" name="L427" href="#L427">427</a>                 <span class="jxr_string">"Advertencia: no hay clave p\u00FAblica para el alias {0}. Aseg\u00FArese de que se ha configurado correctamente un almac\u00E9n de claves."</span>},
+<a class="jxr_linenumber" name="L428" href="#L428">428</a>         {<span class="jxr_string">"Warning.Class.not.found.class"</span>, <span class="jxr_string">"Advertencia: no se ha encontrado la clase: {0}"</span>},
+<a class="jxr_linenumber" name="L429" href="#L429">429</a>         {<span class="jxr_string">"Warning.Invalid.argument.s.for.constructor.arg"</span>,
+<a class="jxr_linenumber" name="L430" href="#L430">430</a>                 <span class="jxr_string">"Advertencia: argumento(s) no v\u00E1lido(s) para el constructor: {0}"</span>},
+<a class="jxr_linenumber" name="L431" href="#L431">431</a>         {<span class="jxr_string">"Illegal.Principal.Type.type"</span>, <span class="jxr_string">"Tipo de principal no permitido: {0}"</span>},
+<a class="jxr_linenumber" name="L432" href="#L432">432</a>         {<span class="jxr_string">"Illegal.option.option"</span>, <span class="jxr_string">"Opci\u00F3n no permitida: {0}"</span>},
+<a class="jxr_linenumber" name="L433" href="#L433">433</a>         {<span class="jxr_string">"Usage.policytool.options."</span>, <span class="jxr_string">"Sintaxis: policytool [opciones]"</span>},
+<a class="jxr_linenumber" name="L434" href="#L434">434</a>         {<span class="jxr_string">".file.file.policy.file.location"</span>,
+<a class="jxr_linenumber" name="L435" href="#L435">435</a>                 <span class="jxr_string">"  [-file &lt;archivo&gt;]    ubicaci\u00F3n del archivo de normas"</span>},
+<a class="jxr_linenumber" name="L436" href="#L436">436</a>         {<span class="jxr_string">"New"</span>, <span class="jxr_string">"Nuevo"</span>},
+<a class="jxr_linenumber" name="L437" href="#L437">437</a>         {<span class="jxr_string">"Open"</span>, <span class="jxr_string">"Abrir"</span>},
+<a class="jxr_linenumber" name="L438" href="#L438">438</a>         {<span class="jxr_string">"Save"</span>, <span class="jxr_string">"Guardar"</span>},
+<a class="jxr_linenumber" name="L439" href="#L439">439</a>         {<span class="jxr_string">"Save.As"</span>, <span class="jxr_string">"Guardar como"</span>},
+<a class="jxr_linenumber" name="L440" href="#L440">440</a>         {<span class="jxr_string">"View.Warning.Log"</span>, <span class="jxr_string">"Ver Log de Advertencias"</span>},
+<a class="jxr_linenumber" name="L441" href="#L441">441</a>         {<span class="jxr_string">"Exit"</span>, <span class="jxr_string">"Salir"</span>},
+<a class="jxr_linenumber" name="L442" href="#L442">442</a>         {<span class="jxr_string">"Add.Policy.Entry"</span>, <span class="jxr_string">"Agregar Entrada de Pol\u00EDtica"</span>},
+<a class="jxr_linenumber" name="L443" href="#L443">443</a>         {<span class="jxr_string">"Edit.Policy.Entry"</span>, <span class="jxr_string">"Editar Entrada de Pol\u00EDtica"</span>},
+<a class="jxr_linenumber" name="L444" href="#L444">444</a>         {<span class="jxr_string">"Remove.Policy.Entry"</span>, <span class="jxr_string">"Eliminar Entrada de Pol\u00EDtica"</span>},
+<a class="jxr_linenumber" name="L445" href="#L445">445</a>         {<span class="jxr_string">"Edit"</span>, <span class="jxr_string">"Editar"</span>},
+<a class="jxr_linenumber" name="L446" href="#L446">446</a>         {<span class="jxr_string">"Retain"</span>, <span class="jxr_string">"Mantener"</span>},
+<a class="jxr_linenumber" name="L447" href="#L447">447</a> 
+<a class="jxr_linenumber" name="L448" href="#L448">448</a>         {<span class="jxr_string">"Warning.File.name.may.include.escaped.backslash.characters.It.is.not.necessary.to.escape.backslash.characters.the.tool.escapes"</span>,
+<a class="jxr_linenumber" name="L449" href="#L449">449</a>             <span class="jxr_string">"Advertencia: el nombre del archivo puede contener caracteres de barra invertida de escape. No es necesario utilizar barras invertidas de escape (la herramienta aplica caracteres de escape seg\u00FAn sea necesario al escribir el contenido de las pol\u00EDticas en el almac\u00E9n persistente).\n\nHaga clic en Mantener para conservar el nombre introducido o en Editar para modificarlo."</span>},
+<a class="jxr_linenumber" name="L450" href="#L450">450</a> 
+<a class="jxr_linenumber" name="L451" href="#L451">451</a>         {<span class="jxr_string">"Add.Public.Key.Alias"</span>, <span class="jxr_string">"Agregar Alias de Clave P\u00FAblico"</span>},
+<a class="jxr_linenumber" name="L452" href="#L452">452</a>         {<span class="jxr_string">"Remove.Public.Key.Alias"</span>, <span class="jxr_string">"Eliminar Alias de Clave P\u00FAblico"</span>},
+<a class="jxr_linenumber" name="L453" href="#L453">453</a>         {<span class="jxr_string">"File"</span>, <span class="jxr_string">"Archivo"</span>},
+<a class="jxr_linenumber" name="L454" href="#L454">454</a>         {<span class="jxr_string">"KeyStore"</span>, <span class="jxr_string">"Almac\u00E9n de Claves"</span>},
+<a class="jxr_linenumber" name="L455" href="#L455">455</a>         {<span class="jxr_string">"Policy.File."</span>, <span class="jxr_string">"Archivo de Pol\u00EDtica:"</span>},
+<a class="jxr_linenumber" name="L456" href="#L456">456</a>         {<span class="jxr_string">"Could.not.open.policy.file.policyFile.e.toString."</span>,
+<a class="jxr_linenumber" name="L457" href="#L457">457</a>                 <span class="jxr_string">"No se ha podido abrir el archivo de pol\u00EDtica: {0}: {1}"</span>},
+<a class="jxr_linenumber" name="L458" href="#L458">458</a>         {<span class="jxr_string">"Policy.Tool"</span>, <span class="jxr_string">"Herramienta de Pol\u00EDticas"</span>},
+<a class="jxr_linenumber" name="L459" href="#L459">459</a>         {<span class="jxr_string">"Errors.have.occurred.while.opening.the.policy.configuration.View.the.Warning.Log.for.more.information."</span>,
+<a class="jxr_linenumber" name="L460" href="#L460">460</a>                 <span class="jxr_string">"Ha habido errores al abrir la configuraci\u00F3n de pol\u00EDticas. V\u00E9ase el log de advertencias para obtener m\u00E1s informaci\u00F3n."</span>},
+<a class="jxr_linenumber" name="L461" href="#L461">461</a>         {<span class="jxr_string">"Error"</span>, <span class="jxr_string">"Error"</span>},
+<a class="jxr_linenumber" name="L462" href="#L462">462</a>         {<span class="jxr_string">"OK"</span>, <span class="jxr_string">"Aceptar"</span>},
+<a class="jxr_linenumber" name="L463" href="#L463">463</a>         {<span class="jxr_string">"Status"</span>, <span class="jxr_string">"Estado"</span>},
+<a class="jxr_linenumber" name="L464" href="#L464">464</a>         {<span class="jxr_string">"Warning"</span>, <span class="jxr_string">"Advertencia"</span>},
+<a class="jxr_linenumber" name="L465" href="#L465">465</a>         {<span class="jxr_string">"Permission."</span>,
+<a class="jxr_linenumber" name="L466" href="#L466">466</a>                 <span class="jxr_string">"Permiso:                                                       "</span>},
+<a class="jxr_linenumber" name="L467" href="#L467">467</a>         {<span class="jxr_string">"Principal.Type."</span>, <span class="jxr_string">"Tipo de Principal:"</span>},
+<a class="jxr_linenumber" name="L468" href="#L468">468</a>         {<span class="jxr_string">"Principal.Name."</span>, <span class="jxr_string">"Nombre de Principal:"</span>},
+<a class="jxr_linenumber" name="L469" href="#L469">469</a>         {<span class="jxr_string">"Target.Name."</span>,
+<a class="jxr_linenumber" name="L470" href="#L470">470</a>                 <span class="jxr_string">"Nombre de Destino:                                                    "</span>},
+<a class="jxr_linenumber" name="L471" href="#L471">471</a>         {<span class="jxr_string">"Actions."</span>,
+<a class="jxr_linenumber" name="L472" href="#L472">472</a>                 <span class="jxr_string">"Acciones:                                                             "</span>},
+<a class="jxr_linenumber" name="L473" href="#L473">473</a>         {<span class="jxr_string">"OK.to.overwrite.existing.file.filename."</span>,
+<a class="jxr_linenumber" name="L474" href="#L474">474</a>                 <span class="jxr_string">"\u00BFSobrescribir el archivo existente {0}?"</span>},
+<a class="jxr_linenumber" name="L475" href="#L475">475</a>         {<span class="jxr_string">"Cancel"</span>, <span class="jxr_string">"Cancelar"</span>},
+<a class="jxr_linenumber" name="L476" href="#L476">476</a>         {<span class="jxr_string">"CodeBase."</span>, <span class="jxr_string">"CodeBase:"</span>},
+<a class="jxr_linenumber" name="L477" href="#L477">477</a>         {<span class="jxr_string">"SignedBy."</span>, <span class="jxr_string">"SignedBy:"</span>},
+<a class="jxr_linenumber" name="L478" href="#L478">478</a>         {<span class="jxr_string">"Add.Principal"</span>, <span class="jxr_string">"Agregar Principal"</span>},
+<a class="jxr_linenumber" name="L479" href="#L479">479</a>         {<span class="jxr_string">"Edit.Principal"</span>, <span class="jxr_string">"Editar Principal"</span>},
+<a class="jxr_linenumber" name="L480" href="#L480">480</a>         {<span class="jxr_string">"Remove.Principal"</span>, <span class="jxr_string">"Eliminar Principal"</span>},
+<a class="jxr_linenumber" name="L481" href="#L481">481</a>         {<span class="jxr_string">"Principals."</span>, <span class="jxr_string">"Principales:"</span>},
+<a class="jxr_linenumber" name="L482" href="#L482">482</a>         {<span class="jxr_string">".Add.Permission"</span>, <span class="jxr_string">"  Agregar Permiso"</span>},
+<a class="jxr_linenumber" name="L483" href="#L483">483</a>         {<span class="jxr_string">".Edit.Permission"</span>, <span class="jxr_string">"  Editar Permiso"</span>},
+<a class="jxr_linenumber" name="L484" href="#L484">484</a>         {<span class="jxr_string">"Remove.Permission"</span>, <span class="jxr_string">"Eliminar Permiso"</span>},
+<a class="jxr_linenumber" name="L485" href="#L485">485</a>         {<span class="jxr_string">"Done"</span>, <span class="jxr_string">"Listo"</span>},
+<a class="jxr_linenumber" name="L486" href="#L486">486</a>         {<span class="jxr_string">"KeyStore.URL."</span>, <span class="jxr_string">"URL de Almac\u00E9n de Claves:"</span>},
+<a class="jxr_linenumber" name="L487" href="#L487">487</a>         {<span class="jxr_string">"KeyStore.Type."</span>, <span class="jxr_string">"Tipo de Almac\u00E9n de Claves:"</span>},
+<a class="jxr_linenumber" name="L488" href="#L488">488</a>         {<span class="jxr_string">"KeyStore.Provider."</span>, <span class="jxr_string">"Proveedor de Almac\u00E9n de Claves:"</span>},
+<a class="jxr_linenumber" name="L489" href="#L489">489</a>         {<span class="jxr_string">"KeyStore.Password.URL."</span>, <span class="jxr_string">"URL de Contrase\u00F1a de Almac\u00E9n de Claves:"</span>},
+<a class="jxr_linenumber" name="L490" href="#L490">490</a>         {<span class="jxr_string">"Principals"</span>, <span class="jxr_string">"Principales"</span>},
+<a class="jxr_linenumber" name="L491" href="#L491">491</a>         {<span class="jxr_string">".Edit.Principal."</span>, <span class="jxr_string">"  Editar Principal:"</span>},
+<a class="jxr_linenumber" name="L492" href="#L492">492</a>         {<span class="jxr_string">".Add.New.Principal."</span>, <span class="jxr_string">"  Agregar Nuevo Principal:"</span>},
+<a class="jxr_linenumber" name="L493" href="#L493">493</a>         {<span class="jxr_string">"Permissions"</span>, <span class="jxr_string">"Permisos"</span>},
+<a class="jxr_linenumber" name="L494" href="#L494">494</a>         {<span class="jxr_string">".Edit.Permission."</span>, <span class="jxr_string">"  Editar Permiso:"</span>},
+<a class="jxr_linenumber" name="L495" href="#L495">495</a>         {<span class="jxr_string">".Add.New.Permission."</span>, <span class="jxr_string">"  Agregar Permiso Nuevo:"</span>},
+<a class="jxr_linenumber" name="L496" href="#L496">496</a>         {<span class="jxr_string">"Signed.By."</span>, <span class="jxr_string">"Firmado Por:"</span>},
+<a class="jxr_linenumber" name="L497" href="#L497">497</a>         {<span class="jxr_string">"Cannot.Specify.Principal.with.a.Wildcard.Class.without.a.Wildcard.Name"</span>,
+<a class="jxr_linenumber" name="L498" href="#L498">498</a>             <span class="jxr_string">"No se puede especificar un principal con una clase de comod\u00EDn sin un nombre de comod\u00EDn"</span>},
+<a class="jxr_linenumber" name="L499" href="#L499">499</a>         {<span class="jxr_string">"Cannot.Specify.Principal.without.a.Name"</span>,
+<a class="jxr_linenumber" name="L500" href="#L500">500</a>             <span class="jxr_string">"No se puede especificar el principal sin un nombre"</span>},
+<a class="jxr_linenumber" name="L501" href="#L501">501</a>         {<span class="jxr_string">"Permission.and.Target.Name.must.have.a.value"</span>,
+<a class="jxr_linenumber" name="L502" href="#L502">502</a>                 <span class="jxr_string">"Permiso y Nombre de Destino deben tener un valor"</span>},
+<a class="jxr_linenumber" name="L503" href="#L503">503</a>         {<span class="jxr_string">"Remove.this.Policy.Entry."</span>, <span class="jxr_string">"\u00BFEliminar esta entrada de pol\u00EDtica?"</span>},
+<a class="jxr_linenumber" name="L504" href="#L504">504</a>         {<span class="jxr_string">"Overwrite.File"</span>, <span class="jxr_string">"Sobrescribir Archivo"</span>},
+<a class="jxr_linenumber" name="L505" href="#L505">505</a>         {<span class="jxr_string">"Policy.successfully.written.to.filename"</span>,
+<a class="jxr_linenumber" name="L506" href="#L506">506</a>                 <span class="jxr_string">"Pol\u00EDtica escrita correctamente en {0}"</span>},
+<a class="jxr_linenumber" name="L507" href="#L507">507</a>         {<span class="jxr_string">"null.filename"</span>, <span class="jxr_string">"nombre de archivo nulo"</span>},
+<a class="jxr_linenumber" name="L508" href="#L508">508</a>         {<span class="jxr_string">"Save.changes."</span>, <span class="jxr_string">"\u00BFGuardar los cambios?"</span>},
+<a class="jxr_linenumber" name="L509" href="#L509">509</a>         {<span class="jxr_string">"Yes"</span>, <span class="jxr_string">"S\u00ED"</span>},
+<a class="jxr_linenumber" name="L510" href="#L510">510</a>         {<span class="jxr_string">"No"</span>, <span class="jxr_string">"No"</span>},
+<a class="jxr_linenumber" name="L511" href="#L511">511</a>         {<span class="jxr_string">"Policy.Entry"</span>, <span class="jxr_string">"Entrada de Pol\u00EDtica"</span>},
+<a class="jxr_linenumber" name="L512" href="#L512">512</a>         {<span class="jxr_string">"Save.Changes"</span>, <span class="jxr_string">"Guardar Cambios"</span>},
+<a class="jxr_linenumber" name="L513" href="#L513">513</a>         {<span class="jxr_string">"No.Policy.Entry.selected"</span>, <span class="jxr_string">"No se ha seleccionado la entrada de pol\u00EDtica"</span>},
+<a class="jxr_linenumber" name="L514" href="#L514">514</a>         {<span class="jxr_string">"Unable.to.open.KeyStore.ex.toString."</span>,
+<a class="jxr_linenumber" name="L515" href="#L515">515</a>                 <span class="jxr_string">"No se ha podido abrir el almac\u00E9n de claves: {0}"</span>},
+<a class="jxr_linenumber" name="L516" href="#L516">516</a>         {<span class="jxr_string">"No.principal.selected"</span>, <span class="jxr_string">"No se ha seleccionado un principal"</span>},
+<a class="jxr_linenumber" name="L517" href="#L517">517</a>         {<span class="jxr_string">"No.permission.selected"</span>, <span class="jxr_string">"No se ha seleccionado un permiso"</span>},
+<a class="jxr_linenumber" name="L518" href="#L518">518</a>         {<span class="jxr_string">"name"</span>, <span class="jxr_string">"nombre"</span>},
+<a class="jxr_linenumber" name="L519" href="#L519">519</a>         {<span class="jxr_string">"configuration.type"</span>, <span class="jxr_string">"tipo de configuraci\u00F3n"</span>},
+<a class="jxr_linenumber" name="L520" href="#L520">520</a>         {<span class="jxr_string">"environment.variable.name"</span>, <span class="jxr_string">"nombre de variable de entorno"</span>},
+<a class="jxr_linenumber" name="L521" href="#L521">521</a>         {<span class="jxr_string">"library.name"</span>, <span class="jxr_string">"nombre de la biblioteca"</span>},
+<a class="jxr_linenumber" name="L522" href="#L522">522</a>         {<span class="jxr_string">"package.name"</span>, <span class="jxr_string">"nombre del paquete"</span>},
+<a class="jxr_linenumber" name="L523" href="#L523">523</a>         {<span class="jxr_string">"policy.type"</span>, <span class="jxr_string">"tipo de pol\u00EDtica"</span>},
+<a class="jxr_linenumber" name="L524" href="#L524">524</a>         {<span class="jxr_string">"property.name"</span>, <span class="jxr_string">"nombre de la propiedad"</span>},
+<a class="jxr_linenumber" name="L525" href="#L525">525</a>         {<span class="jxr_string">"Principal.List"</span>, <span class="jxr_string">"Lista de Principales"</span>},
+<a class="jxr_linenumber" name="L526" href="#L526">526</a>         {<span class="jxr_string">"Permission.List"</span>, <span class="jxr_string">"Lista de Permisos"</span>},
+<a class="jxr_linenumber" name="L527" href="#L527">527</a>         {<span class="jxr_string">"Code.Base"</span>, <span class="jxr_string">"Base de C\u00F3digo"</span>},
+<a class="jxr_linenumber" name="L528" href="#L528">528</a>         {<span class="jxr_string">"KeyStore.U.R.L."</span>, <span class="jxr_string">"URL de Almac\u00E9n de Claves:"</span>},
+<a class="jxr_linenumber" name="L529" href="#L529">529</a>         {<span class="jxr_string">"KeyStore.Password.U.R.L."</span>, <span class="jxr_string">"URL de Contrase\u00F1a de Almac\u00E9n de Claves:"</span>},
+<a class="jxr_linenumber" name="L530" href="#L530">530</a> 
+<a class="jxr_linenumber" name="L531" href="#L531">531</a> 
+<a class="jxr_linenumber" name="L532" href="#L532">532</a>         <em class="jxr_comment">// javax.security.auth.PrivateCredentialPermission</em>
+<a class="jxr_linenumber" name="L533" href="#L533">533</a>         {<span class="jxr_string">"invalid.null.input.s."</span>, <span class="jxr_string">"entradas nulas no v\u00E1lidas"</span>},
+<a class="jxr_linenumber" name="L534" href="#L534">534</a>         {<span class="jxr_string">"actions.can.only.be.read."</span>, <span class="jxr_string">"las acciones s\u00F3lo pueden 'leerse'"</span>},
+<a class="jxr_linenumber" name="L535" href="#L535">535</a>         {<span class="jxr_string">"permission.name.name.syntax.invalid."</span>,
+<a class="jxr_linenumber" name="L536" href="#L536">536</a>                 <span class="jxr_string">"sintaxis de nombre de permiso [{0}] no v\u00E1lida: "</span>},
+<a class="jxr_linenumber" name="L537" href="#L537">537</a>         {<span class="jxr_string">"Credential.Class.not.followed.by.a.Principal.Class.and.Name"</span>,
+<a class="jxr_linenumber" name="L538" href="#L538">538</a>                 <span class="jxr_string">"La clase de credencial no va seguida de una clase y nombre de principal"</span>},
+<a class="jxr_linenumber" name="L539" href="#L539">539</a>         {<span class="jxr_string">"Principal.Class.not.followed.by.a.Principal.Name"</span>,
+<a class="jxr_linenumber" name="L540" href="#L540">540</a>                 <span class="jxr_string">"La clase de principal no va seguida de un nombre de principal"</span>},
+<a class="jxr_linenumber" name="L541" href="#L541">541</a>         {<span class="jxr_string">"Principal.Name.must.be.surrounded.by.quotes"</span>,
+<a class="jxr_linenumber" name="L542" href="#L542">542</a>                 <span class="jxr_string">"El nombre de principal debe ir entre comillas"</span>},
+<a class="jxr_linenumber" name="L543" href="#L543">543</a>         {<span class="jxr_string">"Principal.Name.missing.end.quote"</span>,
+<a class="jxr_linenumber" name="L544" href="#L544">544</a>                 <span class="jxr_string">"Faltan las comillas finales en el nombre de principal"</span>},
+<a class="jxr_linenumber" name="L545" href="#L545">545</a>         {<span class="jxr_string">"PrivateCredentialPermission.Principal.Class.can.not.be.a.wildcard.value.if.Principal.Name.is.not.a.wildcard.value"</span>,
+<a class="jxr_linenumber" name="L546" href="#L546">546</a>                 <span class="jxr_string">"La clase de principal PrivateCredentialPermission no puede ser un valor comod\u00EDn (*) si el nombre de principal no lo es tambi\u00E9n"</span>},
+<a class="jxr_linenumber" name="L547" href="#L547">547</a>         {<span class="jxr_string">"CredOwner.Principal.Class.class.Principal.Name.name"</span>,
+<a class="jxr_linenumber" name="L548" href="#L548">548</a>                 <span class="jxr_string">"CredOwner:\n\tClase de Principal = {0}\n\tNombre de Principal = {1}"</span>},
+<a class="jxr_linenumber" name="L549" href="#L549">549</a> 
+<a class="jxr_linenumber" name="L550" href="#L550">550</a>         <em class="jxr_comment">// javax.security.auth.x500</em>
+<a class="jxr_linenumber" name="L551" href="#L551">551</a>         {<span class="jxr_string">"provided.null.name"</span>, <span class="jxr_string">"se ha proporcionado un nombre nulo"</span>},
+<a class="jxr_linenumber" name="L552" href="#L552">552</a>         {<span class="jxr_string">"provided.null.keyword.map"</span>, <span class="jxr_string">"mapa de palabras clave proporcionado nulo"</span>},
+<a class="jxr_linenumber" name="L553" href="#L553">553</a>         {<span class="jxr_string">"provided.null.OID.map"</span>, <span class="jxr_string">"mapa de OID proporcionado nulo"</span>},
+<a class="jxr_linenumber" name="L554" href="#L554">554</a> 
+<a class="jxr_linenumber" name="L555" href="#L555">555</a>         <em class="jxr_comment">// javax.security.auth.Subject</em>
+<a class="jxr_linenumber" name="L556" href="#L556">556</a>         {<span class="jxr_string">"invalid.null.AccessControlContext.provided"</span>,
+<a class="jxr_linenumber" name="L557" href="#L557">557</a>                 <span class="jxr_string">"se ha proporcionado un AccessControlContext nulo no v\u00E1lido"</span>},
+<a class="jxr_linenumber" name="L558" href="#L558">558</a>         {<span class="jxr_string">"invalid.null.action.provided"</span>, <span class="jxr_string">"se ha proporcionado una acci\u00F3n nula no v\u00E1lida"</span>},
+<a class="jxr_linenumber" name="L559" href="#L559">559</a>         {<span class="jxr_string">"invalid.null.Class.provided"</span>, <span class="jxr_string">"se ha proporcionado una clase nula no v\u00E1lida"</span>},
+<a class="jxr_linenumber" name="L560" href="#L560">560</a>         {<span class="jxr_string">"Subject."</span>, <span class="jxr_string">"Asunto:\n"</span>},
+<a class="jxr_linenumber" name="L561" href="#L561">561</a>         {<span class="jxr_string">".Principal."</span>, <span class="jxr_string">"\tPrincipal: "</span>},
+<a class="jxr_linenumber" name="L562" href="#L562">562</a>         {<span class="jxr_string">".Public.Credential."</span>, <span class="jxr_string">"\tCredencial P\u00FAblica: "</span>},
+<a class="jxr_linenumber" name="L563" href="#L563">563</a>         {<span class="jxr_string">".Private.Credentials.inaccessible."</span>,
+<a class="jxr_linenumber" name="L564" href="#L564">564</a>                 <span class="jxr_string">"\tCredenciales Privadas Inaccesibles\n"</span>},
+<a class="jxr_linenumber" name="L565" href="#L565">565</a>         {<span class="jxr_string">".Private.Credential."</span>, <span class="jxr_string">"\tCredencial Privada: "</span>},
+<a class="jxr_linenumber" name="L566" href="#L566">566</a>         {<span class="jxr_string">".Private.Credential.inaccessible."</span>,
+<a class="jxr_linenumber" name="L567" href="#L567">567</a>                 <span class="jxr_string">"\tCredencial Privada Inaccesible\n"</span>},
+<a class="jxr_linenumber" name="L568" href="#L568">568</a>         {<span class="jxr_string">"Subject.is.read.only"</span>, <span class="jxr_string">"El asunto es de s\u00F3lo lectura"</span>},
+<a class="jxr_linenumber" name="L569" href="#L569">569</a>         {<span class="jxr_string">"attempting.to.add.an.object.which.is.not.an.instance.of.java.security.Principal.to.a.Subject.s.Principal.Set"</span>,
+<a class="jxr_linenumber" name="L570" href="#L570">570</a>                 <span class="jxr_string">"intentando agregar un objeto que no es una instancia de java.security.Principal al juego principal de un asunto"</span>},
+<a class="jxr_linenumber" name="L571" href="#L571">571</a>         {<span class="jxr_string">"attempting.to.add.an.object.which.is.not.an.instance.of.class"</span>,
+<a class="jxr_linenumber" name="L572" href="#L572">572</a>                 <span class="jxr_string">"intentando agregar un objeto que no es una instancia de {0}"</span>},
+<a class="jxr_linenumber" name="L573" href="#L573">573</a> 
+<a class="jxr_linenumber" name="L574" href="#L574">574</a>         <em class="jxr_comment">// javax.security.auth.login.AppConfigurationEntry</em>
+<a class="jxr_linenumber" name="L575" href="#L575">575</a>         {<span class="jxr_string">"LoginModuleControlFlag."</span>, <span class="jxr_string">"LoginModuleControlFlag: "</span>},
+<a class="jxr_linenumber" name="L576" href="#L576">576</a> 
+<a class="jxr_linenumber" name="L577" href="#L577">577</a>         <em class="jxr_comment">// javax.security.auth.login.LoginContext</em>
+<a class="jxr_linenumber" name="L578" href="#L578">578</a>         {<span class="jxr_string">"Invalid.null.input.name"</span>, <span class="jxr_string">"Entrada nula no v\u00E1lida: nombre"</span>},
+<a class="jxr_linenumber" name="L579" href="#L579">579</a>         {<span class="jxr_string">"No.LoginModules.configured.for.name"</span>,
+<a class="jxr_linenumber" name="L580" href="#L580">580</a>          <span class="jxr_string">"No se han configurado LoginModules para {0}"</span>},
+<a class="jxr_linenumber" name="L581" href="#L581">581</a>         {<span class="jxr_string">"invalid.null.Subject.provided"</span>, <span class="jxr_string">"se ha proporcionado un asunto nulo no v\u00E1lido"</span>},
+<a class="jxr_linenumber" name="L582" href="#L582">582</a>         {<span class="jxr_string">"invalid.null.CallbackHandler.provided"</span>,
+<a class="jxr_linenumber" name="L583" href="#L583">583</a>                 <span class="jxr_string">"se ha proporcionado CallbackHandler nulo no v\u00E1lido"</span>},
+<a class="jxr_linenumber" name="L584" href="#L584">584</a>         {<span class="jxr_string">"null.subject.logout.called.before.login"</span>,
+<a class="jxr_linenumber" name="L585" href="#L585">585</a>                 <span class="jxr_string">"asunto nulo - se ha llamado al cierre de sesi\u00F3n antes del inicio de sesi\u00F3n"</span>},
+<a class="jxr_linenumber" name="L586" href="#L586">586</a>         {<span class="jxr_string">"unable.to.instantiate.LoginModule.module.because.it.does.not.provide.a.no.argument.constructor"</span>,
+<a class="jxr_linenumber" name="L587" href="#L587">587</a>                 <span class="jxr_string">"no se ha podido instanciar LoginModule, {0}, porque no incluye un constructor sin argumentos"</span>},
+<a class="jxr_linenumber" name="L588" href="#L588">588</a>         {<span class="jxr_string">"unable.to.instantiate.LoginModule"</span>,
+<a class="jxr_linenumber" name="L589" href="#L589">589</a>                 <span class="jxr_string">"no se ha podido instanciar LoginModule"</span>},
+<a class="jxr_linenumber" name="L590" href="#L590">590</a>         {<span class="jxr_string">"unable.to.instantiate.LoginModule."</span>,
+<a class="jxr_linenumber" name="L591" href="#L591">591</a>                 <span class="jxr_string">"no se ha podido instanciar LoginModule: "</span>},
+<a class="jxr_linenumber" name="L592" href="#L592">592</a>         {<span class="jxr_string">"unable.to.find.LoginModule.class."</span>,
+<a class="jxr_linenumber" name="L593" href="#L593">593</a>                 <span class="jxr_string">"no se ha encontrado la clase LoginModule: "</span>},
+<a class="jxr_linenumber" name="L594" href="#L594">594</a>         {<span class="jxr_string">"unable.to.access.LoginModule."</span>,
+<a class="jxr_linenumber" name="L595" href="#L595">595</a>                 <span class="jxr_string">"no se ha podido acceder a LoginModule: "</span>},
+<a class="jxr_linenumber" name="L596" href="#L596">596</a>         {<span class="jxr_string">"Login.Failure.all.modules.ignored"</span>,
+<a class="jxr_linenumber" name="L597" href="#L597">597</a>                 <span class="jxr_string">"Fallo en inicio de sesi\u00F3n: se han ignorado todos los m\u00F3dulos"</span>},
+<a class="jxr_linenumber" name="L598" href="#L598">598</a> 
+<a class="jxr_linenumber" name="L599" href="#L599">599</a>         <em class="jxr_comment">// sun.security.provider.PolicyFile</em>
+<a class="jxr_linenumber" name="L600" href="#L600">600</a> 
+<a class="jxr_linenumber" name="L601" href="#L601">601</a>         {<span class="jxr_string">"java.security.policy.error.parsing.policy.message"</span>,
+<a class="jxr_linenumber" name="L602" href="#L602">602</a>                 <span class="jxr_string">"java.security.policy: error de an\u00E1lisis de {0}:\n\t{1}"</span>},
+<a class="jxr_linenumber" name="L603" href="#L603">603</a>         {<span class="jxr_string">"java.security.policy.error.adding.Permission.perm.message"</span>,
+<a class="jxr_linenumber" name="L604" href="#L604">604</a>                 <span class="jxr_string">"java.security.policy: error al agregar un permiso, {0}:\n\t{1}"</span>},
+<a class="jxr_linenumber" name="L605" href="#L605">605</a>         {<span class="jxr_string">"java.security.policy.error.adding.Entry.message"</span>,
+<a class="jxr_linenumber" name="L606" href="#L606">606</a>                 <span class="jxr_string">"java.security.policy: error al agregar una entrada:\n\t{0}"</span>},
+<a class="jxr_linenumber" name="L607" href="#L607">607</a>         {<span class="jxr_string">"alias.name.not.provided.pe.name."</span>, <span class="jxr_string">"no se ha proporcionado el nombre de alias ({0})"</span>},
+<a class="jxr_linenumber" name="L608" href="#L608">608</a>         {<span class="jxr_string">"unable.to.perform.substitution.on.alias.suffix"</span>,
+<a class="jxr_linenumber" name="L609" href="#L609">609</a>                 <span class="jxr_string">"no se puede realizar la sustituci\u00F3n en el alias, {0}"</span>},
+<a class="jxr_linenumber" name="L610" href="#L610">610</a>         {<span class="jxr_string">"substitution.value.prefix.unsupported"</span>,
+<a class="jxr_linenumber" name="L611" href="#L611">611</a>                 <span class="jxr_string">"valor de sustituci\u00F3n, {0}, no soportado"</span>},
+<a class="jxr_linenumber" name="L612" href="#L612">612</a>         {<span class="jxr_string">"LPARAM"</span>, <span class="jxr_string">"("</span>},
+<a class="jxr_linenumber" name="L613" href="#L613">613</a>         {<span class="jxr_string">"RPARAM"</span>, <span class="jxr_string">")"</span>},
+<a class="jxr_linenumber" name="L614" href="#L614">614</a>         {<span class="jxr_string">"type.can.t.be.null"</span>,<span class="jxr_string">"el tipo no puede ser nulo"</span>},
+<a class="jxr_linenumber" name="L615" href="#L615">615</a> 
+<a class="jxr_linenumber" name="L616" href="#L616">616</a>         <em class="jxr_comment">// sun.security.provider.PolicyParser</em>
+<a class="jxr_linenumber" name="L617" href="#L617">617</a>         {<span class="jxr_string">"keystorePasswordURL.can.not.be.specified.without.also.specifying.keystore"</span>,
+<a class="jxr_linenumber" name="L618" href="#L618">618</a>                 <span class="jxr_string">"keystorePasswordURL no puede especificarse sin especificar tambi\u00E9n el almac\u00E9n de claves"</span>},
+<a class="jxr_linenumber" name="L619" href="#L619">619</a>         {<span class="jxr_string">"expected.keystore.type"</span>, <span class="jxr_string">"se esperaba un tipo de almac\u00E9n de claves"</span>},
+<a class="jxr_linenumber" name="L620" href="#L620">620</a>         {<span class="jxr_string">"expected.keystore.provider"</span>, <span class="jxr_string">"se esperaba un proveedor de almac\u00E9n de claves"</span>},
+<a class="jxr_linenumber" name="L621" href="#L621">621</a>         {<span class="jxr_string">"multiple.Codebase.expressions"</span>,
+<a class="jxr_linenumber" name="L622" href="#L622">622</a>                 <span class="jxr_string">"expresiones m\u00FAltiples de CodeBase"</span>},
+<a class="jxr_linenumber" name="L623" href="#L623">623</a>         {<span class="jxr_string">"multiple.SignedBy.expressions"</span>,<span class="jxr_string">"expresiones m\u00FAltiples de SignedBy"</span>},
+<a class="jxr_linenumber" name="L624" href="#L624">624</a>         {<span class="jxr_string">"SignedBy.has.empty.alias"</span>,<span class="jxr_string">"SignedBy tiene un alias vac\u00EDo"</span>},
+<a class="jxr_linenumber" name="L625" href="#L625">625</a>         {<span class="jxr_string">"can.not.specify.Principal.with.a.wildcard.class.without.a.wildcard.name"</span>,
+<a class="jxr_linenumber" name="L626" href="#L626">626</a>                 <span class="jxr_string">"no se puede especificar Principal con una clase de comod\u00EDn sin un nombre de comod\u00EDn"</span>},
+<a class="jxr_linenumber" name="L627" href="#L627">627</a>         {<span class="jxr_string">"expected.codeBase.or.SignedBy.or.Principal"</span>,
+<a class="jxr_linenumber" name="L628" href="#L628">628</a>                 <span class="jxr_string">"se esperaba codeBase o SignedBy o Principal"</span>},
+<a class="jxr_linenumber" name="L629" href="#L629">629</a>         {<span class="jxr_string">"expected.permission.entry"</span>, <span class="jxr_string">"se esperaba una entrada de permiso"</span>},
+<a class="jxr_linenumber" name="L630" href="#L630">630</a>         {<span class="jxr_string">"number."</span>, <span class="jxr_string">"n\u00FAmero "</span>},
+<a class="jxr_linenumber" name="L631" href="#L631">631</a>         {<span class="jxr_string">"expected.expect.read.end.of.file."</span>,
+<a class="jxr_linenumber" name="L632" href="#L632">632</a>                 <span class="jxr_string">"se esperaba [{0}], se ha le\u00EDdo [final de archivo]"</span>},
+<a class="jxr_linenumber" name="L633" href="#L633">633</a>         {<span class="jxr_string">"expected.read.end.of.file."</span>,
+<a class="jxr_linenumber" name="L634" href="#L634">634</a>                 <span class="jxr_string">"se esperaba [;], se ha le\u00EDdo [final de archivo]"</span>},
+<a class="jxr_linenumber" name="L635" href="#L635">635</a>         {<span class="jxr_string">"line.number.msg"</span>, <span class="jxr_string">"l\u00EDnea {0}: {1}"</span>},
+<a class="jxr_linenumber" name="L636" href="#L636">636</a>         {<span class="jxr_string">"line.number.expected.expect.found.actual."</span>,
+<a class="jxr_linenumber" name="L637" href="#L637">637</a>                 <span class="jxr_string">"l\u00EDnea {0}: se esperaba [{1}], se ha encontrado [{2}]"</span>},
+<a class="jxr_linenumber" name="L638" href="#L638">638</a>         {<span class="jxr_string">"null.principalClass.or.principalName"</span>,
+<a class="jxr_linenumber" name="L639" href="#L639">639</a>                 <span class="jxr_string">"principalClass o principalName nulos"</span>},
+<a class="jxr_linenumber" name="L640" href="#L640">640</a> 
+<a class="jxr_linenumber" name="L641" href="#L641">641</a>         <em class="jxr_comment">// sun.security.pkcs11.SunPKCS11</em>
+<a class="jxr_linenumber" name="L642" href="#L642">642</a>         {<span class="jxr_string">"PKCS11.Token.providerName.Password."</span>,
+<a class="jxr_linenumber" name="L643" href="#L643">643</a>                 <span class="jxr_string">"Contrase\u00F1a del Elemento PKCS11 [{0}]: "</span>},
+<a class="jxr_linenumber" name="L644" href="#L644">644</a> 
+<a class="jxr_linenumber" name="L645" href="#L645">645</a>         <em class="jxr_comment">/* --- DEPRECATED --- */</em>
+<a class="jxr_linenumber" name="L646" href="#L646">646</a>         <em class="jxr_comment">// javax.security.auth.Policy</em>
+<a class="jxr_linenumber" name="L647" href="#L647">647</a>         {<span class="jxr_string">"unable.to.instantiate.Subject.based.policy"</span>,
+<a class="jxr_linenumber" name="L648" href="#L648">648</a>                 <span class="jxr_string">"no se ha podido instanciar una pol\u00EDtica basada en asunto"</span>}
+<a class="jxr_linenumber" name="L649" href="#L649">649</a>     };
+<a class="jxr_linenumber" name="L650" href="#L650">650</a> 
+<a class="jxr_linenumber" name="L651" href="#L651">651</a> 
+<a class="jxr_linenumber" name="L652" href="#L652">652</a>     <em class="jxr_javadoccomment">/**</em>
+<a class="jxr_linenumber" name="L653" href="#L653">653</a> <em class="jxr_javadoccomment">     * Returns the contents of this &lt;code&gt;ResourceBundle&lt;/code&gt;.</em>
+<a class="jxr_linenumber" name="L654" href="#L654">654</a> <em class="jxr_javadoccomment">     *</em>
+<a class="jxr_linenumber" name="L655" href="#L655">655</a> <em class="jxr_javadoccomment">     * &lt;p&gt;</em>
+<a class="jxr_linenumber" name="L656" href="#L656">656</a> <em class="jxr_javadoccomment">     *</em>
+<a class="jxr_linenumber" name="L657" href="#L657">657</a> <em class="jxr_javadoccomment">     * @return the contents of this &lt;code&gt;ResourceBundle&lt;/code&gt;.</em>
+<a class="jxr_linenumber" name="L658" href="#L658">658</a> <em class="jxr_javadoccomment">     */</em>
+<a class="jxr_linenumber" name="L659" href="#L659">659</a>     <strong class="jxr_keyword">public</strong> Object[][] getContents() {
+<a class="jxr_linenumber" name="L660" href="#L660">660</a>         <strong class="jxr_keyword">return</strong> contents;
+<a class="jxr_linenumber" name="L661" href="#L661">661</a>     }
+<a class="jxr_linenumber" name="L662" href="#L662">662</a> }
+<a class="jxr_linenumber" name="L663" href="#L663">663</a> 
+</pre>
+<hr/>
+<div id="footer"></div>
+</body>
+</html>

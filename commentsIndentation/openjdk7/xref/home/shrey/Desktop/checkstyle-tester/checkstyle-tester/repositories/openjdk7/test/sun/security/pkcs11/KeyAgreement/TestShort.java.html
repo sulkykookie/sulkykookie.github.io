@@ -1,0 +1,156 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head><meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+<title>TestShort xref</title>
+<link type="text/css" rel="stylesheet" href="../stylesheet.css" />
+</head>
+<body>
+<pre>
+<a class="jxr_linenumber" name="L1" href="#L1">1</a>   <em class="jxr_comment">/*</em>
+<a class="jxr_linenumber" name="L2" href="#L2">2</a>   <em class="jxr_comment"> * Copyright (c) 2003, Oracle and/or its affiliates. All rights reserved.</em>
+<a class="jxr_linenumber" name="L3" href="#L3">3</a>   <em class="jxr_comment"> * DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS FILE HEADER.</em>
+<a class="jxr_linenumber" name="L4" href="#L4">4</a>   <em class="jxr_comment"> *</em>
+<a class="jxr_linenumber" name="L5" href="#L5">5</a>   <em class="jxr_comment"> * This code is free software; you can redistribute it and/or modify it</em>
+<a class="jxr_linenumber" name="L6" href="#L6">6</a>   <em class="jxr_comment"> * under the terms of the GNU General Public License version 2 only, as</em>
+<a class="jxr_linenumber" name="L7" href="#L7">7</a>   <em class="jxr_comment"> * published by the Free Software Foundation.</em>
+<a class="jxr_linenumber" name="L8" href="#L8">8</a>   <em class="jxr_comment"> *</em>
+<a class="jxr_linenumber" name="L9" href="#L9">9</a>   <em class="jxr_comment"> * This code is distributed in the hope that it will be useful, but WITHOUT</em>
+<a class="jxr_linenumber" name="L10" href="#L10">10</a>  <em class="jxr_comment"> * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or</em>
+<a class="jxr_linenumber" name="L11" href="#L11">11</a>  <em class="jxr_comment"> * FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License</em>
+<a class="jxr_linenumber" name="L12" href="#L12">12</a>  <em class="jxr_comment"> * version 2 for more details (a copy is included in the LICENSE file that</em>
+<a class="jxr_linenumber" name="L13" href="#L13">13</a>  <em class="jxr_comment"> * accompanied this code).</em>
+<a class="jxr_linenumber" name="L14" href="#L14">14</a>  <em class="jxr_comment"> *</em>
+<a class="jxr_linenumber" name="L15" href="#L15">15</a>  <em class="jxr_comment"> * You should have received a copy of the GNU General Public License version</em>
+<a class="jxr_linenumber" name="L16" href="#L16">16</a>  <em class="jxr_comment"> * 2 along with this work; if not, write to the Free Software Foundation,</em>
+<a class="jxr_linenumber" name="L17" href="#L17">17</a>  <em class="jxr_comment"> * Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301 USA.</em>
+<a class="jxr_linenumber" name="L18" href="#L18">18</a>  <em class="jxr_comment"> *</em>
+<a class="jxr_linenumber" name="L19" href="#L19">19</a>  <em class="jxr_comment"> * Please contact Oracle, 500 Oracle Parkway, Redwood Shores, CA 94065 USA</em>
+<a class="jxr_linenumber" name="L20" href="#L20">20</a>  <em class="jxr_comment"> * or visit www.oracle.com if you need additional information or have any</em>
+<a class="jxr_linenumber" name="L21" href="#L21">21</a>  <em class="jxr_comment"> * questions.</em>
+<a class="jxr_linenumber" name="L22" href="#L22">22</a>  <em class="jxr_comment"> */</em>
+<a class="jxr_linenumber" name="L23" href="#L23">23</a>  
+<a class="jxr_linenumber" name="L24" href="#L24">24</a>  <em class="jxr_javadoccomment">/**</em>
+<a class="jxr_linenumber" name="L25" href="#L25">25</a>  <em class="jxr_javadoccomment"> * @test</em>
+<a class="jxr_linenumber" name="L26" href="#L26">26</a>  <em class="jxr_javadoccomment"> * @bug 4942494</em>
+<a class="jxr_linenumber" name="L27" href="#L27">27</a>  <em class="jxr_javadoccomment"> * @summary KAT test for DH (normal and with secret that has leading a 0x00 byte)</em>
+<a class="jxr_linenumber" name="L28" href="#L28">28</a>  <em class="jxr_javadoccomment"> * @author Andreas Sterbenz</em>
+<a class="jxr_linenumber" name="L29" href="#L29">29</a>  <em class="jxr_javadoccomment"> * @library ..</em>
+<a class="jxr_linenumber" name="L30" href="#L30">30</a>  <em class="jxr_javadoccomment"> */</em>
+<a class="jxr_linenumber" name="L31" href="#L31">31</a>  
+<a class="jxr_linenumber" name="L32" href="#L32">32</a>  <strong class="jxr_keyword">import</strong> java.math.BigInteger;
+<a class="jxr_linenumber" name="L33" href="#L33">33</a>  <strong class="jxr_keyword">import</strong> java.util.*;
+<a class="jxr_linenumber" name="L34" href="#L34">34</a>  
+<a class="jxr_linenumber" name="L35" href="#L35">35</a>  <strong class="jxr_keyword">import</strong> java.security.*;
+<a class="jxr_linenumber" name="L36" href="#L36">36</a>  
+<a class="jxr_linenumber" name="L37" href="#L37">37</a>  <strong class="jxr_keyword">import</strong> javax.crypto.*;
+<a class="jxr_linenumber" name="L38" href="#L38">38</a>  <strong class="jxr_keyword">import</strong> javax.crypto.spec.*;
+<a class="jxr_linenumber" name="L39" href="#L39">39</a>  
+<a class="jxr_linenumber" name="L40" href="#L40">40</a>  <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">class</strong> TestShort <strong class="jxr_keyword">extends</strong> PKCS11Test {
+<a class="jxr_linenumber" name="L41" href="#L41">41</a>  
+<a class="jxr_linenumber" name="L42" href="#L42">42</a>      <strong class="jxr_keyword">private</strong> <strong class="jxr_keyword">final</strong> <strong class="jxr_keyword">static</strong> BigInteger p = <strong class="jxr_keyword">new</strong> BigInteger
+<a class="jxr_linenumber" name="L43" href="#L43">43</a>      (<span class="jxr_string">"132323768951986124075479307182674357577285270296234088722451560397577130"</span>
+<a class="jxr_linenumber" name="L44" href="#L44">44</a>      + <span class="jxr_string">"29036368719146452186041204237350521785240337048752071462798273003935646"</span>
+<a class="jxr_linenumber" name="L45" href="#L45">45</a>      + <span class="jxr_string">"236777459223"</span>);
+<a class="jxr_linenumber" name="L46" href="#L46">46</a>  
+<a class="jxr_linenumber" name="L47" href="#L47">47</a>      <strong class="jxr_keyword">private</strong> <strong class="jxr_keyword">final</strong> <strong class="jxr_keyword">static</strong> BigInteger g = <strong class="jxr_keyword">new</strong> BigInteger
+<a class="jxr_linenumber" name="L48" href="#L48">48</a>      (<span class="jxr_string">"542164405743647514160964848832570512804742839438047437683466730076610826"</span>
+<a class="jxr_linenumber" name="L49" href="#L49">49</a>      + <span class="jxr_string">"26139005426812890807137245973106730741193551360857959820973906708903671"</span>
+<a class="jxr_linenumber" name="L50" href="#L50">50</a>      + <span class="jxr_string">"85141189796"</span>);
+<a class="jxr_linenumber" name="L51" href="#L51">51</a>  
+<a class="jxr_linenumber" name="L52" href="#L52">52</a>      <strong class="jxr_keyword">private</strong> <strong class="jxr_keyword">final</strong> <strong class="jxr_keyword">static</strong> BigInteger y1 = <strong class="jxr_keyword">new</strong> BigInteger
+<a class="jxr_linenumber" name="L53" href="#L53">53</a>      (<span class="jxr_string">"917822587297202019713917824657175324360828836418754472207798053179332700"</span>
+<a class="jxr_linenumber" name="L54" href="#L54">54</a>      + <span class="jxr_string">"39938196470323405362414543604756313574842317687108720161868374135893507"</span>
+<a class="jxr_linenumber" name="L55" href="#L55">55</a>      + <span class="jxr_string">"32549013008"</span>);
+<a class="jxr_linenumber" name="L56" href="#L56">56</a>  
+<a class="jxr_linenumber" name="L57" href="#L57">57</a>      <strong class="jxr_keyword">private</strong> <strong class="jxr_keyword">final</strong> <strong class="jxr_keyword">static</strong> BigInteger x1 = <strong class="jxr_keyword">new</strong> BigInteger
+<a class="jxr_linenumber" name="L58" href="#L58">58</a>      (<span class="jxr_string">"44680539865608058021525420137770558786664900449"</span>);
+<a class="jxr_linenumber" name="L59" href="#L59">59</a>  
+<a class="jxr_linenumber" name="L60" href="#L60">60</a>      <strong class="jxr_keyword">private</strong> <strong class="jxr_keyword">final</strong> <strong class="jxr_keyword">static</strong> BigInteger y2 = <strong class="jxr_keyword">new</strong> BigInteger
+<a class="jxr_linenumber" name="L61" href="#L61">61</a>      (<span class="jxr_string">"971516093764754129400636279042779828227876735997548759620533874940954728"</span>
+<a class="jxr_linenumber" name="L62" href="#L62">62</a>      + <span class="jxr_string">"96003923584532197641582422156725687657451980378160229472095259392582713"</span>
+<a class="jxr_linenumber" name="L63" href="#L63">63</a>      + <span class="jxr_string">"54693857368"</span>);
+<a class="jxr_linenumber" name="L64" href="#L64">64</a>  
+<a class="jxr_linenumber" name="L65" href="#L65">65</a>      <strong class="jxr_keyword">private</strong> <strong class="jxr_keyword">final</strong> <strong class="jxr_keyword">static</strong> BigInteger x2 = <strong class="jxr_keyword">new</strong> BigInteger
+<a class="jxr_linenumber" name="L66" href="#L66">66</a>      (<span class="jxr_string">"433011588852527167500079509018272713204454720683"</span>);
+<a class="jxr_linenumber" name="L67" href="#L67">67</a>  
+<a class="jxr_linenumber" name="L68" href="#L68">68</a>      <strong class="jxr_keyword">private</strong> <strong class="jxr_keyword">final</strong> <strong class="jxr_keyword">static</strong> byte[] s2 = parse
+<a class="jxr_linenumber" name="L69" href="#L69">69</a>      (<span class="jxr_string">"19:c7:f1:bb:2e:3d:93:fa:02:d2:e9:9f:75:32:b9:e6:7a:a0:4a:10:45:81:d4:2b:"</span>
+<a class="jxr_linenumber" name="L70" href="#L70">70</a>      + <span class="jxr_string">"e2:77:4c:70:41:39:7c:19:fa:65:64:47:49:8a:ad:0a:fa:9d:e9:62:68:97:c5:52"</span>
+<a class="jxr_linenumber" name="L71" href="#L71">71</a>      + <span class="jxr_string">":b1:37:03:d9:cd:aa:e1:bd:7e:71:0c:fc:15:a1:95"</span>);
+<a class="jxr_linenumber" name="L72" href="#L72">72</a>  
+<a class="jxr_linenumber" name="L73" href="#L73">73</a>      <strong class="jxr_keyword">private</strong> <strong class="jxr_keyword">final</strong> <strong class="jxr_keyword">static</strong> BigInteger y3 = <strong class="jxr_keyword">new</strong> BigInteger
+<a class="jxr_linenumber" name="L74" href="#L74">74</a>      (<span class="jxr_string">"487191942830952492045314176949691887949505843590154039270855000076570641"</span>
+<a class="jxr_linenumber" name="L75" href="#L75">75</a>      + <span class="jxr_string">"84133173374554778014985281423493547105556633876312739488944445812738030"</span>
+<a class="jxr_linenumber" name="L76" href="#L76">76</a>      + <span class="jxr_string">"00691614787"</span>);
+<a class="jxr_linenumber" name="L77" href="#L77">77</a>  
+<a class="jxr_linenumber" name="L78" href="#L78">78</a>      <strong class="jxr_keyword">private</strong> <strong class="jxr_keyword">final</strong> <strong class="jxr_keyword">static</strong> BigInteger x3 = <strong class="jxr_keyword">new</strong> BigInteger
+<a class="jxr_linenumber" name="L79" href="#L79">79</a>      (<span class="jxr_string">"1105612503769813327556221318510360767544481637404"</span>);
+<a class="jxr_linenumber" name="L80" href="#L80">80</a>  
+<a class="jxr_linenumber" name="L81" href="#L81">81</a>      <strong class="jxr_keyword">private</strong> <strong class="jxr_keyword">final</strong> <strong class="jxr_keyword">static</strong> byte[] s3 = parse
+<a class="jxr_linenumber" name="L82" href="#L82">82</a>      (<span class="jxr_string">"98:62:f3:e4:ff:2b:8d:8a:5a:20:fe:52:35:56:73:09:8e:b3:e2:cb:e2:45:e5:b7:"</span>
+<a class="jxr_linenumber" name="L83" href="#L83">83</a>      + <span class="jxr_string">"1a:6a:15:d8:a4:8c:0a:ce:f0:15:03:0c:c2:56:82:a2:75:9b:49:fe:ed:60:c5:6e"</span>
+<a class="jxr_linenumber" name="L84" href="#L84">84</a>      + <span class="jxr_string">":de:47:55:62:4f:16:20:6d:74:cc:7b:95:93:25:2c:ea"</span>);
+<a class="jxr_linenumber" name="L85" href="#L85">85</a>  
+<a class="jxr_linenumber" name="L86" href="#L86">86</a>      <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">void</strong> main(Provider provider) <strong class="jxr_keyword">throws</strong> Exception {
+<a class="jxr_linenumber" name="L87" href="#L87">87</a>          <strong class="jxr_keyword">if</strong> (provider.getService(<span class="jxr_string">"KeyAgreement"</span>, <span class="jxr_string">"DH"</span>) == <strong class="jxr_keyword">null</strong>) {
+<a class="jxr_linenumber" name="L88" href="#L88">88</a>              System.out.println(<span class="jxr_string">"DH not supported, skipping"</span>);
+<a class="jxr_linenumber" name="L89" href="#L89">89</a>              <strong class="jxr_keyword">return</strong>;
+<a class="jxr_linenumber" name="L90" href="#L90">90</a>          }
+<a class="jxr_linenumber" name="L91" href="#L91">91</a>          DHPublicKeySpec publicSpec;
+<a class="jxr_linenumber" name="L92" href="#L92">92</a>          DHPrivateKeySpec privateSpec;
+<a class="jxr_linenumber" name="L93" href="#L93">93</a>          KeyFactory kf = KeyFactory.getInstance(<span class="jxr_string">"DH"</span>, provider);
+<a class="jxr_linenumber" name="L94" href="#L94">94</a>          KeyAgreement ka = KeyAgreement.getInstance(<span class="jxr_string">"DH"</span>, provider);
+<a class="jxr_linenumber" name="L95" href="#L95">95</a>  <em class="jxr_comment">//      KeyAgreement ka = KeyAgreement.getInstance("DH");</em>
+<a class="jxr_linenumber" name="L96" href="#L96">96</a>  
+<a class="jxr_linenumber" name="L97" href="#L97">97</a>          PrivateKey pr1 = kf.generatePrivate(<strong class="jxr_keyword">new</strong> DHPrivateKeySpec(x1, p, g));
+<a class="jxr_linenumber" name="L98" href="#L98">98</a>          PublicKey pu2 = kf.generatePublic(<strong class="jxr_keyword">new</strong> DHPublicKeySpec(y2, p, g));
+<a class="jxr_linenumber" name="L99" href="#L99">99</a>          PublicKey pu3 = kf.generatePublic(<strong class="jxr_keyword">new</strong> DHPublicKeySpec(y3, p, g));
+<a class="jxr_linenumber" name="L100" href="#L100">100</a> 
+<a class="jxr_linenumber" name="L101" href="#L101">101</a>         ka.init(pr1);
+<a class="jxr_linenumber" name="L102" href="#L102">102</a>         ka.doPhase(pu2, <strong class="jxr_keyword">true</strong>);
+<a class="jxr_linenumber" name="L103" href="#L103">103</a>         byte[] n2 = ka.generateSecret();
+<a class="jxr_linenumber" name="L104" href="#L104">104</a>         <strong class="jxr_keyword">if</strong> (Arrays.equals(s2, n2) == false) {
+<a class="jxr_linenumber" name="L105" href="#L105">105</a>             <strong class="jxr_keyword">throw</strong> <strong class="jxr_keyword">new</strong> Exception(<span class="jxr_string">"mismatch 2"</span>);
+<a class="jxr_linenumber" name="L106" href="#L106">106</a>         }
+<a class="jxr_linenumber" name="L107" href="#L107">107</a>         System.out.println(<span class="jxr_string">"short ok"</span>);
+<a class="jxr_linenumber" name="L108" href="#L108">108</a> 
+<a class="jxr_linenumber" name="L109" href="#L109">109</a>         ka.init(pr1);
+<a class="jxr_linenumber" name="L110" href="#L110">110</a>         ka.doPhase(pu3, <strong class="jxr_keyword">true</strong>);
+<a class="jxr_linenumber" name="L111" href="#L111">111</a>         byte[] n3 = ka.generateSecret();
+<a class="jxr_linenumber" name="L112" href="#L112">112</a>         <strong class="jxr_keyword">if</strong> (Arrays.equals(s3, n3) == false) {
+<a class="jxr_linenumber" name="L113" href="#L113">113</a>             <strong class="jxr_keyword">throw</strong> <strong class="jxr_keyword">new</strong> Exception(<span class="jxr_string">"mismatch 3"</span>);
+<a class="jxr_linenumber" name="L114" href="#L114">114</a>         }
+<a class="jxr_linenumber" name="L115" href="#L115">115</a>         System.out.println(<span class="jxr_string">"normal ok"</span>);
+<a class="jxr_linenumber" name="L116" href="#L116">116</a> 
+<a class="jxr_linenumber" name="L117" href="#L117">117</a> <em class="jxr_comment">/*</em>
+<a class="jxr_linenumber" name="L118" href="#L118">118</a> <em class="jxr_comment">        KeyPairGenerator kpg = KeyPairGenerator.getInstance("DH", provider);</em>
+<a class="jxr_linenumber" name="L119" href="#L119">119</a> <em class="jxr_comment">        kpg.initialize(512);</em>
+<a class="jxr_linenumber" name="L120" href="#L120">120</a> <em class="jxr_comment">//        KeyPair kp1 = kpg.generateKeyPair();</em>
+<a class="jxr_linenumber" name="L121" href="#L121">121</a> <em class="jxr_comment">//      System.out.println(kp1.getPublic());</em>
+<a class="jxr_linenumber" name="L122" href="#L122">122</a> <em class="jxr_comment">//      System.out.println(kp1.getPrivate());</em>
+<a class="jxr_linenumber" name="L123" href="#L123">123</a> <em class="jxr_comment">        while (true) {</em>
+<a class="jxr_linenumber" name="L124" href="#L124">124</a> <em class="jxr_comment">            KeyAgreement ka = KeyAgreement.getInstance("DH", provider);</em>
+<a class="jxr_linenumber" name="L125" href="#L125">125</a> <em class="jxr_comment">            ka.init(pr1);</em>
+<a class="jxr_linenumber" name="L126" href="#L126">126</a> <em class="jxr_comment">            KeyPair kp2 = kpg.generateKeyPair();</em>
+<a class="jxr_linenumber" name="L127" href="#L127">127</a> <em class="jxr_comment">            ka.doPhase(kp2.getPublic(), true);</em>
+<a class="jxr_linenumber" name="L128" href="#L128">128</a> <em class="jxr_comment">            byte[] sec = ka.generateSecret();</em>
+<a class="jxr_linenumber" name="L129" href="#L129">129</a> <em class="jxr_comment">            if (sec.length == 64) {</em>
+<a class="jxr_linenumber" name="L130" href="#L130">130</a> <em class="jxr_comment">                System.out.println(kp2.getPrivate());</em>
+<a class="jxr_linenumber" name="L131" href="#L131">131</a> <em class="jxr_comment">                System.out.println(kp2.getPublic());</em>
+<a class="jxr_linenumber" name="L132" href="#L132">132</a> <em class="jxr_comment">                System.out.println(toString(sec));</em>
+<a class="jxr_linenumber" name="L133" href="#L133">133</a> <em class="jxr_comment">                break;</em>
+<a class="jxr_linenumber" name="L134" href="#L134">134</a> <em class="jxr_comment">            }</em>
+<a class="jxr_linenumber" name="L135" href="#L135">135</a> <em class="jxr_comment">        }</em>
+<a class="jxr_linenumber" name="L136" href="#L136">136</a> <em class="jxr_comment">/**/</em>
+<a class="jxr_linenumber" name="L137" href="#L137">137</a>     }
+<a class="jxr_linenumber" name="L138" href="#L138">138</a> 
+<a class="jxr_linenumber" name="L139" href="#L139">139</a>     <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">static</strong> <strong class="jxr_keyword">void</strong> main(String[] args) <strong class="jxr_keyword">throws</strong> Exception {
+<a class="jxr_linenumber" name="L140" href="#L140">140</a>         main(<strong class="jxr_keyword">new</strong> TestShort());
+<a class="jxr_linenumber" name="L141" href="#L141">141</a>     }
+<a class="jxr_linenumber" name="L142" href="#L142">142</a> 
+<a class="jxr_linenumber" name="L143" href="#L143">143</a> }
+</pre>
+<hr/>
+<div id="footer"></div>
+</body>
+</html>

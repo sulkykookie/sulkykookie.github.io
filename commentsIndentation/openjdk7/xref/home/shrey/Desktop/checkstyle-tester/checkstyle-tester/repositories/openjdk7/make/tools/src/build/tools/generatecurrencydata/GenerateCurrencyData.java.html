@@ -1,0 +1,394 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head><meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+<title>GenerateCurrencyData xref</title>
+<link type="text/css" rel="stylesheet" href="../../../stylesheet.css" />
+</head>
+<body>
+<pre>
+<a class="jxr_linenumber" name="L1" href="#L1">1</a>   <em class="jxr_comment">/*</em>
+<a class="jxr_linenumber" name="L2" href="#L2">2</a>   <em class="jxr_comment"> * Copyright (c) 2001, 2006, Oracle and/or its affiliates. All rights reserved.</em>
+<a class="jxr_linenumber" name="L3" href="#L3">3</a>   <em class="jxr_comment"> * DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS FILE HEADER.</em>
+<a class="jxr_linenumber" name="L4" href="#L4">4</a>   <em class="jxr_comment"> *</em>
+<a class="jxr_linenumber" name="L5" href="#L5">5</a>   <em class="jxr_comment"> * This code is free software; you can redistribute it and/or modify it</em>
+<a class="jxr_linenumber" name="L6" href="#L6">6</a>   <em class="jxr_comment"> * under the terms of the GNU General Public License version 2 only, as</em>
+<a class="jxr_linenumber" name="L7" href="#L7">7</a>   <em class="jxr_comment"> * published by the Free Software Foundation.  Oracle designates this</em>
+<a class="jxr_linenumber" name="L8" href="#L8">8</a>   <em class="jxr_comment"> * particular file as subject to the "Classpath" exception as provided</em>
+<a class="jxr_linenumber" name="L9" href="#L9">9</a>   <em class="jxr_comment"> * by Oracle in the LICENSE file that accompanied this code.</em>
+<a class="jxr_linenumber" name="L10" href="#L10">10</a>  <em class="jxr_comment"> *</em>
+<a class="jxr_linenumber" name="L11" href="#L11">11</a>  <em class="jxr_comment"> * This code is distributed in the hope that it will be useful, but WITHOUT</em>
+<a class="jxr_linenumber" name="L12" href="#L12">12</a>  <em class="jxr_comment"> * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or</em>
+<a class="jxr_linenumber" name="L13" href="#L13">13</a>  <em class="jxr_comment"> * FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License</em>
+<a class="jxr_linenumber" name="L14" href="#L14">14</a>  <em class="jxr_comment"> * version 2 for more details (a copy is included in the LICENSE file that</em>
+<a class="jxr_linenumber" name="L15" href="#L15">15</a>  <em class="jxr_comment"> * accompanied this code).</em>
+<a class="jxr_linenumber" name="L16" href="#L16">16</a>  <em class="jxr_comment"> *</em>
+<a class="jxr_linenumber" name="L17" href="#L17">17</a>  <em class="jxr_comment"> * You should have received a copy of the GNU General Public License version</em>
+<a class="jxr_linenumber" name="L18" href="#L18">18</a>  <em class="jxr_comment"> * 2 along with this work; if not, write to the Free Software Foundation,</em>
+<a class="jxr_linenumber" name="L19" href="#L19">19</a>  <em class="jxr_comment"> * Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301 USA.</em>
+<a class="jxr_linenumber" name="L20" href="#L20">20</a>  <em class="jxr_comment"> *</em>
+<a class="jxr_linenumber" name="L21" href="#L21">21</a>  <em class="jxr_comment"> * Please contact Oracle, 500 Oracle Parkway, Redwood Shores, CA 94065 USA</em>
+<a class="jxr_linenumber" name="L22" href="#L22">22</a>  <em class="jxr_comment"> * or visit www.oracle.com if you need additional information or have any</em>
+<a class="jxr_linenumber" name="L23" href="#L23">23</a>  <em class="jxr_comment"> * questions.</em>
+<a class="jxr_linenumber" name="L24" href="#L24">24</a>  <em class="jxr_comment"> */</em>
+<a class="jxr_linenumber" name="L25" href="#L25">25</a>  
+<a class="jxr_linenumber" name="L26" href="#L26">26</a>  <strong class="jxr_keyword">package</strong> build.tools.generatecurrencydata;
+<a class="jxr_linenumber" name="L27" href="#L27">27</a>  
+<a class="jxr_linenumber" name="L28" href="#L28">28</a>  <strong class="jxr_keyword">import</strong> java.io.IOException;
+<a class="jxr_linenumber" name="L29" href="#L29">29</a>  <strong class="jxr_keyword">import</strong> java.io.FileNotFoundException;
+<a class="jxr_linenumber" name="L30" href="#L30">30</a>  <strong class="jxr_keyword">import</strong> java.io.DataOutputStream;
+<a class="jxr_linenumber" name="L31" href="#L31">31</a>  <strong class="jxr_keyword">import</strong> java.io.FileOutputStream;
+<a class="jxr_linenumber" name="L32" href="#L32">32</a>  <strong class="jxr_keyword">import</strong> java.text.SimpleDateFormat;
+<a class="jxr_linenumber" name="L33" href="#L33">33</a>  <strong class="jxr_keyword">import</strong> java.util.Date;
+<a class="jxr_linenumber" name="L34" href="#L34">34</a>  <strong class="jxr_keyword">import</strong> java.util.HashMap;
+<a class="jxr_linenumber" name="L35" href="#L35">35</a>  <strong class="jxr_keyword">import</strong> java.util.Locale;
+<a class="jxr_linenumber" name="L36" href="#L36">36</a>  <strong class="jxr_keyword">import</strong> java.util.Properties;
+<a class="jxr_linenumber" name="L37" href="#L37">37</a>  <strong class="jxr_keyword">import</strong> java.util.TimeZone;
+<a class="jxr_linenumber" name="L38" href="#L38">38</a>  
+<a class="jxr_linenumber" name="L39" href="#L39">39</a>  <em class="jxr_javadoccomment">/**</em>
+<a class="jxr_linenumber" name="L40" href="#L40">40</a>  <em class="jxr_javadoccomment"> * Reads currency data in properties format from the file specified in the</em>
+<a class="jxr_linenumber" name="L41" href="#L41">41</a>  <em class="jxr_javadoccomment"> * command line and generates a binary data file as specified in the command line.</em>
+<a class="jxr_linenumber" name="L42" href="#L42">42</a>  <em class="jxr_javadoccomment"> *</em>
+<a class="jxr_linenumber" name="L43" href="#L43">43</a>  <em class="jxr_javadoccomment"> * Output of this tool is a binary file that contains the data in</em>
+<a class="jxr_linenumber" name="L44" href="#L44">44</a>  <em class="jxr_javadoccomment"> * the following order:</em>
+<a class="jxr_linenumber" name="L45" href="#L45">45</a>  <em class="jxr_javadoccomment"> *</em>
+<a class="jxr_linenumber" name="L46" href="#L46">46</a>  <em class="jxr_javadoccomment"> *     - magic number (int): always 0x43757244 ('CurD')</em>
+<a class="jxr_linenumber" name="L47" href="#L47">47</a>  <em class="jxr_javadoccomment"> *     - formatVersion (int)</em>
+<a class="jxr_linenumber" name="L48" href="#L48">48</a>  <em class="jxr_javadoccomment"> *     - dataVersion (int)</em>
+<a class="jxr_linenumber" name="L49" href="#L49">49</a>  <em class="jxr_javadoccomment"> *     - mainTable (int[26*26])</em>
+<a class="jxr_linenumber" name="L50" href="#L50">50</a>  <em class="jxr_javadoccomment"> *     - specialCaseCount (int)</em>
+<a class="jxr_linenumber" name="L51" href="#L51">51</a>  <em class="jxr_javadoccomment"> *     - specialCaseCutOverTimes (long[specialCaseCount])</em>
+<a class="jxr_linenumber" name="L52" href="#L52">52</a>  <em class="jxr_javadoccomment"> *     - specialCaseOldCurrencies (String[specialCaseCount])</em>
+<a class="jxr_linenumber" name="L53" href="#L53">53</a>  <em class="jxr_javadoccomment"> *     - specialCaseNewCurrencies (String[specialCaseCount])</em>
+<a class="jxr_linenumber" name="L54" href="#L54">54</a>  <em class="jxr_javadoccomment"> *     - specialCaseOldCurrenciesDefaultFractionDigits (int[specialCaseCount])</em>
+<a class="jxr_linenumber" name="L55" href="#L55">55</a>  <em class="jxr_javadoccomment"> *     - specialCaseNewCurrenciesDefaultFractionDigits (int[specialCaseCount])</em>
+<a class="jxr_linenumber" name="L56" href="#L56">56</a>  <em class="jxr_javadoccomment"> *     - specialCaseOldCurrenciesNumericCode (int[specialCaseCount])</em>
+<a class="jxr_linenumber" name="L57" href="#L57">57</a>  <em class="jxr_javadoccomment"> *     - specialCaseNewCurrenciesNumericCode (int[specialCaseCount])</em>
+<a class="jxr_linenumber" name="L58" href="#L58">58</a>  <em class="jxr_javadoccomment"> *     - otherCurrenciesCount (int)</em>
+<a class="jxr_linenumber" name="L59" href="#L59">59</a>  <em class="jxr_javadoccomment"> *     - otherCurrencies (String)</em>
+<a class="jxr_linenumber" name="L60" href="#L60">60</a>  <em class="jxr_javadoccomment"> *     - otherCurrenciesDefaultFractionDigits (int[otherCurrenciesCount])</em>
+<a class="jxr_linenumber" name="L61" href="#L61">61</a>  <em class="jxr_javadoccomment"> *     - otherCurrenciesNumericCode (int[otherCurrenciesCount])</em>
+<a class="jxr_linenumber" name="L62" href="#L62">62</a>  <em class="jxr_javadoccomment"> *</em>
+<a class="jxr_linenumber" name="L63" href="#L63">63</a>  <em class="jxr_javadoccomment"> * See CurrencyData.properties for the input format description and</em>
+<a class="jxr_linenumber" name="L64" href="#L64">64</a>  <em class="jxr_javadoccomment"> * Currency.java for the format descriptions of the generated tables.</em>
+<a class="jxr_linenumber" name="L65" href="#L65">65</a>  <em class="jxr_javadoccomment"> */</em>
+<a class="jxr_linenumber" name="L66" href="#L66">66</a>  <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">class</strong> GenerateCurrencyData {
+<a class="jxr_linenumber" name="L67" href="#L67">67</a>  
+<a class="jxr_linenumber" name="L68" href="#L68">68</a>      <strong class="jxr_keyword">private</strong> <strong class="jxr_keyword">static</strong> DataOutputStream out;
+<a class="jxr_linenumber" name="L69" href="#L69">69</a>  
+<a class="jxr_linenumber" name="L70" href="#L70">70</a>      <em class="jxr_comment">// input data: currency data obtained from properties on input stream</em>
+<a class="jxr_linenumber" name="L71" href="#L71">71</a>      <strong class="jxr_keyword">private</strong> <strong class="jxr_keyword">static</strong> Properties currencyData;
+<a class="jxr_linenumber" name="L72" href="#L72">72</a>      <strong class="jxr_keyword">private</strong> <strong class="jxr_keyword">static</strong> String formatVersion;
+<a class="jxr_linenumber" name="L73" href="#L73">73</a>      <strong class="jxr_keyword">private</strong> <strong class="jxr_keyword">static</strong> String dataVersion;
+<a class="jxr_linenumber" name="L74" href="#L74">74</a>      <strong class="jxr_keyword">private</strong> <strong class="jxr_keyword">static</strong> String validCurrencyCodes;
+<a class="jxr_linenumber" name="L75" href="#L75">75</a>      <strong class="jxr_keyword">private</strong> <strong class="jxr_keyword">static</strong> String currenciesWith0MinorUnitDecimals;
+<a class="jxr_linenumber" name="L76" href="#L76">76</a>      <strong class="jxr_keyword">private</strong> <strong class="jxr_keyword">static</strong> String currenciesWith1MinorUnitDecimal;
+<a class="jxr_linenumber" name="L77" href="#L77">77</a>      <strong class="jxr_keyword">private</strong> <strong class="jxr_keyword">static</strong> String currenciesWith3MinorUnitDecimal;
+<a class="jxr_linenumber" name="L78" href="#L78">78</a>      <strong class="jxr_keyword">private</strong> <strong class="jxr_keyword">static</strong> String currenciesWithMinorUnitsUndefined;
+<a class="jxr_linenumber" name="L79" href="#L79">79</a>  
+<a class="jxr_linenumber" name="L80" href="#L80">80</a>      <em class="jxr_comment">// handy constants - must match definitions in java.util.Currency</em>
+<a class="jxr_linenumber" name="L81" href="#L81">81</a>      <em class="jxr_comment">// magic number</em>
+<a class="jxr_linenumber" name="L82" href="#L82">82</a>      <strong class="jxr_keyword">private</strong> <strong class="jxr_keyword">static</strong> <strong class="jxr_keyword">final</strong> <strong class="jxr_keyword">int</strong> MAGIC_NUMBER = 0x43757244;
+<a class="jxr_linenumber" name="L83" href="#L83">83</a>      <em class="jxr_comment">// number of characters from A to Z</em>
+<a class="jxr_linenumber" name="L84" href="#L84">84</a>      <strong class="jxr_keyword">private</strong> <strong class="jxr_keyword">static</strong> <strong class="jxr_keyword">final</strong> <strong class="jxr_keyword">int</strong> A_TO_Z = ('Z' - 'A') + 1;
+<a class="jxr_linenumber" name="L85" href="#L85">85</a>      <em class="jxr_comment">// entry for invalid country codes</em>
+<a class="jxr_linenumber" name="L86" href="#L86">86</a>      <strong class="jxr_keyword">private</strong> <strong class="jxr_keyword">static</strong> <strong class="jxr_keyword">final</strong> <strong class="jxr_keyword">int</strong> INVALID_COUNTRY_ENTRY = 0x007F;
+<a class="jxr_linenumber" name="L87" href="#L87">87</a>      <em class="jxr_comment">// entry for countries without currency</em>
+<a class="jxr_linenumber" name="L88" href="#L88">88</a>      <strong class="jxr_keyword">private</strong> <strong class="jxr_keyword">static</strong> <strong class="jxr_keyword">final</strong> <strong class="jxr_keyword">int</strong> COUNTRY_WITHOUT_CURRENCY_ENTRY = 0x0080;
+<a class="jxr_linenumber" name="L89" href="#L89">89</a>      <em class="jxr_comment">// mask for simple case country entries</em>
+<a class="jxr_linenumber" name="L90" href="#L90">90</a>      <strong class="jxr_keyword">private</strong> <strong class="jxr_keyword">static</strong> <strong class="jxr_keyword">final</strong> <strong class="jxr_keyword">int</strong> SIMPLE_CASE_COUNTRY_MASK = 0x0000;
+<a class="jxr_linenumber" name="L91" href="#L91">91</a>      <em class="jxr_comment">// mask for simple case country entry final character</em>
+<a class="jxr_linenumber" name="L92" href="#L92">92</a>      <strong class="jxr_keyword">private</strong> <strong class="jxr_keyword">static</strong> <strong class="jxr_keyword">final</strong> <strong class="jxr_keyword">int</strong> SIMPLE_CASE_COUNTRY_FINAL_CHAR_MASK = 0x001F;
+<a class="jxr_linenumber" name="L93" href="#L93">93</a>      <em class="jxr_comment">// mask for simple case country entry default currency digits</em>
+<a class="jxr_linenumber" name="L94" href="#L94">94</a>      <strong class="jxr_keyword">private</strong> <strong class="jxr_keyword">static</strong> <strong class="jxr_keyword">final</strong> <strong class="jxr_keyword">int</strong> SIMPLE_CASE_COUNTRY_DEFAULT_DIGITS_MASK = 0x0060;
+<a class="jxr_linenumber" name="L95" href="#L95">95</a>      <em class="jxr_comment">// shift count for simple case country entry default currency digits</em>
+<a class="jxr_linenumber" name="L96" href="#L96">96</a>      <strong class="jxr_keyword">private</strong> <strong class="jxr_keyword">static</strong> <strong class="jxr_keyword">final</strong> <strong class="jxr_keyword">int</strong> SIMPLE_CASE_COUNTRY_DEFAULT_DIGITS_SHIFT = 5;
+<a class="jxr_linenumber" name="L97" href="#L97">97</a>      <em class="jxr_comment">// mask for special case country entries</em>
+<a class="jxr_linenumber" name="L98" href="#L98">98</a>      <strong class="jxr_keyword">private</strong> <strong class="jxr_keyword">static</strong> <strong class="jxr_keyword">final</strong> <strong class="jxr_keyword">int</strong> SPECIAL_CASE_COUNTRY_MASK = 0x0080;
+<a class="jxr_linenumber" name="L99" href="#L99">99</a>      <em class="jxr_comment">// mask for special case country index</em>
+<a class="jxr_linenumber" name="L100" href="#L100">100</a>     <strong class="jxr_keyword">private</strong> <strong class="jxr_keyword">static</strong> <strong class="jxr_keyword">final</strong> <strong class="jxr_keyword">int</strong> SPECIAL_CASE_COUNTRY_INDEX_MASK = 0x001F;
+<a class="jxr_linenumber" name="L101" href="#L101">101</a>     <em class="jxr_comment">// delta from entry index component in main table to index into special case tables</em>
+<a class="jxr_linenumber" name="L102" href="#L102">102</a>     <strong class="jxr_keyword">private</strong> <strong class="jxr_keyword">static</strong> <strong class="jxr_keyword">final</strong> <strong class="jxr_keyword">int</strong> SPECIAL_CASE_COUNTRY_INDEX_DELTA = 1;
+<a class="jxr_linenumber" name="L103" href="#L103">103</a>     <em class="jxr_comment">// mask for distinguishing simple and special case countries</em>
+<a class="jxr_linenumber" name="L104" href="#L104">104</a>     <strong class="jxr_keyword">private</strong> <strong class="jxr_keyword">static</strong> <strong class="jxr_keyword">final</strong> <strong class="jxr_keyword">int</strong> COUNTRY_TYPE_MASK = SIMPLE_CASE_COUNTRY_MASK | SPECIAL_CASE_COUNTRY_MASK;
+<a class="jxr_linenumber" name="L105" href="#L105">105</a>     <em class="jxr_comment">// mask for the numeric code of the currency</em>
+<a class="jxr_linenumber" name="L106" href="#L106">106</a>     <strong class="jxr_keyword">private</strong> <strong class="jxr_keyword">static</strong> <strong class="jxr_keyword">final</strong> <strong class="jxr_keyword">int</strong> NUMERIC_CODE_MASK = 0x0003FF00;
+<a class="jxr_linenumber" name="L107" href="#L107">107</a>     <em class="jxr_comment">// shift count for the numeric code of the currency</em>
+<a class="jxr_linenumber" name="L108" href="#L108">108</a>     <strong class="jxr_keyword">private</strong> <strong class="jxr_keyword">static</strong> <strong class="jxr_keyword">final</strong> <strong class="jxr_keyword">int</strong> NUMERIC_CODE_SHIFT = 8;
+<a class="jxr_linenumber" name="L109" href="#L109">109</a> 
+<a class="jxr_linenumber" name="L110" href="#L110">110</a>     <em class="jxr_comment">// generated data</em>
+<a class="jxr_linenumber" name="L111" href="#L111">111</a>     <strong class="jxr_keyword">private</strong> <strong class="jxr_keyword">static</strong> <strong class="jxr_keyword">int</strong>[] mainTable = <strong class="jxr_keyword">new</strong> <strong class="jxr_keyword">int</strong>[A_TO_Z * A_TO_Z];
+<a class="jxr_linenumber" name="L112" href="#L112">112</a> 
+<a class="jxr_linenumber" name="L113" href="#L113">113</a>     <strong class="jxr_keyword">private</strong> <strong class="jxr_keyword">static</strong> <strong class="jxr_keyword">final</strong> <strong class="jxr_keyword">int</strong> maxSpecialCases = 30;
+<a class="jxr_linenumber" name="L114" href="#L114">114</a>     <strong class="jxr_keyword">private</strong> <strong class="jxr_keyword">static</strong> <strong class="jxr_keyword">int</strong> specialCaseCount = 0;
+<a class="jxr_linenumber" name="L115" href="#L115">115</a>     <strong class="jxr_keyword">private</strong> <strong class="jxr_keyword">static</strong> <strong class="jxr_keyword">long</strong>[] specialCaseCutOverTimes = <strong class="jxr_keyword">new</strong> <strong class="jxr_keyword">long</strong>[maxSpecialCases];
+<a class="jxr_linenumber" name="L116" href="#L116">116</a>     <strong class="jxr_keyword">private</strong> <strong class="jxr_keyword">static</strong> String[] specialCaseOldCurrencies = <strong class="jxr_keyword">new</strong> String[maxSpecialCases];
+<a class="jxr_linenumber" name="L117" href="#L117">117</a>     <strong class="jxr_keyword">private</strong> <strong class="jxr_keyword">static</strong> String[] specialCaseNewCurrencies = <strong class="jxr_keyword">new</strong> String[maxSpecialCases];
+<a class="jxr_linenumber" name="L118" href="#L118">118</a>     <strong class="jxr_keyword">private</strong> <strong class="jxr_keyword">static</strong> <strong class="jxr_keyword">int</strong>[] specialCaseOldCurrenciesDefaultFractionDigits = <strong class="jxr_keyword">new</strong> <strong class="jxr_keyword">int</strong>[maxSpecialCases];
+<a class="jxr_linenumber" name="L119" href="#L119">119</a>     <strong class="jxr_keyword">private</strong> <strong class="jxr_keyword">static</strong> <strong class="jxr_keyword">int</strong>[] specialCaseNewCurrenciesDefaultFractionDigits = <strong class="jxr_keyword">new</strong> <strong class="jxr_keyword">int</strong>[maxSpecialCases];
+<a class="jxr_linenumber" name="L120" href="#L120">120</a>     <strong class="jxr_keyword">private</strong> <strong class="jxr_keyword">static</strong> <strong class="jxr_keyword">int</strong>[] specialCaseOldCurrenciesNumericCode = <strong class="jxr_keyword">new</strong> <strong class="jxr_keyword">int</strong>[maxSpecialCases];
+<a class="jxr_linenumber" name="L121" href="#L121">121</a>     <strong class="jxr_keyword">private</strong> <strong class="jxr_keyword">static</strong> <strong class="jxr_keyword">int</strong>[] specialCaseNewCurrenciesNumericCode = <strong class="jxr_keyword">new</strong> <strong class="jxr_keyword">int</strong>[maxSpecialCases];
+<a class="jxr_linenumber" name="L122" href="#L122">122</a> 
+<a class="jxr_linenumber" name="L123" href="#L123">123</a>     <strong class="jxr_keyword">private</strong> <strong class="jxr_keyword">static</strong> <strong class="jxr_keyword">final</strong> <strong class="jxr_keyword">int</strong> maxOtherCurrencies = 65;
+<a class="jxr_linenumber" name="L124" href="#L124">124</a>     <strong class="jxr_keyword">private</strong> <strong class="jxr_keyword">static</strong> <strong class="jxr_keyword">int</strong> otherCurrenciesCount = 0;
+<a class="jxr_linenumber" name="L125" href="#L125">125</a>     <strong class="jxr_keyword">private</strong> <strong class="jxr_keyword">static</strong> StringBuffer otherCurrencies = <strong class="jxr_keyword">new</strong> StringBuffer();
+<a class="jxr_linenumber" name="L126" href="#L126">126</a>     <strong class="jxr_keyword">private</strong> <strong class="jxr_keyword">static</strong> <strong class="jxr_keyword">int</strong>[] otherCurrenciesDefaultFractionDigits = <strong class="jxr_keyword">new</strong> <strong class="jxr_keyword">int</strong>[maxOtherCurrencies];
+<a class="jxr_linenumber" name="L127" href="#L127">127</a>     <strong class="jxr_keyword">private</strong> <strong class="jxr_keyword">static</strong> <strong class="jxr_keyword">int</strong>[] otherCurrenciesNumericCode= <strong class="jxr_keyword">new</strong> <strong class="jxr_keyword">int</strong>[maxOtherCurrencies];
+<a class="jxr_linenumber" name="L128" href="#L128">128</a> 
+<a class="jxr_linenumber" name="L129" href="#L129">129</a>     <em class="jxr_comment">// date format for parsing cut-over times</em>
+<a class="jxr_linenumber" name="L130" href="#L130">130</a>     <strong class="jxr_keyword">private</strong> <strong class="jxr_keyword">static</strong> SimpleDateFormat format;
+<a class="jxr_linenumber" name="L131" href="#L131">131</a> 
+<a class="jxr_linenumber" name="L132" href="#L132">132</a>     <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">static</strong> <strong class="jxr_keyword">void</strong> main(String[] args) {
+<a class="jxr_linenumber" name="L133" href="#L133">133</a> 
+<a class="jxr_linenumber" name="L134" href="#L134">134</a>         <em class="jxr_comment">// Look for "-o outputfilename" option</em>
+<a class="jxr_linenumber" name="L135" href="#L135">135</a>         <strong class="jxr_keyword">if</strong> ( args.length == 2 &amp;&amp; args[0].equals(<span class="jxr_string">"-o"</span>) ) {
+<a class="jxr_linenumber" name="L136" href="#L136">136</a>             <strong class="jxr_keyword">try</strong> {
+<a class="jxr_linenumber" name="L137" href="#L137">137</a>                 out = <strong class="jxr_keyword">new</strong> DataOutputStream(<strong class="jxr_keyword">new</strong> FileOutputStream(args[1]));
+<a class="jxr_linenumber" name="L138" href="#L138">138</a>             } <strong class="jxr_keyword">catch</strong> ( FileNotFoundException e ) {
+<a class="jxr_linenumber" name="L139" href="#L139">139</a>                 System.err.println(<span class="jxr_string">"Error: "</span> + e.getMessage());
+<a class="jxr_linenumber" name="L140" href="#L140">140</a>                 e.printStackTrace(System.err);
+<a class="jxr_linenumber" name="L141" href="#L141">141</a>                 System.exit(1);
+<a class="jxr_linenumber" name="L142" href="#L142">142</a>             }
+<a class="jxr_linenumber" name="L143" href="#L143">143</a>         } <strong class="jxr_keyword">else</strong> {
+<a class="jxr_linenumber" name="L144" href="#L144">144</a>             System.err.println(<span class="jxr_string">"Error: Illegal arg count"</span>);
+<a class="jxr_linenumber" name="L145" href="#L145">145</a>             System.exit(1);
+<a class="jxr_linenumber" name="L146" href="#L146">146</a>         }
+<a class="jxr_linenumber" name="L147" href="#L147">147</a> 
+<a class="jxr_linenumber" name="L148" href="#L148">148</a>         format = <strong class="jxr_keyword">new</strong> SimpleDateFormat(<span class="jxr_string">"yyyy-MM-dd-HH-mm-ss"</span>, Locale.US);
+<a class="jxr_linenumber" name="L149" href="#L149">149</a>         format.setTimeZone(TimeZone.getTimeZone(<span class="jxr_string">"GMT"</span>));
+<a class="jxr_linenumber" name="L150" href="#L150">150</a>         format.setLenient(false);
+<a class="jxr_linenumber" name="L151" href="#L151">151</a> 
+<a class="jxr_linenumber" name="L152" href="#L152">152</a>         <strong class="jxr_keyword">try</strong> {
+<a class="jxr_linenumber" name="L153" href="#L153">153</a>             readInput();
+<a class="jxr_linenumber" name="L154" href="#L154">154</a>             buildMainAndSpecialCaseTables();
+<a class="jxr_linenumber" name="L155" href="#L155">155</a>             buildOtherTables();
+<a class="jxr_linenumber" name="L156" href="#L156">156</a>             writeOutput();
+<a class="jxr_linenumber" name="L157" href="#L157">157</a>             out.flush();
+<a class="jxr_linenumber" name="L158" href="#L158">158</a>             out.close();
+<a class="jxr_linenumber" name="L159" href="#L159">159</a>         } <strong class="jxr_keyword">catch</strong> (Exception e) {
+<a class="jxr_linenumber" name="L160" href="#L160">160</a>             System.err.println(<span class="jxr_string">"Error: "</span> + e.getMessage());
+<a class="jxr_linenumber" name="L161" href="#L161">161</a>             e.printStackTrace(System.err);
+<a class="jxr_linenumber" name="L162" href="#L162">162</a>             System.exit(1);
+<a class="jxr_linenumber" name="L163" href="#L163">163</a>         }
+<a class="jxr_linenumber" name="L164" href="#L164">164</a>     }
+<a class="jxr_linenumber" name="L165" href="#L165">165</a> 
+<a class="jxr_linenumber" name="L166" href="#L166">166</a>     <strong class="jxr_keyword">private</strong> <strong class="jxr_keyword">static</strong> <strong class="jxr_keyword">void</strong> readInput() <strong class="jxr_keyword">throws</strong> IOException {
+<a class="jxr_linenumber" name="L167" href="#L167">167</a>         currencyData = <strong class="jxr_keyword">new</strong> Properties();
+<a class="jxr_linenumber" name="L168" href="#L168">168</a>         currencyData.load(System.in);
+<a class="jxr_linenumber" name="L169" href="#L169">169</a> 
+<a class="jxr_linenumber" name="L170" href="#L170">170</a>         <em class="jxr_comment">// initialize other lookup strings</em>
+<a class="jxr_linenumber" name="L171" href="#L171">171</a>         formatVersion = (String) currencyData.get(<span class="jxr_string">"formatVersion"</span>);
+<a class="jxr_linenumber" name="L172" href="#L172">172</a>         dataVersion = (String) currencyData.get(<span class="jxr_string">"dataVersion"</span>);
+<a class="jxr_linenumber" name="L173" href="#L173">173</a>         validCurrencyCodes = (String) currencyData.get(<span class="jxr_string">"all"</span>);
+<a class="jxr_linenumber" name="L174" href="#L174">174</a>         currenciesWith0MinorUnitDecimals  = (String) currencyData.get(<span class="jxr_string">"minor0"</span>);
+<a class="jxr_linenumber" name="L175" href="#L175">175</a>         currenciesWith1MinorUnitDecimal  = (String) currencyData.get(<span class="jxr_string">"minor1"</span>);
+<a class="jxr_linenumber" name="L176" href="#L176">176</a>         currenciesWith3MinorUnitDecimal  = (String) currencyData.get(<span class="jxr_string">"minor3"</span>);
+<a class="jxr_linenumber" name="L177" href="#L177">177</a>         currenciesWithMinorUnitsUndefined  = (String) currencyData.get(<span class="jxr_string">"minorUndefined"</span>);
+<a class="jxr_linenumber" name="L178" href="#L178">178</a>         <strong class="jxr_keyword">if</strong> (formatVersion == <strong class="jxr_keyword">null</strong> ||
+<a class="jxr_linenumber" name="L179" href="#L179">179</a>                 dataVersion == <strong class="jxr_keyword">null</strong> ||
+<a class="jxr_linenumber" name="L180" href="#L180">180</a>                 validCurrencyCodes == <strong class="jxr_keyword">null</strong> ||
+<a class="jxr_linenumber" name="L181" href="#L181">181</a>                 currenciesWith0MinorUnitDecimals == <strong class="jxr_keyword">null</strong> ||
+<a class="jxr_linenumber" name="L182" href="#L182">182</a>                 currenciesWith1MinorUnitDecimal == <strong class="jxr_keyword">null</strong> ||
+<a class="jxr_linenumber" name="L183" href="#L183">183</a>                 currenciesWith3MinorUnitDecimal == <strong class="jxr_keyword">null</strong> ||
+<a class="jxr_linenumber" name="L184" href="#L184">184</a>                 currenciesWithMinorUnitsUndefined == <strong class="jxr_keyword">null</strong>) {
+<a class="jxr_linenumber" name="L185" href="#L185">185</a>             <strong class="jxr_keyword">throw</strong> <strong class="jxr_keyword">new</strong> NullPointerException(<span class="jxr_string">"not all required data is defined in input"</span>);
+<a class="jxr_linenumber" name="L186" href="#L186">186</a>         }
+<a class="jxr_linenumber" name="L187" href="#L187">187</a>     }
+<a class="jxr_linenumber" name="L188" href="#L188">188</a> 
+<a class="jxr_linenumber" name="L189" href="#L189">189</a>     <strong class="jxr_keyword">private</strong> <strong class="jxr_keyword">static</strong> <strong class="jxr_keyword">void</strong> buildMainAndSpecialCaseTables() <strong class="jxr_keyword">throws</strong> Exception {
+<a class="jxr_linenumber" name="L190" href="#L190">190</a>         <strong class="jxr_keyword">for</strong> (<strong class="jxr_keyword">int</strong> first = 0; first &lt; A_TO_Z; first++) {
+<a class="jxr_linenumber" name="L191" href="#L191">191</a>             <strong class="jxr_keyword">for</strong> (<strong class="jxr_keyword">int</strong> second = 0; second &lt; A_TO_Z; second++) {
+<a class="jxr_linenumber" name="L192" href="#L192">192</a>                 <strong class="jxr_keyword">char</strong> firstChar = (<strong class="jxr_keyword">char</strong>) ('A' + first);
+<a class="jxr_linenumber" name="L193" href="#L193">193</a>                 <strong class="jxr_keyword">char</strong> secondChar = (<strong class="jxr_keyword">char</strong>) ('A' + second);
+<a class="jxr_linenumber" name="L194" href="#L194">194</a>                 String countryCode = (<strong class="jxr_keyword">new</strong> StringBuffer()).append(firstChar).append(secondChar).toString();
+<a class="jxr_linenumber" name="L195" href="#L195">195</a>                 String currencyInfo = (String) currencyData.get(countryCode);
+<a class="jxr_linenumber" name="L196" href="#L196">196</a>                 <strong class="jxr_keyword">int</strong> tableEntry = 0;
+<a class="jxr_linenumber" name="L197" href="#L197">197</a>                 <strong class="jxr_keyword">if</strong> (currencyInfo == <strong class="jxr_keyword">null</strong>) {
+<a class="jxr_linenumber" name="L198" href="#L198">198</a>                     <em class="jxr_comment">// no entry -&gt; must be invalid ISO 3166 country code</em>
+<a class="jxr_linenumber" name="L199" href="#L199">199</a>                     tableEntry = INVALID_COUNTRY_ENTRY;
+<a class="jxr_linenumber" name="L200" href="#L200">200</a>                 } <strong class="jxr_keyword">else</strong> {
+<a class="jxr_linenumber" name="L201" href="#L201">201</a>                     <strong class="jxr_keyword">int</strong> length = currencyInfo.length();
+<a class="jxr_linenumber" name="L202" href="#L202">202</a>                     <strong class="jxr_keyword">if</strong> (length == 0) {
+<a class="jxr_linenumber" name="L203" href="#L203">203</a>                         <em class="jxr_comment">// special case: country without currency</em>
+<a class="jxr_linenumber" name="L204" href="#L204">204</a>                        tableEntry = COUNTRY_WITHOUT_CURRENCY_ENTRY;
+<a class="jxr_linenumber" name="L205" href="#L205">205</a>                     } <strong class="jxr_keyword">else</strong> <strong class="jxr_keyword">if</strong> (length == 3) {
+<a class="jxr_linenumber" name="L206" href="#L206">206</a>                         <em class="jxr_comment">// valid currency</em>
+<a class="jxr_linenumber" name="L207" href="#L207">207</a>                         <strong class="jxr_keyword">if</strong> (currencyInfo.charAt(0) == firstChar &amp;&amp; currencyInfo.charAt(1) == secondChar) {
+<a class="jxr_linenumber" name="L208" href="#L208">208</a>                             checkCurrencyCode(currencyInfo);
+<a class="jxr_linenumber" name="L209" href="#L209">209</a>                             <strong class="jxr_keyword">int</strong> digits = getDefaultFractionDigits(currencyInfo);
+<a class="jxr_linenumber" name="L210" href="#L210">210</a>                             <strong class="jxr_keyword">if</strong> (digits &lt; 0 || digits &gt; 3) {
+<a class="jxr_linenumber" name="L211" href="#L211">211</a>                                 <strong class="jxr_keyword">throw</strong> <strong class="jxr_keyword">new</strong> RuntimeException(<span class="jxr_string">"fraction digits out of range for "</span> + currencyInfo);
+<a class="jxr_linenumber" name="L212" href="#L212">212</a>                             }
+<a class="jxr_linenumber" name="L213" href="#L213">213</a>                             <strong class="jxr_keyword">int</strong> numericCode= getNumericCode(currencyInfo);
+<a class="jxr_linenumber" name="L214" href="#L214">214</a>                             <strong class="jxr_keyword">if</strong> (numericCode &lt; 0 || numericCode &gt;= 1000 ) {
+<a class="jxr_linenumber" name="L215" href="#L215">215</a>                                 <strong class="jxr_keyword">throw</strong> <strong class="jxr_keyword">new</strong> RuntimeException(<span class="jxr_string">"numeric code out of range for "</span> + currencyInfo);
+<a class="jxr_linenumber" name="L216" href="#L216">216</a>                             }
+<a class="jxr_linenumber" name="L217" href="#L217">217</a>                             tableEntry = SIMPLE_CASE_COUNTRY_MASK
+<a class="jxr_linenumber" name="L218" href="#L218">218</a>                                     | (currencyInfo.charAt(2) - 'A')
+<a class="jxr_linenumber" name="L219" href="#L219">219</a>                                     | (digits &lt;&lt; SIMPLE_CASE_COUNTRY_DEFAULT_DIGITS_SHIFT)
+<a class="jxr_linenumber" name="L220" href="#L220">220</a>                                     | (numericCode &lt;&lt; NUMERIC_CODE_SHIFT);
+<a class="jxr_linenumber" name="L221" href="#L221">221</a>                         } <strong class="jxr_keyword">else</strong> {
+<a class="jxr_linenumber" name="L222" href="#L222">222</a>                             tableEntry = SPECIAL_CASE_COUNTRY_MASK | (makeSpecialCaseEntry(currencyInfo) + SPECIAL_CASE_COUNTRY_INDEX_DELTA);
+<a class="jxr_linenumber" name="L223" href="#L223">223</a>                         }
+<a class="jxr_linenumber" name="L224" href="#L224">224</a>                     } <strong class="jxr_keyword">else</strong> {
+<a class="jxr_linenumber" name="L225" href="#L225">225</a>                         tableEntry = SPECIAL_CASE_COUNTRY_MASK | (makeSpecialCaseEntry(currencyInfo) + SPECIAL_CASE_COUNTRY_INDEX_DELTA);
+<a class="jxr_linenumber" name="L226" href="#L226">226</a>                     }
+<a class="jxr_linenumber" name="L227" href="#L227">227</a>                 }
+<a class="jxr_linenumber" name="L228" href="#L228">228</a>                 mainTable[first * A_TO_Z + second] = tableEntry;
+<a class="jxr_linenumber" name="L229" href="#L229">229</a>             }
+<a class="jxr_linenumber" name="L230" href="#L230">230</a>         }
+<a class="jxr_linenumber" name="L231" href="#L231">231</a>     }
+<a class="jxr_linenumber" name="L232" href="#L232">232</a> 
+<a class="jxr_linenumber" name="L233" href="#L233">233</a>     <strong class="jxr_keyword">private</strong> <strong class="jxr_keyword">static</strong> <strong class="jxr_keyword">int</strong> getDefaultFractionDigits(String currencyCode) {
+<a class="jxr_linenumber" name="L234" href="#L234">234</a>         <strong class="jxr_keyword">if</strong> (currenciesWith0MinorUnitDecimals.indexOf(currencyCode) != -1) {
+<a class="jxr_linenumber" name="L235" href="#L235">235</a>             <strong class="jxr_keyword">return</strong> 0;
+<a class="jxr_linenumber" name="L236" href="#L236">236</a>         } <strong class="jxr_keyword">else</strong> <strong class="jxr_keyword">if</strong> (currenciesWith1MinorUnitDecimal.indexOf(currencyCode) != -1) {
+<a class="jxr_linenumber" name="L237" href="#L237">237</a>             <strong class="jxr_keyword">return</strong> 1;
+<a class="jxr_linenumber" name="L238" href="#L238">238</a>         } <strong class="jxr_keyword">else</strong> <strong class="jxr_keyword">if</strong> (currenciesWith3MinorUnitDecimal.indexOf(currencyCode) != -1) {
+<a class="jxr_linenumber" name="L239" href="#L239">239</a>             <strong class="jxr_keyword">return</strong> 3;
+<a class="jxr_linenumber" name="L240" href="#L240">240</a>         } <strong class="jxr_keyword">else</strong> <strong class="jxr_keyword">if</strong> (currenciesWithMinorUnitsUndefined.indexOf(currencyCode) != -1) {
+<a class="jxr_linenumber" name="L241" href="#L241">241</a>             <strong class="jxr_keyword">return</strong> -1;
+<a class="jxr_linenumber" name="L242" href="#L242">242</a>         } <strong class="jxr_keyword">else</strong> {
+<a class="jxr_linenumber" name="L243" href="#L243">243</a>             <strong class="jxr_keyword">return</strong> 2;
+<a class="jxr_linenumber" name="L244" href="#L244">244</a>         }
+<a class="jxr_linenumber" name="L245" href="#L245">245</a>     }
+<a class="jxr_linenumber" name="L246" href="#L246">246</a> 
+<a class="jxr_linenumber" name="L247" href="#L247">247</a>     <strong class="jxr_keyword">private</strong> <strong class="jxr_keyword">static</strong> <strong class="jxr_keyword">int</strong> getNumericCode(String currencyCode) {
+<a class="jxr_linenumber" name="L248" href="#L248">248</a>         <strong class="jxr_keyword">int</strong> index = validCurrencyCodes.indexOf(currencyCode);
+<a class="jxr_linenumber" name="L249" href="#L249">249</a>         String numericCode = validCurrencyCodes.substring(index + 3, index + 6);
+<a class="jxr_linenumber" name="L250" href="#L250">250</a>         <strong class="jxr_keyword">return</strong> Integer.parseInt(numericCode);
+<a class="jxr_linenumber" name="L251" href="#L251">251</a>     }
+<a class="jxr_linenumber" name="L252" href="#L252">252</a> 
+<a class="jxr_linenumber" name="L253" href="#L253">253</a>     <strong class="jxr_keyword">static</strong> HashMap specialCaseMap = <strong class="jxr_keyword">new</strong> HashMap();
+<a class="jxr_linenumber" name="L254" href="#L254">254</a> 
+<a class="jxr_linenumber" name="L255" href="#L255">255</a>     <strong class="jxr_keyword">private</strong> <strong class="jxr_keyword">static</strong> <strong class="jxr_keyword">int</strong> makeSpecialCaseEntry(String currencyInfo) <strong class="jxr_keyword">throws</strong> Exception {
+<a class="jxr_linenumber" name="L256" href="#L256">256</a>         Integer oldEntry = (Integer) specialCaseMap.get(currencyInfo);
+<a class="jxr_linenumber" name="L257" href="#L257">257</a>         <strong class="jxr_keyword">if</strong> (oldEntry != <strong class="jxr_keyword">null</strong>) {
+<a class="jxr_linenumber" name="L258" href="#L258">258</a>             <strong class="jxr_keyword">return</strong> oldEntry.intValue();
+<a class="jxr_linenumber" name="L259" href="#L259">259</a>         }
+<a class="jxr_linenumber" name="L260" href="#L260">260</a>         <strong class="jxr_keyword">if</strong> (specialCaseCount == maxSpecialCases) {
+<a class="jxr_linenumber" name="L261" href="#L261">261</a>             <strong class="jxr_keyword">throw</strong> <strong class="jxr_keyword">new</strong> RuntimeException(<span class="jxr_string">"too many special cases"</span>);
+<a class="jxr_linenumber" name="L262" href="#L262">262</a>         }
+<a class="jxr_linenumber" name="L263" href="#L263">263</a>         <strong class="jxr_keyword">if</strong> (currencyInfo.length() == 3) {
+<a class="jxr_linenumber" name="L264" href="#L264">264</a>             checkCurrencyCode(currencyInfo);
+<a class="jxr_linenumber" name="L265" href="#L265">265</a>             specialCaseCutOverTimes[specialCaseCount] = Long.MAX_VALUE;
+<a class="jxr_linenumber" name="L266" href="#L266">266</a>             specialCaseOldCurrencies[specialCaseCount] = currencyInfo;
+<a class="jxr_linenumber" name="L267" href="#L267">267</a>             specialCaseOldCurrenciesDefaultFractionDigits[specialCaseCount] = getDefaultFractionDigits(currencyInfo);
+<a class="jxr_linenumber" name="L268" href="#L268">268</a>             specialCaseOldCurrenciesNumericCode[specialCaseCount] = getNumericCode(currencyInfo);
+<a class="jxr_linenumber" name="L269" href="#L269">269</a>             specialCaseNewCurrencies[specialCaseCount] = <strong class="jxr_keyword">null</strong>;
+<a class="jxr_linenumber" name="L270" href="#L270">270</a>             specialCaseNewCurrenciesDefaultFractionDigits[specialCaseCount] = 0;
+<a class="jxr_linenumber" name="L271" href="#L271">271</a>             specialCaseNewCurrenciesNumericCode[specialCaseCount] = 0;
+<a class="jxr_linenumber" name="L272" href="#L272">272</a>         } <strong class="jxr_keyword">else</strong> {
+<a class="jxr_linenumber" name="L273" href="#L273">273</a>             <strong class="jxr_keyword">int</strong> length = currencyInfo.length();
+<a class="jxr_linenumber" name="L274" href="#L274">274</a>             <strong class="jxr_keyword">if</strong> (currencyInfo.charAt(3) != ';' ||
+<a class="jxr_linenumber" name="L275" href="#L275">275</a>                     currencyInfo.charAt(length - 4) != ';') {
+<a class="jxr_linenumber" name="L276" href="#L276">276</a>                 <strong class="jxr_keyword">throw</strong> <strong class="jxr_keyword">new</strong> RuntimeException(<span class="jxr_string">"invalid currency info: "</span> + currencyInfo);
+<a class="jxr_linenumber" name="L277" href="#L277">277</a>             }
+<a class="jxr_linenumber" name="L278" href="#L278">278</a>             String oldCurrency = currencyInfo.substring(0, 3);
+<a class="jxr_linenumber" name="L279" href="#L279">279</a>             String newCurrency = currencyInfo.substring(length - 3, length);
+<a class="jxr_linenumber" name="L280" href="#L280">280</a>             checkCurrencyCode(oldCurrency);
+<a class="jxr_linenumber" name="L281" href="#L281">281</a>             checkCurrencyCode(newCurrency);
+<a class="jxr_linenumber" name="L282" href="#L282">282</a>             String timeString = currencyInfo.substring(4, length - 4);
+<a class="jxr_linenumber" name="L283" href="#L283">283</a>             <strong class="jxr_keyword">long</strong> time = format.parse(timeString).getTime();
+<a class="jxr_linenumber" name="L284" href="#L284">284</a>             <strong class="jxr_keyword">if</strong> (Math.abs(time - System.currentTimeMillis()) &gt; ((<strong class="jxr_keyword">long</strong>) 10) * 365 * 24 * 60 * 60 * 1000) {
+<a class="jxr_linenumber" name="L285" href="#L285">285</a>                 <strong class="jxr_keyword">throw</strong> <strong class="jxr_keyword">new</strong> RuntimeException(<span class="jxr_string">"time is more than 10 years from present: "</span> + time);
+<a class="jxr_linenumber" name="L286" href="#L286">286</a>             }
+<a class="jxr_linenumber" name="L287" href="#L287">287</a>             specialCaseCutOverTimes[specialCaseCount] = time;
+<a class="jxr_linenumber" name="L288" href="#L288">288</a>             specialCaseOldCurrencies[specialCaseCount] = oldCurrency;
+<a class="jxr_linenumber" name="L289" href="#L289">289</a>             specialCaseOldCurrenciesDefaultFractionDigits[specialCaseCount] = getDefaultFractionDigits(oldCurrency);
+<a class="jxr_linenumber" name="L290" href="#L290">290</a>             specialCaseOldCurrenciesNumericCode[specialCaseCount] = getNumericCode(oldCurrency);
+<a class="jxr_linenumber" name="L291" href="#L291">291</a>             specialCaseNewCurrencies[specialCaseCount] = newCurrency;
+<a class="jxr_linenumber" name="L292" href="#L292">292</a>             specialCaseNewCurrenciesDefaultFractionDigits[specialCaseCount] = getDefaultFractionDigits(newCurrency);
+<a class="jxr_linenumber" name="L293" href="#L293">293</a>             specialCaseNewCurrenciesNumericCode[specialCaseCount] = getNumericCode(newCurrency);
+<a class="jxr_linenumber" name="L294" href="#L294">294</a>         }
+<a class="jxr_linenumber" name="L295" href="#L295">295</a>         specialCaseMap.put(currencyInfo, <strong class="jxr_keyword">new</strong> Integer(specialCaseCount));
+<a class="jxr_linenumber" name="L296" href="#L296">296</a>         <strong class="jxr_keyword">return</strong> specialCaseCount++;
+<a class="jxr_linenumber" name="L297" href="#L297">297</a>     }
+<a class="jxr_linenumber" name="L298" href="#L298">298</a> 
+<a class="jxr_linenumber" name="L299" href="#L299">299</a>     <strong class="jxr_keyword">private</strong> <strong class="jxr_keyword">static</strong> <strong class="jxr_keyword">void</strong> buildOtherTables() {
+<a class="jxr_linenumber" name="L300" href="#L300">300</a>         <strong class="jxr_keyword">if</strong> (validCurrencyCodes.length() % 7 != 6) {
+<a class="jxr_linenumber" name="L301" href="#L301">301</a>             <strong class="jxr_keyword">throw</strong> <strong class="jxr_keyword">new</strong> RuntimeException(<span class="jxr_string">"\&quot;all\&quot; entry has incorrect size"</span>);
+<a class="jxr_linenumber" name="L302" href="#L302">302</a>         }
+<a class="jxr_linenumber" name="L303" href="#L303">303</a>         <strong class="jxr_keyword">for</strong> (<strong class="jxr_keyword">int</strong> i = 0; i &lt; (validCurrencyCodes.length() + 1) / 7; i++) {
+<a class="jxr_linenumber" name="L304" href="#L304">304</a>             <strong class="jxr_keyword">if</strong> (i &gt; 0 &amp;&amp; validCurrencyCodes.charAt(i * 7 - 1) != '-') {
+<a class="jxr_linenumber" name="L305" href="#L305">305</a>                 <strong class="jxr_keyword">throw</strong> <strong class="jxr_keyword">new</strong> RuntimeException(<span class="jxr_string">"incorrect separator in \&quot;all\&quot; entry"</span>);
+<a class="jxr_linenumber" name="L306" href="#L306">306</a>             }
+<a class="jxr_linenumber" name="L307" href="#L307">307</a>             String currencyCode = validCurrencyCodes.substring(i * 7, i * 7 + 3);
+<a class="jxr_linenumber" name="L308" href="#L308">308</a>             <strong class="jxr_keyword">int</strong> numericCode = Integer.parseInt(
+<a class="jxr_linenumber" name="L309" href="#L309">309</a>                 validCurrencyCodes.substring(i * 7 + 3, i * 7 + 6));
+<a class="jxr_linenumber" name="L310" href="#L310">310</a>             checkCurrencyCode(currencyCode);
+<a class="jxr_linenumber" name="L311" href="#L311">311</a>             <strong class="jxr_keyword">int</strong> tableEntry = mainTable[(currencyCode.charAt(0) - 'A') * A_TO_Z + (currencyCode.charAt(1) - 'A')];
+<a class="jxr_linenumber" name="L312" href="#L312">312</a>             <strong class="jxr_keyword">if</strong> (tableEntry == INVALID_COUNTRY_ENTRY ||
+<a class="jxr_linenumber" name="L313" href="#L313">313</a>                     (tableEntry &amp; SPECIAL_CASE_COUNTRY_MASK) != 0 ||
+<a class="jxr_linenumber" name="L314" href="#L314">314</a>                     (tableEntry &amp; SIMPLE_CASE_COUNTRY_FINAL_CHAR_MASK) != (currencyCode.charAt(2) - 'A')) {
+<a class="jxr_linenumber" name="L315" href="#L315">315</a>                 <strong class="jxr_keyword">if</strong> (otherCurrenciesCount == maxOtherCurrencies) {
+<a class="jxr_linenumber" name="L316" href="#L316">316</a>                     <strong class="jxr_keyword">throw</strong> <strong class="jxr_keyword">new</strong> RuntimeException(<span class="jxr_string">"too many other currencies"</span>);
+<a class="jxr_linenumber" name="L317" href="#L317">317</a>                 }
+<a class="jxr_linenumber" name="L318" href="#L318">318</a>                 <strong class="jxr_keyword">if</strong> (otherCurrencies.length() &gt; 0) {
+<a class="jxr_linenumber" name="L319" href="#L319">319</a>                     otherCurrencies.append('-');
+<a class="jxr_linenumber" name="L320" href="#L320">320</a>                 }
+<a class="jxr_linenumber" name="L321" href="#L321">321</a>                 otherCurrencies.append(currencyCode);
+<a class="jxr_linenumber" name="L322" href="#L322">322</a>                 otherCurrenciesDefaultFractionDigits[otherCurrenciesCount] = getDefaultFractionDigits(currencyCode);
+<a class="jxr_linenumber" name="L323" href="#L323">323</a>                 otherCurrenciesNumericCode[otherCurrenciesCount] = getNumericCode(currencyCode);
+<a class="jxr_linenumber" name="L324" href="#L324">324</a>                 otherCurrenciesCount++;
+<a class="jxr_linenumber" name="L325" href="#L325">325</a>             }
+<a class="jxr_linenumber" name="L326" href="#L326">326</a>         }
+<a class="jxr_linenumber" name="L327" href="#L327">327</a>     }
+<a class="jxr_linenumber" name="L328" href="#L328">328</a> 
+<a class="jxr_linenumber" name="L329" href="#L329">329</a>     <strong class="jxr_keyword">private</strong> <strong class="jxr_keyword">static</strong> <strong class="jxr_keyword">void</strong> checkCurrencyCode(String currencyCode) {
+<a class="jxr_linenumber" name="L330" href="#L330">330</a>         <strong class="jxr_keyword">if</strong> (currencyCode.length() != 3) {
+<a class="jxr_linenumber" name="L331" href="#L331">331</a>             <strong class="jxr_keyword">throw</strong> <strong class="jxr_keyword">new</strong> RuntimeException(<span class="jxr_string">"illegal length for currency code: "</span> + currencyCode);
+<a class="jxr_linenumber" name="L332" href="#L332">332</a>         }
+<a class="jxr_linenumber" name="L333" href="#L333">333</a>         <strong class="jxr_keyword">for</strong> (<strong class="jxr_keyword">int</strong> i = 0; i &lt; 3; i++) {
+<a class="jxr_linenumber" name="L334" href="#L334">334</a>             <strong class="jxr_keyword">char</strong> aChar = currencyCode.charAt(i);
+<a class="jxr_linenumber" name="L335" href="#L335">335</a>             <strong class="jxr_keyword">if</strong> ((aChar &lt; 'A' || aChar &gt; 'Z') &amp;&amp; !currencyCode.equals(<span class="jxr_string">"XB5"</span>)) {
+<a class="jxr_linenumber" name="L336" href="#L336">336</a>                 <strong class="jxr_keyword">throw</strong> <strong class="jxr_keyword">new</strong> RuntimeException(<span class="jxr_string">"currency code contains illegal character: "</span> + currencyCode);
+<a class="jxr_linenumber" name="L337" href="#L337">337</a>             }
+<a class="jxr_linenumber" name="L338" href="#L338">338</a>         }
+<a class="jxr_linenumber" name="L339" href="#L339">339</a>         <strong class="jxr_keyword">if</strong> (validCurrencyCodes.indexOf(currencyCode) == -1) {
+<a class="jxr_linenumber" name="L340" href="#L340">340</a>             <strong class="jxr_keyword">throw</strong> <strong class="jxr_keyword">new</strong> RuntimeException(<span class="jxr_string">"currency code not listed as valid: "</span> + currencyCode);
+<a class="jxr_linenumber" name="L341" href="#L341">341</a>         }
+<a class="jxr_linenumber" name="L342" href="#L342">342</a>     }
+<a class="jxr_linenumber" name="L343" href="#L343">343</a> 
+<a class="jxr_linenumber" name="L344" href="#L344">344</a>     <strong class="jxr_keyword">private</strong> <strong class="jxr_keyword">static</strong> <strong class="jxr_keyword">void</strong> writeOutput() <strong class="jxr_keyword">throws</strong> IOException {
+<a class="jxr_linenumber" name="L345" href="#L345">345</a>         out.writeInt(MAGIC_NUMBER);
+<a class="jxr_linenumber" name="L346" href="#L346">346</a>         out.writeInt(Integer.parseInt(formatVersion));
+<a class="jxr_linenumber" name="L347" href="#L347">347</a>         out.writeInt(Integer.parseInt(dataVersion));
+<a class="jxr_linenumber" name="L348" href="#L348">348</a>         writeIntArray(mainTable, mainTable.length);
+<a class="jxr_linenumber" name="L349" href="#L349">349</a>         out.writeInt(specialCaseCount);
+<a class="jxr_linenumber" name="L350" href="#L350">350</a>         writeLongArray(specialCaseCutOverTimes, specialCaseCount);
+<a class="jxr_linenumber" name="L351" href="#L351">351</a>         writeStringArray(specialCaseOldCurrencies, specialCaseCount);
+<a class="jxr_linenumber" name="L352" href="#L352">352</a>         writeStringArray(specialCaseNewCurrencies, specialCaseCount);
+<a class="jxr_linenumber" name="L353" href="#L353">353</a>         writeIntArray(specialCaseOldCurrenciesDefaultFractionDigits, specialCaseCount);
+<a class="jxr_linenumber" name="L354" href="#L354">354</a>         writeIntArray(specialCaseNewCurrenciesDefaultFractionDigits, specialCaseCount);
+<a class="jxr_linenumber" name="L355" href="#L355">355</a>         writeIntArray(specialCaseOldCurrenciesNumericCode, specialCaseCount);
+<a class="jxr_linenumber" name="L356" href="#L356">356</a>         writeIntArray(specialCaseNewCurrenciesNumericCode, specialCaseCount);
+<a class="jxr_linenumber" name="L357" href="#L357">357</a>         out.writeInt(otherCurrenciesCount);
+<a class="jxr_linenumber" name="L358" href="#L358">358</a>         out.writeUTF(otherCurrencies.toString());
+<a class="jxr_linenumber" name="L359" href="#L359">359</a>         writeIntArray(otherCurrenciesDefaultFractionDigits, otherCurrenciesCount);
+<a class="jxr_linenumber" name="L360" href="#L360">360</a>         writeIntArray(otherCurrenciesNumericCode, otherCurrenciesCount);
+<a class="jxr_linenumber" name="L361" href="#L361">361</a>     }
+<a class="jxr_linenumber" name="L362" href="#L362">362</a> 
+<a class="jxr_linenumber" name="L363" href="#L363">363</a>     <strong class="jxr_keyword">private</strong> <strong class="jxr_keyword">static</strong> <strong class="jxr_keyword">void</strong> writeIntArray(<strong class="jxr_keyword">int</strong>[] ia, <strong class="jxr_keyword">int</strong> count) <strong class="jxr_keyword">throws</strong> IOException {
+<a class="jxr_linenumber" name="L364" href="#L364">364</a>         <strong class="jxr_keyword">for</strong> (<strong class="jxr_keyword">int</strong> i = 0; i &lt; count; i ++) {
+<a class="jxr_linenumber" name="L365" href="#L365">365</a>             out.writeInt(ia[i]);
+<a class="jxr_linenumber" name="L366" href="#L366">366</a>         }
+<a class="jxr_linenumber" name="L367" href="#L367">367</a>     }
+<a class="jxr_linenumber" name="L368" href="#L368">368</a> 
+<a class="jxr_linenumber" name="L369" href="#L369">369</a>     <strong class="jxr_keyword">private</strong> <strong class="jxr_keyword">static</strong> <strong class="jxr_keyword">void</strong> writeLongArray(<strong class="jxr_keyword">long</strong>[] la, <strong class="jxr_keyword">int</strong> count) <strong class="jxr_keyword">throws</strong> IOException  {
+<a class="jxr_linenumber" name="L370" href="#L370">370</a>         <strong class="jxr_keyword">for</strong> (<strong class="jxr_keyword">int</strong> i = 0; i &lt; count; i ++) {
+<a class="jxr_linenumber" name="L371" href="#L371">371</a>             out.writeLong(la[i]);
+<a class="jxr_linenumber" name="L372" href="#L372">372</a>         }
+<a class="jxr_linenumber" name="L373" href="#L373">373</a>     }
+<a class="jxr_linenumber" name="L374" href="#L374">374</a> 
+<a class="jxr_linenumber" name="L375" href="#L375">375</a>     <strong class="jxr_keyword">private</strong> <strong class="jxr_keyword">static</strong> <strong class="jxr_keyword">void</strong> writeStringArray(String[] sa, <strong class="jxr_keyword">int</strong> count) <strong class="jxr_keyword">throws</strong> IOException  {
+<a class="jxr_linenumber" name="L376" href="#L376">376</a>         <strong class="jxr_keyword">for</strong> (<strong class="jxr_keyword">int</strong> i = 0; i &lt; count; i ++) {
+<a class="jxr_linenumber" name="L377" href="#L377">377</a>             String str = (sa[i] != <strong class="jxr_keyword">null</strong>) ? sa[i] : <span class="jxr_string">""</span>;
+<a class="jxr_linenumber" name="L378" href="#L378">378</a>             out.writeUTF(str);
+<a class="jxr_linenumber" name="L379" href="#L379">379</a>         }
+<a class="jxr_linenumber" name="L380" href="#L380">380</a>     }
+<a class="jxr_linenumber" name="L381" href="#L381">381</a> }
+</pre>
+<hr/>
+<div id="footer"></div>
+</body>
+</html>

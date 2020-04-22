@@ -1,0 +1,156 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head><meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+<title>ToolkitPropertyTest_Disable xref</title>
+<link type="text/css" rel="stylesheet" href="../stylesheet.css" />
+</head>
+<body>
+<pre>
+<a class="jxr_linenumber" name="L1" href="#L1">1</a>   <em class="jxr_comment">/*</em>
+<a class="jxr_linenumber" name="L2" href="#L2">2</a>   <em class="jxr_comment">  @test %I% %E%</em>
+<a class="jxr_linenumber" name="L3" href="#L3">3</a>   <em class="jxr_comment">  @bug 6315717</em>
+<a class="jxr_linenumber" name="L4" href="#L4">4</a>   <em class="jxr_comment">  @summary verifies that sun.awt.enableExtraMouseButtons = false consumes extra events</em>
+<a class="jxr_linenumber" name="L5" href="#L5">5</a>   <em class="jxr_comment">  @author Andrei Dmitriev : area=awt.mouse</em>
+<a class="jxr_linenumber" name="L6" href="#L6">6</a>   <em class="jxr_comment">  @run main/othervm -Dsun.awt.enableExtraMouseButtons=false ToolkitPropertyTest_Disable</em>
+<a class="jxr_linenumber" name="L7" href="#L7">7</a>   <em class="jxr_comment"> */</em>
+<a class="jxr_linenumber" name="L8" href="#L8">8</a>   
+<a class="jxr_linenumber" name="L9" href="#L9">9</a>   <strong class="jxr_keyword">import</strong> java.awt.*;
+<a class="jxr_linenumber" name="L10" href="#L10">10</a>  <strong class="jxr_keyword">import</strong> java.awt.event.*;
+<a class="jxr_linenumber" name="L11" href="#L11">11</a>  
+<a class="jxr_linenumber" name="L12" href="#L12">12</a>  <em class="jxr_comment">// Testcase 1: set to FALSE and check</em>
+<a class="jxr_linenumber" name="L13" href="#L13">13</a>  <em class="jxr_comment">// Testcase 2: set to FALSE and check that extra events are not coming</em>
+<a class="jxr_linenumber" name="L14" href="#L14">14</a>  <em class="jxr_comment">//                              check that standard events are coming</em>
+<a class="jxr_linenumber" name="L15" href="#L15">15</a>  
+<a class="jxr_linenumber" name="L16" href="#L16">16</a>  <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">class</strong> ToolkitPropertyTest_Disable <strong class="jxr_keyword">extends</strong> Frame {
+<a class="jxr_linenumber" name="L17" href="#L17">17</a>      <strong class="jxr_keyword">static</strong> <strong class="jxr_keyword">boolean</strong> propValue;
+<a class="jxr_linenumber" name="L18" href="#L18">18</a>      <strong class="jxr_keyword">static</strong> Robot robot;
+<a class="jxr_linenumber" name="L19" href="#L19">19</a>      <strong class="jxr_keyword">static</strong> <strong class="jxr_keyword">int</strong> [] buttonsPressed;
+<a class="jxr_linenumber" name="L20" href="#L20">20</a>      <strong class="jxr_keyword">static</strong> <strong class="jxr_keyword">int</strong> [] buttonsReleased;
+<a class="jxr_linenumber" name="L21" href="#L21">21</a>      <strong class="jxr_keyword">static</strong> <strong class="jxr_keyword">int</strong> [] buttonsClicked;
+<a class="jxr_linenumber" name="L22" href="#L22">22</a>  
+<a class="jxr_linenumber" name="L23" href="#L23">23</a>      <strong class="jxr_keyword">static</strong> <strong class="jxr_keyword">boolean</strong> lessThenFourButtons;
+<a class="jxr_linenumber" name="L24" href="#L24">24</a>  
+<a class="jxr_linenumber" name="L25" href="#L25">25</a>      <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">static</strong> <strong class="jxr_keyword">void</strong> main(String []s){
+<a class="jxr_linenumber" name="L26" href="#L26">26</a>          propValue = Boolean.parseBoolean(System.getProperty(<span class="jxr_string">"sun.awt.enableExtraMouseButtons"</span>));
+<a class="jxr_linenumber" name="L27" href="#L27">27</a>          buttonsPressed = <strong class="jxr_keyword">new</strong> <strong class="jxr_keyword">int</strong> [MouseInfo.getNumberOfButtons()];
+<a class="jxr_linenumber" name="L28" href="#L28">28</a>          buttonsReleased = <strong class="jxr_keyword">new</strong> <strong class="jxr_keyword">int</strong> [MouseInfo.getNumberOfButtons()];
+<a class="jxr_linenumber" name="L29" href="#L29">29</a>          buttonsClicked = <strong class="jxr_keyword">new</strong> <strong class="jxr_keyword">int</strong> [MouseInfo.getNumberOfButtons()];
+<a class="jxr_linenumber" name="L30" href="#L30">30</a>  
+<a class="jxr_linenumber" name="L31" href="#L31">31</a>          ToolkitPropertyTest_Disable frame = <strong class="jxr_keyword">new</strong> ToolkitPropertyTest_Disable();
+<a class="jxr_linenumber" name="L32" href="#L32">32</a>          frame.setSize(300, 300);
+<a class="jxr_linenumber" name="L33" href="#L33">33</a>          frame.setVisible(<strong class="jxr_keyword">true</strong>);
+<a class="jxr_linenumber" name="L34" href="#L34">34</a>  
+<a class="jxr_linenumber" name="L35" href="#L35">35</a>          MouseAdapter ma1 = <strong class="jxr_keyword">new</strong> MouseAdapter() {
+<a class="jxr_linenumber" name="L36" href="#L36">36</a>                  <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">void</strong> mousePressed(MouseEvent e) {
+<a class="jxr_linenumber" name="L37" href="#L37">37</a>                      buttonsPressed[e.getButton() - 1] += 1;
+<a class="jxr_linenumber" name="L38" href="#L38">38</a>                      System.out.println(<span class="jxr_string">"PRESSED "</span>+e);
+<a class="jxr_linenumber" name="L39" href="#L39">39</a>                  }
+<a class="jxr_linenumber" name="L40" href="#L40">40</a>                  <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">void</strong> mouseReleased(MouseEvent e) {
+<a class="jxr_linenumber" name="L41" href="#L41">41</a>                      buttonsReleased[e.getButton() - 1] += 1;
+<a class="jxr_linenumber" name="L42" href="#L42">42</a>                      System.out.println(<span class="jxr_string">"RELEASED "</span>+e);
+<a class="jxr_linenumber" name="L43" href="#L43">43</a>                  }
+<a class="jxr_linenumber" name="L44" href="#L44">44</a>                  <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">void</strong> mouseClicked(MouseEvent e) {
+<a class="jxr_linenumber" name="L45" href="#L45">45</a>                      buttonsClicked[e.getButton() - 1] += 1;
+<a class="jxr_linenumber" name="L46" href="#L46">46</a>                      System.out.println(<span class="jxr_string">"CLICKED "</span>+e);
+<a class="jxr_linenumber" name="L47" href="#L47">47</a>                  }
+<a class="jxr_linenumber" name="L48" href="#L48">48</a>              };
+<a class="jxr_linenumber" name="L49" href="#L49">49</a>  
+<a class="jxr_linenumber" name="L50" href="#L50">50</a>          <strong class="jxr_keyword">try</strong> {
+<a class="jxr_linenumber" name="L51" href="#L51">51</a>              robot = <strong class="jxr_keyword">new</strong> Robot();
+<a class="jxr_linenumber" name="L52" href="#L52">52</a>              robot.delay(1000);
+<a class="jxr_linenumber" name="L53" href="#L53">53</a>              robot.mouseMove(frame.getLocationOnScreen().x + frame.getWidth()/2, frame.getLocationOnScreen().y + frame.getHeight()/2);
+<a class="jxr_linenumber" name="L54" href="#L54">54</a>  
+<a class="jxr_linenumber" name="L55" href="#L55">55</a>              System.out.println(<span class="jxr_string">"Property = "</span> + propValue);
+<a class="jxr_linenumber" name="L56" href="#L56">56</a>              testCase0();
+<a class="jxr_linenumber" name="L57" href="#L57">57</a>  
+<a class="jxr_linenumber" name="L58" href="#L58">58</a>              testCase1();
+<a class="jxr_linenumber" name="L59" href="#L59">59</a>              System.out.println(<span class="jxr_string">"Number Of Buttons = "</span>+ MouseInfo.getNumberOfButtons());
+<a class="jxr_linenumber" name="L60" href="#L60">60</a>  
+<a class="jxr_linenumber" name="L61" href="#L61">61</a>              lessThenFourButtons = (MouseInfo.getNumberOfButtons() &lt;= 3);
+<a class="jxr_linenumber" name="L62" href="#L62">62</a>              <strong class="jxr_keyword">if</strong> ( !lessThenFourButtons ) {
+<a class="jxr_linenumber" name="L63" href="#L63">63</a>                  frame.addMouseListener(ma1);
+<a class="jxr_linenumber" name="L64" href="#L64">64</a>                  testCase2();
+<a class="jxr_linenumber" name="L65" href="#L65">65</a>              }
+<a class="jxr_linenumber" name="L66" href="#L66">66</a>          } <strong class="jxr_keyword">catch</strong> (Exception e){
+<a class="jxr_linenumber" name="L67" href="#L67">67</a>              e.printStackTrace();
+<a class="jxr_linenumber" name="L68" href="#L68">68</a>  <em class="jxr_comment">//            throw new RuntimeException(e);</em>
+<a class="jxr_linenumber" name="L69" href="#L69">69</a>          } <strong class="jxr_keyword">finally</strong> {
+<a class="jxr_linenumber" name="L70" href="#L70">70</a>  <em class="jxr_comment">//            frame.removeMouseListener(ma1);</em>
+<a class="jxr_linenumber" name="L71" href="#L71">71</a>          }
+<a class="jxr_linenumber" name="L72" href="#L72">72</a>      }
+<a class="jxr_linenumber" name="L73" href="#L73">73</a>  
+<a class="jxr_linenumber" name="L74" href="#L74">74</a>      <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">static</strong> <strong class="jxr_keyword">void</strong> testCase0(){
+<a class="jxr_linenumber" name="L75" href="#L75">75</a>          <strong class="jxr_keyword">if</strong> (propValue){
+<a class="jxr_linenumber" name="L76" href="#L76">76</a>              <strong class="jxr_keyword">throw</strong> <strong class="jxr_keyword">new</strong> RuntimeException(<span class="jxr_string">"TEST FAILED (0): System property sun.awt.enableExtraMouseButtons = "</span> + propValue);
+<a class="jxr_linenumber" name="L77" href="#L77">77</a>          }
+<a class="jxr_linenumber" name="L78" href="#L78">78</a>      }
+<a class="jxr_linenumber" name="L79" href="#L79">79</a>  
+<a class="jxr_linenumber" name="L80" href="#L80">80</a>      <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">static</strong> <strong class="jxr_keyword">void</strong> testCase1(){
+<a class="jxr_linenumber" name="L81" href="#L81">81</a>          <strong class="jxr_keyword">if</strong> (Toolkit.getDefaultToolkit().areExtraMouseButtonsEnabled() == <strong class="jxr_keyword">true</strong>){
+<a class="jxr_linenumber" name="L82" href="#L82">82</a>              <strong class="jxr_keyword">throw</strong> <strong class="jxr_keyword">new</strong> RuntimeException(<span class="jxr_string">"TEST FAILED (1): setting to FALSE. Toolkit.getDefaultToolkit().areExtraMouseButtonsEnabled() = "</span> + Toolkit.getDefaultToolkit().areExtraMouseButtonsEnabled());
+<a class="jxr_linenumber" name="L83" href="#L83">83</a>          }
+<a class="jxr_linenumber" name="L84" href="#L84">84</a>      }
+<a class="jxr_linenumber" name="L85" href="#L85">85</a>  
+<a class="jxr_linenumber" name="L86" href="#L86">86</a>      <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">static</strong> <strong class="jxr_keyword">void</strong> testCase2(){
+<a class="jxr_linenumber" name="L87" href="#L87">87</a>          emptyArrays();
+<a class="jxr_linenumber" name="L88" href="#L88">88</a>          <strong class="jxr_keyword">int</strong> [] buttonMasks = <strong class="jxr_keyword">new</strong> <strong class="jxr_keyword">int</strong>[MouseInfo.getNumberOfButtons()]; <em class="jxr_comment">// = InputEvent.getButtonDownMasks();</em>
+<a class="jxr_linenumber" name="L89" href="#L89">89</a>          <strong class="jxr_keyword">for</strong> (<strong class="jxr_keyword">int</strong> i = 0; i &lt; MouseInfo.getNumberOfButtons(); i++){
+<a class="jxr_linenumber" name="L90" href="#L90">90</a>              buttonMasks[i] = InputEvent.getMaskForButton(i+1);
+<a class="jxr_linenumber" name="L91" href="#L91">91</a>              System.out.println(<span class="jxr_string">"TEST: "</span>+buttonMasks[i]);
+<a class="jxr_linenumber" name="L92" href="#L92">92</a>          }
+<a class="jxr_linenumber" name="L93" href="#L93">93</a>  
+<a class="jxr_linenumber" name="L94" href="#L94">94</a>          <strong class="jxr_keyword">for</strong> (<strong class="jxr_keyword">int</strong> i = 0; i &lt; MouseInfo.getNumberOfButtons(); i++){
+<a class="jxr_linenumber" name="L95" href="#L95">95</a>              System.out.println(<span class="jxr_string">"button to press = "</span> +(i+1) + <span class="jxr_string">" : value passed to robot = "</span> +buttonMasks[i]);
+<a class="jxr_linenumber" name="L96" href="#L96">96</a>              <strong class="jxr_keyword">try</strong> {
+<a class="jxr_linenumber" name="L97" href="#L97">97</a>                  robot.mousePress(buttonMasks[i]);
+<a class="jxr_linenumber" name="L98" href="#L98">98</a>                  robot.delay(70);
+<a class="jxr_linenumber" name="L99" href="#L99">99</a>                  robot.mouseRelease(buttonMasks[i]);
+<a class="jxr_linenumber" name="L100" href="#L100">100</a>                 robot.delay(200);
+<a class="jxr_linenumber" name="L101" href="#L101">101</a>                 <em class="jxr_comment">//no exception is thrown</em>
+<a class="jxr_linenumber" name="L102" href="#L102">102</a>                 <strong class="jxr_keyword">if</strong> (i &gt;= 3) {
+<a class="jxr_linenumber" name="L103" href="#L103">103</a>                     <strong class="jxr_keyword">throw</strong> <strong class="jxr_keyword">new</strong> RuntimeException(<span class="jxr_string">"TESTCASE 2 FAILED : robot accepted the extra button "</span> + (i+1) + <span class="jxr_string">" instead of throwing an exception."</span>);
+<a class="jxr_linenumber" name="L104" href="#L104">104</a>                 }
+<a class="jxr_linenumber" name="L105" href="#L105">105</a>             } <strong class="jxr_keyword">catch</strong> (IllegalArgumentException e){
+<a class="jxr_linenumber" name="L106" href="#L106">106</a>                 <strong class="jxr_keyword">if</strong> (i &gt;= 3) {
+<a class="jxr_linenumber" name="L107" href="#L107">107</a>                     System.out.println(<span class="jxr_string">"Passed: an exception caught for extra button."</span>);
+<a class="jxr_linenumber" name="L108" href="#L108">108</a>                 } <strong class="jxr_keyword">else</strong> {
+<a class="jxr_linenumber" name="L109" href="#L109">109</a>                     <strong class="jxr_keyword">throw</strong> <strong class="jxr_keyword">new</strong> RuntimeException(<span class="jxr_string">"TESTCASE 2 FAILED : exception happen on standard button."</span>, e);
+<a class="jxr_linenumber" name="L110" href="#L110">110</a>                 }
+<a class="jxr_linenumber" name="L111" href="#L111">111</a>             }
+<a class="jxr_linenumber" name="L112" href="#L112">112</a>         }
+<a class="jxr_linenumber" name="L113" href="#L113">113</a>         robot.delay(2000);
+<a class="jxr_linenumber" name="L114" href="#L114">114</a>         <strong class="jxr_keyword">if</strong> (MouseInfo.getNumberOfButtons() &lt; 3) {
+<a class="jxr_linenumber" name="L115" href="#L115">115</a>             <strong class="jxr_keyword">for</strong> (<strong class="jxr_keyword">int</strong> i = 0; i &lt; MouseInfo.getNumberOfButtons(); i++){
+<a class="jxr_linenumber" name="L116" href="#L116">116</a>                 <strong class="jxr_keyword">if</strong> (buttonsPressed[i] != 1 || buttonsReleased[i] != 1 || buttonsClicked[i] !=1 ) {
+<a class="jxr_linenumber" name="L117" href="#L117">117</a>                     <strong class="jxr_keyword">throw</strong> <strong class="jxr_keyword">new</strong> RuntimeException(<span class="jxr_string">"TESTCASE 2 FAILED : button "</span> + (i+1) + <span class="jxr_string">" wasn't single pressed."</span>);
+<a class="jxr_linenumber" name="L118" href="#L118">118</a>                 }
+<a class="jxr_linenumber" name="L119" href="#L119">119</a>             }
+<a class="jxr_linenumber" name="L120" href="#L120">120</a>         } <strong class="jxr_keyword">else</strong> {
+<a class="jxr_linenumber" name="L121" href="#L121">121</a>             <strong class="jxr_keyword">for</strong> (<strong class="jxr_keyword">int</strong> i = 0; i &lt; 3; i++){
+<a class="jxr_linenumber" name="L122" href="#L122">122</a>                 <strong class="jxr_keyword">if</strong> (buttonsPressed[i] != 1 || buttonsReleased[i] != 1 || buttonsClicked[i] !=1 ) {
+<a class="jxr_linenumber" name="L123" href="#L123">123</a>                     <strong class="jxr_keyword">throw</strong> <strong class="jxr_keyword">new</strong> RuntimeException(<span class="jxr_string">"TESTCASE 2 FAILED : button "</span> + (i+1) + <span class="jxr_string">" wasn't single pressed."</span>);
+<a class="jxr_linenumber" name="L124" href="#L124">124</a>                 }
+<a class="jxr_linenumber" name="L125" href="#L125">125</a>             }
+<a class="jxr_linenumber" name="L126" href="#L126">126</a> 
+<a class="jxr_linenumber" name="L127" href="#L127">127</a>             <strong class="jxr_keyword">for</strong> (<strong class="jxr_keyword">int</strong> i = 3; i &lt; MouseInfo.getNumberOfButtons(); i++){
+<a class="jxr_linenumber" name="L128" href="#L128">128</a>                 <strong class="jxr_keyword">if</strong> (buttonsPressed[i] != 0 || buttonsReleased[i] != 0 || buttonsClicked[i] != 0 ) {
+<a class="jxr_linenumber" name="L129" href="#L129">129</a>                     <strong class="jxr_keyword">throw</strong> <strong class="jxr_keyword">new</strong> RuntimeException(<span class="jxr_string">"TESTCASE 2 FAILED : button "</span> + (i+1) + <span class="jxr_string">" was pressed."</span>);
+<a class="jxr_linenumber" name="L130" href="#L130">130</a>                 }
+<a class="jxr_linenumber" name="L131" href="#L131">131</a>             }
+<a class="jxr_linenumber" name="L132" href="#L132">132</a>         }
+<a class="jxr_linenumber" name="L133" href="#L133">133</a>     }
+<a class="jxr_linenumber" name="L134" href="#L134">134</a> 
+<a class="jxr_linenumber" name="L135" href="#L135">135</a>     <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">static</strong> <strong class="jxr_keyword">void</strong> emptyArrays(){
+<a class="jxr_linenumber" name="L136" href="#L136">136</a>         <strong class="jxr_keyword">for</strong> (<strong class="jxr_keyword">int</strong> i = 0; i &lt; MouseInfo.getNumberOfButtons(); i++){
+<a class="jxr_linenumber" name="L137" href="#L137">137</a>             buttonsPressed[i] = 0;
+<a class="jxr_linenumber" name="L138" href="#L138">138</a>             buttonsReleased[i] = 0;
+<a class="jxr_linenumber" name="L139" href="#L139">139</a>             buttonsClicked[i] = 0;
+<a class="jxr_linenumber" name="L140" href="#L140">140</a>         }
+<a class="jxr_linenumber" name="L141" href="#L141">141</a>     }
+<a class="jxr_linenumber" name="L142" href="#L142">142</a> 
+<a class="jxr_linenumber" name="L143" href="#L143">143</a> }
+</pre>
+<hr/>
+<div id="footer"></div>
+</body>
+</html>

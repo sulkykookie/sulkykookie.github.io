@@ -1,0 +1,1104 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head><meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+<title>AquaLookAndFeel xref</title>
+<link type="text/css" rel="stylesheet" href="../../../stylesheet.css" />
+</head>
+<body>
+<pre>
+<a class="jxr_linenumber" name="L1" href="#L1">1</a>   <em class="jxr_comment">/*</em>
+<a class="jxr_linenumber" name="L2" href="#L2">2</a>   <em class="jxr_comment"> * Copyright (c) 2011, 2013, Oracle and/or its affiliates. All rights reserved.</em>
+<a class="jxr_linenumber" name="L3" href="#L3">3</a>   <em class="jxr_comment"> * DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS FILE HEADER.</em>
+<a class="jxr_linenumber" name="L4" href="#L4">4</a>   <em class="jxr_comment"> *</em>
+<a class="jxr_linenumber" name="L5" href="#L5">5</a>   <em class="jxr_comment"> * This code is free software; you can redistribute it and/or modify it</em>
+<a class="jxr_linenumber" name="L6" href="#L6">6</a>   <em class="jxr_comment"> * under the terms of the GNU General Public License version 2 only, as</em>
+<a class="jxr_linenumber" name="L7" href="#L7">7</a>   <em class="jxr_comment"> * published by the Free Software Foundation.  Oracle designates this</em>
+<a class="jxr_linenumber" name="L8" href="#L8">8</a>   <em class="jxr_comment"> * particular file as subject to the "Classpath" exception as provided</em>
+<a class="jxr_linenumber" name="L9" href="#L9">9</a>   <em class="jxr_comment"> * by Oracle in the LICENSE file that accompanied this code.</em>
+<a class="jxr_linenumber" name="L10" href="#L10">10</a>  <em class="jxr_comment"> *</em>
+<a class="jxr_linenumber" name="L11" href="#L11">11</a>  <em class="jxr_comment"> * This code is distributed in the hope that it will be useful, but WITHOUT</em>
+<a class="jxr_linenumber" name="L12" href="#L12">12</a>  <em class="jxr_comment"> * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or</em>
+<a class="jxr_linenumber" name="L13" href="#L13">13</a>  <em class="jxr_comment"> * FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License</em>
+<a class="jxr_linenumber" name="L14" href="#L14">14</a>  <em class="jxr_comment"> * version 2 for more details (a copy is included in the LICENSE file that</em>
+<a class="jxr_linenumber" name="L15" href="#L15">15</a>  <em class="jxr_comment"> * accompanied this code).</em>
+<a class="jxr_linenumber" name="L16" href="#L16">16</a>  <em class="jxr_comment"> *</em>
+<a class="jxr_linenumber" name="L17" href="#L17">17</a>  <em class="jxr_comment"> * You should have received a copy of the GNU General Public License version</em>
+<a class="jxr_linenumber" name="L18" href="#L18">18</a>  <em class="jxr_comment"> * 2 along with this work; if not, write to the Free Software Foundation,</em>
+<a class="jxr_linenumber" name="L19" href="#L19">19</a>  <em class="jxr_comment"> * Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301 USA.</em>
+<a class="jxr_linenumber" name="L20" href="#L20">20</a>  <em class="jxr_comment"> *</em>
+<a class="jxr_linenumber" name="L21" href="#L21">21</a>  <em class="jxr_comment"> * Please contact Oracle, 500 Oracle Parkway, Redwood Shores, CA 94065 USA</em>
+<a class="jxr_linenumber" name="L22" href="#L22">22</a>  <em class="jxr_comment"> * or visit www.oracle.com if you need additional information or have any</em>
+<a class="jxr_linenumber" name="L23" href="#L23">23</a>  <em class="jxr_comment"> * questions.</em>
+<a class="jxr_linenumber" name="L24" href="#L24">24</a>  <em class="jxr_comment"> */</em>
+<a class="jxr_linenumber" name="L25" href="#L25">25</a>  
+<a class="jxr_linenumber" name="L26" href="#L26">26</a>  <strong class="jxr_keyword">package</strong> com.apple.laf;
+<a class="jxr_linenumber" name="L27" href="#L27">27</a>  
+<a class="jxr_linenumber" name="L28" href="#L28">28</a>  <strong class="jxr_keyword">import</strong> java.awt.*;
+<a class="jxr_linenumber" name="L29" href="#L29">29</a>  <strong class="jxr_keyword">import</strong> java.security.PrivilegedAction;
+<a class="jxr_linenumber" name="L30" href="#L30">30</a>  <strong class="jxr_keyword">import</strong> java.util.*;
+<a class="jxr_linenumber" name="L31" href="#L31">31</a>  
+<a class="jxr_linenumber" name="L32" href="#L32">32</a>  <strong class="jxr_keyword">import</strong> javax.swing.*;
+<a class="jxr_linenumber" name="L33" href="#L33">33</a>  <strong class="jxr_keyword">import</strong> javax.swing.border.Border;
+<a class="jxr_linenumber" name="L34" href="#L34">34</a>  <strong class="jxr_keyword">import</strong> javax.swing.plaf.*;
+<a class="jxr_linenumber" name="L35" href="#L35">35</a>  <strong class="jxr_keyword">import</strong> javax.swing.plaf.basic.BasicLookAndFeel;
+<a class="jxr_linenumber" name="L36" href="#L36">36</a>  
+<a class="jxr_linenumber" name="L37" href="#L37">37</a>  <strong class="jxr_keyword">import</strong> sun.swing.*;
+<a class="jxr_linenumber" name="L38" href="#L38">38</a>  <strong class="jxr_keyword">import</strong> apple.laf.*;
+<a class="jxr_linenumber" name="L39" href="#L39">39</a>  
+<a class="jxr_linenumber" name="L40" href="#L40">40</a>  <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">class</strong> AquaLookAndFeel <strong class="jxr_keyword">extends</strong> BasicLookAndFeel {
+<a class="jxr_linenumber" name="L41" href="#L41">41</a>      <strong class="jxr_keyword">static</strong> <strong class="jxr_keyword">final</strong> String sOldPropertyPrefix = <span class="jxr_string">"com.apple.macos."</span>; <em class="jxr_comment">// old prefix for things like 'useScreenMenuBar'</em>
+<a class="jxr_linenumber" name="L42" href="#L42">42</a>      <strong class="jxr_keyword">static</strong> <strong class="jxr_keyword">final</strong> String sPropertyPrefix = <span class="jxr_string">"apple.laf."</span>; <em class="jxr_comment">// new prefix for things like 'useScreenMenuBar'</em>
+<a class="jxr_linenumber" name="L43" href="#L43">43</a>  
+<a class="jxr_linenumber" name="L44" href="#L44">44</a>      <em class="jxr_comment">// for lazy initalizers. Following the pattern from metal.</em>
+<a class="jxr_linenumber" name="L45" href="#L45">45</a>      <strong class="jxr_keyword">private</strong> <strong class="jxr_keyword">static</strong> <strong class="jxr_keyword">final</strong> String PKG_PREFIX = <span class="jxr_string">"com.apple.laf."</span>;
+<a class="jxr_linenumber" name="L46" href="#L46">46</a>      <strong class="jxr_keyword">private</strong> <strong class="jxr_keyword">static</strong> <strong class="jxr_keyword">final</strong> String kAquaImageFactoryName = PKG_PREFIX + <span class="jxr_string">"AquaImageFactory"</span>;
+<a class="jxr_linenumber" name="L47" href="#L47">47</a>      <strong class="jxr_keyword">private</strong> <strong class="jxr_keyword">static</strong> <strong class="jxr_keyword">final</strong> String kAquaFontsName = PKG_PREFIX + <span class="jxr_string">"AquaFonts"</span>;
+<a class="jxr_linenumber" name="L48" href="#L48">48</a>  
+<a class="jxr_linenumber" name="L49" href="#L49">49</a>      <em class="jxr_javadoccomment">/**</em>
+<a class="jxr_linenumber" name="L50" href="#L50">50</a>  <em class="jxr_javadoccomment">     * Return a short string that identifies this look and feel, e.g.</em>
+<a class="jxr_linenumber" name="L51" href="#L51">51</a>  <em class="jxr_javadoccomment">     * "CDE/Motif".  This string should be appropriate for a menu item.</em>
+<a class="jxr_linenumber" name="L52" href="#L52">52</a>  <em class="jxr_javadoccomment">     * Distinct look and feels should have different names, e.g.</em>
+<a class="jxr_linenumber" name="L53" href="#L53">53</a>  <em class="jxr_javadoccomment">     * a subclass of MotifLookAndFeel that changes the way a few components</em>
+<a class="jxr_linenumber" name="L54" href="#L54">54</a>  <em class="jxr_javadoccomment">     * are rendered should be called "CDE/Motif My Way"; something</em>
+<a class="jxr_linenumber" name="L55" href="#L55">55</a>  <em class="jxr_javadoccomment">     * that would be useful to a user trying to select a L&amp;F from a list</em>
+<a class="jxr_linenumber" name="L56" href="#L56">56</a>  <em class="jxr_javadoccomment">     * of names.</em>
+<a class="jxr_linenumber" name="L57" href="#L57">57</a>  <em class="jxr_javadoccomment">     */</em>
+<a class="jxr_linenumber" name="L58" href="#L58">58</a>      <strong class="jxr_keyword">public</strong> String getName() {
+<a class="jxr_linenumber" name="L59" href="#L59">59</a>          <strong class="jxr_keyword">return</strong> <span class="jxr_string">"Mac OS X"</span>;
+<a class="jxr_linenumber" name="L60" href="#L60">60</a>      }
+<a class="jxr_linenumber" name="L61" href="#L61">61</a>  
+<a class="jxr_linenumber" name="L62" href="#L62">62</a>      <em class="jxr_javadoccomment">/**</em>
+<a class="jxr_linenumber" name="L63" href="#L63">63</a>  <em class="jxr_javadoccomment">     * Return a string that identifies this look and feel.  This string</em>
+<a class="jxr_linenumber" name="L64" href="#L64">64</a>  <em class="jxr_javadoccomment">     * will be used by applications/services that want to recognize</em>
+<a class="jxr_linenumber" name="L65" href="#L65">65</a>  <em class="jxr_javadoccomment">     * well known look and feel implementations.  Presently</em>
+<a class="jxr_linenumber" name="L66" href="#L66">66</a>  <em class="jxr_javadoccomment">     * the well known names are "Motif", "Windows", "Mac", "Metal".  Note</em>
+<a class="jxr_linenumber" name="L67" href="#L67">67</a>  <em class="jxr_javadoccomment">     * that a LookAndFeel derived from a well known superclass</em>
+<a class="jxr_linenumber" name="L68" href="#L68">68</a>  <em class="jxr_javadoccomment">     * that doesn't make any fundamental changes to the look or feel</em>
+<a class="jxr_linenumber" name="L69" href="#L69">69</a>  <em class="jxr_javadoccomment">     * shouldn't override this method.</em>
+<a class="jxr_linenumber" name="L70" href="#L70">70</a>  <em class="jxr_javadoccomment">     */</em>
+<a class="jxr_linenumber" name="L71" href="#L71">71</a>      <strong class="jxr_keyword">public</strong> String getID() {
+<a class="jxr_linenumber" name="L72" href="#L72">72</a>          <strong class="jxr_keyword">return</strong> <span class="jxr_string">"Aqua"</span>;
+<a class="jxr_linenumber" name="L73" href="#L73">73</a>      }
+<a class="jxr_linenumber" name="L74" href="#L74">74</a>  
+<a class="jxr_linenumber" name="L75" href="#L75">75</a>      <em class="jxr_javadoccomment">/**</em>
+<a class="jxr_linenumber" name="L76" href="#L76">76</a>  <em class="jxr_javadoccomment">     * Return a one line description of this look and feel implementation,</em>
+<a class="jxr_linenumber" name="L77" href="#L77">77</a>  <em class="jxr_javadoccomment">     * e.g. "The CDE/Motif Look and Feel".   This string is intended for</em>
+<a class="jxr_linenumber" name="L78" href="#L78">78</a>  <em class="jxr_javadoccomment">     * the user, e.g. in the title of a window or in a ToolTip message.</em>
+<a class="jxr_linenumber" name="L79" href="#L79">79</a>  <em class="jxr_javadoccomment">     */</em>
+<a class="jxr_linenumber" name="L80" href="#L80">80</a>      <strong class="jxr_keyword">public</strong> String getDescription() {
+<a class="jxr_linenumber" name="L81" href="#L81">81</a>          <strong class="jxr_keyword">return</strong> <span class="jxr_string">"Aqua Look and Feel for Mac OS X"</span>;
+<a class="jxr_linenumber" name="L82" href="#L82">82</a>      }
+<a class="jxr_linenumber" name="L83" href="#L83">83</a>  
+<a class="jxr_linenumber" name="L84" href="#L84">84</a>      <em class="jxr_javadoccomment">/**</em>
+<a class="jxr_linenumber" name="L85" href="#L85">85</a>  <em class="jxr_javadoccomment">     * Returns true if the &lt;code&gt;LookAndFeel&lt;/code&gt; returned</em>
+<a class="jxr_linenumber" name="L86" href="#L86">86</a>  <em class="jxr_javadoccomment">     * &lt;code&gt;RootPaneUI&lt;/code&gt; instances support providing Window decorations</em>
+<a class="jxr_linenumber" name="L87" href="#L87">87</a>  <em class="jxr_javadoccomment">     * in a &lt;code&gt;JRootPane&lt;/code&gt;.</em>
+<a class="jxr_linenumber" name="L88" href="#L88">88</a>  <em class="jxr_javadoccomment">     * &lt;p&gt;</em>
+<a class="jxr_linenumber" name="L89" href="#L89">89</a>  <em class="jxr_javadoccomment">     * The default implementation returns false, subclasses that support</em>
+<a class="jxr_linenumber" name="L90" href="#L90">90</a>  <em class="jxr_javadoccomment">     * Window decorations should override this and return true.</em>
+<a class="jxr_linenumber" name="L91" href="#L91">91</a>  <em class="jxr_javadoccomment">     *</em>
+<a class="jxr_linenumber" name="L92" href="#L92">92</a>  <em class="jxr_javadoccomment">     * @return True if the RootPaneUI instances created support client side</em>
+<a class="jxr_linenumber" name="L93" href="#L93">93</a>  <em class="jxr_javadoccomment">     *             decorations</em>
+<a class="jxr_linenumber" name="L94" href="#L94">94</a>  <em class="jxr_javadoccomment">     * @see JDialog#setDefaultLookAndFeelDecorated</em>
+<a class="jxr_linenumber" name="L95" href="#L95">95</a>  <em class="jxr_javadoccomment">     * @see JFrame#setDefaultLookAndFeelDecorated</em>
+<a class="jxr_linenumber" name="L96" href="#L96">96</a>  <em class="jxr_javadoccomment">     * @see JRootPane#setWindowDecorationStyle</em>
+<a class="jxr_linenumber" name="L97" href="#L97">97</a>  <em class="jxr_javadoccomment">     * @since 1.4</em>
+<a class="jxr_linenumber" name="L98" href="#L98">98</a>  <em class="jxr_javadoccomment">     */</em>
+<a class="jxr_linenumber" name="L99" href="#L99">99</a>      <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">boolean</strong> getSupportsWindowDecorations() {
+<a class="jxr_linenumber" name="L100" href="#L100">100</a>         <strong class="jxr_keyword">return</strong> false;
+<a class="jxr_linenumber" name="L101" href="#L101">101</a>     }
+<a class="jxr_linenumber" name="L102" href="#L102">102</a> 
+<a class="jxr_linenumber" name="L103" href="#L103">103</a>     <em class="jxr_javadoccomment">/**</em>
+<a class="jxr_linenumber" name="L104" href="#L104">104</a> <em class="jxr_javadoccomment">     * If the underlying platform has a "native" look and feel, and this</em>
+<a class="jxr_linenumber" name="L105" href="#L105">105</a> <em class="jxr_javadoccomment">     * is an implementation of it, return true.</em>
+<a class="jxr_linenumber" name="L106" href="#L106">106</a> <em class="jxr_javadoccomment">     */</em>
+<a class="jxr_linenumber" name="L107" href="#L107">107</a>     <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">boolean</strong> isNativeLookAndFeel() {
+<a class="jxr_linenumber" name="L108" href="#L108">108</a>         <strong class="jxr_keyword">return</strong> <strong class="jxr_keyword">true</strong>;
+<a class="jxr_linenumber" name="L109" href="#L109">109</a>     }
+<a class="jxr_linenumber" name="L110" href="#L110">110</a> 
+<a class="jxr_linenumber" name="L111" href="#L111">111</a>     <em class="jxr_javadoccomment">/**</em>
+<a class="jxr_linenumber" name="L112" href="#L112">112</a> <em class="jxr_javadoccomment">     * Return true if the underlying platform supports and or permits</em>
+<a class="jxr_linenumber" name="L113" href="#L113">113</a> <em class="jxr_javadoccomment">     * this look and feel.  This method returns false if the look</em>
+<a class="jxr_linenumber" name="L114" href="#L114">114</a> <em class="jxr_javadoccomment">     * and feel depends on special resources or legal agreements that</em>
+<a class="jxr_linenumber" name="L115" href="#L115">115</a> <em class="jxr_javadoccomment">     * aren't defined for the current platform.</em>
+<a class="jxr_linenumber" name="L116" href="#L116">116</a> <em class="jxr_javadoccomment">     *</em>
+<a class="jxr_linenumber" name="L117" href="#L117">117</a> <em class="jxr_javadoccomment">     * @see UIManager#setLookAndFeel</em>
+<a class="jxr_linenumber" name="L118" href="#L118">118</a> <em class="jxr_javadoccomment">     */</em>
+<a class="jxr_linenumber" name="L119" href="#L119">119</a>     <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">boolean</strong> isSupportedLookAndFeel() {
+<a class="jxr_linenumber" name="L120" href="#L120">120</a>         <strong class="jxr_keyword">return</strong> <strong class="jxr_keyword">true</strong>;
+<a class="jxr_linenumber" name="L121" href="#L121">121</a>     }
+<a class="jxr_linenumber" name="L122" href="#L122">122</a> 
+<a class="jxr_linenumber" name="L123" href="#L123">123</a>     <em class="jxr_javadoccomment">/**</em>
+<a class="jxr_linenumber" name="L124" href="#L124">124</a> <em class="jxr_javadoccomment">     * UIManager.setLookAndFeel calls this method before the first</em>
+<a class="jxr_linenumber" name="L125" href="#L125">125</a> <em class="jxr_javadoccomment">     * call (and typically the only call) to getDefaults().  Subclasses</em>
+<a class="jxr_linenumber" name="L126" href="#L126">126</a> <em class="jxr_javadoccomment">     * should do any one-time setup they need here, rather than</em>
+<a class="jxr_linenumber" name="L127" href="#L127">127</a> <em class="jxr_javadoccomment">     * in a static initializer, because look and feel class objects</em>
+<a class="jxr_linenumber" name="L128" href="#L128">128</a> <em class="jxr_javadoccomment">     * may be loaded just to discover that isSupportedLookAndFeel()</em>
+<a class="jxr_linenumber" name="L129" href="#L129">129</a> <em class="jxr_javadoccomment">     * returns false.</em>
+<a class="jxr_linenumber" name="L130" href="#L130">130</a> <em class="jxr_javadoccomment">     *</em>
+<a class="jxr_linenumber" name="L131" href="#L131">131</a> <em class="jxr_javadoccomment">     * @see #uninitialize</em>
+<a class="jxr_linenumber" name="L132" href="#L132">132</a> <em class="jxr_javadoccomment">     * @see UIManager#setLookAndFeel</em>
+<a class="jxr_linenumber" name="L133" href="#L133">133</a> <em class="jxr_javadoccomment">     */</em>
+<a class="jxr_linenumber" name="L134" href="#L134">134</a>     <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">void</strong> initialize() {
+<a class="jxr_linenumber" name="L135" href="#L135">135</a>         java.security.AccessController.doPrivileged(<strong class="jxr_keyword">new</strong> PrivilegedAction&lt;Void&gt;() {
+<a class="jxr_linenumber" name="L136" href="#L136">136</a>                 <strong class="jxr_keyword">public</strong> Void run() {
+<a class="jxr_linenumber" name="L137" href="#L137">137</a>                     System.loadLibrary(<span class="jxr_string">"osxui"</span>);
+<a class="jxr_linenumber" name="L138" href="#L138">138</a>                     <strong class="jxr_keyword">return</strong> <strong class="jxr_keyword">null</strong>;
+<a class="jxr_linenumber" name="L139" href="#L139">139</a>                 }
+<a class="jxr_linenumber" name="L140" href="#L140">140</a>             });
+<a class="jxr_linenumber" name="L141" href="#L141">141</a> 
+<a class="jxr_linenumber" name="L142" href="#L142">142</a>         java.security.AccessController.doPrivileged(<strong class="jxr_keyword">new</strong> PrivilegedAction&lt;Void&gt;(){
+<a class="jxr_linenumber" name="L143" href="#L143">143</a>             @Override
+<a class="jxr_linenumber" name="L144" href="#L144">144</a>             <strong class="jxr_keyword">public</strong> Void run() {
+<a class="jxr_linenumber" name="L145" href="#L145">145</a>                 JRSUIControl.initJRSUI();
+<a class="jxr_linenumber" name="L146" href="#L146">146</a>                 <strong class="jxr_keyword">return</strong> <strong class="jxr_keyword">null</strong>;
+<a class="jxr_linenumber" name="L147" href="#L147">147</a>             }
+<a class="jxr_linenumber" name="L148" href="#L148">148</a>         });
+<a class="jxr_linenumber" name="L149" href="#L149">149</a> 
+<a class="jxr_linenumber" name="L150" href="#L150">150</a>         <strong class="jxr_keyword">super</strong>.initialize();
+<a class="jxr_linenumber" name="L151" href="#L151">151</a>         <strong class="jxr_keyword">final</strong> ScreenPopupFactory spf = <strong class="jxr_keyword">new</strong> ScreenPopupFactory();
+<a class="jxr_linenumber" name="L152" href="#L152">152</a>         spf.setActive(<strong class="jxr_keyword">true</strong>);
+<a class="jxr_linenumber" name="L153" href="#L153">153</a>         PopupFactory.setSharedInstance(spf);
+<a class="jxr_linenumber" name="L154" href="#L154">154</a> 
+<a class="jxr_linenumber" name="L155" href="#L155">155</a>         KeyboardFocusManager.getCurrentKeyboardFocusManager().addKeyEventPostProcessor(AquaMnemonicHandler.getInstance());
+<a class="jxr_linenumber" name="L156" href="#L156">156</a>     }
+<a class="jxr_linenumber" name="L157" href="#L157">157</a> 
+<a class="jxr_linenumber" name="L158" href="#L158">158</a>     <em class="jxr_javadoccomment">/**</em>
+<a class="jxr_linenumber" name="L159" href="#L159">159</a> <em class="jxr_javadoccomment">     * UIManager.setLookAndFeel calls this method just before we're</em>
+<a class="jxr_linenumber" name="L160" href="#L160">160</a> <em class="jxr_javadoccomment">     * replaced by a new default look and feel.   Subclasses may</em>
+<a class="jxr_linenumber" name="L161" href="#L161">161</a> <em class="jxr_javadoccomment">     * choose to free up some resources here.</em>
+<a class="jxr_linenumber" name="L162" href="#L162">162</a> <em class="jxr_javadoccomment">     *</em>
+<a class="jxr_linenumber" name="L163" href="#L163">163</a> <em class="jxr_javadoccomment">     * @see #initialize</em>
+<a class="jxr_linenumber" name="L164" href="#L164">164</a> <em class="jxr_javadoccomment">     */</em>
+<a class="jxr_linenumber" name="L165" href="#L165">165</a>     <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">void</strong> uninitialize() {
+<a class="jxr_linenumber" name="L166" href="#L166">166</a>         KeyboardFocusManager.getCurrentKeyboardFocusManager().removeKeyEventPostProcessor(AquaMnemonicHandler.getInstance());
+<a class="jxr_linenumber" name="L167" href="#L167">167</a> 
+<a class="jxr_linenumber" name="L168" href="#L168">168</a>         <strong class="jxr_keyword">final</strong> PopupFactory popupFactory = PopupFactory.getSharedInstance();
+<a class="jxr_linenumber" name="L169" href="#L169">169</a>         <strong class="jxr_keyword">if</strong> (popupFactory != <strong class="jxr_keyword">null</strong> &amp;&amp; popupFactory instanceof ScreenPopupFactory) {
+<a class="jxr_linenumber" name="L170" href="#L170">170</a>             ((ScreenPopupFactory)popupFactory).setActive(false);
+<a class="jxr_linenumber" name="L171" href="#L171">171</a>         }
+<a class="jxr_linenumber" name="L172" href="#L172">172</a> 
+<a class="jxr_linenumber" name="L173" href="#L173">173</a>         <strong class="jxr_keyword">super</strong>.uninitialize();
+<a class="jxr_linenumber" name="L174" href="#L174">174</a>     }
+<a class="jxr_linenumber" name="L175" href="#L175">175</a> 
+<a class="jxr_linenumber" name="L176" href="#L176">176</a>     <em class="jxr_javadoccomment">/**</em>
+<a class="jxr_linenumber" name="L177" href="#L177">177</a> <em class="jxr_javadoccomment">     * Returns an &lt;code&gt;ActionMap&lt;/code&gt;.</em>
+<a class="jxr_linenumber" name="L178" href="#L178">178</a> <em class="jxr_javadoccomment">     * &lt;P&gt;</em>
+<a class="jxr_linenumber" name="L179" href="#L179">179</a> <em class="jxr_javadoccomment">     * This &lt;code&gt;ActionMap&lt;/code&gt; contains &lt;code&gt;Actions&lt;/code&gt; that</em>
+<a class="jxr_linenumber" name="L180" href="#L180">180</a> <em class="jxr_javadoccomment">     * embody the ability to render an auditory cue. These auditory</em>
+<a class="jxr_linenumber" name="L181" href="#L181">181</a> <em class="jxr_javadoccomment">     * cues map onto user and system activities that may be useful</em>
+<a class="jxr_linenumber" name="L182" href="#L182">182</a> <em class="jxr_javadoccomment">     * for an end user to know about (such as a dialog box appearing).</em>
+<a class="jxr_linenumber" name="L183" href="#L183">183</a> <em class="jxr_javadoccomment">     * &lt;P&gt;</em>
+<a class="jxr_linenumber" name="L184" href="#L184">184</a> <em class="jxr_javadoccomment">     * At the appropriate time in a &lt;code&gt;JComponent&lt;/code&gt; UI's lifecycle,</em>
+<a class="jxr_linenumber" name="L185" href="#L185">185</a> <em class="jxr_javadoccomment">     * the ComponentUI is responsible for getting the appropriate</em>
+<a class="jxr_linenumber" name="L186" href="#L186">186</a> <em class="jxr_javadoccomment">     * &lt;code&gt;Action&lt;/code&gt; out of the &lt;code&gt;ActionMap&lt;/code&gt; and passing</em>
+<a class="jxr_linenumber" name="L187" href="#L187">187</a> <em class="jxr_javadoccomment">     * it on to &lt;code&gt;playSound&lt;/code&gt;.</em>
+<a class="jxr_linenumber" name="L188" href="#L188">188</a> <em class="jxr_javadoccomment">     * &lt;P&gt;</em>
+<a class="jxr_linenumber" name="L189" href="#L189">189</a> <em class="jxr_javadoccomment">     * The &lt;code&gt;Actions&lt;/code&gt; in this &lt;code&gt;ActionMap&lt;/code&gt; are</em>
+<a class="jxr_linenumber" name="L190" href="#L190">190</a> <em class="jxr_javadoccomment">     * created by the &lt;code&gt;createAudioAction&lt;/code&gt; method.</em>
+<a class="jxr_linenumber" name="L191" href="#L191">191</a> <em class="jxr_javadoccomment">     *</em>
+<a class="jxr_linenumber" name="L192" href="#L192">192</a> <em class="jxr_javadoccomment">     * @return      an ActionMap containing Actions</em>
+<a class="jxr_linenumber" name="L193" href="#L193">193</a> <em class="jxr_javadoccomment">     *              responsible for rendering auditory cues</em>
+<a class="jxr_linenumber" name="L194" href="#L194">194</a> <em class="jxr_javadoccomment">     * @see #createAudioAction</em>
+<a class="jxr_linenumber" name="L195" href="#L195">195</a> <em class="jxr_javadoccomment">     * @see #playSound(Action)</em>
+<a class="jxr_linenumber" name="L196" href="#L196">196</a> <em class="jxr_javadoccomment">     * @since 1.4</em>
+<a class="jxr_linenumber" name="L197" href="#L197">197</a> <em class="jxr_javadoccomment">     */</em>
+<a class="jxr_linenumber" name="L198" href="#L198">198</a>     <strong class="jxr_keyword">protected</strong> ActionMap getAudioActionMap() {
+<a class="jxr_linenumber" name="L199" href="#L199">199</a>         ActionMap audioActionMap = (ActionMap)UIManager.get(<span class="jxr_string">"AuditoryCues.actionMap"</span>);
+<a class="jxr_linenumber" name="L200" href="#L200">200</a>         <strong class="jxr_keyword">if</strong> (audioActionMap != <strong class="jxr_keyword">null</strong>) <strong class="jxr_keyword">return</strong> audioActionMap;
+<a class="jxr_linenumber" name="L201" href="#L201">201</a> 
+<a class="jxr_linenumber" name="L202" href="#L202">202</a>         <strong class="jxr_keyword">final</strong> Object[] acList = (Object[])UIManager.get(<span class="jxr_string">"AuditoryCues.cueList"</span>);
+<a class="jxr_linenumber" name="L203" href="#L203">203</a>         <strong class="jxr_keyword">if</strong> (acList != <strong class="jxr_keyword">null</strong>) {
+<a class="jxr_linenumber" name="L204" href="#L204">204</a>             audioActionMap = <strong class="jxr_keyword">new</strong> ActionMapUIResource();
+<a class="jxr_linenumber" name="L205" href="#L205">205</a>             <strong class="jxr_keyword">for</strong> (<strong class="jxr_keyword">int</strong> counter = acList.length - 1; counter &gt;= 0; counter--) {
+<a class="jxr_linenumber" name="L206" href="#L206">206</a>                 audioActionMap.put(acList[counter], createAudioAction(acList[counter]));
+<a class="jxr_linenumber" name="L207" href="#L207">207</a>             }
+<a class="jxr_linenumber" name="L208" href="#L208">208</a>         }
+<a class="jxr_linenumber" name="L209" href="#L209">209</a>         UIManager.getLookAndFeelDefaults().put(<span class="jxr_string">"AuditoryCues.actionMap"</span>, audioActionMap);
+<a class="jxr_linenumber" name="L210" href="#L210">210</a> 
+<a class="jxr_linenumber" name="L211" href="#L211">211</a>         <strong class="jxr_keyword">return</strong> audioActionMap;
+<a class="jxr_linenumber" name="L212" href="#L212">212</a>     }
+<a class="jxr_linenumber" name="L213" href="#L213">213</a> 
+<a class="jxr_linenumber" name="L214" href="#L214">214</a>     <em class="jxr_javadoccomment">/**</em>
+<a class="jxr_linenumber" name="L215" href="#L215">215</a> <em class="jxr_javadoccomment">     * We override getDefaults() so we can install our own debug defaults</em>
+<a class="jxr_linenumber" name="L216" href="#L216">216</a> <em class="jxr_javadoccomment">     * if needed for testing</em>
+<a class="jxr_linenumber" name="L217" href="#L217">217</a> <em class="jxr_javadoccomment">     */</em>
+<a class="jxr_linenumber" name="L218" href="#L218">218</a>     <strong class="jxr_keyword">public</strong> UIDefaults getDefaults() {
+<a class="jxr_linenumber" name="L219" href="#L219">219</a>         <strong class="jxr_keyword">final</strong> UIDefaults table = <strong class="jxr_keyword">new</strong> UIDefaults();
+<a class="jxr_linenumber" name="L220" href="#L220">220</a>         <em class="jxr_comment">// use debug defaults if you want to see every query into the defaults object.</em>
+<a class="jxr_linenumber" name="L221" href="#L221">221</a>         <em class="jxr_comment">//UIDefaults table = new DebugDefaults();</em>
+<a class="jxr_linenumber" name="L222" href="#L222">222</a>         <strong class="jxr_keyword">try</strong> {
+<a class="jxr_linenumber" name="L223" href="#L223">223</a>             <em class="jxr_comment">// PopupFactory.getSharedInstance().setPopupType(2);</em>
+<a class="jxr_linenumber" name="L224" href="#L224">224</a>             initClassDefaults(table);
+<a class="jxr_linenumber" name="L225" href="#L225">225</a> 
+<a class="jxr_linenumber" name="L226" href="#L226">226</a>             <em class="jxr_comment">// Here we install all the Basic defaults in case we missed some in our System color</em>
+<a class="jxr_linenumber" name="L227" href="#L227">227</a>             <em class="jxr_comment">// or component defaults that follow. Eventually we will take this out.</em>
+<a class="jxr_linenumber" name="L228" href="#L228">228</a>             <em class="jxr_comment">// This is a big negative to performance so we want to get it out as soon</em>
+<a class="jxr_linenumber" name="L229" href="#L229">229</a>             <em class="jxr_comment">// as we are comfortable with the Aqua defaults.</em>
+<a class="jxr_linenumber" name="L230" href="#L230">230</a>             <strong class="jxr_keyword">super</strong>.initSystemColorDefaults(table);
+<a class="jxr_linenumber" name="L231" href="#L231">231</a>             <strong class="jxr_keyword">super</strong>.initComponentDefaults(table);
+<a class="jxr_linenumber" name="L232" href="#L232">232</a> 
+<a class="jxr_linenumber" name="L233" href="#L233">233</a>             <em class="jxr_comment">// Because the last elements added win in precedence we add all of our aqua elements here.</em>
+<a class="jxr_linenumber" name="L234" href="#L234">234</a>             initSystemColorDefaults(table);
+<a class="jxr_linenumber" name="L235" href="#L235">235</a>             initComponentDefaults(table);
+<a class="jxr_linenumber" name="L236" href="#L236">236</a>         } <strong class="jxr_keyword">catch</strong>(<strong class="jxr_keyword">final</strong> Exception e) {
+<a class="jxr_linenumber" name="L237" href="#L237">237</a>             e.printStackTrace();
+<a class="jxr_linenumber" name="L238" href="#L238">238</a>         }
+<a class="jxr_linenumber" name="L239" href="#L239">239</a>         <strong class="jxr_keyword">return</strong> table;
+<a class="jxr_linenumber" name="L240" href="#L240">240</a>     }
+<a class="jxr_linenumber" name="L241" href="#L241">241</a> 
+<a class="jxr_linenumber" name="L242" href="#L242">242</a>     <em class="jxr_javadoccomment">/**</em>
+<a class="jxr_linenumber" name="L243" href="#L243">243</a> <em class="jxr_javadoccomment">     * Initialize the defaults table with the name of the ResourceBundle</em>
+<a class="jxr_linenumber" name="L244" href="#L244">244</a> <em class="jxr_javadoccomment">     * used for getting localized defaults.  Also initialize the default</em>
+<a class="jxr_linenumber" name="L245" href="#L245">245</a> <em class="jxr_javadoccomment">     * locale used when no locale is passed into UIDefaults.get().  The</em>
+<a class="jxr_linenumber" name="L246" href="#L246">246</a> <em class="jxr_javadoccomment">     * default locale should generally not be relied upon. It is here for</em>
+<a class="jxr_linenumber" name="L247" href="#L247">247</a> <em class="jxr_javadoccomment">     * compatibility with releases prior to 1.4.</em>
+<a class="jxr_linenumber" name="L248" href="#L248">248</a> <em class="jxr_javadoccomment">     */</em>
+<a class="jxr_linenumber" name="L249" href="#L249">249</a>     <strong class="jxr_keyword">private</strong> <strong class="jxr_keyword">void</strong> initResourceBundle(<strong class="jxr_keyword">final</strong> UIDefaults table) {
+<a class="jxr_linenumber" name="L250" href="#L250">250</a>         table.setDefaultLocale(Locale.getDefault());
+<a class="jxr_linenumber" name="L251" href="#L251">251</a>         table.addResourceBundle(PKG_PREFIX + <span class="jxr_string">"resources.aqua"</span>);
+<a class="jxr_linenumber" name="L252" href="#L252">252</a>         <strong class="jxr_keyword">try</strong> {
+<a class="jxr_linenumber" name="L253" href="#L253">253</a>             <strong class="jxr_keyword">final</strong> ResourceBundle aquaProperties = ResourceBundle.getBundle(PKG_PREFIX + <span class="jxr_string">"resources.aqua"</span>);
+<a class="jxr_linenumber" name="L254" href="#L254">254</a>             <strong class="jxr_keyword">final</strong> Enumeration&lt;String&gt; propertyKeys = aquaProperties.getKeys();
+<a class="jxr_linenumber" name="L255" href="#L255">255</a> 
+<a class="jxr_linenumber" name="L256" href="#L256">256</a>             <strong class="jxr_keyword">while</strong> (propertyKeys.hasMoreElements()) {
+<a class="jxr_linenumber" name="L257" href="#L257">257</a>                 <strong class="jxr_keyword">final</strong> String key = propertyKeys.nextElement();
+<a class="jxr_linenumber" name="L258" href="#L258">258</a>                 table.put(key, aquaProperties.getString(key));
+<a class="jxr_linenumber" name="L259" href="#L259">259</a>             }
+<a class="jxr_linenumber" name="L260" href="#L260">260</a>         } <strong class="jxr_keyword">catch</strong> (<strong class="jxr_keyword">final</strong> Exception e) {
+<a class="jxr_linenumber" name="L261" href="#L261">261</a>         }
+<a class="jxr_linenumber" name="L262" href="#L262">262</a>     }
+<a class="jxr_linenumber" name="L263" href="#L263">263</a> 
+<a class="jxr_linenumber" name="L264" href="#L264">264</a>     <em class="jxr_javadoccomment">/**</em>
+<a class="jxr_linenumber" name="L265" href="#L265">265</a> <em class="jxr_javadoccomment">     * This is the last step in the getDefaults routine usually called from our superclass</em>
+<a class="jxr_linenumber" name="L266" href="#L266">266</a> <em class="jxr_javadoccomment">     */</em>
+<a class="jxr_linenumber" name="L267" href="#L267">267</a>     <strong class="jxr_keyword">protected</strong> <strong class="jxr_keyword">void</strong> initComponentDefaults(<strong class="jxr_keyword">final</strong> UIDefaults table) {
+<a class="jxr_linenumber" name="L268" href="#L268">268</a>         initResourceBundle(table);
+<a class="jxr_linenumber" name="L269" href="#L269">269</a> 
+<a class="jxr_linenumber" name="L270" href="#L270">270</a>         <strong class="jxr_keyword">final</strong> InsetsUIResource zeroInsets = <strong class="jxr_keyword">new</strong> InsetsUIResource(0, 0, 0, 0);
+<a class="jxr_linenumber" name="L271" href="#L271">271</a>         <strong class="jxr_keyword">final</strong> InsetsUIResource menuItemMargin = zeroInsets;
+<a class="jxr_linenumber" name="L272" href="#L272">272</a> 
+<a class="jxr_linenumber" name="L273" href="#L273">273</a>         <em class="jxr_comment">// &lt;rdar://problem/5189013&gt; Entire Java application window refreshes when moving off Shortcut menu item</em>
+<a class="jxr_linenumber" name="L274" href="#L274">274</a>         <strong class="jxr_keyword">final</strong> Boolean useOpaqueComponents = Boolean.TRUE;
+<a class="jxr_linenumber" name="L275" href="#L275">275</a> 
+<a class="jxr_linenumber" name="L276" href="#L276">276</a>         <strong class="jxr_keyword">final</strong> Boolean buttonShouldBeOpaque = AquaUtils.shouldUseOpaqueButtons() ? Boolean.TRUE : Boolean.FALSE;
+<a class="jxr_linenumber" name="L277" href="#L277">277</a> 
+<a class="jxr_linenumber" name="L278" href="#L278">278</a>         <em class="jxr_comment">// *** List value objects</em>
+<a class="jxr_linenumber" name="L279" href="#L279">279</a>         <strong class="jxr_keyword">final</strong> Object listCellRendererActiveValue = <strong class="jxr_keyword">new</strong> UIDefaults.ActiveValue(){
+<a class="jxr_linenumber" name="L280" href="#L280">280</a>             <strong class="jxr_keyword">public</strong> Object createValue(UIDefaults defaultsTable) {
+<a class="jxr_linenumber" name="L281" href="#L281">281</a>                 <strong class="jxr_keyword">return</strong> <strong class="jxr_keyword">new</strong> DefaultListCellRenderer.UIResource();
+<a class="jxr_linenumber" name="L282" href="#L282">282</a>             }
+<a class="jxr_linenumber" name="L283" href="#L283">283</a>         };
+<a class="jxr_linenumber" name="L284" href="#L284">284</a> 
+<a class="jxr_linenumber" name="L285" href="#L285">285</a>         <em class="jxr_comment">// SJA - I'm basing this on what is in the MetalLookAndFeel class, but</em>
+<a class="jxr_linenumber" name="L286" href="#L286">286</a>         <em class="jxr_comment">// without being based on BasicLookAndFeel. We want more flexibility.</em>
+<a class="jxr_linenumber" name="L287" href="#L287">287</a>         <em class="jxr_comment">// The key to doing this well is to use Lazy initializing classes as</em>
+<a class="jxr_linenumber" name="L288" href="#L288">288</a>         <em class="jxr_comment">// much as possible.</em>
+<a class="jxr_linenumber" name="L289" href="#L289">289</a> 
+<a class="jxr_linenumber" name="L290" href="#L290">290</a>         <em class="jxr_comment">// Here I want to go to native and get all the values we'd need for colors etc.</em>
+<a class="jxr_linenumber" name="L291" href="#L291">291</a>         <strong class="jxr_keyword">final</strong> Border toolTipBorder = <strong class="jxr_keyword">new</strong> BorderUIResource.EmptyBorderUIResource(2, 0, 2, 0);
+<a class="jxr_linenumber" name="L292" href="#L292">292</a>         <strong class="jxr_keyword">final</strong> ColorUIResource toolTipBackground = <strong class="jxr_keyword">new</strong> ColorUIResource(255, 255, (<strong class="jxr_keyword">int</strong>)(255.0 * 0.80));
+<a class="jxr_linenumber" name="L293" href="#L293">293</a>         <strong class="jxr_keyword">final</strong> ColorUIResource black = <strong class="jxr_keyword">new</strong> ColorUIResource(Color.black);
+<a class="jxr_linenumber" name="L294" href="#L294">294</a>         <strong class="jxr_keyword">final</strong> ColorUIResource white = <strong class="jxr_keyword">new</strong> ColorUIResource(Color.white);
+<a class="jxr_linenumber" name="L295" href="#L295">295</a>         <strong class="jxr_keyword">final</strong> ColorUIResource smokyGlass = <strong class="jxr_keyword">new</strong> ColorUIResource(<strong class="jxr_keyword">new</strong> Color(0, 0, 0, 152));
+<a class="jxr_linenumber" name="L296" href="#L296">296</a>         <strong class="jxr_keyword">final</strong> ColorUIResource dockIconRim = <strong class="jxr_keyword">new</strong> ColorUIResource(<strong class="jxr_keyword">new</strong> Color(192, 192, 192, 192));
+<a class="jxr_linenumber" name="L297" href="#L297">297</a>         <strong class="jxr_keyword">final</strong> ColorUIResource mediumTranslucentBlack = <strong class="jxr_keyword">new</strong> ColorUIResource(<strong class="jxr_keyword">new</strong> Color(0, 0, 0, 100));
+<a class="jxr_linenumber" name="L298" href="#L298">298</a>         <strong class="jxr_keyword">final</strong> ColorUIResource translucentWhite = <strong class="jxr_keyword">new</strong> ColorUIResource(<strong class="jxr_keyword">new</strong> Color(255, 255, 255, 254));
+<a class="jxr_linenumber" name="L299" href="#L299">299</a>     <em class="jxr_comment">//    final ColorUIResource lightGray = new ColorUIResource(232, 232, 232);</em>
+<a class="jxr_linenumber" name="L300" href="#L300">300</a>         <strong class="jxr_keyword">final</strong> ColorUIResource disabled = <strong class="jxr_keyword">new</strong> ColorUIResource(0.5f, 0.5f, 0.5f);
+<a class="jxr_linenumber" name="L301" href="#L301">301</a>         <strong class="jxr_keyword">final</strong> ColorUIResource disabledShadow = <strong class="jxr_keyword">new</strong> ColorUIResource(0.25f, 0.25f, 0.25f);
+<a class="jxr_linenumber" name="L302" href="#L302">302</a>         <strong class="jxr_keyword">final</strong> ColorUIResource selected = <strong class="jxr_keyword">new</strong> ColorUIResource(1.0f, 0.4f, 0.4f);
+<a class="jxr_linenumber" name="L303" href="#L303">303</a> 
+<a class="jxr_linenumber" name="L304" href="#L304">304</a>         <em class="jxr_comment">// Contrast tab UI colors</em>
+<a class="jxr_linenumber" name="L305" href="#L305">305</a> 
+<a class="jxr_linenumber" name="L306" href="#L306">306</a>         <strong class="jxr_keyword">final</strong> ColorUIResource selectedTabTitlePressedColor = <strong class="jxr_keyword">new</strong> ColorUIResource(240, 240, 240);
+<a class="jxr_linenumber" name="L307" href="#L307">307</a>         <strong class="jxr_keyword">final</strong> ColorUIResource selectedTabTitleDisabledColor = <strong class="jxr_keyword">new</strong> ColorUIResource(<strong class="jxr_keyword">new</strong> Color(1, 1, 1, 0.55f));
+<a class="jxr_linenumber" name="L308" href="#L308">308</a>         <strong class="jxr_keyword">final</strong> ColorUIResource selectedTabTitleNormalColor = white;
+<a class="jxr_linenumber" name="L309" href="#L309">309</a>         <strong class="jxr_keyword">final</strong> ColorUIResource selectedTabTitleShadowDisabledColor = <strong class="jxr_keyword">new</strong> ColorUIResource(<strong class="jxr_keyword">new</strong> Color(0, 0, 0, 0.25f));
+<a class="jxr_linenumber" name="L310" href="#L310">310</a>         <strong class="jxr_keyword">final</strong> ColorUIResource selectedTabTitleShadowNormalColor = mediumTranslucentBlack;
+<a class="jxr_linenumber" name="L311" href="#L311">311</a>         <strong class="jxr_keyword">final</strong> ColorUIResource nonSelectedTabTitleNormalColor = black;
+<a class="jxr_linenumber" name="L312" href="#L312">312</a> 
+<a class="jxr_linenumber" name="L313" href="#L313">313</a>         <strong class="jxr_keyword">final</strong> ColorUIResource toolbarDragHandleColor = <strong class="jxr_keyword">new</strong> ColorUIResource(140, 140, 140);
+<a class="jxr_linenumber" name="L314" href="#L314">314</a> 
+<a class="jxr_linenumber" name="L315" href="#L315">315</a>         <em class="jxr_comment">// sja todo Make these lazy values so we only get them when required - if we deem it necessary</em>
+<a class="jxr_linenumber" name="L316" href="#L316">316</a>         <em class="jxr_comment">// it may be the case that we think the overhead of a proxy lazy value is not worth delaying</em>
+<a class="jxr_linenumber" name="L317" href="#L317">317</a>         <em class="jxr_comment">// creating the object if we think that most swing apps will use this.</em>
+<a class="jxr_linenumber" name="L318" href="#L318">318</a>         <em class="jxr_comment">// the lazy value is useful for delaying initialization until this default value is actually</em>
+<a class="jxr_linenumber" name="L319" href="#L319">319</a>         <em class="jxr_comment">// accessed by the LAF instead of at init time, so making it lazy should speed up</em>
+<a class="jxr_linenumber" name="L320" href="#L320">320</a>         <em class="jxr_comment">// our launch times of Swing apps.</em>
+<a class="jxr_linenumber" name="L321" href="#L321">321</a> 
+<a class="jxr_linenumber" name="L322" href="#L322">322</a>         <em class="jxr_comment">// *** Text value objects</em>
+<a class="jxr_linenumber" name="L323" href="#L323">323</a>         <strong class="jxr_keyword">final</strong> Object marginBorder = <strong class="jxr_keyword">new</strong> SwingLazyValue(<span class="jxr_string">"javax.swing.plaf.basic.BasicBorders$MarginBorder"</span>);
+<a class="jxr_linenumber" name="L324" href="#L324">324</a> 
+<a class="jxr_linenumber" name="L325" href="#L325">325</a>         <strong class="jxr_keyword">final</strong> Object zero = <strong class="jxr_keyword">new</strong> Integer(0);
+<a class="jxr_linenumber" name="L326" href="#L326">326</a>         <strong class="jxr_keyword">final</strong> Object editorMargin = zeroInsets; <em class="jxr_comment">// this is not correct - look at TextEdit to determine the right margin</em>
+<a class="jxr_linenumber" name="L327" href="#L327">327</a>         <strong class="jxr_keyword">final</strong> Object textCaretBlinkRate = <strong class="jxr_keyword">new</strong> Integer(500);
+<a class="jxr_linenumber" name="L328" href="#L328">328</a>         <strong class="jxr_keyword">final</strong> Object textFieldBorder = <strong class="jxr_keyword">new</strong> SwingLazyValue(PKG_PREFIX + <span class="jxr_string">"AquaTextFieldBorder"</span>, <span class="jxr_string">"getTextFieldBorder"</span>);
+<a class="jxr_linenumber" name="L329" href="#L329">329</a>         <strong class="jxr_keyword">final</strong> Object textAreaBorder = marginBorder; <em class="jxr_comment">// text areas have no real border - radar 311073</em>
+<a class="jxr_linenumber" name="L330" href="#L330">330</a> 
+<a class="jxr_linenumber" name="L331" href="#L331">331</a>         <strong class="jxr_keyword">final</strong> Object scollListBorder = <strong class="jxr_keyword">new</strong> SwingLazyValue(PKG_PREFIX + <span class="jxr_string">"AquaScrollRegionBorder"</span>, <span class="jxr_string">"getScrollRegionBorder"</span>);
+<a class="jxr_linenumber" name="L332" href="#L332">332</a>         <strong class="jxr_keyword">final</strong> Object aquaTitledBorder = <strong class="jxr_keyword">new</strong> SwingLazyValue(PKG_PREFIX + <span class="jxr_string">"AquaGroupBorder"</span>, <span class="jxr_string">"getBorderForTitledBorder"</span>);
+<a class="jxr_linenumber" name="L333" href="#L333">333</a>         <strong class="jxr_keyword">final</strong> Object aquaInsetBorder = <strong class="jxr_keyword">new</strong> SwingLazyValue(PKG_PREFIX + <span class="jxr_string">"AquaGroupBorder"</span>, <span class="jxr_string">"getTitlelessBorder"</span>);
+<a class="jxr_linenumber" name="L334" href="#L334">334</a> 
+<a class="jxr_linenumber" name="L335" href="#L335">335</a>         <strong class="jxr_keyword">final</strong> Border listHeaderBorder = AquaTableHeaderBorder.getListHeaderBorder();
+<a class="jxr_linenumber" name="L336" href="#L336">336</a>         <strong class="jxr_keyword">final</strong> Border zeroBorder = <strong class="jxr_keyword">new</strong> BorderUIResource.EmptyBorderUIResource(0, 0, 0, 0);
+<a class="jxr_linenumber" name="L337" href="#L337">337</a> 
+<a class="jxr_linenumber" name="L338" href="#L338">338</a>         <em class="jxr_comment">// we can't seem to proxy Colors</em>
+<a class="jxr_linenumber" name="L339" href="#L339">339</a>         <strong class="jxr_keyword">final</strong> Color selectionBackground = AquaImageFactory.getSelectionBackgroundColorUIResource();
+<a class="jxr_linenumber" name="L340" href="#L340">340</a>         <strong class="jxr_keyword">final</strong> Color selectionForeground = AquaImageFactory.getSelectionForegroundColorUIResource();
+<a class="jxr_linenumber" name="L341" href="#L341">341</a>         <strong class="jxr_keyword">final</strong> Color selectionInactiveBackground = AquaImageFactory.getSelectionInactiveBackgroundColorUIResource();
+<a class="jxr_linenumber" name="L342" href="#L342">342</a>         <strong class="jxr_keyword">final</strong> Color selectionInactiveForeground = AquaImageFactory.getSelectionInactiveForegroundColorUIResource();
+<a class="jxr_linenumber" name="L343" href="#L343">343</a> 
+<a class="jxr_linenumber" name="L344" href="#L344">344</a>         <strong class="jxr_keyword">final</strong> Color textHighlightText = AquaImageFactory.getTextSelectionForegroundColorUIResource();
+<a class="jxr_linenumber" name="L345" href="#L345">345</a>         <strong class="jxr_keyword">final</strong> Color textHighlight = AquaImageFactory.getTextSelectionBackgroundColorUIResource();
+<a class="jxr_linenumber" name="L346" href="#L346">346</a>         <strong class="jxr_keyword">final</strong> Color textHighlightInactive = <strong class="jxr_keyword">new</strong> ColorUIResource(212, 212, 212);
+<a class="jxr_linenumber" name="L347" href="#L347">347</a> 
+<a class="jxr_linenumber" name="L348" href="#L348">348</a>         <strong class="jxr_keyword">final</strong> Color textInactiveText = disabled;
+<a class="jxr_linenumber" name="L349" href="#L349">349</a>         <strong class="jxr_keyword">final</strong> Color textForeground = black;
+<a class="jxr_linenumber" name="L350" href="#L350">350</a>         <strong class="jxr_keyword">final</strong> Color textBackground = white;
+<a class="jxr_linenumber" name="L351" href="#L351">351</a>         <strong class="jxr_keyword">final</strong> Color textInactiveBackground = white;
+<a class="jxr_linenumber" name="L352" href="#L352">352</a> 
+<a class="jxr_linenumber" name="L353" href="#L353">353</a>         <strong class="jxr_keyword">final</strong> Color textPasswordFieldCapsLockIconColor = mediumTranslucentBlack;
+<a class="jxr_linenumber" name="L354" href="#L354">354</a> 
+<a class="jxr_linenumber" name="L355" href="#L355">355</a>         <strong class="jxr_keyword">final</strong> Object internalFrameBorder = <strong class="jxr_keyword">new</strong> SwingLazyValue(<span class="jxr_string">"javax.swing.plaf.basic.BasicBorders"</span>, <span class="jxr_string">"getInternalFrameBorder"</span>);
+<a class="jxr_linenumber" name="L356" href="#L356">356</a>         <strong class="jxr_keyword">final</strong> Color desktopBackgroundColor = <strong class="jxr_keyword">new</strong> ColorUIResource(<strong class="jxr_keyword">new</strong> Color(65, 105, 170));<em class="jxr_comment">//SystemColor.desktop</em>
+<a class="jxr_linenumber" name="L357" href="#L357">357</a> 
+<a class="jxr_linenumber" name="L358" href="#L358">358</a>         <strong class="jxr_keyword">final</strong> Color focusRingColor = AquaImageFactory.getFocusRingColorUIResource();
+<a class="jxr_linenumber" name="L359" href="#L359">359</a>         <strong class="jxr_keyword">final</strong> Border focusCellHighlightBorder = <strong class="jxr_keyword">new</strong> BorderUIResource.LineBorderUIResource(focusRingColor);
+<a class="jxr_linenumber" name="L360" href="#L360">360</a> 
+<a class="jxr_linenumber" name="L361" href="#L361">361</a>         <strong class="jxr_keyword">final</strong> Color windowBackgroundColor = AquaImageFactory.getWindowBackgroundColorUIResource();
+<a class="jxr_linenumber" name="L362" href="#L362">362</a>         <strong class="jxr_keyword">final</strong> Color panelBackgroundColor = windowBackgroundColor;
+<a class="jxr_linenumber" name="L363" href="#L363">363</a>         <strong class="jxr_keyword">final</strong> Color tabBackgroundColor = windowBackgroundColor;
+<a class="jxr_linenumber" name="L364" href="#L364">364</a>         <strong class="jxr_keyword">final</strong> Color controlBackgroundColor = windowBackgroundColor;
+<a class="jxr_linenumber" name="L365" href="#L365">365</a> 
+<a class="jxr_linenumber" name="L366" href="#L366">366</a>         <strong class="jxr_keyword">final</strong> Object controlFont = <strong class="jxr_keyword">new</strong> SwingLazyValue(kAquaFontsName, <span class="jxr_string">"getControlTextFont"</span>);
+<a class="jxr_linenumber" name="L367" href="#L367">367</a>         <strong class="jxr_keyword">final</strong> Object controlSmallFont = <strong class="jxr_keyword">new</strong> SwingLazyValue(kAquaFontsName, <span class="jxr_string">"getControlTextSmallFont"</span>);
+<a class="jxr_linenumber" name="L368" href="#L368">368</a>         <strong class="jxr_keyword">final</strong> Object alertHeaderFont = <strong class="jxr_keyword">new</strong> SwingLazyValue(kAquaFontsName, <span class="jxr_string">"getAlertHeaderFont"</span>);
+<a class="jxr_linenumber" name="L369" href="#L369">369</a>         <strong class="jxr_keyword">final</strong> Object menuFont = <strong class="jxr_keyword">new</strong> SwingLazyValue(kAquaFontsName, <span class="jxr_string">"getMenuFont"</span>);
+<a class="jxr_linenumber" name="L370" href="#L370">370</a>         <strong class="jxr_keyword">final</strong> Object viewFont = <strong class="jxr_keyword">new</strong> SwingLazyValue(kAquaFontsName, <span class="jxr_string">"getViewFont"</span>);
+<a class="jxr_linenumber" name="L371" href="#L371">371</a> 
+<a class="jxr_linenumber" name="L372" href="#L372">372</a>         <strong class="jxr_keyword">final</strong> Color menuBackgroundColor = <strong class="jxr_keyword">new</strong> ColorUIResource(Color.white);
+<a class="jxr_linenumber" name="L373" href="#L373">373</a>         <strong class="jxr_keyword">final</strong> Color menuForegroundColor = black;
+<a class="jxr_linenumber" name="L374" href="#L374">374</a> 
+<a class="jxr_linenumber" name="L375" href="#L375">375</a>         <strong class="jxr_keyword">final</strong> Color menuSelectedForegroundColor = white;
+<a class="jxr_linenumber" name="L376" href="#L376">376</a>         <strong class="jxr_keyword">final</strong> Color menuSelectedBackgroundColor = focusRingColor;
+<a class="jxr_linenumber" name="L377" href="#L377">377</a> 
+<a class="jxr_linenumber" name="L378" href="#L378">378</a>         <strong class="jxr_keyword">final</strong> Color menuDisabledBackgroundColor = menuBackgroundColor;
+<a class="jxr_linenumber" name="L379" href="#L379">379</a>         <strong class="jxr_keyword">final</strong> Color menuDisabledForegroundColor = disabled;
+<a class="jxr_linenumber" name="L380" href="#L380">380</a> 
+<a class="jxr_linenumber" name="L381" href="#L381">381</a>         <strong class="jxr_keyword">final</strong> Color menuAccelForegroundColor = black;
+<a class="jxr_linenumber" name="L382" href="#L382">382</a>         <strong class="jxr_keyword">final</strong> Color menuAccelSelectionForegroundColor = black;
+<a class="jxr_linenumber" name="L383" href="#L383">383</a> 
+<a class="jxr_linenumber" name="L384" href="#L384">384</a>         <strong class="jxr_keyword">final</strong> Border menuBorder = <strong class="jxr_keyword">new</strong> AquaMenuBorder();
+<a class="jxr_linenumber" name="L385" href="#L385">385</a> 
+<a class="jxr_linenumber" name="L386" href="#L386">386</a>         <strong class="jxr_keyword">final</strong> UIDefaults.LazyInputMap controlFocusInputMap = <strong class="jxr_keyword">new</strong> UIDefaults.LazyInputMap(<strong class="jxr_keyword">new</strong> Object[]{
+<a class="jxr_linenumber" name="L387" href="#L387">387</a>             <span class="jxr_string">"SPACE"</span>, <span class="jxr_string">"pressed"</span>,
+<a class="jxr_linenumber" name="L388" href="#L388">388</a>             <span class="jxr_string">"released SPACE"</span>, <span class="jxr_string">"released"</span>
+<a class="jxr_linenumber" name="L389" href="#L389">389</a>         });
+<a class="jxr_linenumber" name="L390" href="#L390">390</a> 
+<a class="jxr_linenumber" name="L391" href="#L391">391</a>         <em class="jxr_comment">// sja testing</em>
+<a class="jxr_linenumber" name="L392" href="#L392">392</a>         <strong class="jxr_keyword">final</strong> Object confirmIcon = <strong class="jxr_keyword">new</strong> SwingLazyValue(kAquaImageFactoryName, <span class="jxr_string">"getConfirmImageIcon"</span>); <em class="jxr_comment">// AquaImageFactory.getConfirmImageIcon();</em>
+<a class="jxr_linenumber" name="L393" href="#L393">393</a>         <strong class="jxr_keyword">final</strong> Object cautionIcon = <strong class="jxr_keyword">new</strong> SwingLazyValue(kAquaImageFactoryName, <span class="jxr_string">"getCautionImageIcon"</span>); <em class="jxr_comment">// AquaImageFactory.getCautionImageIcon();</em>
+<a class="jxr_linenumber" name="L394" href="#L394">394</a>         <strong class="jxr_keyword">final</strong> Object stopIcon = <strong class="jxr_keyword">new</strong> SwingLazyValue(kAquaImageFactoryName, <span class="jxr_string">"getStopImageIcon"</span>); <em class="jxr_comment">// AquaImageFactory.getStopImageIcon();</em>
+<a class="jxr_linenumber" name="L395" href="#L395">395</a>         <strong class="jxr_keyword">final</strong> Object securityIcon = <strong class="jxr_keyword">new</strong> SwingLazyValue(kAquaImageFactoryName, <span class="jxr_string">"getLockImageIcon"</span>); <em class="jxr_comment">// AquaImageFactory.getLockImageIcon();</em>
+<a class="jxr_linenumber" name="L396" href="#L396">396</a> 
+<a class="jxr_linenumber" name="L397" href="#L397">397</a>         <strong class="jxr_keyword">final</strong> AquaKeyBindings aquaKeyBindings = AquaKeyBindings.instance();
+<a class="jxr_linenumber" name="L398" href="#L398">398</a> 
+<a class="jxr_linenumber" name="L399" href="#L399">399</a>         <strong class="jxr_keyword">final</strong> Object[] defaults = {
+<a class="jxr_linenumber" name="L400" href="#L400">400</a>             <span class="jxr_string">"control"</span>, windowBackgroundColor, <em class="jxr_comment">/* Default color for controls (buttons, sliders, etc) */</em>
+<a class="jxr_linenumber" name="L401" href="#L401">401</a> 
+<a class="jxr_linenumber" name="L402" href="#L402">402</a>             <em class="jxr_comment">// Buttons</em>
+<a class="jxr_linenumber" name="L403" href="#L403">403</a>             <span class="jxr_string">"Button.background"</span>, controlBackgroundColor,
+<a class="jxr_linenumber" name="L404" href="#L404">404</a>             <span class="jxr_string">"Button.foreground"</span>, black,
+<a class="jxr_linenumber" name="L405" href="#L405">405</a>             <span class="jxr_string">"Button.disabledText"</span>, disabled,
+<a class="jxr_linenumber" name="L406" href="#L406">406</a>             <span class="jxr_string">"Button.select"</span>, selected,
+<a class="jxr_linenumber" name="L407" href="#L407">407</a>             <span class="jxr_string">"Button.border"</span>, <strong class="jxr_keyword">new</strong> SwingLazyValue(PKG_PREFIX + <span class="jxr_string">"AquaButtonBorder"</span>, <span class="jxr_string">"getDynamicButtonBorder"</span>),
+<a class="jxr_linenumber" name="L408" href="#L408">408</a>             <span class="jxr_string">"Button.font"</span>, controlFont,
+<a class="jxr_linenumber" name="L409" href="#L409">409</a>             <span class="jxr_string">"Button.textIconGap"</span>, <strong class="jxr_keyword">new</strong> Integer(4),
+<a class="jxr_linenumber" name="L410" href="#L410">410</a>             <span class="jxr_string">"Button.textShiftOffset"</span>, zero, <em class="jxr_comment">// radar 3308129 - aqua doesn't move images when pressed.</em>
+<a class="jxr_linenumber" name="L411" href="#L411">411</a>             <span class="jxr_string">"Button.focusInputMap"</span>, controlFocusInputMap,
+<a class="jxr_linenumber" name="L412" href="#L412">412</a>             <span class="jxr_string">"Button.margin"</span>, <strong class="jxr_keyword">new</strong> InsetsUIResource(0, 2, 0, 2),
+<a class="jxr_linenumber" name="L413" href="#L413">413</a>             <span class="jxr_string">"Button.opaque"</span>, buttonShouldBeOpaque,
+<a class="jxr_linenumber" name="L414" href="#L414">414</a> 
+<a class="jxr_linenumber" name="L415" href="#L415">415</a>             <span class="jxr_string">"CheckBox.background"</span>, controlBackgroundColor,
+<a class="jxr_linenumber" name="L416" href="#L416">416</a>             <span class="jxr_string">"CheckBox.foreground"</span>, black,
+<a class="jxr_linenumber" name="L417" href="#L417">417</a>             <span class="jxr_string">"CheckBox.disabledText"</span>, disabled,
+<a class="jxr_linenumber" name="L418" href="#L418">418</a>             <span class="jxr_string">"CheckBox.select"</span>, selected,
+<a class="jxr_linenumber" name="L419" href="#L419">419</a>             <span class="jxr_string">"CheckBox.icon"</span>, <strong class="jxr_keyword">new</strong> SwingLazyValue(PKG_PREFIX + <span class="jxr_string">"AquaButtonCheckBoxUI"</span>, <span class="jxr_string">"getSizingCheckBoxIcon"</span>),
+<a class="jxr_linenumber" name="L420" href="#L420">420</a>             <span class="jxr_string">"CheckBox.font"</span>, controlFont,
+<a class="jxr_linenumber" name="L421" href="#L421">421</a>             <span class="jxr_string">"CheckBox.border"</span>, AquaButtonBorder.getBevelButtonBorder(),
+<a class="jxr_linenumber" name="L422" href="#L422">422</a>             <span class="jxr_string">"CheckBox.margin"</span>, <strong class="jxr_keyword">new</strong> InsetsUIResource(1, 1, 0, 1),
+<a class="jxr_linenumber" name="L423" href="#L423">423</a>             <em class="jxr_comment">// radar 3583849. This property never gets</em>
+<a class="jxr_linenumber" name="L424" href="#L424">424</a>             <em class="jxr_comment">// used. The border for the Checkbox gets overridden</em>
+<a class="jxr_linenumber" name="L425" href="#L425">425</a>             <em class="jxr_comment">// by AquaRadiButtonUI.setThemeBorder(). Needs refactoring. (vm)</em>
+<a class="jxr_linenumber" name="L426" href="#L426">426</a>             <em class="jxr_comment">// why is button focus commented out?</em>
+<a class="jxr_linenumber" name="L427" href="#L427">427</a>             <em class="jxr_comment">//"CheckBox.focus", getFocusColor(),</em>
+<a class="jxr_linenumber" name="L428" href="#L428">428</a>             <span class="jxr_string">"CheckBox.focusInputMap"</span>, controlFocusInputMap,
+<a class="jxr_linenumber" name="L429" href="#L429">429</a> 
+<a class="jxr_linenumber" name="L430" href="#L430">430</a>             <span class="jxr_string">"CheckBoxMenuItem.font"</span>, menuFont,
+<a class="jxr_linenumber" name="L431" href="#L431">431</a>             <span class="jxr_string">"CheckBoxMenuItem.acceleratorFont"</span>, menuFont,
+<a class="jxr_linenumber" name="L432" href="#L432">432</a>             <span class="jxr_string">"CheckBoxMenuItem.background"</span>, menuBackgroundColor,
+<a class="jxr_linenumber" name="L433" href="#L433">433</a>             <span class="jxr_string">"CheckBoxMenuItem.foreground"</span>, menuForegroundColor,
+<a class="jxr_linenumber" name="L434" href="#L434">434</a>             <span class="jxr_string">"CheckBoxMenuItem.selectionBackground"</span>, menuSelectedBackgroundColor,
+<a class="jxr_linenumber" name="L435" href="#L435">435</a>             <span class="jxr_string">"CheckBoxMenuItem.selectionForeground"</span>, menuSelectedForegroundColor,
+<a class="jxr_linenumber" name="L436" href="#L436">436</a>             <span class="jxr_string">"CheckBoxMenuItem.disabledBackground"</span>, menuDisabledBackgroundColor,
+<a class="jxr_linenumber" name="L437" href="#L437">437</a>             <span class="jxr_string">"CheckBoxMenuItem.disabledForeground"</span>, menuDisabledForegroundColor,
+<a class="jxr_linenumber" name="L438" href="#L438">438</a>             <span class="jxr_string">"CheckBoxMenuItem.acceleratorForeground"</span>, menuAccelForegroundColor,
+<a class="jxr_linenumber" name="L439" href="#L439">439</a>             <span class="jxr_string">"CheckBoxMenuItem.acceleratorSelectionForeground"</span>, menuAccelSelectionForegroundColor,
+<a class="jxr_linenumber" name="L440" href="#L440">440</a>             <span class="jxr_string">"CheckBoxMenuItem.acceleratorDelimiter"</span>, <span class="jxr_string">""</span>,
+<a class="jxr_linenumber" name="L441" href="#L441">441</a>             <span class="jxr_string">"CheckBoxMenuItem.border"</span>, menuBorder, <em class="jxr_comment">// for inset calculation</em>
+<a class="jxr_linenumber" name="L442" href="#L442">442</a>             <span class="jxr_string">"CheckBoxMenuItem.margin"</span>, menuItemMargin,
+<a class="jxr_linenumber" name="L443" href="#L443">443</a>             <span class="jxr_string">"CheckBoxMenuItem.borderPainted"</span>, Boolean.TRUE,
+<a class="jxr_linenumber" name="L444" href="#L444">444</a>             <span class="jxr_string">"CheckBoxMenuItem.checkIcon"</span>, <strong class="jxr_keyword">new</strong> SwingLazyValue(kAquaImageFactoryName, <span class="jxr_string">"getMenuItemCheckIcon"</span>),
+<a class="jxr_linenumber" name="L445" href="#L445">445</a>             <span class="jxr_string">"CheckBoxMenuItem.dashIcon"</span>, <strong class="jxr_keyword">new</strong> SwingLazyValue(kAquaImageFactoryName, <span class="jxr_string">"getMenuItemDashIcon"</span>),
+<a class="jxr_linenumber" name="L446" href="#L446">446</a>             <em class="jxr_comment">//"CheckBoxMenuItem.arrowIcon", null,</em>
+<a class="jxr_linenumber" name="L447" href="#L447">447</a> 
+<a class="jxr_linenumber" name="L448" href="#L448">448</a>             <span class="jxr_string">"ColorChooser.background"</span>, panelBackgroundColor,
+<a class="jxr_linenumber" name="L449" href="#L449">449</a> 
+<a class="jxr_linenumber" name="L450" href="#L450">450</a>             <em class="jxr_comment">// *** ComboBox</em>
+<a class="jxr_linenumber" name="L451" href="#L451">451</a>             <span class="jxr_string">"ComboBox.font"</span>, controlFont,
+<a class="jxr_linenumber" name="L452" href="#L452">452</a>             <span class="jxr_string">"ComboBox.background"</span>, controlBackgroundColor, <em class="jxr_comment">//menuBackgroundColor, // "menu" when it has no scrollbar, "listView" when it does</em>
+<a class="jxr_linenumber" name="L453" href="#L453">453</a>             <span class="jxr_string">"ComboBox.foreground"</span>, menuForegroundColor,
+<a class="jxr_linenumber" name="L454" href="#L454">454</a>             <span class="jxr_string">"ComboBox.selectionBackground"</span>, menuSelectedBackgroundColor,
+<a class="jxr_linenumber" name="L455" href="#L455">455</a>             <span class="jxr_string">"ComboBox.selectionForeground"</span>, menuSelectedForegroundColor,
+<a class="jxr_linenumber" name="L456" href="#L456">456</a>             <span class="jxr_string">"ComboBox.disabledBackground"</span>, menuDisabledBackgroundColor,
+<a class="jxr_linenumber" name="L457" href="#L457">457</a>             <span class="jxr_string">"ComboBox.disabledForeground"</span>, menuDisabledForegroundColor,
+<a class="jxr_linenumber" name="L458" href="#L458">458</a>             <span class="jxr_string">"ComboBox.ancestorInputMap"</span>, aquaKeyBindings.getComboBoxInputMap(),
+<a class="jxr_linenumber" name="L459" href="#L459">459</a> 
+<a class="jxr_linenumber" name="L460" href="#L460">460</a>             <span class="jxr_string">"DesktopIcon.border"</span>, internalFrameBorder,
+<a class="jxr_linenumber" name="L461" href="#L461">461</a>             <span class="jxr_string">"DesktopIcon.borderColor"</span>, smokyGlass,
+<a class="jxr_linenumber" name="L462" href="#L462">462</a>             <span class="jxr_string">"DesktopIcon.borderRimColor"</span>, dockIconRim,
+<a class="jxr_linenumber" name="L463" href="#L463">463</a>             <span class="jxr_string">"DesktopIcon.labelBackground"</span>, mediumTranslucentBlack,
+<a class="jxr_linenumber" name="L464" href="#L464">464</a>             <span class="jxr_string">"Desktop.background"</span>, desktopBackgroundColor,
+<a class="jxr_linenumber" name="L465" href="#L465">465</a> 
+<a class="jxr_linenumber" name="L466" href="#L466">466</a>             <span class="jxr_string">"EditorPane.focusInputMap"</span>, aquaKeyBindings.getMultiLineTextInputMap(),
+<a class="jxr_linenumber" name="L467" href="#L467">467</a>             <span class="jxr_string">"EditorPane.font"</span>, controlFont,
+<a class="jxr_linenumber" name="L468" href="#L468">468</a>             <span class="jxr_string">"EditorPane.background"</span>, textBackground,
+<a class="jxr_linenumber" name="L469" href="#L469">469</a>             <span class="jxr_string">"EditorPane.foreground"</span>, textForeground,
+<a class="jxr_linenumber" name="L470" href="#L470">470</a>             <span class="jxr_string">"EditorPane.selectionBackground"</span>, textHighlight,
+<a class="jxr_linenumber" name="L471" href="#L471">471</a>             <span class="jxr_string">"EditorPane.selectionForeground"</span>, textHighlightText,
+<a class="jxr_linenumber" name="L472" href="#L472">472</a>             <span class="jxr_string">"EditorPane.caretForeground"</span>, textForeground,
+<a class="jxr_linenumber" name="L473" href="#L473">473</a>             <span class="jxr_string">"EditorPane.caretBlinkRate"</span>, textCaretBlinkRate,
+<a class="jxr_linenumber" name="L474" href="#L474">474</a>             <span class="jxr_string">"EditorPane.inactiveForeground"</span>, textInactiveText,
+<a class="jxr_linenumber" name="L475" href="#L475">475</a>             <span class="jxr_string">"EditorPane.inactiveBackground"</span>, textInactiveBackground,
+<a class="jxr_linenumber" name="L476" href="#L476">476</a>             <span class="jxr_string">"EditorPane.border"</span>, textAreaBorder,
+<a class="jxr_linenumber" name="L477" href="#L477">477</a>             <span class="jxr_string">"EditorPane.margin"</span>, editorMargin,
+<a class="jxr_linenumber" name="L478" href="#L478">478</a> 
+<a class="jxr_linenumber" name="L479" href="#L479">479</a>             <span class="jxr_string">"FileChooser.newFolderIcon"</span>, AquaIcon.SystemIcon.getFolderIconUIResource(),
+<a class="jxr_linenumber" name="L480" href="#L480">480</a>             <span class="jxr_string">"FileChooser.upFolderIcon"</span>, AquaIcon.SystemIcon.getFolderIconUIResource(),
+<a class="jxr_linenumber" name="L481" href="#L481">481</a>             <span class="jxr_string">"FileChooser.homeFolderIcon"</span>, AquaIcon.SystemIcon.getDesktopIconUIResource(),
+<a class="jxr_linenumber" name="L482" href="#L482">482</a>             <span class="jxr_string">"FileChooser.detailsViewIcon"</span>, AquaIcon.SystemIcon.getComputerIconUIResource(),
+<a class="jxr_linenumber" name="L483" href="#L483">483</a>             <span class="jxr_string">"FileChooser.listViewIcon"</span>, AquaIcon.SystemIcon.getComputerIconUIResource(),
+<a class="jxr_linenumber" name="L484" href="#L484">484</a> 
+<a class="jxr_linenumber" name="L485" href="#L485">485</a>             <span class="jxr_string">"FileView.directoryIcon"</span>, AquaIcon.SystemIcon.getFolderIconUIResource(),
+<a class="jxr_linenumber" name="L486" href="#L486">486</a>             <span class="jxr_string">"FileView.fileIcon"</span>, AquaIcon.SystemIcon.getDocumentIconUIResource(),
+<a class="jxr_linenumber" name="L487" href="#L487">487</a>             <span class="jxr_string">"FileView.computerIcon"</span>, AquaIcon.SystemIcon.getDesktopIconUIResource(),
+<a class="jxr_linenumber" name="L488" href="#L488">488</a>             <span class="jxr_string">"FileView.hardDriveIcon"</span>, AquaIcon.SystemIcon.getHardDriveIconUIResource(),
+<a class="jxr_linenumber" name="L489" href="#L489">489</a>             <span class="jxr_string">"FileView.floppyDriveIcon"</span>, AquaIcon.SystemIcon.getFloppyIconUIResource(),
+<a class="jxr_linenumber" name="L490" href="#L490">490</a> 
+<a class="jxr_linenumber" name="L491" href="#L491">491</a>             <em class="jxr_comment">// File View</em>
+<a class="jxr_linenumber" name="L492" href="#L492">492</a>             <span class="jxr_string">"FileChooser.cancelButtonMnemonic"</span>, zero,
+<a class="jxr_linenumber" name="L493" href="#L493">493</a>             <span class="jxr_string">"FileChooser.saveButtonMnemonic"</span>, zero,
+<a class="jxr_linenumber" name="L494" href="#L494">494</a>             <span class="jxr_string">"FileChooser.openButtonMnemonic"</span>, zero,
+<a class="jxr_linenumber" name="L495" href="#L495">495</a>             <span class="jxr_string">"FileChooser.updateButtonMnemonic"</span>, zero,
+<a class="jxr_linenumber" name="L496" href="#L496">496</a>             <span class="jxr_string">"FileChooser.helpButtonMnemonic"</span>, zero,
+<a class="jxr_linenumber" name="L497" href="#L497">497</a>             <span class="jxr_string">"FileChooser.directoryOpenButtonMnemonic"</span>, zero,
+<a class="jxr_linenumber" name="L498" href="#L498">498</a> 
+<a class="jxr_linenumber" name="L499" href="#L499">499</a>             <span class="jxr_string">"FileChooser.lookInLabelMnemonic"</span>, zero,
+<a class="jxr_linenumber" name="L500" href="#L500">500</a>             <span class="jxr_string">"FileChooser.fileNameLabelMnemonic"</span>, zero,
+<a class="jxr_linenumber" name="L501" href="#L501">501</a>             <span class="jxr_string">"FileChooser.filesOfTypeLabelMnemonic"</span>, zero,
+<a class="jxr_linenumber" name="L502" href="#L502">502</a> 
+<a class="jxr_linenumber" name="L503" href="#L503">503</a>             <span class="jxr_string">"Focus.color"</span>, focusRingColor,
+<a class="jxr_linenumber" name="L504" href="#L504">504</a> 
+<a class="jxr_linenumber" name="L505" href="#L505">505</a>             <span class="jxr_string">"FormattedTextField.focusInputMap"</span>, aquaKeyBindings.getFormattedTextFieldInputMap(),
+<a class="jxr_linenumber" name="L506" href="#L506">506</a>             <span class="jxr_string">"FormattedTextField.font"</span>, controlFont,
+<a class="jxr_linenumber" name="L507" href="#L507">507</a>             <span class="jxr_string">"FormattedTextField.background"</span>, textBackground,
+<a class="jxr_linenumber" name="L508" href="#L508">508</a>             <span class="jxr_string">"FormattedTextField.foreground"</span>, textForeground,
+<a class="jxr_linenumber" name="L509" href="#L509">509</a>             <span class="jxr_string">"FormattedTextField.inactiveForeground"</span>, textInactiveText,
+<a class="jxr_linenumber" name="L510" href="#L510">510</a>             <span class="jxr_string">"FormattedTextField.inactiveBackground"</span>, textInactiveBackground,
+<a class="jxr_linenumber" name="L511" href="#L511">511</a>             <span class="jxr_string">"FormattedTextField.selectionBackground"</span>, textHighlight,
+<a class="jxr_linenumber" name="L512" href="#L512">512</a>             <span class="jxr_string">"FormattedTextField.selectionForeground"</span>, textHighlightText,
+<a class="jxr_linenumber" name="L513" href="#L513">513</a>             <span class="jxr_string">"FormattedTextField.caretForeground"</span>, textForeground,
+<a class="jxr_linenumber" name="L514" href="#L514">514</a>             <span class="jxr_string">"FormattedTextField.caretBlinkRate"</span>, textCaretBlinkRate,
+<a class="jxr_linenumber" name="L515" href="#L515">515</a>             <span class="jxr_string">"FormattedTextField.border"</span>, textFieldBorder,
+<a class="jxr_linenumber" name="L516" href="#L516">516</a>             <span class="jxr_string">"FormattedTextField.margin"</span>, zeroInsets,
+<a class="jxr_linenumber" name="L517" href="#L517">517</a> 
+<a class="jxr_linenumber" name="L518" href="#L518">518</a>             <span class="jxr_string">"IconButton.font"</span>, controlSmallFont,
+<a class="jxr_linenumber" name="L519" href="#L519">519</a> 
+<a class="jxr_linenumber" name="L520" href="#L520">520</a>             <span class="jxr_string">"InternalFrame.titleFont"</span>, menuFont,
+<a class="jxr_linenumber" name="L521" href="#L521">521</a>             <span class="jxr_string">"InternalFrame.background"</span>, windowBackgroundColor,
+<a class="jxr_linenumber" name="L522" href="#L522">522</a>             <span class="jxr_string">"InternalFrame.borderColor"</span>, windowBackgroundColor,
+<a class="jxr_linenumber" name="L523" href="#L523">523</a>             <span class="jxr_string">"InternalFrame.borderShadow"</span>, Color.red,
+<a class="jxr_linenumber" name="L524" href="#L524">524</a>             <span class="jxr_string">"InternalFrame.borderDarkShadow"</span>, Color.green,
+<a class="jxr_linenumber" name="L525" href="#L525">525</a>             <span class="jxr_string">"InternalFrame.borderHighlight"</span>, Color.blue,
+<a class="jxr_linenumber" name="L526" href="#L526">526</a>             <span class="jxr_string">"InternalFrame.borderLight"</span>, Color.yellow,
+<a class="jxr_linenumber" name="L527" href="#L527">527</a>             <span class="jxr_string">"InternalFrame.opaque"</span>, Boolean.FALSE,
+<a class="jxr_linenumber" name="L528" href="#L528">528</a>             <span class="jxr_string">"InternalFrame.border"</span>, <strong class="jxr_keyword">null</strong>, <em class="jxr_comment">//internalFrameBorder,</em>
+<a class="jxr_linenumber" name="L529" href="#L529">529</a>             <span class="jxr_string">"InternalFrame.icon"</span>, <strong class="jxr_keyword">null</strong>,
+<a class="jxr_linenumber" name="L530" href="#L530">530</a> 
+<a class="jxr_linenumber" name="L531" href="#L531">531</a>             <span class="jxr_string">"InternalFrame.paletteBorder"</span>, <strong class="jxr_keyword">null</strong>,<em class="jxr_comment">//internalFrameBorder,</em>
+<a class="jxr_linenumber" name="L532" href="#L532">532</a>             <span class="jxr_string">"InternalFrame.paletteTitleFont"</span>, menuFont,
+<a class="jxr_linenumber" name="L533" href="#L533">533</a>             <span class="jxr_string">"InternalFrame.paletteBackground"</span>, windowBackgroundColor,
+<a class="jxr_linenumber" name="L534" href="#L534">534</a> 
+<a class="jxr_linenumber" name="L535" href="#L535">535</a>             <span class="jxr_string">"InternalFrame.optionDialogBorder"</span>, <strong class="jxr_keyword">null</strong>,<em class="jxr_comment">//internalFrameBorder,</em>
+<a class="jxr_linenumber" name="L536" href="#L536">536</a>             <span class="jxr_string">"InternalFrame.optionDialogTitleFont"</span>, menuFont,
+<a class="jxr_linenumber" name="L537" href="#L537">537</a>             <span class="jxr_string">"InternalFrame.optionDialogBackground"</span>, windowBackgroundColor,
+<a class="jxr_linenumber" name="L538" href="#L538">538</a> 
+<a class="jxr_linenumber" name="L539" href="#L539">539</a>             <em class="jxr_comment">/* Default frame icons are undefined for Basic. */</em>
+<a class="jxr_linenumber" name="L540" href="#L540">540</a> 
+<a class="jxr_linenumber" name="L541" href="#L541">541</a>             <span class="jxr_string">"InternalFrame.closeIcon"</span>, <strong class="jxr_keyword">new</strong> SwingLazyValue(PKG_PREFIX + <span class="jxr_string">"AquaInternalFrameUI"</span>, <span class="jxr_string">"exportCloseIcon"</span>),
+<a class="jxr_linenumber" name="L542" href="#L542">542</a>             <span class="jxr_string">"InternalFrame.maximizeIcon"</span>, <strong class="jxr_keyword">new</strong> SwingLazyValue(PKG_PREFIX + <span class="jxr_string">"AquaInternalFrameUI"</span>, <span class="jxr_string">"exportZoomIcon"</span>),
+<a class="jxr_linenumber" name="L543" href="#L543">543</a>             <span class="jxr_string">"InternalFrame.iconifyIcon"</span>, <strong class="jxr_keyword">new</strong> SwingLazyValue(PKG_PREFIX + <span class="jxr_string">"AquaInternalFrameUI"</span>, <span class="jxr_string">"exportMinimizeIcon"</span>),
+<a class="jxr_linenumber" name="L544" href="#L544">544</a>             <span class="jxr_string">"InternalFrame.minimizeIcon"</span>, <strong class="jxr_keyword">new</strong> SwingLazyValue(PKG_PREFIX + <span class="jxr_string">"AquaInternalFrameUI"</span>, <span class="jxr_string">"exportMinimizeIcon"</span>),
+<a class="jxr_linenumber" name="L545" href="#L545">545</a>             <em class="jxr_comment">// this could be either grow or icon</em>
+<a class="jxr_linenumber" name="L546" href="#L546">546</a>             <em class="jxr_comment">// we decided to make it icon so that anyone who uses</em>
+<a class="jxr_linenumber" name="L547" href="#L547">547</a>             <em class="jxr_comment">// these for ui will have different icons for max and min</em>
+<a class="jxr_linenumber" name="L548" href="#L548">548</a>             <em class="jxr_comment">// these icons are pretty crappy to use in Mac OS X since</em>
+<a class="jxr_linenumber" name="L549" href="#L549">549</a>             <em class="jxr_comment">// they really are interactive but we have to return a static</em>
+<a class="jxr_linenumber" name="L550" href="#L550">550</a>             <em class="jxr_comment">// icon for now.</em>
+<a class="jxr_linenumber" name="L551" href="#L551">551</a> 
+<a class="jxr_linenumber" name="L552" href="#L552">552</a>             <em class="jxr_comment">// InternalFrame Auditory Cue Mappings</em>
+<a class="jxr_linenumber" name="L553" href="#L553">553</a>             <span class="jxr_string">"InternalFrame.closeSound"</span>, <strong class="jxr_keyword">null</strong>,
+<a class="jxr_linenumber" name="L554" href="#L554">554</a>             <span class="jxr_string">"InternalFrame.maximizeSound"</span>, <strong class="jxr_keyword">null</strong>,
+<a class="jxr_linenumber" name="L555" href="#L555">555</a>             <span class="jxr_string">"InternalFrame.minimizeSound"</span>, <strong class="jxr_keyword">null</strong>,
+<a class="jxr_linenumber" name="L556" href="#L556">556</a>             <span class="jxr_string">"InternalFrame.restoreDownSound"</span>, <strong class="jxr_keyword">null</strong>,
+<a class="jxr_linenumber" name="L557" href="#L557">557</a>             <span class="jxr_string">"InternalFrame.restoreUpSound"</span>, <strong class="jxr_keyword">null</strong>,
+<a class="jxr_linenumber" name="L558" href="#L558">558</a> 
+<a class="jxr_linenumber" name="L559" href="#L559">559</a>             <span class="jxr_string">"InternalFrame.activeTitleBackground"</span>, windowBackgroundColor,
+<a class="jxr_linenumber" name="L560" href="#L560">560</a>             <span class="jxr_string">"InternalFrame.activeTitleForeground"</span>, textForeground,
+<a class="jxr_linenumber" name="L561" href="#L561">561</a>             <span class="jxr_string">"InternalFrame.inactiveTitleBackground"</span>, windowBackgroundColor,
+<a class="jxr_linenumber" name="L562" href="#L562">562</a>             <span class="jxr_string">"InternalFrame.inactiveTitleForeground"</span>, textInactiveText,
+<a class="jxr_linenumber" name="L563" href="#L563">563</a>             <span class="jxr_string">"InternalFrame.windowBindings"</span>, <strong class="jxr_keyword">new</strong> Object[]{
+<a class="jxr_linenumber" name="L564" href="#L564">564</a>                 <span class="jxr_string">"shift ESCAPE"</span>, <span class="jxr_string">"showSystemMenu"</span>,
+<a class="jxr_linenumber" name="L565" href="#L565">565</a>                 <span class="jxr_string">"ctrl SPACE"</span>, <span class="jxr_string">"showSystemMenu"</span>,
+<a class="jxr_linenumber" name="L566" href="#L566">566</a>                 <span class="jxr_string">"ESCAPE"</span>, <span class="jxr_string">"hideSystemMenu"</span>
+<a class="jxr_linenumber" name="L567" href="#L567">567</a>             },
+<a class="jxr_linenumber" name="L568" href="#L568">568</a> 
+<a class="jxr_linenumber" name="L569" href="#L569">569</a>             <em class="jxr_comment">// Radar [3543438]. We now define the TitledBorder properties for font and color.</em>
+<a class="jxr_linenumber" name="L570" href="#L570">570</a>             <em class="jxr_comment">// Aqua HIG doesn't define TitledBorders as Swing does. Eventually, we might want to</em>
+<a class="jxr_linenumber" name="L571" href="#L571">571</a>             <em class="jxr_comment">// re-think TitledBorder to behave more like a Box (NSBox). (vm)</em>
+<a class="jxr_linenumber" name="L572" href="#L572">572</a>             <span class="jxr_string">"TitledBorder.font"</span>, controlFont,
+<a class="jxr_linenumber" name="L573" href="#L573">573</a>             <span class="jxr_string">"TitledBorder.titleColor"</span>, black,
+<a class="jxr_linenumber" name="L574" href="#L574">574</a>         <em class="jxr_comment">//    "TitledBorder.border", -- we inherit this property from BasicLookAndFeel (etched border)</em>
+<a class="jxr_linenumber" name="L575" href="#L575">575</a>             <span class="jxr_string">"TitledBorder.aquaVariant"</span>, aquaTitledBorder, <em class="jxr_comment">// this is the border that matches what aqua really looks like</em>
+<a class="jxr_linenumber" name="L576" href="#L576">576</a>             <span class="jxr_string">"InsetBorder.aquaVariant"</span>, aquaInsetBorder, <em class="jxr_comment">// this is the title-less variant</em>
+<a class="jxr_linenumber" name="L577" href="#L577">577</a> 
+<a class="jxr_linenumber" name="L578" href="#L578">578</a>             <em class="jxr_comment">// *** Label</em>
+<a class="jxr_linenumber" name="L579" href="#L579">579</a>             <span class="jxr_string">"Label.font"</span>, controlFont, <em class="jxr_comment">// themeLabelFont is for small things like ToolbarButtons</em>
+<a class="jxr_linenumber" name="L580" href="#L580">580</a>             <span class="jxr_string">"Label.background"</span>, controlBackgroundColor,
+<a class="jxr_linenumber" name="L581" href="#L581">581</a>             <span class="jxr_string">"Label.foreground"</span>, black,
+<a class="jxr_linenumber" name="L582" href="#L582">582</a>             <span class="jxr_string">"Label.disabledForeground"</span>, disabled,
+<a class="jxr_linenumber" name="L583" href="#L583">583</a>             <span class="jxr_string">"Label.disabledShadow"</span>, disabledShadow,
+<a class="jxr_linenumber" name="L584" href="#L584">584</a>             <span class="jxr_string">"Label.opaque"</span>, useOpaqueComponents,
+<a class="jxr_linenumber" name="L585" href="#L585">585</a>             <span class="jxr_string">"Label.border"</span>, <strong class="jxr_keyword">null</strong>,
+<a class="jxr_linenumber" name="L586" href="#L586">586</a> 
+<a class="jxr_linenumber" name="L587" href="#L587">587</a>             <span class="jxr_string">"List.font"</span>, viewFont, <em class="jxr_comment">// [3577901] Aqua HIG says "default font of text in lists and tables" should be 12 point (vm).</em>
+<a class="jxr_linenumber" name="L588" href="#L588">588</a>             <span class="jxr_string">"List.background"</span>, white,
+<a class="jxr_linenumber" name="L589" href="#L589">589</a>             <span class="jxr_string">"List.foreground"</span>, black,
+<a class="jxr_linenumber" name="L590" href="#L590">590</a>             <span class="jxr_string">"List.selectionBackground"</span>, selectionBackground,
+<a class="jxr_linenumber" name="L591" href="#L591">591</a>             <span class="jxr_string">"List.selectionForeground"</span>, selectionForeground,
+<a class="jxr_linenumber" name="L592" href="#L592">592</a>             <span class="jxr_string">"List.selectionInactiveBackground"</span>, selectionInactiveBackground,
+<a class="jxr_linenumber" name="L593" href="#L593">593</a>             <span class="jxr_string">"List.selectionInactiveForeground"</span>, selectionInactiveForeground,
+<a class="jxr_linenumber" name="L594" href="#L594">594</a>             <span class="jxr_string">"List.focusCellHighlightBorder"</span>, focusCellHighlightBorder,
+<a class="jxr_linenumber" name="L595" href="#L595">595</a>             <span class="jxr_string">"List.border"</span>, <strong class="jxr_keyword">null</strong>,
+<a class="jxr_linenumber" name="L596" href="#L596">596</a>             <span class="jxr_string">"List.cellRenderer"</span>, listCellRendererActiveValue,
+<a class="jxr_linenumber" name="L597" href="#L597">597</a> 
+<a class="jxr_linenumber" name="L598" href="#L598">598</a>             <span class="jxr_string">"List.sourceListBackgroundPainter"</span>, <strong class="jxr_keyword">new</strong> SwingLazyValue(PKG_PREFIX + <span class="jxr_string">"AquaListUI"</span>, <span class="jxr_string">"getSourceListBackgroundPainter"</span>),
+<a class="jxr_linenumber" name="L599" href="#L599">599</a>             <span class="jxr_string">"List.sourceListSelectionBackgroundPainter"</span>, <strong class="jxr_keyword">new</strong> SwingLazyValue(PKG_PREFIX + <span class="jxr_string">"AquaListUI"</span>, <span class="jxr_string">"getSourceListSelectionBackgroundPainter"</span>),
+<a class="jxr_linenumber" name="L600" href="#L600">600</a>             <span class="jxr_string">"List.sourceListFocusedSelectionBackgroundPainter"</span>, <strong class="jxr_keyword">new</strong> SwingLazyValue(PKG_PREFIX + <span class="jxr_string">"AquaListUI"</span>, <span class="jxr_string">"getSourceListFocusedSelectionBackgroundPainter"</span>),
+<a class="jxr_linenumber" name="L601" href="#L601">601</a>             <span class="jxr_string">"List.evenRowBackgroundPainter"</span>, <strong class="jxr_keyword">new</strong> SwingLazyValue(PKG_PREFIX + <span class="jxr_string">"AquaListUI"</span>, <span class="jxr_string">"getListEvenBackgroundPainter"</span>),
+<a class="jxr_linenumber" name="L602" href="#L602">602</a>             <span class="jxr_string">"List.oddRowBackgroundPainter"</span>, <strong class="jxr_keyword">new</strong> SwingLazyValue(PKG_PREFIX + <span class="jxr_string">"AquaListUI"</span>, <span class="jxr_string">"getListOddBackgroundPainter"</span>),
+<a class="jxr_linenumber" name="L603" href="#L603">603</a> 
+<a class="jxr_linenumber" name="L604" href="#L604">604</a>             <em class="jxr_comment">// &lt;rdar://Problem/3743210&gt; The modifier for the Mac is meta, not control.</em>
+<a class="jxr_linenumber" name="L605" href="#L605">605</a>             <span class="jxr_string">"List.focusInputMap"</span>, aquaKeyBindings.getListInputMap(),
+<a class="jxr_linenumber" name="L606" href="#L606">606</a> 
+<a class="jxr_linenumber" name="L607" href="#L607">607</a>             <em class="jxr_comment">//"List.scrollPaneBorder", listBoxBorder, // Not used in Swing1.1</em>
+<a class="jxr_linenumber" name="L608" href="#L608">608</a>             <em class="jxr_comment">//"ListItem.border", ThemeMenu.listItemBorder(), // for inset calculation</em>
+<a class="jxr_linenumber" name="L609" href="#L609">609</a> 
+<a class="jxr_linenumber" name="L610" href="#L610">610</a>             <em class="jxr_comment">// *** Menus</em>
+<a class="jxr_linenumber" name="L611" href="#L611">611</a>             <span class="jxr_string">"Menu.font"</span>, menuFont,
+<a class="jxr_linenumber" name="L612" href="#L612">612</a>             <span class="jxr_string">"Menu.acceleratorFont"</span>, menuFont,
+<a class="jxr_linenumber" name="L613" href="#L613">613</a>             <span class="jxr_string">"Menu.background"</span>, menuBackgroundColor,
+<a class="jxr_linenumber" name="L614" href="#L614">614</a>             <span class="jxr_string">"Menu.foreground"</span>, menuForegroundColor,
+<a class="jxr_linenumber" name="L615" href="#L615">615</a>             <span class="jxr_string">"Menu.selectionBackground"</span>, menuSelectedBackgroundColor,
+<a class="jxr_linenumber" name="L616" href="#L616">616</a>             <span class="jxr_string">"Menu.selectionForeground"</span>, menuSelectedForegroundColor,
+<a class="jxr_linenumber" name="L617" href="#L617">617</a>             <span class="jxr_string">"Menu.disabledBackground"</span>, menuDisabledBackgroundColor,
+<a class="jxr_linenumber" name="L618" href="#L618">618</a>             <span class="jxr_string">"Menu.disabledForeground"</span>, menuDisabledForegroundColor,
+<a class="jxr_linenumber" name="L619" href="#L619">619</a>             <span class="jxr_string">"Menu.acceleratorForeground"</span>, menuAccelForegroundColor,
+<a class="jxr_linenumber" name="L620" href="#L620">620</a>             <span class="jxr_string">"Menu.acceleratorSelectionForeground"</span>, menuAccelSelectionForegroundColor,
+<a class="jxr_linenumber" name="L621" href="#L621">621</a>             <em class="jxr_comment">//"Menu.border", ThemeMenu.menuItemBorder(), // for inset calculation</em>
+<a class="jxr_linenumber" name="L622" href="#L622">622</a>             <span class="jxr_string">"Menu.border"</span>, menuBorder,
+<a class="jxr_linenumber" name="L623" href="#L623">623</a>             <span class="jxr_string">"Menu.borderPainted"</span>, Boolean.FALSE,
+<a class="jxr_linenumber" name="L624" href="#L624">624</a>             <span class="jxr_string">"Menu.margin"</span>, menuItemMargin,
+<a class="jxr_linenumber" name="L625" href="#L625">625</a>             <em class="jxr_comment">//"Menu.checkIcon", emptyCheckIcon, // A non-drawing GlyphIcon to make the spacing consistent</em>
+<a class="jxr_linenumber" name="L626" href="#L626">626</a>             <span class="jxr_string">"Menu.arrowIcon"</span>, <strong class="jxr_keyword">new</strong> SwingLazyValue(kAquaImageFactoryName, <span class="jxr_string">"getMenuArrowIcon"</span>),
+<a class="jxr_linenumber" name="L627" href="#L627">627</a>             <span class="jxr_string">"Menu.consumesTabs"</span>, Boolean.TRUE,
+<a class="jxr_linenumber" name="L628" href="#L628">628</a>             <span class="jxr_string">"Menu.menuPopupOffsetY"</span>, <strong class="jxr_keyword">new</strong> Integer(1),
+<a class="jxr_linenumber" name="L629" href="#L629">629</a>             <span class="jxr_string">"Menu.submenuPopupOffsetY"</span>, <strong class="jxr_keyword">new</strong> Integer(-4),
+<a class="jxr_linenumber" name="L630" href="#L630">630</a> 
+<a class="jxr_linenumber" name="L631" href="#L631">631</a>             <span class="jxr_string">"MenuBar.font"</span>, menuFont,
+<a class="jxr_linenumber" name="L632" href="#L632">632</a>             <span class="jxr_string">"MenuBar.background"</span>, menuBackgroundColor, <em class="jxr_comment">// not a menu item, not selected</em>
+<a class="jxr_linenumber" name="L633" href="#L633">633</a>             <span class="jxr_string">"MenuBar.foreground"</span>, menuForegroundColor,
+<a class="jxr_linenumber" name="L634" href="#L634">634</a>             <span class="jxr_string">"MenuBar.border"</span>, <strong class="jxr_keyword">new</strong> AquaMenuBarBorder(), <em class="jxr_comment">// sja make lazy!</em>
+<a class="jxr_linenumber" name="L635" href="#L635">635</a>             <span class="jxr_string">"MenuBar.margin"</span>, <strong class="jxr_keyword">new</strong> InsetsUIResource(0, 8, 0, 8), <em class="jxr_comment">// sja make lazy!</em>
+<a class="jxr_linenumber" name="L636" href="#L636">636</a>             <span class="jxr_string">"MenuBar.selectionBackground"</span>, menuSelectedBackgroundColor, <em class="jxr_comment">// not a menu item, is selected</em>
+<a class="jxr_linenumber" name="L637" href="#L637">637</a>             <span class="jxr_string">"MenuBar.selectionForeground"</span>, menuSelectedForegroundColor,
+<a class="jxr_linenumber" name="L638" href="#L638">638</a>             <span class="jxr_string">"MenuBar.disabledBackground"</span>, menuDisabledBackgroundColor, <em class="jxr_comment">//ThemeBrush.GetThemeBrushForMenu(false, false), // not a menu item, not selected</em>
+<a class="jxr_linenumber" name="L639" href="#L639">639</a>             <span class="jxr_string">"MenuBar.disabledForeground"</span>, menuDisabledForegroundColor,
+<a class="jxr_linenumber" name="L640" href="#L640">640</a>             <span class="jxr_string">"MenuBar.backgroundPainter"</span>, <strong class="jxr_keyword">new</strong> SwingLazyValue(PKG_PREFIX + <span class="jxr_string">"AquaMenuPainter"</span>, <span class="jxr_string">"getMenuBarPainter"</span>),
+<a class="jxr_linenumber" name="L641" href="#L641">641</a>             <span class="jxr_string">"MenuBar.selectedBackgroundPainter"</span>, <strong class="jxr_keyword">new</strong> SwingLazyValue(PKG_PREFIX + <span class="jxr_string">"AquaMenuPainter"</span>, <span class="jxr_string">"getSelectedMenuBarItemPainter"</span>),
+<a class="jxr_linenumber" name="L642" href="#L642">642</a> 
+<a class="jxr_linenumber" name="L643" href="#L643">643</a>             <span class="jxr_string">"MenuItem.font"</span>, menuFont,
+<a class="jxr_linenumber" name="L644" href="#L644">644</a>             <span class="jxr_string">"MenuItem.acceleratorFont"</span>, menuFont,
+<a class="jxr_linenumber" name="L645" href="#L645">645</a>             <span class="jxr_string">"MenuItem.background"</span>, menuBackgroundColor,
+<a class="jxr_linenumber" name="L646" href="#L646">646</a>             <span class="jxr_string">"MenuItem.foreground"</span>, menuForegroundColor,
+<a class="jxr_linenumber" name="L647" href="#L647">647</a>             <span class="jxr_string">"MenuItem.selectionBackground"</span>, menuSelectedBackgroundColor,
+<a class="jxr_linenumber" name="L648" href="#L648">648</a>             <span class="jxr_string">"MenuItem.selectionForeground"</span>, menuSelectedForegroundColor,
+<a class="jxr_linenumber" name="L649" href="#L649">649</a>             <span class="jxr_string">"MenuItem.disabledBackground"</span>, menuDisabledBackgroundColor,
+<a class="jxr_linenumber" name="L650" href="#L650">650</a>             <span class="jxr_string">"MenuItem.disabledForeground"</span>, menuDisabledForegroundColor,
+<a class="jxr_linenumber" name="L651" href="#L651">651</a>             <span class="jxr_string">"MenuItem.acceleratorForeground"</span>, menuAccelForegroundColor,
+<a class="jxr_linenumber" name="L652" href="#L652">652</a>             <span class="jxr_string">"MenuItem.acceleratorSelectionForeground"</span>, menuAccelSelectionForegroundColor,
+<a class="jxr_linenumber" name="L653" href="#L653">653</a>             <span class="jxr_string">"MenuItem.acceleratorDelimiter"</span>, <span class="jxr_string">""</span>,
+<a class="jxr_linenumber" name="L654" href="#L654">654</a>             <span class="jxr_string">"MenuItem.border"</span>, menuBorder,
+<a class="jxr_linenumber" name="L655" href="#L655">655</a>             <span class="jxr_string">"MenuItem.margin"</span>, menuItemMargin,
+<a class="jxr_linenumber" name="L656" href="#L656">656</a>             <span class="jxr_string">"MenuItem.borderPainted"</span>, Boolean.TRUE,
+<a class="jxr_linenumber" name="L657" href="#L657">657</a>             <em class="jxr_comment">//"MenuItem.checkIcon", emptyCheckIcon, // A non-drawing GlyphIcon to make the spacing consistent</em>
+<a class="jxr_linenumber" name="L658" href="#L658">658</a>             <em class="jxr_comment">//"MenuItem.arrowIcon", null,</em>
+<a class="jxr_linenumber" name="L659" href="#L659">659</a>             <span class="jxr_string">"MenuItem.selectedBackgroundPainter"</span>, <strong class="jxr_keyword">new</strong> SwingLazyValue(PKG_PREFIX + <span class="jxr_string">"AquaMenuPainter"</span>, <span class="jxr_string">"getSelectedMenuItemPainter"</span>),
+<a class="jxr_linenumber" name="L660" href="#L660">660</a> 
+<a class="jxr_linenumber" name="L661" href="#L661">661</a>             <em class="jxr_comment">// *** OptionPane</em>
+<a class="jxr_linenumber" name="L662" href="#L662">662</a>             <em class="jxr_comment">// You can additionaly define OptionPane.messageFont which will</em>
+<a class="jxr_linenumber" name="L663" href="#L663">663</a>             <em class="jxr_comment">// dictate the fonts used for the message, and</em>
+<a class="jxr_linenumber" name="L664" href="#L664">664</a>             <em class="jxr_comment">// OptionPane.buttonFont, which defines the font for the buttons.</em>
+<a class="jxr_linenumber" name="L665" href="#L665">665</a>             <span class="jxr_string">"OptionPane.font"</span>, alertHeaderFont,
+<a class="jxr_linenumber" name="L666" href="#L666">666</a>             <span class="jxr_string">"OptionPane.messageFont"</span>, controlFont,
+<a class="jxr_linenumber" name="L667" href="#L667">667</a>             <span class="jxr_string">"OptionPane.buttonFont"</span>, controlFont,
+<a class="jxr_linenumber" name="L668" href="#L668">668</a>             <span class="jxr_string">"OptionPane.background"</span>, windowBackgroundColor,
+<a class="jxr_linenumber" name="L669" href="#L669">669</a>             <span class="jxr_string">"OptionPane.foreground"</span>, black,
+<a class="jxr_linenumber" name="L670" href="#L670">670</a>             <span class="jxr_string">"OptionPane.messageForeground"</span>, black,
+<a class="jxr_linenumber" name="L671" href="#L671">671</a>             <span class="jxr_string">"OptionPane.border"</span>, <strong class="jxr_keyword">new</strong> BorderUIResource.EmptyBorderUIResource(12, 21, 17, 21),
+<a class="jxr_linenumber" name="L672" href="#L672">672</a>             <span class="jxr_string">"OptionPane.messageAreaBorder"</span>, zeroBorder,
+<a class="jxr_linenumber" name="L673" href="#L673">673</a>             <span class="jxr_string">"OptionPane.buttonAreaBorder"</span>, <strong class="jxr_keyword">new</strong> BorderUIResource.EmptyBorderUIResource(13, 0, 0, 0),
+<a class="jxr_linenumber" name="L674" href="#L674">674</a>             <span class="jxr_string">"OptionPane.minimumSize"</span>, <strong class="jxr_keyword">new</strong> DimensionUIResource(262, 90),
+<a class="jxr_linenumber" name="L675" href="#L675">675</a> 
+<a class="jxr_linenumber" name="L676" href="#L676">676</a>             <span class="jxr_string">"OptionPane.errorIcon"</span>, stopIcon,
+<a class="jxr_linenumber" name="L677" href="#L677">677</a>             <span class="jxr_string">"OptionPane.informationIcon"</span>, confirmIcon,
+<a class="jxr_linenumber" name="L678" href="#L678">678</a>             <span class="jxr_string">"OptionPane.warningIcon"</span>, cautionIcon,
+<a class="jxr_linenumber" name="L679" href="#L679">679</a>             <span class="jxr_string">"OptionPane.questionIcon"</span>, confirmIcon,
+<a class="jxr_linenumber" name="L680" href="#L680">680</a>             <span class="jxr_string">"_SecurityDecisionIcon"</span>, securityIcon,
+<a class="jxr_linenumber" name="L681" href="#L681">681</a>             <span class="jxr_string">"OptionPane.windowBindings"</span>, <strong class="jxr_keyword">new</strong> Object[]{<span class="jxr_string">"ESCAPE"</span>, <span class="jxr_string">"close"</span>},
+<a class="jxr_linenumber" name="L682" href="#L682">682</a>             <em class="jxr_comment">// OptionPane Auditory Cue Mappings</em>
+<a class="jxr_linenumber" name="L683" href="#L683">683</a>             <span class="jxr_string">"OptionPane.errorSound"</span>, <strong class="jxr_keyword">null</strong>,
+<a class="jxr_linenumber" name="L684" href="#L684">684</a>             <span class="jxr_string">"OptionPane.informationSound"</span>, <strong class="jxr_keyword">null</strong>, <em class="jxr_comment">// Info and Plain</em>
+<a class="jxr_linenumber" name="L685" href="#L685">685</a>             <span class="jxr_string">"OptionPane.questionSound"</span>, <strong class="jxr_keyword">null</strong>,
+<a class="jxr_linenumber" name="L686" href="#L686">686</a>             <span class="jxr_string">"OptionPane.warningSound"</span>, <strong class="jxr_keyword">null</strong>,
+<a class="jxr_linenumber" name="L687" href="#L687">687</a>             <span class="jxr_string">"OptionPane.buttonClickThreshhold"</span>, <strong class="jxr_keyword">new</strong> Integer(500),
+<a class="jxr_linenumber" name="L688" href="#L688">688</a>             <span class="jxr_string">"OptionPane.yesButtonMnemonic"</span>, <span class="jxr_string">""</span>,
+<a class="jxr_linenumber" name="L689" href="#L689">689</a>             <span class="jxr_string">"OptionPane.noButtonMnemonic"</span>, <span class="jxr_string">""</span>,
+<a class="jxr_linenumber" name="L690" href="#L690">690</a>             <span class="jxr_string">"OptionPane.okButtonMnemonic"</span>, <span class="jxr_string">""</span>,
+<a class="jxr_linenumber" name="L691" href="#L691">691</a>             <span class="jxr_string">"OptionPane.cancelButtonMnemonic"</span>, <span class="jxr_string">""</span>,
+<a class="jxr_linenumber" name="L692" href="#L692">692</a> 
+<a class="jxr_linenumber" name="L693" href="#L693">693</a>             <span class="jxr_string">"Panel.font"</span>, controlFont,
+<a class="jxr_linenumber" name="L694" href="#L694">694</a>             <span class="jxr_string">"Panel.background"</span>, panelBackgroundColor, <em class="jxr_comment">//new ColorUIResource(0.5647f, 0.9957f, 0.5059f),</em>
+<a class="jxr_linenumber" name="L695" href="#L695">695</a>             <span class="jxr_string">"Panel.foreground"</span>, black,
+<a class="jxr_linenumber" name="L696" href="#L696">696</a>             <span class="jxr_string">"Panel.opaque"</span>, useOpaqueComponents,
+<a class="jxr_linenumber" name="L697" href="#L697">697</a> 
+<a class="jxr_linenumber" name="L698" href="#L698">698</a>             <span class="jxr_string">"PasswordField.focusInputMap"</span>, aquaKeyBindings.getPasswordFieldInputMap(),
+<a class="jxr_linenumber" name="L699" href="#L699">699</a>             <span class="jxr_string">"PasswordField.font"</span>, controlFont,
+<a class="jxr_linenumber" name="L700" href="#L700">700</a>             <span class="jxr_string">"PasswordField.background"</span>, textBackground,
+<a class="jxr_linenumber" name="L701" href="#L701">701</a>             <span class="jxr_string">"PasswordField.foreground"</span>, textForeground,
+<a class="jxr_linenumber" name="L702" href="#L702">702</a>             <span class="jxr_string">"PasswordField.inactiveForeground"</span>, textInactiveText,
+<a class="jxr_linenumber" name="L703" href="#L703">703</a>             <span class="jxr_string">"PasswordField.inactiveBackground"</span>, textInactiveBackground,
+<a class="jxr_linenumber" name="L704" href="#L704">704</a>             <span class="jxr_string">"PasswordField.selectionBackground"</span>, textHighlight,
+<a class="jxr_linenumber" name="L705" href="#L705">705</a>             <span class="jxr_string">"PasswordField.selectionForeground"</span>, textHighlightText,
+<a class="jxr_linenumber" name="L706" href="#L706">706</a>             <span class="jxr_string">"PasswordField.caretForeground"</span>, textForeground,
+<a class="jxr_linenumber" name="L707" href="#L707">707</a>             <span class="jxr_string">"PasswordField.caretBlinkRate"</span>, textCaretBlinkRate,
+<a class="jxr_linenumber" name="L708" href="#L708">708</a>             <span class="jxr_string">"PasswordField.border"</span>, textFieldBorder,
+<a class="jxr_linenumber" name="L709" href="#L709">709</a>             <span class="jxr_string">"PasswordField.margin"</span>, zeroInsets,
+<a class="jxr_linenumber" name="L710" href="#L710">710</a>             <span class="jxr_string">"PasswordField.echoChar"</span>, <strong class="jxr_keyword">new</strong> Character((<strong class="jxr_keyword">char</strong>)0x25CF),
+<a class="jxr_linenumber" name="L711" href="#L711">711</a>             <span class="jxr_string">"PasswordField.capsLockIconColor"</span>, textPasswordFieldCapsLockIconColor,
+<a class="jxr_linenumber" name="L712" href="#L712">712</a> 
+<a class="jxr_linenumber" name="L713" href="#L713">713</a>             <span class="jxr_string">"PopupMenu.font"</span>, menuFont,
+<a class="jxr_linenumber" name="L714" href="#L714">714</a>             <span class="jxr_string">"PopupMenu.background"</span>, menuBackgroundColor,
+<a class="jxr_linenumber" name="L715" href="#L715">715</a>             <em class="jxr_comment">// Fix for 7154516: make popups opaque</em>
+<a class="jxr_linenumber" name="L716" href="#L716">716</a>             <span class="jxr_string">"PopupMenu.translucentBackground"</span>, white,
+<a class="jxr_linenumber" name="L717" href="#L717">717</a>             <span class="jxr_string">"PopupMenu.foreground"</span>, menuForegroundColor,
+<a class="jxr_linenumber" name="L718" href="#L718">718</a>             <span class="jxr_string">"PopupMenu.selectionBackground"</span>, menuSelectedBackgroundColor,
+<a class="jxr_linenumber" name="L719" href="#L719">719</a>             <span class="jxr_string">"PopupMenu.selectionForeground"</span>, menuSelectedForegroundColor,
+<a class="jxr_linenumber" name="L720" href="#L720">720</a>             <span class="jxr_string">"PopupMenu.border"</span>, menuBorder,
+<a class="jxr_linenumber" name="L721" href="#L721">721</a> <em class="jxr_comment">//            "PopupMenu.margin",</em>
+<a class="jxr_linenumber" name="L722" href="#L722">722</a> 
+<a class="jxr_linenumber" name="L723" href="#L723">723</a>             <span class="jxr_string">"ProgressBar.font"</span>, controlFont,
+<a class="jxr_linenumber" name="L724" href="#L724">724</a>             <span class="jxr_string">"ProgressBar.foreground"</span>, black,
+<a class="jxr_linenumber" name="L725" href="#L725">725</a>             <span class="jxr_string">"ProgressBar.background"</span>, controlBackgroundColor,
+<a class="jxr_linenumber" name="L726" href="#L726">726</a>             <span class="jxr_string">"ProgressBar.selectionForeground"</span>, black,
+<a class="jxr_linenumber" name="L727" href="#L727">727</a>             <span class="jxr_string">"ProgressBar.selectionBackground"</span>, white,
+<a class="jxr_linenumber" name="L728" href="#L728">728</a>             <span class="jxr_string">"ProgressBar.border"</span>, <strong class="jxr_keyword">new</strong> BorderUIResource(BorderFactory.createEmptyBorder()),
+<a class="jxr_linenumber" name="L729" href="#L729">729</a>             <span class="jxr_string">"ProgressBar.repaintInterval"</span>, <strong class="jxr_keyword">new</strong> Integer(20),
+<a class="jxr_linenumber" name="L730" href="#L730">730</a> 
+<a class="jxr_linenumber" name="L731" href="#L731">731</a>             <span class="jxr_string">"RadioButton.background"</span>, controlBackgroundColor,
+<a class="jxr_linenumber" name="L732" href="#L732">732</a>             <span class="jxr_string">"RadioButton.foreground"</span>, black,
+<a class="jxr_linenumber" name="L733" href="#L733">733</a>             <span class="jxr_string">"RadioButton.disabledText"</span>, disabled,
+<a class="jxr_linenumber" name="L734" href="#L734">734</a>             <span class="jxr_string">"RadioButton.select"</span>, selected,
+<a class="jxr_linenumber" name="L735" href="#L735">735</a>             <span class="jxr_string">"RadioButton.icon"</span>, <strong class="jxr_keyword">new</strong> SwingLazyValue(PKG_PREFIX + <span class="jxr_string">"AquaButtonRadioUI"</span>, <span class="jxr_string">"getSizingRadioButtonIcon"</span>),
+<a class="jxr_linenumber" name="L736" href="#L736">736</a>             <span class="jxr_string">"RadioButton.font"</span>, controlFont,
+<a class="jxr_linenumber" name="L737" href="#L737">737</a>             <span class="jxr_string">"RadioButton.border"</span>, AquaButtonBorder.getBevelButtonBorder(),
+<a class="jxr_linenumber" name="L738" href="#L738">738</a>             <span class="jxr_string">"RadioButton.margin"</span>, <strong class="jxr_keyword">new</strong> InsetsUIResource(1, 1, 0, 1),
+<a class="jxr_linenumber" name="L739" href="#L739">739</a>             <span class="jxr_string">"RadioButton.focusInputMap"</span>, controlFocusInputMap,
+<a class="jxr_linenumber" name="L740" href="#L740">740</a> 
+<a class="jxr_linenumber" name="L741" href="#L741">741</a>             <span class="jxr_string">"RadioButtonMenuItem.font"</span>, menuFont,
+<a class="jxr_linenumber" name="L742" href="#L742">742</a>             <span class="jxr_string">"RadioButtonMenuItem.acceleratorFont"</span>, menuFont,
+<a class="jxr_linenumber" name="L743" href="#L743">743</a>             <span class="jxr_string">"RadioButtonMenuItem.background"</span>, menuBackgroundColor,
+<a class="jxr_linenumber" name="L744" href="#L744">744</a>             <span class="jxr_string">"RadioButtonMenuItem.foreground"</span>, menuForegroundColor,
+<a class="jxr_linenumber" name="L745" href="#L745">745</a>             <span class="jxr_string">"RadioButtonMenuItem.selectionBackground"</span>, menuSelectedBackgroundColor,
+<a class="jxr_linenumber" name="L746" href="#L746">746</a>             <span class="jxr_string">"RadioButtonMenuItem.selectionForeground"</span>, menuSelectedForegroundColor,
+<a class="jxr_linenumber" name="L747" href="#L747">747</a>             <span class="jxr_string">"RadioButtonMenuItem.disabledBackground"</span>, menuDisabledBackgroundColor,
+<a class="jxr_linenumber" name="L748" href="#L748">748</a>             <span class="jxr_string">"RadioButtonMenuItem.disabledForeground"</span>, menuDisabledForegroundColor,
+<a class="jxr_linenumber" name="L749" href="#L749">749</a>             <span class="jxr_string">"RadioButtonMenuItem.acceleratorForeground"</span>, menuAccelForegroundColor,
+<a class="jxr_linenumber" name="L750" href="#L750">750</a>             <span class="jxr_string">"RadioButtonMenuItem.acceleratorSelectionForeground"</span>, menuAccelSelectionForegroundColor,
+<a class="jxr_linenumber" name="L751" href="#L751">751</a>             <span class="jxr_string">"RadioButtonMenuItem.acceleratorDelimiter"</span>, <span class="jxr_string">""</span>,
+<a class="jxr_linenumber" name="L752" href="#L752">752</a>             <span class="jxr_string">"RadioButtonMenuItem.border"</span>, menuBorder, <em class="jxr_comment">// for inset calculation</em>
+<a class="jxr_linenumber" name="L753" href="#L753">753</a>             <span class="jxr_string">"RadioButtonMenuItem.margin"</span>, menuItemMargin,
+<a class="jxr_linenumber" name="L754" href="#L754">754</a>             <span class="jxr_string">"RadioButtonMenuItem.borderPainted"</span>, Boolean.TRUE,
+<a class="jxr_linenumber" name="L755" href="#L755">755</a>             <span class="jxr_string">"RadioButtonMenuItem.checkIcon"</span>, <strong class="jxr_keyword">new</strong> SwingLazyValue(kAquaImageFactoryName, <span class="jxr_string">"getMenuItemCheckIcon"</span>),
+<a class="jxr_linenumber" name="L756" href="#L756">756</a>             <span class="jxr_string">"RadioButtonMenuItem.dashIcon"</span>, <strong class="jxr_keyword">new</strong> SwingLazyValue(kAquaImageFactoryName, <span class="jxr_string">"getMenuItemDashIcon"</span>),
+<a class="jxr_linenumber" name="L757" href="#L757">757</a>             <em class="jxr_comment">//"RadioButtonMenuItem.arrowIcon", null,</em>
+<a class="jxr_linenumber" name="L758" href="#L758">758</a> 
+<a class="jxr_linenumber" name="L759" href="#L759">759</a>             <span class="jxr_string">"Separator.background"</span>, <strong class="jxr_keyword">null</strong>,
+<a class="jxr_linenumber" name="L760" href="#L760">760</a>             <span class="jxr_string">"Separator.foreground"</span>, <strong class="jxr_keyword">new</strong> ColorUIResource(0xD4, 0xD4, 0xD4),
+<a class="jxr_linenumber" name="L761" href="#L761">761</a> 
+<a class="jxr_linenumber" name="L762" href="#L762">762</a>             <span class="jxr_string">"ScrollBar.border"</span>, <strong class="jxr_keyword">null</strong>,
+<a class="jxr_linenumber" name="L763" href="#L763">763</a>             <span class="jxr_string">"ScrollBar.focusInputMap"</span>, aquaKeyBindings.getScrollBarInputMap(),
+<a class="jxr_linenumber" name="L764" href="#L764">764</a>             <span class="jxr_string">"ScrollBar.focusInputMap.RightToLeft"</span>, aquaKeyBindings.getScrollBarRightToLeftInputMap(),
+<a class="jxr_linenumber" name="L765" href="#L765">765</a>             <span class="jxr_string">"ScrollBar.width"</span>, <strong class="jxr_keyword">new</strong> Integer(16),
+<a class="jxr_linenumber" name="L766" href="#L766">766</a>             <span class="jxr_string">"ScrollBar.background"</span>, white,
+<a class="jxr_linenumber" name="L767" href="#L767">767</a>             <span class="jxr_string">"ScrollBar.foreground"</span>, black,
+<a class="jxr_linenumber" name="L768" href="#L768">768</a> 
+<a class="jxr_linenumber" name="L769" href="#L769">769</a>             <span class="jxr_string">"ScrollPane.font"</span>, controlFont,
+<a class="jxr_linenumber" name="L770" href="#L770">770</a>             <span class="jxr_string">"ScrollPane.background"</span>, white,
+<a class="jxr_linenumber" name="L771" href="#L771">771</a>             <span class="jxr_string">"ScrollPane.foreground"</span>, black, <em class="jxr_comment">//$</em>
+<a class="jxr_linenumber" name="L772" href="#L772">772</a>             <span class="jxr_string">"ScrollPane.border"</span>, scollListBorder,
+<a class="jxr_linenumber" name="L773" href="#L773">773</a>             <span class="jxr_string">"ScrollPane.viewportBorder"</span>, <strong class="jxr_keyword">null</strong>,
+<a class="jxr_linenumber" name="L774" href="#L774">774</a> 
+<a class="jxr_linenumber" name="L775" href="#L775">775</a>             <span class="jxr_string">"ScrollPane.ancestorInputMap"</span>, aquaKeyBindings.getScrollPaneInputMap(),
+<a class="jxr_linenumber" name="L776" href="#L776">776</a>             <span class="jxr_string">"ScrollPane.ancestorInputMap.RightToLeft"</span>, <strong class="jxr_keyword">new</strong> UIDefaults.LazyInputMap(<strong class="jxr_keyword">new</strong> Object[]{}),
+<a class="jxr_linenumber" name="L777" href="#L777">777</a> 
+<a class="jxr_linenumber" name="L778" href="#L778">778</a>             <span class="jxr_string">"Viewport.font"</span>, controlFont,
+<a class="jxr_linenumber" name="L779" href="#L779">779</a>             <span class="jxr_string">"Viewport.background"</span>, white, <em class="jxr_comment">// The background for tables, lists, etc</em>
+<a class="jxr_linenumber" name="L780" href="#L780">780</a>             <span class="jxr_string">"Viewport.foreground"</span>, black,
+<a class="jxr_linenumber" name="L781" href="#L781">781</a> 
+<a class="jxr_linenumber" name="L782" href="#L782">782</a>             <em class="jxr_comment">// *** Slider</em>
+<a class="jxr_linenumber" name="L783" href="#L783">783</a>             <span class="jxr_string">"Slider.foreground"</span>, black, <span class="jxr_string">"Slider.background"</span>, controlBackgroundColor,
+<a class="jxr_linenumber" name="L784" href="#L784">784</a>             <span class="jxr_string">"Slider.font"</span>, controlSmallFont,
+<a class="jxr_linenumber" name="L785" href="#L785">785</a>             <em class="jxr_comment">//"Slider.highlight", table.get("controlLtHighlight"),</em>
+<a class="jxr_linenumber" name="L786" href="#L786">786</a>             <em class="jxr_comment">//"Slider.shadow", table.get("controlShadow"),</em>
+<a class="jxr_linenumber" name="L787" href="#L787">787</a>             <em class="jxr_comment">//"Slider.focus", table.get("controlDkShadow"),</em>
+<a class="jxr_linenumber" name="L788" href="#L788">788</a>             <span class="jxr_string">"Slider.tickColor"</span>, <strong class="jxr_keyword">new</strong> ColorUIResource(Color.GRAY),
+<a class="jxr_linenumber" name="L789" href="#L789">789</a>             <span class="jxr_string">"Slider.border"</span>, <strong class="jxr_keyword">null</strong>,
+<a class="jxr_linenumber" name="L790" href="#L790">790</a>             <span class="jxr_string">"Slider.focusInsets"</span>, <strong class="jxr_keyword">new</strong> InsetsUIResource(2, 2, 2, 2),
+<a class="jxr_linenumber" name="L791" href="#L791">791</a>             <span class="jxr_string">"Slider.focusInputMap"</span>, aquaKeyBindings.getSliderInputMap(),
+<a class="jxr_linenumber" name="L792" href="#L792">792</a>             <span class="jxr_string">"Slider.focusInputMap.RightToLeft"</span>, aquaKeyBindings.getSliderRightToLeftInputMap(),
+<a class="jxr_linenumber" name="L793" href="#L793">793</a> 
+<a class="jxr_linenumber" name="L794" href="#L794">794</a>             <em class="jxr_comment">// *** Spinner</em>
+<a class="jxr_linenumber" name="L795" href="#L795">795</a>             <span class="jxr_string">"Spinner.font"</span>, controlFont,
+<a class="jxr_linenumber" name="L796" href="#L796">796</a>             <span class="jxr_string">"Spinner.background"</span>, controlBackgroundColor,
+<a class="jxr_linenumber" name="L797" href="#L797">797</a>             <span class="jxr_string">"Spinner.foreground"</span>, black,
+<a class="jxr_linenumber" name="L798" href="#L798">798</a>             <span class="jxr_string">"Spinner.border"</span>, <strong class="jxr_keyword">null</strong>,
+<a class="jxr_linenumber" name="L799" href="#L799">799</a>             <span class="jxr_string">"Spinner.arrowButtonSize"</span>, <strong class="jxr_keyword">new</strong> Dimension(16, 5),
+<a class="jxr_linenumber" name="L800" href="#L800">800</a>             <span class="jxr_string">"Spinner.ancestorInputMap"</span>, aquaKeyBindings.getSpinnerInputMap(),
+<a class="jxr_linenumber" name="L801" href="#L801">801</a>             <span class="jxr_string">"Spinner.editorBorderPainted"</span>, Boolean.TRUE,
+<a class="jxr_linenumber" name="L802" href="#L802">802</a>             <span class="jxr_string">"Spinner.editorAlignment"</span>, SwingConstants.TRAILING,
+<a class="jxr_linenumber" name="L803" href="#L803">803</a> 
+<a class="jxr_linenumber" name="L804" href="#L804">804</a>             <em class="jxr_comment">// *** SplitPane</em>
+<a class="jxr_linenumber" name="L805" href="#L805">805</a>             <em class="jxr_comment">//"SplitPane.highlight", table.get("controlLtHighlight"),</em>
+<a class="jxr_linenumber" name="L806" href="#L806">806</a>             <em class="jxr_comment">//"SplitPane.shadow", table.get("controlShadow"),</em>
+<a class="jxr_linenumber" name="L807" href="#L807">807</a>             <span class="jxr_string">"SplitPane.background"</span>, panelBackgroundColor,
+<a class="jxr_linenumber" name="L808" href="#L808">808</a>             <span class="jxr_string">"SplitPane.border"</span>, scollListBorder,
+<a class="jxr_linenumber" name="L809" href="#L809">809</a>             <span class="jxr_string">"SplitPane.dividerSize"</span>, <strong class="jxr_keyword">new</strong> Integer(9), <em class="jxr_comment">//$</em>
+<a class="jxr_linenumber" name="L810" href="#L810">810</a>             <span class="jxr_string">"SplitPaneDivider.border"</span>, <strong class="jxr_keyword">null</strong>, <em class="jxr_comment">// AquaSplitPaneDividerUI draws it</em>
+<a class="jxr_linenumber" name="L811" href="#L811">811</a>             <span class="jxr_string">"SplitPaneDivider.horizontalGradientVariant"</span>, <strong class="jxr_keyword">new</strong> SwingLazyValue(PKG_PREFIX + <span class="jxr_string">"AquaSplitPaneDividerUI"</span>, <span class="jxr_string">"getHorizontalSplitDividerGradientVariant"</span>),
+<a class="jxr_linenumber" name="L812" href="#L812">812</a> 
+<a class="jxr_linenumber" name="L813" href="#L813">813</a>             <em class="jxr_comment">// *** TabbedPane</em>
+<a class="jxr_linenumber" name="L814" href="#L814">814</a>             <span class="jxr_string">"TabbedPane.font"</span>, controlFont,
+<a class="jxr_linenumber" name="L815" href="#L815">815</a>             <span class="jxr_string">"TabbedPane.smallFont"</span>, controlSmallFont,
+<a class="jxr_linenumber" name="L816" href="#L816">816</a>             <span class="jxr_string">"TabbedPane.useSmallLayout"</span>, Boolean.FALSE,<em class="jxr_comment">//sSmallTabs ? Boolean.TRUE : Boolean.FALSE,</em>
+<a class="jxr_linenumber" name="L817" href="#L817">817</a>             <span class="jxr_string">"TabbedPane.background"</span>, tabBackgroundColor, <em class="jxr_comment">// for bug [3398277] use a background color so that</em>
+<a class="jxr_linenumber" name="L818" href="#L818">818</a>             <em class="jxr_comment">// tabs on a custom pane get erased when they are removed.</em>
+<a class="jxr_linenumber" name="L819" href="#L819">819</a>             <span class="jxr_string">"TabbedPane.foreground"</span>, black, <em class="jxr_comment">//ThemeTextColor.GetThemeTextColor(AppearanceConstants.kThemeTextColorTabFrontActive),</em>
+<a class="jxr_linenumber" name="L820" href="#L820">820</a>             <em class="jxr_comment">//"TabbedPane.lightHighlight", table.get("controlLtHighlight"),</em>
+<a class="jxr_linenumber" name="L821" href="#L821">821</a>             <em class="jxr_comment">//"TabbedPane.highlight", table.get("controlHighlight"),</em>
+<a class="jxr_linenumber" name="L822" href="#L822">822</a>             <em class="jxr_comment">//"TabbedPane.shadow", table.get("controlShadow"),</em>
+<a class="jxr_linenumber" name="L823" href="#L823">823</a>             <em class="jxr_comment">//"TabbedPane.darkShadow", table.get("controlDkShadow"),</em>
+<a class="jxr_linenumber" name="L824" href="#L824">824</a>             <em class="jxr_comment">//"TabbedPane.focus", table.get("controlText"),</em>
+<a class="jxr_linenumber" name="L825" href="#L825">825</a>             <span class="jxr_string">"TabbedPane.opaque"</span>, useOpaqueComponents,
+<a class="jxr_linenumber" name="L826" href="#L826">826</a>             <span class="jxr_string">"TabbedPane.textIconGap"</span>, <strong class="jxr_keyword">new</strong> Integer(4),
+<a class="jxr_linenumber" name="L827" href="#L827">827</a>             <span class="jxr_string">"TabbedPane.tabInsets"</span>, <strong class="jxr_keyword">new</strong> InsetsUIResource(0, 10, 3, 10), <em class="jxr_comment">// Label within tab (top, left, bottom, right)</em>
+<a class="jxr_linenumber" name="L828" href="#L828">828</a>             <em class="jxr_comment">//"TabbedPane.rightTabInsets", new InsetsUIResource(0, 10, 3, 10), // Label within tab (top, left, bottom, right)</em>
+<a class="jxr_linenumber" name="L829" href="#L829">829</a>             <span class="jxr_string">"TabbedPane.leftTabInsets"</span>, <strong class="jxr_keyword">new</strong> InsetsUIResource(0, 10, 3, 10), <em class="jxr_comment">// Label within tab</em>
+<a class="jxr_linenumber" name="L830" href="#L830">830</a>             <span class="jxr_string">"TabbedPane.rightTabInsets"</span>, <strong class="jxr_keyword">new</strong> InsetsUIResource(0, 10, 3, 10), <em class="jxr_comment">// Label within tab</em>
+<a class="jxr_linenumber" name="L831" href="#L831">831</a>             <em class="jxr_comment">//"TabbedPane.tabAreaInsets", new InsetsUIResource(3, 9, -1, 9), // Tabs relative to edge of pane (negative value for overlapping)</em>
+<a class="jxr_linenumber" name="L832" href="#L832">832</a>             <span class="jxr_string">"TabbedPane.tabAreaInsets"</span>, <strong class="jxr_keyword">new</strong> InsetsUIResource(3, 9, -1, 9), <em class="jxr_comment">// Tabs relative to edge of pane (negative value for overlapping)</em>
+<a class="jxr_linenumber" name="L833" href="#L833">833</a>             <em class="jxr_comment">// (top = side opposite pane, left = edge || to pane, bottom = side adjacent to pane, right = left) - see rotateInsets</em>
+<a class="jxr_linenumber" name="L834" href="#L834">834</a>             <span class="jxr_string">"TabbedPane.contentBorderInsets"</span>, <strong class="jxr_keyword">new</strong> InsetsUIResource(8, 0, 0, 0), <em class="jxr_comment">// width of border</em>
+<a class="jxr_linenumber" name="L835" href="#L835">835</a>             <em class="jxr_comment">//"TabbedPane.selectedTabPadInsets", new InsetsUIResource(0, 0, 1, 0), // Really outsets, this is where we allow for overlap</em>
+<a class="jxr_linenumber" name="L836" href="#L836">836</a>             <span class="jxr_string">"TabbedPane.selectedTabPadInsets"</span>, <strong class="jxr_keyword">new</strong> InsetsUIResource(0, 0, 0, 0), <em class="jxr_comment">// Really outsets, this is where we allow for overlap</em>
+<a class="jxr_linenumber" name="L837" href="#L837">837</a>             <span class="jxr_string">"TabbedPane.tabsOverlapBorder"</span>, Boolean.TRUE,
+<a class="jxr_linenumber" name="L838" href="#L838">838</a>             <span class="jxr_string">"TabbedPane.selectedTabTitlePressedColor"</span>, selectedTabTitlePressedColor,
+<a class="jxr_linenumber" name="L839" href="#L839">839</a>             <span class="jxr_string">"TabbedPane.selectedTabTitleDisabledColor"</span>, selectedTabTitleDisabledColor,
+<a class="jxr_linenumber" name="L840" href="#L840">840</a>             <span class="jxr_string">"TabbedPane.selectedTabTitleNormalColor"</span>, selectedTabTitleNormalColor,
+<a class="jxr_linenumber" name="L841" href="#L841">841</a>             <span class="jxr_string">"TabbedPane.selectedTabTitleShadowDisabledColor"</span>, selectedTabTitleShadowDisabledColor,
+<a class="jxr_linenumber" name="L842" href="#L842">842</a>             <span class="jxr_string">"TabbedPane.selectedTabTitleShadowNormalColor"</span>, selectedTabTitleShadowNormalColor,
+<a class="jxr_linenumber" name="L843" href="#L843">843</a>             <span class="jxr_string">"TabbedPane.nonSelectedTabTitleNormalColor"</span>, nonSelectedTabTitleNormalColor,
+<a class="jxr_linenumber" name="L844" href="#L844">844</a> 
+<a class="jxr_linenumber" name="L845" href="#L845">845</a>             <em class="jxr_comment">// *** Table</em>
+<a class="jxr_linenumber" name="L846" href="#L846">846</a>             <span class="jxr_string">"Table.font"</span>, viewFont, <em class="jxr_comment">// [3577901] Aqua HIG says "default font of text in lists and tables" should be 12 point (vm).</em>
+<a class="jxr_linenumber" name="L847" href="#L847">847</a>             <span class="jxr_string">"Table.foreground"</span>, black, <em class="jxr_comment">// cell text color</em>
+<a class="jxr_linenumber" name="L848" href="#L848">848</a>             <span class="jxr_string">"Table.background"</span>, white, <em class="jxr_comment">// cell background color</em>
+<a class="jxr_linenumber" name="L849" href="#L849">849</a>             <span class="jxr_string">"Table.selectionForeground"</span>, selectionForeground,
+<a class="jxr_linenumber" name="L850" href="#L850">850</a>             <span class="jxr_string">"Table.selectionBackground"</span>, selectionBackground,
+<a class="jxr_linenumber" name="L851" href="#L851">851</a>             <span class="jxr_string">"Table.selectionInactiveBackground"</span>, selectionInactiveBackground,
+<a class="jxr_linenumber" name="L852" href="#L852">852</a>             <span class="jxr_string">"Table.selectionInactiveForeground"</span>, selectionInactiveForeground,
+<a class="jxr_linenumber" name="L853" href="#L853">853</a>             <span class="jxr_string">"Table.gridColor"</span>, white, <em class="jxr_comment">// grid line color</em>
+<a class="jxr_linenumber" name="L854" href="#L854">854</a>             <span class="jxr_string">"Table.focusCellBackground"</span>, textHighlightText,
+<a class="jxr_linenumber" name="L855" href="#L855">855</a>             <span class="jxr_string">"Table.focusCellForeground"</span>, textHighlight,
+<a class="jxr_linenumber" name="L856" href="#L856">856</a>             <span class="jxr_string">"Table.focusCellHighlightBorder"</span>, focusCellHighlightBorder,
+<a class="jxr_linenumber" name="L857" href="#L857">857</a>             <span class="jxr_string">"Table.scrollPaneBorder"</span>, scollListBorder,
+<a class="jxr_linenumber" name="L858" href="#L858">858</a> 
+<a class="jxr_linenumber" name="L859" href="#L859">859</a>             <span class="jxr_string">"Table.ancestorInputMap"</span>, aquaKeyBindings.getTableInputMap(),
+<a class="jxr_linenumber" name="L860" href="#L860">860</a>             <span class="jxr_string">"Table.ancestorInputMap.RightToLeft"</span>, aquaKeyBindings.getTableRightToLeftInputMap(),
+<a class="jxr_linenumber" name="L861" href="#L861">861</a> 
+<a class="jxr_linenumber" name="L862" href="#L862">862</a>             <span class="jxr_string">"TableHeader.font"</span>, controlSmallFont,
+<a class="jxr_linenumber" name="L863" href="#L863">863</a>             <span class="jxr_string">"TableHeader.foreground"</span>, black,
+<a class="jxr_linenumber" name="L864" href="#L864">864</a>             <span class="jxr_string">"TableHeader.background"</span>, white, <em class="jxr_comment">// header background</em>
+<a class="jxr_linenumber" name="L865" href="#L865">865</a>             <span class="jxr_string">"TableHeader.cellBorder"</span>, listHeaderBorder,
+<a class="jxr_linenumber" name="L866" href="#L866">866</a> 
+<a class="jxr_linenumber" name="L867" href="#L867">867</a>             <em class="jxr_comment">// *** Text</em>
+<a class="jxr_linenumber" name="L868" href="#L868">868</a>             <span class="jxr_string">"TextArea.focusInputMap"</span>, aquaKeyBindings.getMultiLineTextInputMap(),
+<a class="jxr_linenumber" name="L869" href="#L869">869</a>             <span class="jxr_string">"TextArea.font"</span>, controlFont,
+<a class="jxr_linenumber" name="L870" href="#L870">870</a>             <span class="jxr_string">"TextArea.background"</span>, textBackground,
+<a class="jxr_linenumber" name="L871" href="#L871">871</a>             <span class="jxr_string">"TextArea.foreground"</span>, textForeground,
+<a class="jxr_linenumber" name="L872" href="#L872">872</a>             <span class="jxr_string">"TextArea.inactiveForeground"</span>, textInactiveText,
+<a class="jxr_linenumber" name="L873" href="#L873">873</a>             <span class="jxr_string">"TextArea.inactiveBackground"</span>, textInactiveBackground,
+<a class="jxr_linenumber" name="L874" href="#L874">874</a>             <span class="jxr_string">"TextArea.selectionBackground"</span>, textHighlight,
+<a class="jxr_linenumber" name="L875" href="#L875">875</a>             <span class="jxr_string">"TextArea.selectionForeground"</span>, textHighlightText,
+<a class="jxr_linenumber" name="L876" href="#L876">876</a>             <span class="jxr_string">"TextArea.caretForeground"</span>, textForeground,
+<a class="jxr_linenumber" name="L877" href="#L877">877</a>             <span class="jxr_string">"TextArea.caretBlinkRate"</span>, textCaretBlinkRate,
+<a class="jxr_linenumber" name="L878" href="#L878">878</a>             <span class="jxr_string">"TextArea.border"</span>, textAreaBorder,
+<a class="jxr_linenumber" name="L879" href="#L879">879</a>             <span class="jxr_string">"TextArea.margin"</span>, zeroInsets,
+<a class="jxr_linenumber" name="L880" href="#L880">880</a> 
+<a class="jxr_linenumber" name="L881" href="#L881">881</a>             <span class="jxr_string">"TextComponent.selectionBackgroundInactive"</span>, textHighlightInactive,
+<a class="jxr_linenumber" name="L882" href="#L882">882</a> 
+<a class="jxr_linenumber" name="L883" href="#L883">883</a>             <span class="jxr_string">"TextField.focusInputMap"</span>, aquaKeyBindings.getTextFieldInputMap(),
+<a class="jxr_linenumber" name="L884" href="#L884">884</a>             <span class="jxr_string">"TextField.font"</span>, controlFont,
+<a class="jxr_linenumber" name="L885" href="#L885">885</a>             <span class="jxr_string">"TextField.background"</span>, textBackground,
+<a class="jxr_linenumber" name="L886" href="#L886">886</a>             <span class="jxr_string">"TextField.foreground"</span>, textForeground,
+<a class="jxr_linenumber" name="L887" href="#L887">887</a>             <span class="jxr_string">"TextField.inactiveForeground"</span>, textInactiveText,
+<a class="jxr_linenumber" name="L888" href="#L888">888</a>             <span class="jxr_string">"TextField.inactiveBackground"</span>, textInactiveBackground,
+<a class="jxr_linenumber" name="L889" href="#L889">889</a>             <span class="jxr_string">"TextField.selectionBackground"</span>, textHighlight,
+<a class="jxr_linenumber" name="L890" href="#L890">890</a>             <span class="jxr_string">"TextField.selectionForeground"</span>, textHighlightText,
+<a class="jxr_linenumber" name="L891" href="#L891">891</a>             <span class="jxr_string">"TextField.caretForeground"</span>, textForeground,
+<a class="jxr_linenumber" name="L892" href="#L892">892</a>             <span class="jxr_string">"TextField.caretBlinkRate"</span>, textCaretBlinkRate,
+<a class="jxr_linenumber" name="L893" href="#L893">893</a>             <span class="jxr_string">"TextField.border"</span>, textFieldBorder,
+<a class="jxr_linenumber" name="L894" href="#L894">894</a>             <span class="jxr_string">"TextField.margin"</span>, zeroInsets,
+<a class="jxr_linenumber" name="L895" href="#L895">895</a> 
+<a class="jxr_linenumber" name="L896" href="#L896">896</a>             <span class="jxr_string">"TextPane.focusInputMap"</span>, aquaKeyBindings.getMultiLineTextInputMap(),
+<a class="jxr_linenumber" name="L897" href="#L897">897</a>             <span class="jxr_string">"TextPane.font"</span>, controlFont,
+<a class="jxr_linenumber" name="L898" href="#L898">898</a>             <span class="jxr_string">"TextPane.background"</span>, textBackground,
+<a class="jxr_linenumber" name="L899" href="#L899">899</a>             <span class="jxr_string">"TextPane.foreground"</span>, textForeground,
+<a class="jxr_linenumber" name="L900" href="#L900">900</a>             <span class="jxr_string">"TextPane.selectionBackground"</span>, textHighlight,
+<a class="jxr_linenumber" name="L901" href="#L901">901</a>             <span class="jxr_string">"TextPane.selectionForeground"</span>, textHighlightText,
+<a class="jxr_linenumber" name="L902" href="#L902">902</a>             <span class="jxr_string">"TextPane.caretForeground"</span>, textForeground,
+<a class="jxr_linenumber" name="L903" href="#L903">903</a>             <span class="jxr_string">"TextPane.caretBlinkRate"</span>, textCaretBlinkRate,
+<a class="jxr_linenumber" name="L904" href="#L904">904</a>             <span class="jxr_string">"TextPane.inactiveForeground"</span>, textInactiveText,
+<a class="jxr_linenumber" name="L905" href="#L905">905</a>             <span class="jxr_string">"TextPane.inactiveBackground"</span>, textInactiveBackground,
+<a class="jxr_linenumber" name="L906" href="#L906">906</a>             <span class="jxr_string">"TextPane.border"</span>, textAreaBorder,
+<a class="jxr_linenumber" name="L907" href="#L907">907</a>             <span class="jxr_string">"TextPane.margin"</span>, editorMargin,
+<a class="jxr_linenumber" name="L908" href="#L908">908</a> 
+<a class="jxr_linenumber" name="L909" href="#L909">909</a>             <em class="jxr_comment">// *** ToggleButton</em>
+<a class="jxr_linenumber" name="L910" href="#L910">910</a>             <span class="jxr_string">"ToggleButton.background"</span>, controlBackgroundColor,
+<a class="jxr_linenumber" name="L911" href="#L911">911</a>             <span class="jxr_string">"ToggleButton.foreground"</span>, black,
+<a class="jxr_linenumber" name="L912" href="#L912">912</a>             <span class="jxr_string">"ToggleButton.disabledText"</span>, disabled,
+<a class="jxr_linenumber" name="L913" href="#L913">913</a>             <em class="jxr_comment">// we need to go through and find out if these are used, and if not what to set</em>
+<a class="jxr_linenumber" name="L914" href="#L914">914</a>             <em class="jxr_comment">// so that subclasses will get good aqua like colors.</em>
+<a class="jxr_linenumber" name="L915" href="#L915">915</a>             <em class="jxr_comment">//    "ToggleButton.select", getControlShadow(),</em>
+<a class="jxr_linenumber" name="L916" href="#L916">916</a>             <em class="jxr_comment">//    "ToggleButton.text", getControl(),</em>
+<a class="jxr_linenumber" name="L917" href="#L917">917</a>             <em class="jxr_comment">//    "ToggleButton.disabledSelectedText", getControlDarkShadow(),</em>
+<a class="jxr_linenumber" name="L918" href="#L918">918</a>             <em class="jxr_comment">//    "ToggleButton.disabledBackground", getControl(),</em>
+<a class="jxr_linenumber" name="L919" href="#L919">919</a>             <em class="jxr_comment">//    "ToggleButton.disabledSelectedBackground", getControlShadow(),</em>
+<a class="jxr_linenumber" name="L920" href="#L920">920</a>             <em class="jxr_comment">//"ToggleButton.focus", getFocusColor(),</em>
+<a class="jxr_linenumber" name="L921" href="#L921">921</a>             <span class="jxr_string">"ToggleButton.border"</span>, <strong class="jxr_keyword">new</strong> SwingLazyValue(PKG_PREFIX + <span class="jxr_string">"AquaButtonBorder"</span>, <span class="jxr_string">"getDynamicButtonBorder"</span>), <em class="jxr_comment">// sja make this lazy!</em>
+<a class="jxr_linenumber" name="L922" href="#L922">922</a>             <span class="jxr_string">"ToggleButton.font"</span>, controlFont,
+<a class="jxr_linenumber" name="L923" href="#L923">923</a>             <span class="jxr_string">"ToggleButton.focusInputMap"</span>, controlFocusInputMap,
+<a class="jxr_linenumber" name="L924" href="#L924">924</a>             <span class="jxr_string">"ToggleButton.margin"</span>, <strong class="jxr_keyword">new</strong> InsetsUIResource(2, 2, 2, 2),
+<a class="jxr_linenumber" name="L925" href="#L925">925</a> 
+<a class="jxr_linenumber" name="L926" href="#L926">926</a>             <em class="jxr_comment">// *** ToolBar</em>
+<a class="jxr_linenumber" name="L927" href="#L927">927</a>             <span class="jxr_string">"ToolBar.font"</span>, controlFont,
+<a class="jxr_linenumber" name="L928" href="#L928">928</a>             <span class="jxr_string">"ToolBar.background"</span>, panelBackgroundColor,
+<a class="jxr_linenumber" name="L929" href="#L929">929</a>             <span class="jxr_string">"ToolBar.foreground"</span>, <strong class="jxr_keyword">new</strong> ColorUIResource(Color.gray),
+<a class="jxr_linenumber" name="L930" href="#L930">930</a>             <span class="jxr_string">"ToolBar.dockingBackground"</span>, panelBackgroundColor,
+<a class="jxr_linenumber" name="L931" href="#L931">931</a>             <span class="jxr_string">"ToolBar.dockingForeground"</span>, selectionBackground,
+<a class="jxr_linenumber" name="L932" href="#L932">932</a>             <span class="jxr_string">"ToolBar.floatingBackground"</span>, panelBackgroundColor,
+<a class="jxr_linenumber" name="L933" href="#L933">933</a>             <span class="jxr_string">"ToolBar.floatingForeground"</span>, <strong class="jxr_keyword">new</strong> ColorUIResource(Color.darkGray),
+<a class="jxr_linenumber" name="L934" href="#L934">934</a>             <span class="jxr_string">"ToolBar.border"</span>, <strong class="jxr_keyword">new</strong> SwingLazyValue(PKG_PREFIX + <span class="jxr_string">"AquaToolBarUI"</span>, <span class="jxr_string">"getToolBarBorder"</span>),
+<a class="jxr_linenumber" name="L935" href="#L935">935</a>             <span class="jxr_string">"ToolBar.borderHandleColor"</span>, toolbarDragHandleColor,
+<a class="jxr_linenumber" name="L936" href="#L936">936</a>             <em class="jxr_comment">//"ToolBar.separatorSize", new DimensionUIResource( 10, 10 ),</em>
+<a class="jxr_linenumber" name="L937" href="#L937">937</a>             <span class="jxr_string">"ToolBar.separatorSize"</span>, <strong class="jxr_keyword">null</strong>,
+<a class="jxr_linenumber" name="L938" href="#L938">938</a> 
+<a class="jxr_linenumber" name="L939" href="#L939">939</a>             <em class="jxr_comment">// *** ToolBarButton</em>
+<a class="jxr_linenumber" name="L940" href="#L940">940</a>             <span class="jxr_string">"ToolBarButton.margin"</span>, <strong class="jxr_keyword">new</strong> InsetsUIResource(3, 3, 3, 3),
+<a class="jxr_linenumber" name="L941" href="#L941">941</a>             <span class="jxr_string">"ToolBarButton.insets"</span>, <strong class="jxr_keyword">new</strong> InsetsUIResource(1, 1, 1, 1),
+<a class="jxr_linenumber" name="L942" href="#L942">942</a> 
+<a class="jxr_linenumber" name="L943" href="#L943">943</a>             <em class="jxr_comment">// *** ToolTips</em>
+<a class="jxr_linenumber" name="L944" href="#L944">944</a>             <span class="jxr_string">"ToolTip.font"</span>, controlSmallFont,
+<a class="jxr_linenumber" name="L945" href="#L945">945</a>             <em class="jxr_comment">//$ Tooltips - Same color as help balloons?</em>
+<a class="jxr_linenumber" name="L946" href="#L946">946</a>             <span class="jxr_string">"ToolTip.background"</span>, toolTipBackground,
+<a class="jxr_linenumber" name="L947" href="#L947">947</a>             <span class="jxr_string">"ToolTip.foreground"</span>, black,
+<a class="jxr_linenumber" name="L948" href="#L948">948</a>             <span class="jxr_string">"ToolTip.border"</span>, toolTipBorder,
+<a class="jxr_linenumber" name="L949" href="#L949">949</a> 
+<a class="jxr_linenumber" name="L950" href="#L950">950</a>             <em class="jxr_comment">// *** Tree</em>
+<a class="jxr_linenumber" name="L951" href="#L951">951</a>             <span class="jxr_string">"Tree.font"</span>, viewFont, <em class="jxr_comment">// [3577901] Aqua HIG says "default font of text in lists and tables" should be 12 point (vm).</em>
+<a class="jxr_linenumber" name="L952" href="#L952">952</a>             <span class="jxr_string">"Tree.background"</span>, white,
+<a class="jxr_linenumber" name="L953" href="#L953">953</a>             <span class="jxr_string">"Tree.foreground"</span>, black,
+<a class="jxr_linenumber" name="L954" href="#L954">954</a>             <em class="jxr_comment">// for now no lines</em>
+<a class="jxr_linenumber" name="L955" href="#L955">955</a>             <span class="jxr_string">"Tree.hash"</span>, white, <em class="jxr_comment">//disabled, // Line color</em>
+<a class="jxr_linenumber" name="L956" href="#L956">956</a>             <span class="jxr_string">"Tree.line"</span>, white, <em class="jxr_comment">//disabled, // Line color</em>
+<a class="jxr_linenumber" name="L957" href="#L957">957</a>             <span class="jxr_string">"Tree.textForeground"</span>, black,
+<a class="jxr_linenumber" name="L958" href="#L958">958</a>             <span class="jxr_string">"Tree.textBackground"</span>, white,
+<a class="jxr_linenumber" name="L959" href="#L959">959</a>             <span class="jxr_string">"Tree.selectionForeground"</span>, selectionForeground,
+<a class="jxr_linenumber" name="L960" href="#L960">960</a>             <span class="jxr_string">"Tree.selectionBackground"</span>, selectionBackground,
+<a class="jxr_linenumber" name="L961" href="#L961">961</a>             <span class="jxr_string">"Tree.selectionInactiveBackground"</span>, selectionInactiveBackground,
+<a class="jxr_linenumber" name="L962" href="#L962">962</a>             <span class="jxr_string">"Tree.selectionInactiveForeground"</span>, selectionInactiveForeground,
+<a class="jxr_linenumber" name="L963" href="#L963">963</a>             <span class="jxr_string">"Tree.selectionBorderColor"</span>, selectionBackground, <em class="jxr_comment">// match the background so it looks like we don't draw anything</em>
+<a class="jxr_linenumber" name="L964" href="#L964">964</a>             <span class="jxr_string">"Tree.editorBorderSelectionColor"</span>, <strong class="jxr_keyword">null</strong>, <em class="jxr_comment">// The EditTextFrame provides its own border</em>
+<a class="jxr_linenumber" name="L965" href="#L965">965</a>             <em class="jxr_comment">// "Tree.editorBorder", textFieldBorder, // If you still have Sun bug 4376328 in DefaultTreeCellEditor, it has to have the same insets as TextField.border</em>
+<a class="jxr_linenumber" name="L966" href="#L966">966</a>             <span class="jxr_string">"Tree.leftChildIndent"</span>, <strong class="jxr_keyword">new</strong> Integer(7),<em class="jxr_comment">//$</em>
+<a class="jxr_linenumber" name="L967" href="#L967">967</a>             <span class="jxr_string">"Tree.rightChildIndent"</span>, <strong class="jxr_keyword">new</strong> Integer(13),<em class="jxr_comment">//$</em>
+<a class="jxr_linenumber" name="L968" href="#L968">968</a>             <span class="jxr_string">"Tree.rowHeight"</span>, <strong class="jxr_keyword">new</strong> Integer(19),<em class="jxr_comment">// iconHeight + 3, to match finder - a zero would have the renderer decide, except that leaves the icons touching</em>
+<a class="jxr_linenumber" name="L969" href="#L969">969</a>             <span class="jxr_string">"Tree.scrollsOnExpand"</span>, Boolean.FALSE,
+<a class="jxr_linenumber" name="L970" href="#L970">970</a>             <span class="jxr_string">"Tree.openIcon"</span>, <strong class="jxr_keyword">new</strong> SwingLazyValue(kAquaImageFactoryName, <span class="jxr_string">"getTreeOpenFolderIcon"</span>), <em class="jxr_comment">// Open folder icon</em>
+<a class="jxr_linenumber" name="L971" href="#L971">971</a>             <span class="jxr_string">"Tree.closedIcon"</span>, <strong class="jxr_keyword">new</strong> SwingLazyValue(kAquaImageFactoryName, <span class="jxr_string">"getTreeFolderIcon"</span>), <em class="jxr_comment">// Closed folder icon</em>
+<a class="jxr_linenumber" name="L972" href="#L972">972</a>             <span class="jxr_string">"Tree.leafIcon"</span>, <strong class="jxr_keyword">new</strong> SwingLazyValue(kAquaImageFactoryName, <span class="jxr_string">"getTreeDocumentIcon"</span>), <em class="jxr_comment">// Document icon</em>
+<a class="jxr_linenumber" name="L973" href="#L973">973</a>             <span class="jxr_string">"Tree.expandedIcon"</span>, <strong class="jxr_keyword">new</strong> SwingLazyValue(kAquaImageFactoryName, <span class="jxr_string">"getTreeExpandedIcon"</span>),
+<a class="jxr_linenumber" name="L974" href="#L974">974</a>             <span class="jxr_string">"Tree.collapsedIcon"</span>, <strong class="jxr_keyword">new</strong> SwingLazyValue(kAquaImageFactoryName, <span class="jxr_string">"getTreeCollapsedIcon"</span>),
+<a class="jxr_linenumber" name="L975" href="#L975">975</a>             <span class="jxr_string">"Tree.rightToLeftCollapsedIcon"</span>, <strong class="jxr_keyword">new</strong> SwingLazyValue(kAquaImageFactoryName, <span class="jxr_string">"getTreeRightToLeftCollapsedIcon"</span>),
+<a class="jxr_linenumber" name="L976" href="#L976">976</a>             <span class="jxr_string">"Tree.changeSelectionWithFocus"</span>, Boolean.TRUE,
+<a class="jxr_linenumber" name="L977" href="#L977">977</a>             <span class="jxr_string">"Tree.drawsFocusBorderAroundIcon"</span>, Boolean.FALSE,
+<a class="jxr_linenumber" name="L978" href="#L978">978</a> 
+<a class="jxr_linenumber" name="L979" href="#L979">979</a>             <span class="jxr_string">"Tree.focusInputMap"</span>, aquaKeyBindings.getTreeInputMap(),
+<a class="jxr_linenumber" name="L980" href="#L980">980</a>             <span class="jxr_string">"Tree.focusInputMap.RightToLeft"</span>, aquaKeyBindings.getTreeRightToLeftInputMap(),
+<a class="jxr_linenumber" name="L981" href="#L981">981</a>             <span class="jxr_string">"Tree.ancestorInputMap"</span>, <strong class="jxr_keyword">new</strong> UIDefaults.LazyInputMap(<strong class="jxr_keyword">new</strong> Object[]{<span class="jxr_string">"ESCAPE"</span>, <span class="jxr_string">"cancel"</span>}),};
+<a class="jxr_linenumber" name="L982" href="#L982">982</a> 
+<a class="jxr_linenumber" name="L983" href="#L983">983</a>         table.putDefaults(defaults);
+<a class="jxr_linenumber" name="L984" href="#L984">984</a> 
+<a class="jxr_linenumber" name="L985" href="#L985">985</a>         Object aaTextInfo = SwingUtilities2.AATextInfo.getAATextInfo(<strong class="jxr_keyword">true</strong>);
+<a class="jxr_linenumber" name="L986" href="#L986">986</a>         table.put(SwingUtilities2.AA_TEXT_PROPERTY_KEY, aaTextInfo);
+<a class="jxr_linenumber" name="L987" href="#L987">987</a>     }
+<a class="jxr_linenumber" name="L988" href="#L988">988</a> 
+<a class="jxr_linenumber" name="L989" href="#L989">989</a>     <strong class="jxr_keyword">protected</strong> <strong class="jxr_keyword">void</strong> initSystemColorDefaults(<strong class="jxr_keyword">final</strong> UIDefaults table) {
+<a class="jxr_linenumber" name="L990" href="#L990">990</a> <em class="jxr_comment">//        String[] defaultSystemColors = {</em>
+<a class="jxr_linenumber" name="L991" href="#L991">991</a> <em class="jxr_comment">//                  "desktop", "#005C5C", /* Color of the desktop background */</em>
+<a class="jxr_linenumber" name="L992" href="#L992">992</a> <em class="jxr_comment">//          "activeCaption", "#000080", /* Color for captions (title bars) when they are active. */</em>
+<a class="jxr_linenumber" name="L993" href="#L993">993</a> <em class="jxr_comment">//          "activeCaptionText", "#FFFFFF", /* Text color for text in captions (title bars). */</em>
+<a class="jxr_linenumber" name="L994" href="#L994">994</a> <em class="jxr_comment">//        "activeCaptionBorder", "#C0C0C0", /* Border color for caption (title bar) window borders. */</em>
+<a class="jxr_linenumber" name="L995" href="#L995">995</a> <em class="jxr_comment">//            "inactiveCaption", "#808080", /* Color for captions (title bars) when not active. */</em>
+<a class="jxr_linenumber" name="L996" href="#L996">996</a> <em class="jxr_comment">//        "inactiveCaptionText", "#C0C0C0", /* Text color for text in inactive captions (title bars). */</em>
+<a class="jxr_linenumber" name="L997" href="#L997">997</a> <em class="jxr_comment">//      "inactiveCaptionBorder", "#C0C0C0", /* Border color for inactive caption (title bar) window borders. */</em>
+<a class="jxr_linenumber" name="L998" href="#L998">998</a> <em class="jxr_comment">//                 "window", "#FFFFFF", /* Default color for the interior of windows */</em>
+<a class="jxr_linenumber" name="L999" href="#L999">999</a> <em class="jxr_comment">//           "windowBorder", "#000000", /* ??? */</em>
+<a class="jxr_linenumber" name="L1000" href="#L1000">1000</a> <em class="jxr_comment">//             "windowText", "#000000", /* ??? */</em>
+<a class="jxr_linenumber" name="L1001" href="#L1001">1001</a> <em class="jxr_comment">//               "menu", "#C0C0C0", /* Background color for menus */</em>
+<a class="jxr_linenumber" name="L1002" href="#L1002">1002</a> <em class="jxr_comment">//               "menuText", "#000000", /* Text color for menus  */</em>
+<a class="jxr_linenumber" name="L1003" href="#L1003">1003</a> <em class="jxr_comment">//               "text", "#C0C0C0", /* Text background color */</em>
+<a class="jxr_linenumber" name="L1004" href="#L1004">1004</a> <em class="jxr_comment">//               "textText", "#000000", /* Text foreground color */</em>
+<a class="jxr_linenumber" name="L1005" href="#L1005">1005</a> <em class="jxr_comment">//          "textHighlight", "#000080", /* Text background color when selected */</em>
+<a class="jxr_linenumber" name="L1006" href="#L1006">1006</a> <em class="jxr_comment">//          "textHighlightText", "#FFFFFF", /* Text color when selected */</em>
+<a class="jxr_linenumber" name="L1007" href="#L1007">1007</a> <em class="jxr_comment">//           "textInactiveText", "#808080", /* Text color when disabled */</em>
+<a class="jxr_linenumber" name="L1008" href="#L1008">1008</a> <em class="jxr_comment">//                "control", "#C0C0C0", /* Default color for controls (buttons, sliders, etc) */</em>
+<a class="jxr_linenumber" name="L1009" href="#L1009">1009</a> <em class="jxr_comment">//            "controlText", "#000000", /* Default color for text in controls */</em>
+<a class="jxr_linenumber" name="L1010" href="#L1010">1010</a> <em class="jxr_comment">//           "controlHighlight", "#C0C0C0", /* Specular highlight (opposite of the shadow) */</em>
+<a class="jxr_linenumber" name="L1011" href="#L1011">1011</a> <em class="jxr_comment">//         "controlLtHighlight", "#FFFFFF", /* Highlight color for controls */</em>
+<a class="jxr_linenumber" name="L1012" href="#L1012">1012</a> <em class="jxr_comment">//          "controlShadow", "#808080", /* Shadow color for controls */</em>
+<a class="jxr_linenumber" name="L1013" href="#L1013">1013</a> <em class="jxr_comment">//            "controlDkShadow", "#000000", /* Dark shadow color for controls */</em>
+<a class="jxr_linenumber" name="L1014" href="#L1014">1014</a> <em class="jxr_comment">//              "scrollbar", "#E0E0E0", /* Scrollbar background (usually the "track") */</em>
+<a class="jxr_linenumber" name="L1015" href="#L1015">1015</a> <em class="jxr_comment">//               "info", "#FFFFE1", /* ??? */</em>
+<a class="jxr_linenumber" name="L1016" href="#L1016">1016</a> <em class="jxr_comment">//               "infoText", "#000000"  /* ??? */</em>
+<a class="jxr_linenumber" name="L1017" href="#L1017">1017</a> <em class="jxr_comment">//        };</em>
+<a class="jxr_linenumber" name="L1018" href="#L1018">1018</a> <em class="jxr_comment">//</em>
+<a class="jxr_linenumber" name="L1019" href="#L1019">1019</a> <em class="jxr_comment">//        loadSystemColors(table, defaultSystemColors, isNativeLookAndFeel());</em>
+<a class="jxr_linenumber" name="L1020" href="#L1020">1020</a>     }
+<a class="jxr_linenumber" name="L1021" href="#L1021">1021</a> 
+<a class="jxr_linenumber" name="L1022" href="#L1022">1022</a>     <em class="jxr_javadoccomment">/**</em>
+<a class="jxr_linenumber" name="L1023" href="#L1023">1023</a> <em class="jxr_javadoccomment">     * Initialize the uiClassID to AquaComponentUI mapping.</em>
+<a class="jxr_linenumber" name="L1024" href="#L1024">1024</a> <em class="jxr_javadoccomment">     * The JComponent classes define their own uiClassID constants</em>
+<a class="jxr_linenumber" name="L1025" href="#L1025">1025</a> <em class="jxr_javadoccomment">     * (see AbstractComponent.getUIClassID).  This table must</em>
+<a class="jxr_linenumber" name="L1026" href="#L1026">1026</a> <em class="jxr_javadoccomment">     * map those constants to a BasicComponentUI class of the</em>
+<a class="jxr_linenumber" name="L1027" href="#L1027">1027</a> <em class="jxr_javadoccomment">     * appropriate type.</em>
+<a class="jxr_linenumber" name="L1028" href="#L1028">1028</a> <em class="jxr_javadoccomment">     *</em>
+<a class="jxr_linenumber" name="L1029" href="#L1029">1029</a> <em class="jxr_javadoccomment">     * @see #getDefaults</em>
+<a class="jxr_linenumber" name="L1030" href="#L1030">1030</a> <em class="jxr_javadoccomment">     */</em>
+<a class="jxr_linenumber" name="L1031" href="#L1031">1031</a>     <strong class="jxr_keyword">protected</strong> <strong class="jxr_keyword">void</strong> initClassDefaults(<strong class="jxr_keyword">final</strong> UIDefaults table) {
+<a class="jxr_linenumber" name="L1032" href="#L1032">1032</a>         <strong class="jxr_keyword">final</strong> String basicPackageName = <span class="jxr_string">"javax.swing.plaf.basic."</span>;
+<a class="jxr_linenumber" name="L1033" href="#L1033">1033</a> 
+<a class="jxr_linenumber" name="L1034" href="#L1034">1034</a>         <strong class="jxr_keyword">final</strong> Object[] uiDefaults = {
+<a class="jxr_linenumber" name="L1035" href="#L1035">1035</a>             <span class="jxr_string">"ButtonUI"</span>, PKG_PREFIX + <span class="jxr_string">"AquaButtonUI"</span>,
+<a class="jxr_linenumber" name="L1036" href="#L1036">1036</a>             <span class="jxr_string">"CheckBoxUI"</span>, PKG_PREFIX + <span class="jxr_string">"AquaButtonCheckBoxUI"</span>,
+<a class="jxr_linenumber" name="L1037" href="#L1037">1037</a>             <span class="jxr_string">"CheckBoxMenuItemUI"</span>, PKG_PREFIX + <span class="jxr_string">"AquaMenuItemUI"</span>,
+<a class="jxr_linenumber" name="L1038" href="#L1038">1038</a>             <span class="jxr_string">"LabelUI"</span>, PKG_PREFIX + <span class="jxr_string">"AquaLabelUI"</span>,
+<a class="jxr_linenumber" name="L1039" href="#L1039">1039</a>             <span class="jxr_string">"ListUI"</span>, PKG_PREFIX + <span class="jxr_string">"AquaListUI"</span>,
+<a class="jxr_linenumber" name="L1040" href="#L1040">1040</a>             <span class="jxr_string">"MenuUI"</span>, PKG_PREFIX + <span class="jxr_string">"AquaMenuUI"</span>,
+<a class="jxr_linenumber" name="L1041" href="#L1041">1041</a>             <span class="jxr_string">"MenuItemUI"</span>, PKG_PREFIX + <span class="jxr_string">"AquaMenuItemUI"</span>,
+<a class="jxr_linenumber" name="L1042" href="#L1042">1042</a>             <span class="jxr_string">"OptionPaneUI"</span>, PKG_PREFIX + <span class="jxr_string">"AquaOptionPaneUI"</span>,
+<a class="jxr_linenumber" name="L1043" href="#L1043">1043</a>             <span class="jxr_string">"PanelUI"</span>, PKG_PREFIX + <span class="jxr_string">"AquaPanelUI"</span>,
+<a class="jxr_linenumber" name="L1044" href="#L1044">1044</a>             <span class="jxr_string">"RadioButtonMenuItemUI"</span>, PKG_PREFIX + <span class="jxr_string">"AquaMenuItemUI"</span>,
+<a class="jxr_linenumber" name="L1045" href="#L1045">1045</a>             <span class="jxr_string">"RadioButtonUI"</span>, PKG_PREFIX + <span class="jxr_string">"AquaButtonRadioUI"</span>,
+<a class="jxr_linenumber" name="L1046" href="#L1046">1046</a>             <span class="jxr_string">"ProgressBarUI"</span>, PKG_PREFIX + <span class="jxr_string">"AquaProgressBarUI"</span>,
+<a class="jxr_linenumber" name="L1047" href="#L1047">1047</a>             <span class="jxr_string">"RootPaneUI"</span>, PKG_PREFIX + <span class="jxr_string">"AquaRootPaneUI"</span>,
+<a class="jxr_linenumber" name="L1048" href="#L1048">1048</a>             <span class="jxr_string">"SliderUI"</span>, PKG_PREFIX + <span class="jxr_string">"AquaSliderUI"</span>,
+<a class="jxr_linenumber" name="L1049" href="#L1049">1049</a>             <span class="jxr_string">"ScrollBarUI"</span>, PKG_PREFIX + <span class="jxr_string">"AquaScrollBarUI"</span>,
+<a class="jxr_linenumber" name="L1050" href="#L1050">1050</a>             <span class="jxr_string">"TabbedPaneUI"</span>, PKG_PREFIX + (JRSUIUtils.TabbedPane.shouldUseTabbedPaneContrastUI() ? <span class="jxr_string">"AquaTabbedPaneContrastUI"</span> : <span class="jxr_string">"AquaTabbedPaneUI"</span>),
+<a class="jxr_linenumber" name="L1051" href="#L1051">1051</a>             <span class="jxr_string">"TableUI"</span>, PKG_PREFIX + <span class="jxr_string">"AquaTableUI"</span>,
+<a class="jxr_linenumber" name="L1052" href="#L1052">1052</a>             <span class="jxr_string">"ToggleButtonUI"</span>, PKG_PREFIX + <span class="jxr_string">"AquaButtonToggleUI"</span>,
+<a class="jxr_linenumber" name="L1053" href="#L1053">1053</a>             <span class="jxr_string">"ToolBarUI"</span>, PKG_PREFIX + <span class="jxr_string">"AquaToolBarUI"</span>,
+<a class="jxr_linenumber" name="L1054" href="#L1054">1054</a>             <span class="jxr_string">"ToolTipUI"</span>, PKG_PREFIX + <span class="jxr_string">"AquaToolTipUI"</span>,
+<a class="jxr_linenumber" name="L1055" href="#L1055">1055</a>             <span class="jxr_string">"TreeUI"</span>, PKG_PREFIX + <span class="jxr_string">"AquaTreeUI"</span>,
+<a class="jxr_linenumber" name="L1056" href="#L1056">1056</a> 
+<a class="jxr_linenumber" name="L1057" href="#L1057">1057</a>             <span class="jxr_string">"InternalFrameUI"</span>, PKG_PREFIX + <span class="jxr_string">"AquaInternalFrameUI"</span>,
+<a class="jxr_linenumber" name="L1058" href="#L1058">1058</a>             <span class="jxr_string">"DesktopIconUI"</span>, PKG_PREFIX + <span class="jxr_string">"AquaInternalFrameDockIconUI"</span>,
+<a class="jxr_linenumber" name="L1059" href="#L1059">1059</a>             <span class="jxr_string">"DesktopPaneUI"</span>, PKG_PREFIX + <span class="jxr_string">"AquaInternalFramePaneUI"</span>,
+<a class="jxr_linenumber" name="L1060" href="#L1060">1060</a>             <span class="jxr_string">"EditorPaneUI"</span>, PKG_PREFIX + <span class="jxr_string">"AquaEditorPaneUI"</span>,
+<a class="jxr_linenumber" name="L1061" href="#L1061">1061</a>             <span class="jxr_string">"TextFieldUI"</span>, PKG_PREFIX + <span class="jxr_string">"AquaTextFieldUI"</span>,
+<a class="jxr_linenumber" name="L1062" href="#L1062">1062</a>             <span class="jxr_string">"TextPaneUI"</span>, PKG_PREFIX + <span class="jxr_string">"AquaTextPaneUI"</span>,
+<a class="jxr_linenumber" name="L1063" href="#L1063">1063</a>             <span class="jxr_string">"ComboBoxUI"</span>, PKG_PREFIX + <span class="jxr_string">"AquaComboBoxUI"</span>,
+<a class="jxr_linenumber" name="L1064" href="#L1064">1064</a>             <span class="jxr_string">"PopupMenuUI"</span>, PKG_PREFIX + <span class="jxr_string">"AquaPopupMenuUI"</span>,
+<a class="jxr_linenumber" name="L1065" href="#L1065">1065</a>             <span class="jxr_string">"TextAreaUI"</span>, PKG_PREFIX + <span class="jxr_string">"AquaTextAreaUI"</span>,
+<a class="jxr_linenumber" name="L1066" href="#L1066">1066</a>             <span class="jxr_string">"MenuBarUI"</span>, PKG_PREFIX + <span class="jxr_string">"AquaMenuBarUI"</span>,
+<a class="jxr_linenumber" name="L1067" href="#L1067">1067</a>             <span class="jxr_string">"FileChooserUI"</span>, PKG_PREFIX + <span class="jxr_string">"AquaFileChooserUI"</span>,
+<a class="jxr_linenumber" name="L1068" href="#L1068">1068</a>             <span class="jxr_string">"PasswordFieldUI"</span>, PKG_PREFIX + <span class="jxr_string">"AquaTextPasswordFieldUI"</span>,
+<a class="jxr_linenumber" name="L1069" href="#L1069">1069</a>             <span class="jxr_string">"TableHeaderUI"</span>, PKG_PREFIX + <span class="jxr_string">"AquaTableHeaderUI"</span>,
+<a class="jxr_linenumber" name="L1070" href="#L1070">1070</a> 
+<a class="jxr_linenumber" name="L1071" href="#L1071">1071</a>             <span class="jxr_string">"FormattedTextFieldUI"</span>, PKG_PREFIX + <span class="jxr_string">"AquaTextFieldFormattedUI"</span>,
+<a class="jxr_linenumber" name="L1072" href="#L1072">1072</a> 
+<a class="jxr_linenumber" name="L1073" href="#L1073">1073</a>             <span class="jxr_string">"SpinnerUI"</span>, PKG_PREFIX + <span class="jxr_string">"AquaSpinnerUI"</span>,
+<a class="jxr_linenumber" name="L1074" href="#L1074">1074</a>             <span class="jxr_string">"SplitPaneUI"</span>, PKG_PREFIX + <span class="jxr_string">"AquaSplitPaneUI"</span>,
+<a class="jxr_linenumber" name="L1075" href="#L1075">1075</a>             <span class="jxr_string">"ScrollPaneUI"</span>, PKG_PREFIX + <span class="jxr_string">"AquaScrollPaneUI"</span>,
+<a class="jxr_linenumber" name="L1076" href="#L1076">1076</a> 
+<a class="jxr_linenumber" name="L1077" href="#L1077">1077</a>             <span class="jxr_string">"PopupMenuSeparatorUI"</span>, PKG_PREFIX + <span class="jxr_string">"AquaPopupMenuSeparatorUI"</span>,
+<a class="jxr_linenumber" name="L1078" href="#L1078">1078</a>             <span class="jxr_string">"SeparatorUI"</span>, PKG_PREFIX + <span class="jxr_string">"AquaPopupMenuSeparatorUI"</span>,
+<a class="jxr_linenumber" name="L1079" href="#L1079">1079</a>             <span class="jxr_string">"ToolBarSeparatorUI"</span>, PKG_PREFIX + <span class="jxr_string">"AquaToolBarSeparatorUI"</span>,
+<a class="jxr_linenumber" name="L1080" href="#L1080">1080</a> 
+<a class="jxr_linenumber" name="L1081" href="#L1081">1081</a>             <em class="jxr_comment">// as we implement aqua versions of the swing elements</em>
+<a class="jxr_linenumber" name="L1082" href="#L1082">1082</a>             <em class="jxr_comment">// we will aad the com.apple.laf.FooUI classes to this table.</em>
+<a class="jxr_linenumber" name="L1083" href="#L1083">1083</a> 
+<a class="jxr_linenumber" name="L1084" href="#L1084">1084</a>             <span class="jxr_string">"ColorChooserUI"</span>, basicPackageName + <span class="jxr_string">"BasicColorChooserUI"</span>,
+<a class="jxr_linenumber" name="L1085" href="#L1085">1085</a> 
+<a class="jxr_linenumber" name="L1086" href="#L1086">1086</a>             <em class="jxr_comment">// text UIs</em>
+<a class="jxr_linenumber" name="L1087" href="#L1087">1087</a>             <span class="jxr_string">"ViewportUI"</span>, basicPackageName + <span class="jxr_string">"BasicViewportUI"</span>,
+<a class="jxr_linenumber" name="L1088" href="#L1088">1088</a>         };
+<a class="jxr_linenumber" name="L1089" href="#L1089">1089</a>         table.putDefaults(uiDefaults);
+<a class="jxr_linenumber" name="L1090" href="#L1090">1090</a>     }
+<a class="jxr_linenumber" name="L1091" href="#L1091">1091</a> }
+</pre>
+<hr/>
+<div id="footer"></div>
+</body>
+</html>

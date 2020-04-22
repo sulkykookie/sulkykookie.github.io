@@ -1,0 +1,255 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head><meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+<title>DigestKAT xref</title>
+<link type="text/css" rel="stylesheet" href="../stylesheet.css" />
+</head>
+<body>
+<pre>
+<a class="jxr_linenumber" name="L1" href="#L1">1</a>   <em class="jxr_comment">/*</em>
+<a class="jxr_linenumber" name="L2" href="#L2">2</a>   <em class="jxr_comment"> * Copyright (c) 2003, 2005, Oracle and/or its affiliates. All rights reserved.</em>
+<a class="jxr_linenumber" name="L3" href="#L3">3</a>   <em class="jxr_comment"> * DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS FILE HEADER.</em>
+<a class="jxr_linenumber" name="L4" href="#L4">4</a>   <em class="jxr_comment"> *</em>
+<a class="jxr_linenumber" name="L5" href="#L5">5</a>   <em class="jxr_comment"> * This code is free software; you can redistribute it and/or modify it</em>
+<a class="jxr_linenumber" name="L6" href="#L6">6</a>   <em class="jxr_comment"> * under the terms of the GNU General Public License version 2 only, as</em>
+<a class="jxr_linenumber" name="L7" href="#L7">7</a>   <em class="jxr_comment"> * published by the Free Software Foundation.</em>
+<a class="jxr_linenumber" name="L8" href="#L8">8</a>   <em class="jxr_comment"> *</em>
+<a class="jxr_linenumber" name="L9" href="#L9">9</a>   <em class="jxr_comment"> * This code is distributed in the hope that it will be useful, but WITHOUT</em>
+<a class="jxr_linenumber" name="L10" href="#L10">10</a>  <em class="jxr_comment"> * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or</em>
+<a class="jxr_linenumber" name="L11" href="#L11">11</a>  <em class="jxr_comment"> * FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License</em>
+<a class="jxr_linenumber" name="L12" href="#L12">12</a>  <em class="jxr_comment"> * version 2 for more details (a copy is included in the LICENSE file that</em>
+<a class="jxr_linenumber" name="L13" href="#L13">13</a>  <em class="jxr_comment"> * accompanied this code).</em>
+<a class="jxr_linenumber" name="L14" href="#L14">14</a>  <em class="jxr_comment"> *</em>
+<a class="jxr_linenumber" name="L15" href="#L15">15</a>  <em class="jxr_comment"> * You should have received a copy of the GNU General Public License version</em>
+<a class="jxr_linenumber" name="L16" href="#L16">16</a>  <em class="jxr_comment"> * 2 along with this work; if not, write to the Free Software Foundation,</em>
+<a class="jxr_linenumber" name="L17" href="#L17">17</a>  <em class="jxr_comment"> * Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301 USA.</em>
+<a class="jxr_linenumber" name="L18" href="#L18">18</a>  <em class="jxr_comment"> *</em>
+<a class="jxr_linenumber" name="L19" href="#L19">19</a>  <em class="jxr_comment"> * Please contact Oracle, 500 Oracle Parkway, Redwood Shores, CA 94065 USA</em>
+<a class="jxr_linenumber" name="L20" href="#L20">20</a>  <em class="jxr_comment"> * or visit www.oracle.com if you need additional information or have any</em>
+<a class="jxr_linenumber" name="L21" href="#L21">21</a>  <em class="jxr_comment"> * questions.</em>
+<a class="jxr_linenumber" name="L22" href="#L22">22</a>  <em class="jxr_comment"> */</em>
+<a class="jxr_linenumber" name="L23" href="#L23">23</a>  
+<a class="jxr_linenumber" name="L24" href="#L24">24</a>  <em class="jxr_javadoccomment">/**</em>
+<a class="jxr_linenumber" name="L25" href="#L25">25</a>  <em class="jxr_javadoccomment"> * @test</em>
+<a class="jxr_linenumber" name="L26" href="#L26">26</a>  <em class="jxr_javadoccomment"> * @bug 4819771 4834179 5008306</em>
+<a class="jxr_linenumber" name="L27" href="#L27">27</a>  <em class="jxr_javadoccomment"> * @summary Basic known-answer-test for all our MessageDigest algorithms</em>
+<a class="jxr_linenumber" name="L28" href="#L28">28</a>  <em class="jxr_javadoccomment"> * @author Andreas Sterbenz</em>
+<a class="jxr_linenumber" name="L29" href="#L29">29</a>  <em class="jxr_javadoccomment"> */</em>
+<a class="jxr_linenumber" name="L30" href="#L30">30</a>  
+<a class="jxr_linenumber" name="L31" href="#L31">31</a>  <strong class="jxr_keyword">import</strong> java.io.*;
+<a class="jxr_linenumber" name="L32" href="#L32">32</a>  <strong class="jxr_keyword">import</strong> java.util.*;
+<a class="jxr_linenumber" name="L33" href="#L33">33</a>  
+<a class="jxr_linenumber" name="L34" href="#L34">34</a>  <strong class="jxr_keyword">import</strong> java.security.*;
+<a class="jxr_linenumber" name="L35" href="#L35">35</a>  
+<a class="jxr_linenumber" name="L36" href="#L36">36</a>  <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">class</strong> DigestKAT {
+<a class="jxr_linenumber" name="L37" href="#L37">37</a>  
+<a class="jxr_linenumber" name="L38" href="#L38">38</a>      <strong class="jxr_keyword">private</strong> <strong class="jxr_keyword">final</strong> <strong class="jxr_keyword">static</strong> <strong class="jxr_keyword">char</strong>[] hexDigits = <span class="jxr_string">"0123456789abcdef"</span>.toCharArray();
+<a class="jxr_linenumber" name="L39" href="#L39">39</a>  
+<a class="jxr_linenumber" name="L40" href="#L40">40</a>      <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">static</strong> String toString(byte[] b) {
+<a class="jxr_linenumber" name="L41" href="#L41">41</a>          StringBuffer sb = <strong class="jxr_keyword">new</strong> StringBuffer(b.length * 3);
+<a class="jxr_linenumber" name="L42" href="#L42">42</a>          <strong class="jxr_keyword">for</strong> (<strong class="jxr_keyword">int</strong> i = 0; i &lt; b.length; i++) {
+<a class="jxr_linenumber" name="L43" href="#L43">43</a>              <strong class="jxr_keyword">int</strong> k = b[i] &amp; 0xff;
+<a class="jxr_linenumber" name="L44" href="#L44">44</a>              <strong class="jxr_keyword">if</strong> (i != 0) {
+<a class="jxr_linenumber" name="L45" href="#L45">45</a>                  sb.append(':');
+<a class="jxr_linenumber" name="L46" href="#L46">46</a>              }
+<a class="jxr_linenumber" name="L47" href="#L47">47</a>              sb.append(hexDigits[k &gt;&gt;&gt; 4]);
+<a class="jxr_linenumber" name="L48" href="#L48">48</a>              sb.append(hexDigits[k &amp; 0xf]);
+<a class="jxr_linenumber" name="L49" href="#L49">49</a>          }
+<a class="jxr_linenumber" name="L50" href="#L50">50</a>          <strong class="jxr_keyword">return</strong> sb.toString();
+<a class="jxr_linenumber" name="L51" href="#L51">51</a>      }
+<a class="jxr_linenumber" name="L52" href="#L52">52</a>  
+<a class="jxr_linenumber" name="L53" href="#L53">53</a>      <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">static</strong> byte[] parse(String s) {
+<a class="jxr_linenumber" name="L54" href="#L54">54</a>          <strong class="jxr_keyword">try</strong> {
+<a class="jxr_linenumber" name="L55" href="#L55">55</a>              <strong class="jxr_keyword">int</strong> n = s.length();
+<a class="jxr_linenumber" name="L56" href="#L56">56</a>              ByteArrayOutputStream out = <strong class="jxr_keyword">new</strong> ByteArrayOutputStream(n / 3);
+<a class="jxr_linenumber" name="L57" href="#L57">57</a>              StringReader r = <strong class="jxr_keyword">new</strong> StringReader(s);
+<a class="jxr_linenumber" name="L58" href="#L58">58</a>              <strong class="jxr_keyword">while</strong> (<strong class="jxr_keyword">true</strong>) {
+<a class="jxr_linenumber" name="L59" href="#L59">59</a>                  <strong class="jxr_keyword">int</strong> b1 = nextNibble(r);
+<a class="jxr_linenumber" name="L60" href="#L60">60</a>                  <strong class="jxr_keyword">if</strong> (b1 &lt; 0) {
+<a class="jxr_linenumber" name="L61" href="#L61">61</a>                      <strong class="jxr_keyword">break</strong>;
+<a class="jxr_linenumber" name="L62" href="#L62">62</a>                  }
+<a class="jxr_linenumber" name="L63" href="#L63">63</a>                  <strong class="jxr_keyword">int</strong> b2 = nextNibble(r);
+<a class="jxr_linenumber" name="L64" href="#L64">64</a>                  <strong class="jxr_keyword">if</strong> (b2 &lt; 0) {
+<a class="jxr_linenumber" name="L65" href="#L65">65</a>                      <strong class="jxr_keyword">throw</strong> <strong class="jxr_keyword">new</strong> RuntimeException(<span class="jxr_string">"Invalid string "</span> + s);
+<a class="jxr_linenumber" name="L66" href="#L66">66</a>                  }
+<a class="jxr_linenumber" name="L67" href="#L67">67</a>                  <strong class="jxr_keyword">int</strong> b = (b1 &lt;&lt; 4) | b2;
+<a class="jxr_linenumber" name="L68" href="#L68">68</a>                  out.write(b);
+<a class="jxr_linenumber" name="L69" href="#L69">69</a>              }
+<a class="jxr_linenumber" name="L70" href="#L70">70</a>              <strong class="jxr_keyword">return</strong> out.toByteArray();
+<a class="jxr_linenumber" name="L71" href="#L71">71</a>          } <strong class="jxr_keyword">catch</strong> (IOException e) {
+<a class="jxr_linenumber" name="L72" href="#L72">72</a>              <strong class="jxr_keyword">throw</strong> <strong class="jxr_keyword">new</strong> RuntimeException(e);
+<a class="jxr_linenumber" name="L73" href="#L73">73</a>          }
+<a class="jxr_linenumber" name="L74" href="#L74">74</a>      }
+<a class="jxr_linenumber" name="L75" href="#L75">75</a>  
+<a class="jxr_linenumber" name="L76" href="#L76">76</a>      <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">static</strong> byte[] b(String s) {
+<a class="jxr_linenumber" name="L77" href="#L77">77</a>          <strong class="jxr_keyword">return</strong> parse(s);
+<a class="jxr_linenumber" name="L78" href="#L78">78</a>      }
+<a class="jxr_linenumber" name="L79" href="#L79">79</a>  
+<a class="jxr_linenumber" name="L80" href="#L80">80</a>      <strong class="jxr_keyword">private</strong> <strong class="jxr_keyword">static</strong> <strong class="jxr_keyword">int</strong> nextNibble(StringReader r) <strong class="jxr_keyword">throws</strong> IOException {
+<a class="jxr_linenumber" name="L81" href="#L81">81</a>          <strong class="jxr_keyword">while</strong> (<strong class="jxr_keyword">true</strong>) {
+<a class="jxr_linenumber" name="L82" href="#L82">82</a>              <strong class="jxr_keyword">int</strong> ch = r.read();
+<a class="jxr_linenumber" name="L83" href="#L83">83</a>              <strong class="jxr_keyword">if</strong> (ch == -1) {
+<a class="jxr_linenumber" name="L84" href="#L84">84</a>                  <strong class="jxr_keyword">return</strong> -1;
+<a class="jxr_linenumber" name="L85" href="#L85">85</a>              } <strong class="jxr_keyword">else</strong> <strong class="jxr_keyword">if</strong> ((ch &gt;= '0') &amp;&amp; (ch &lt;= '9')) {
+<a class="jxr_linenumber" name="L86" href="#L86">86</a>                  <strong class="jxr_keyword">return</strong> ch - '0';
+<a class="jxr_linenumber" name="L87" href="#L87">87</a>              } <strong class="jxr_keyword">else</strong> <strong class="jxr_keyword">if</strong> ((ch &gt;= 'a') &amp;&amp; (ch &lt;= 'f')) {
+<a class="jxr_linenumber" name="L88" href="#L88">88</a>                  <strong class="jxr_keyword">return</strong> ch - 'a' + 10;
+<a class="jxr_linenumber" name="L89" href="#L89">89</a>              } <strong class="jxr_keyword">else</strong> <strong class="jxr_keyword">if</strong> ((ch &gt;= 'A') &amp;&amp; (ch &lt;= 'F')) {
+<a class="jxr_linenumber" name="L90" href="#L90">90</a>                  <strong class="jxr_keyword">return</strong> ch - 'A' + 10;
+<a class="jxr_linenumber" name="L91" href="#L91">91</a>              }
+<a class="jxr_linenumber" name="L92" href="#L92">92</a>          }
+<a class="jxr_linenumber" name="L93" href="#L93">93</a>      }
+<a class="jxr_linenumber" name="L94" href="#L94">94</a>  
+<a class="jxr_linenumber" name="L95" href="#L95">95</a>      <strong class="jxr_keyword">static</strong> <strong class="jxr_keyword">abstract</strong> <strong class="jxr_keyword">class</strong> Test {
+<a class="jxr_linenumber" name="L96" href="#L96">96</a>          <strong class="jxr_keyword">abstract</strong> <strong class="jxr_keyword">void</strong> run(Provider p) <strong class="jxr_keyword">throws</strong> Exception;
+<a class="jxr_linenumber" name="L97" href="#L97">97</a>      }
+<a class="jxr_linenumber" name="L98" href="#L98">98</a>  
+<a class="jxr_linenumber" name="L99" href="#L99">99</a>      <strong class="jxr_keyword">static</strong> <strong class="jxr_keyword">class</strong> DigestTest <strong class="jxr_keyword">extends</strong> Test {
+<a class="jxr_linenumber" name="L100" href="#L100">100</a>         <strong class="jxr_keyword">private</strong> <strong class="jxr_keyword">final</strong> String alg;
+<a class="jxr_linenumber" name="L101" href="#L101">101</a>         <strong class="jxr_keyword">private</strong> <strong class="jxr_keyword">final</strong> byte[] data;
+<a class="jxr_linenumber" name="L102" href="#L102">102</a>         <strong class="jxr_keyword">private</strong> <strong class="jxr_keyword">final</strong> byte[] digest;
+<a class="jxr_linenumber" name="L103" href="#L103">103</a>         DigestTest(String alg, byte[] data, byte[] digest) {
+<a class="jxr_linenumber" name="L104" href="#L104">104</a>             <strong class="jxr_keyword">this</strong>.alg = alg;
+<a class="jxr_linenumber" name="L105" href="#L105">105</a>             <strong class="jxr_keyword">this</strong>.data = data;
+<a class="jxr_linenumber" name="L106" href="#L106">106</a>             <strong class="jxr_keyword">this</strong>.digest = digest;
+<a class="jxr_linenumber" name="L107" href="#L107">107</a>         }
+<a class="jxr_linenumber" name="L108" href="#L108">108</a>         <strong class="jxr_keyword">void</strong> run(Provider p) <strong class="jxr_keyword">throws</strong> Exception {
+<a class="jxr_linenumber" name="L109" href="#L109">109</a>             MessageDigest md;
+<a class="jxr_linenumber" name="L110" href="#L110">110</a>             <strong class="jxr_keyword">if</strong> (alg.equals(<span class="jxr_string">"MD4"</span>)) {
+<a class="jxr_linenumber" name="L111" href="#L111">111</a>                 md = sun.security.provider.MD4.getInstance();
+<a class="jxr_linenumber" name="L112" href="#L112">112</a>             } <strong class="jxr_keyword">else</strong> {
+<a class="jxr_linenumber" name="L113" href="#L113">113</a>                 md = MessageDigest.getInstance(alg, p);
+<a class="jxr_linenumber" name="L114" href="#L114">114</a>             }
+<a class="jxr_linenumber" name="L115" href="#L115">115</a>             md.update(data);
+<a class="jxr_linenumber" name="L116" href="#L116">116</a>             byte[] myDigest = md.digest();
+<a class="jxr_linenumber" name="L117" href="#L117">117</a>             <strong class="jxr_keyword">if</strong> (Arrays.equals(digest, myDigest) == false) {
+<a class="jxr_linenumber" name="L118" href="#L118">118</a>                 System.out.println(<span class="jxr_string">"Digest test for "</span> + alg + <span class="jxr_string">" failed:"</span>);
+<a class="jxr_linenumber" name="L119" href="#L119">119</a>                 <strong class="jxr_keyword">if</strong> (data.length &lt; 256) {
+<a class="jxr_linenumber" name="L120" href="#L120">120</a>                     System.out.println(<span class="jxr_string">"data: "</span> + DigestKAT.toString(data));
+<a class="jxr_linenumber" name="L121" href="#L121">121</a>                 }
+<a class="jxr_linenumber" name="L122" href="#L122">122</a>                 System.out.println(<span class="jxr_string">"dig:  "</span> + DigestKAT.toString(digest));
+<a class="jxr_linenumber" name="L123" href="#L123">123</a>                 System.out.println(<span class="jxr_string">"out:  "</span> + DigestKAT.toString(myDigest));
+<a class="jxr_linenumber" name="L124" href="#L124">124</a>                 <strong class="jxr_keyword">throw</strong> <strong class="jxr_keyword">new</strong> Exception(<span class="jxr_string">"Digest test for "</span> + alg + <span class="jxr_string">" failed"</span>);
+<a class="jxr_linenumber" name="L125" href="#L125">125</a>             }
+<a class="jxr_linenumber" name="L126" href="#L126">126</a> <em class="jxr_comment">//          System.out.println("Passed " + alg);</em>
+<a class="jxr_linenumber" name="L127" href="#L127">127</a>         }
+<a class="jxr_linenumber" name="L128" href="#L128">128</a>     }
+<a class="jxr_linenumber" name="L129" href="#L129">129</a> 
+<a class="jxr_linenumber" name="L130" href="#L130">130</a>     <strong class="jxr_keyword">private</strong> <strong class="jxr_keyword">static</strong> byte[] s(String s) {
+<a class="jxr_linenumber" name="L131" href="#L131">131</a>         <strong class="jxr_keyword">try</strong> {
+<a class="jxr_linenumber" name="L132" href="#L132">132</a>             <strong class="jxr_keyword">return</strong> s.getBytes(<span class="jxr_string">"UTF8"</span>);
+<a class="jxr_linenumber" name="L133" href="#L133">133</a>         } <strong class="jxr_keyword">catch</strong> (Exception e) {
+<a class="jxr_linenumber" name="L134" href="#L134">134</a>             <strong class="jxr_keyword">throw</strong> <strong class="jxr_keyword">new</strong> RuntimeException(e);
+<a class="jxr_linenumber" name="L135" href="#L135">135</a>         }
+<a class="jxr_linenumber" name="L136" href="#L136">136</a>     }
+<a class="jxr_linenumber" name="L137" href="#L137">137</a> 
+<a class="jxr_linenumber" name="L138" href="#L138">138</a>     <strong class="jxr_keyword">private</strong> <strong class="jxr_keyword">static</strong> Test t(String alg, byte[] data, String digest) {
+<a class="jxr_linenumber" name="L139" href="#L139">139</a>         <strong class="jxr_keyword">return</strong> <strong class="jxr_keyword">new</strong> DigestTest(alg, data, parse(digest));
+<a class="jxr_linenumber" name="L140" href="#L140">140</a>     }
+<a class="jxr_linenumber" name="L141" href="#L141">141</a> 
+<a class="jxr_linenumber" name="L142" href="#L142">142</a>     <strong class="jxr_keyword">private</strong> <strong class="jxr_keyword">final</strong> <strong class="jxr_keyword">static</strong> byte[] ALONG, BLONG;
+<a class="jxr_linenumber" name="L143" href="#L143">143</a> 
+<a class="jxr_linenumber" name="L144" href="#L144">144</a>     <strong class="jxr_keyword">static</strong> {
+<a class="jxr_linenumber" name="L145" href="#L145">145</a>         ALONG = <strong class="jxr_keyword">new</strong> byte[1024 * 128];
+<a class="jxr_linenumber" name="L146" href="#L146">146</a>         Arrays.fill(ALONG, (byte)'a');
+<a class="jxr_linenumber" name="L147" href="#L147">147</a>         Random random = <strong class="jxr_keyword">new</strong> Random(12345678);
+<a class="jxr_linenumber" name="L148" href="#L148">148</a>         BLONG = <strong class="jxr_keyword">new</strong> byte[1024 * 128];
+<a class="jxr_linenumber" name="L149" href="#L149">149</a>         random.nextBytes(BLONG);
+<a class="jxr_linenumber" name="L150" href="#L150">150</a>     }
+<a class="jxr_linenumber" name="L151" href="#L151">151</a> 
+<a class="jxr_linenumber" name="L152" href="#L152">152</a>     <strong class="jxr_keyword">private</strong> <strong class="jxr_keyword">final</strong> <strong class="jxr_keyword">static</strong> Test[] tests = {
+<a class="jxr_linenumber" name="L153" href="#L153">153</a>         t(<span class="jxr_string">"MD2"</span>, s(<span class="jxr_string">""</span>), <span class="jxr_string">"8350e5a3e24c153df2275c9f80692773"</span>),
+<a class="jxr_linenumber" name="L154" href="#L154">154</a>         t(<span class="jxr_string">"MD2"</span>, s(<span class="jxr_string">"a"</span>), <span class="jxr_string">"32ec01ec4a6dac72c0ab96fb34c0b5d1"</span>),
+<a class="jxr_linenumber" name="L155" href="#L155">155</a>         t(<span class="jxr_string">"MD2"</span>, s(<span class="jxr_string">"abc"</span>), <span class="jxr_string">"da853b0d3f88d99b30283a69e6ded6bb"</span>),
+<a class="jxr_linenumber" name="L156" href="#L156">156</a>         t(<span class="jxr_string">"MD2"</span>, s(<span class="jxr_string">"message digest"</span>), <span class="jxr_string">"ab4f496bfb2a530b219ff33031fe06b0"</span>),
+<a class="jxr_linenumber" name="L157" href="#L157">157</a>         t(<span class="jxr_string">"MD2"</span>, s(<span class="jxr_string">"abcdefghijklmnopqrstuvwxyz"</span>), <span class="jxr_string">"4e8ddff3650292ab5a4108c3aa47940b"</span>),
+<a class="jxr_linenumber" name="L158" href="#L158">158</a>         t(<span class="jxr_string">"MD2"</span>, s(<span class="jxr_string">"ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789"</span>), <span class="jxr_string">"da33def2a42df13975352846c30338cd"</span>),
+<a class="jxr_linenumber" name="L159" href="#L159">159</a>         t(<span class="jxr_string">"MD2"</span>, s(<span class="jxr_string">"12345678901234567890123456789012345678901234567890123456789012345678901234567890"</span>), <span class="jxr_string">"d5976f79d83d3a0dc9806c3c66f3efd8"</span>),
+<a class="jxr_linenumber" name="L160" href="#L160">160</a>         t(<span class="jxr_string">"MD2"</span>, ALONG, <span class="jxr_string">"92:e3:15:b4:d5:35:6f:55:45:e0:08:37:dc:8f:6e:e3"</span>),
+<a class="jxr_linenumber" name="L161" href="#L161">161</a>         t(<span class="jxr_string">"MD2"</span>, BLONG, <span class="jxr_string">"fb:d3:b5:f3:80:a7:dd:ae:1b:66:c7:ee:fe:d6:8f:27"</span>),
+<a class="jxr_linenumber" name="L162" href="#L162">162</a> 
+<a class="jxr_linenumber" name="L163" href="#L163">163</a>         t(<span class="jxr_string">"MD4"</span>, s(<span class="jxr_string">""</span>), <span class="jxr_string">"31d6cfe0d16ae931b73c59d7e0c089c0"</span>),
+<a class="jxr_linenumber" name="L164" href="#L164">164</a>         t(<span class="jxr_string">"MD4"</span>, s(<span class="jxr_string">"a"</span>), <span class="jxr_string">"bde52cb31de33e46245e05fbdbd6fb24"</span>),
+<a class="jxr_linenumber" name="L165" href="#L165">165</a>         t(<span class="jxr_string">"MD4"</span>, s(<span class="jxr_string">"abc"</span>), <span class="jxr_string">"a448017aaf21d8525fc10ae87aa6729d"</span>),
+<a class="jxr_linenumber" name="L166" href="#L166">166</a>         t(<span class="jxr_string">"MD4"</span>, s(<span class="jxr_string">"message digest"</span>), <span class="jxr_string">"d9130a8164549fe818874806e1c7014b"</span>),
+<a class="jxr_linenumber" name="L167" href="#L167">167</a>         t(<span class="jxr_string">"MD4"</span>, s(<span class="jxr_string">"abcdefghijklmnopqrstuvwxyz"</span>), <span class="jxr_string">"d79e1c308aa5bbcdeea8ed63df412da9"</span>),
+<a class="jxr_linenumber" name="L168" href="#L168">168</a>         t(<span class="jxr_string">"MD4"</span>, s(<span class="jxr_string">"ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789"</span>), <span class="jxr_string">"043f8582f241db351ce627e153e7f0e4"</span>),
+<a class="jxr_linenumber" name="L169" href="#L169">169</a>         t(<span class="jxr_string">"MD4"</span>, s(<span class="jxr_string">"12345678901234567890123456789012345678901234567890123456789012345678901234567890"</span>), <span class="jxr_string">"e33b4ddc9c38f2199c3e7b164fcc0536"</span>),
+<a class="jxr_linenumber" name="L170" href="#L170">170</a>         t(<span class="jxr_string">"MD4"</span>, ALONG, <span class="jxr_string">"bc:8d:72:fc:4b:52:23:72:95:eb:cf:b6:bd:c1:0c:fe"</span>),
+<a class="jxr_linenumber" name="L171" href="#L171">171</a>         t(<span class="jxr_string">"MD4"</span>, BLONG, <span class="jxr_string">"f7:11:86:91:ef:2f:58:ab:30:5f:4c:f9:85:63:c1:be"</span>),
+<a class="jxr_linenumber" name="L172" href="#L172">172</a> 
+<a class="jxr_linenumber" name="L173" href="#L173">173</a>         t(<span class="jxr_string">"MD5"</span>, s(<span class="jxr_string">""</span>), <span class="jxr_string">"d41d8cd98f00b204e9800998ecf8427e"</span>),
+<a class="jxr_linenumber" name="L174" href="#L174">174</a>         t(<span class="jxr_string">"MD5"</span>, s(<span class="jxr_string">"a"</span>), <span class="jxr_string">"0cc175b9c0f1b6a831c399e269772661"</span>),
+<a class="jxr_linenumber" name="L175" href="#L175">175</a>         t(<span class="jxr_string">"MD5"</span>, s(<span class="jxr_string">"abc"</span>), <span class="jxr_string">"900150983cd24fb0d6963f7d28e17f72"</span>),
+<a class="jxr_linenumber" name="L176" href="#L176">176</a>         t(<span class="jxr_string">"MD5"</span>, s(<span class="jxr_string">"message digest"</span>), <span class="jxr_string">"f96b697d7cb7938d525a2f31aaf161d0"</span>),
+<a class="jxr_linenumber" name="L177" href="#L177">177</a>         t(<span class="jxr_string">"MD5"</span>, s(<span class="jxr_string">"abcdefghijklmnopqrstuvwxyz"</span>), <span class="jxr_string">"c3fcd3d76192e4007dfb496cca67e13b"</span>),
+<a class="jxr_linenumber" name="L178" href="#L178">178</a>         t(<span class="jxr_string">"MD5"</span>, s(<span class="jxr_string">"ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789"</span>), <span class="jxr_string">"d174ab98d277d9f5a5611c2c9f419d9f"</span>),
+<a class="jxr_linenumber" name="L179" href="#L179">179</a>         t(<span class="jxr_string">"MD5"</span>, s(<span class="jxr_string">"12345678901234567890123456789012345678901234567890123456789012345678901234567890"</span>), <span class="jxr_string">"57edf4a22be3c955ac49da2e2107b67a"</span>),
+<a class="jxr_linenumber" name="L180" href="#L180">180</a>         t(<span class="jxr_string">"MD5"</span>, ALONG, <span class="jxr_string">"81:61:54:49:a9:8a:aa:ad:8d:c1:79:b3:be:c8:7f:38"</span>),
+<a class="jxr_linenumber" name="L181" href="#L181">181</a>         t(<span class="jxr_string">"MD5"</span>, BLONG, <span class="jxr_string">"d5:5b:d4:4c:35:6a:00:7f:6f:2d:91:f0:e5:c2:fe:d4"</span>),
+<a class="jxr_linenumber" name="L182" href="#L182">182</a> 
+<a class="jxr_linenumber" name="L183" href="#L183">183</a>         t(<span class="jxr_string">"SHA1"</span>, s(<span class="jxr_string">""</span>), <span class="jxr_string">"da:39:a3:ee:5e:6b:4b:0d:32:55:bf:ef:95:60:18:90:af:d8:07:09"</span>),
+<a class="jxr_linenumber" name="L184" href="#L184">184</a>         t(<span class="jxr_string">"SHA1"</span>, s(<span class="jxr_string">"a"</span>), <span class="jxr_string">"86:f7:e4:37:fa:a5:a7:fc:e1:5d:1d:dc:b9:ea:ea:ea:37:76:67:b8"</span>),
+<a class="jxr_linenumber" name="L185" href="#L185">185</a>         t(<span class="jxr_string">"SHA1"</span>, s(<span class="jxr_string">"abc"</span>), <span class="jxr_string">"a9:99:3e:36:47:06:81:6a:ba:3e:25:71:78:50:c2:6c:9c:d0:d8:9d"</span>),
+<a class="jxr_linenumber" name="L186" href="#L186">186</a>         t(<span class="jxr_string">"SHA1"</span>, s(<span class="jxr_string">"message digest"</span>), <span class="jxr_string">"c1:22:52:ce:da:8b:e8:99:4d:5f:a0:29:0a:47:23:1c:1d:16:aa:e3"</span>),
+<a class="jxr_linenumber" name="L187" href="#L187">187</a>         t(<span class="jxr_string">"SHA1"</span>, s(<span class="jxr_string">"abcdefghijklmnopqrstuvwxyz"</span>), <span class="jxr_string">"32:d1:0c:7b:8c:f9:65:70:ca:04:ce:37:f2:a1:9d:84:24:0d:3a:89"</span>),
+<a class="jxr_linenumber" name="L188" href="#L188">188</a>         t(<span class="jxr_string">"SHA1"</span>, s(<span class="jxr_string">"ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789"</span>), <span class="jxr_string">"76:1c:45:7b:f7:3b:14:d2:7e:9e:92:65:c4:6f:4b:4d:da:11:f9:40"</span>),
+<a class="jxr_linenumber" name="L189" href="#L189">189</a>         t(<span class="jxr_string">"SHA1"</span>, s(<span class="jxr_string">"12345678901234567890123456789012345678901234567890123456789012345678901234567890"</span>), <span class="jxr_string">"50:ab:f5:70:6a:15:09:90:a0:8b:2c:5e:a4:0f:a0:e5:85:55:47:32"</span>),
+<a class="jxr_linenumber" name="L190" href="#L190">190</a>         t(<span class="jxr_string">"SHA1"</span>, ALONG, <span class="jxr_string">"ce:56:53:59:08:04:ba:a9:36:9f:72:d4:83:ed:9e:ba:72:f0:4d:29"</span>),
+<a class="jxr_linenumber" name="L191" href="#L191">191</a>         t(<span class="jxr_string">"SHA1"</span>, BLONG, <span class="jxr_string">"1d:a8:1a:de:8d:1e:d0:82:ba:12:13:e2:56:26:30:fc:05:b8:8d:a6"</span>),
+<a class="jxr_linenumber" name="L192" href="#L192">192</a> 
+<a class="jxr_linenumber" name="L193" href="#L193">193</a>         t(<span class="jxr_string">"SHA-256"</span>, s(<span class="jxr_string">""</span>), <span class="jxr_string">"e3:b0:c4:42:98:fc:1c:14:9a:fb:f4:c8:99:6f:b9:24:27:ae:41:e4:64:9b:93:4c:a4:95:99:1b:78:52:b8:55"</span>),
+<a class="jxr_linenumber" name="L194" href="#L194">194</a>         t(<span class="jxr_string">"SHA-256"</span>, s(<span class="jxr_string">"a"</span>), <span class="jxr_string">"ca:97:81:12:ca:1b:bd:ca:fa:c2:31:b3:9a:23:dc:4d:a7:86:ef:f8:14:7c:4e:72:b9:80:77:85:af:ee:48:bb"</span>),
+<a class="jxr_linenumber" name="L195" href="#L195">195</a>         t(<span class="jxr_string">"SHA-256"</span>, s(<span class="jxr_string">"abc"</span>), <span class="jxr_string">"ba:78:16:bf:8f:01:cf:ea:41:41:40:de:5d:ae:22:23:b0:03:61:a3:96:17:7a:9c:b4:10:ff:61:f2:00:15:ad"</span>),
+<a class="jxr_linenumber" name="L196" href="#L196">196</a>         t(<span class="jxr_string">"SHA-256"</span>, s(<span class="jxr_string">"message digest"</span>), <span class="jxr_string">"f7:84:6f:55:cf:23:e1:4e:eb:ea:b5:b4:e1:55:0c:ad:5b:50:9e:33:48:fb:c4:ef:a3:a1:41:3d:39:3c:b6:50"</span>),
+<a class="jxr_linenumber" name="L197" href="#L197">197</a>         t(<span class="jxr_string">"SHA-256"</span>, s(<span class="jxr_string">"abcdefghijklmnopqrstuvwxyz"</span>), <span class="jxr_string">"71:c4:80:df:93:d6:ae:2f:1e:fa:d1:44:7c:66:c9:52:5e:31:62:18:cf:51:fc:8d:9e:d8:32:f2:da:f1:8b:73"</span>),
+<a class="jxr_linenumber" name="L198" href="#L198">198</a>         t(<span class="jxr_string">"SHA-256"</span>, s(<span class="jxr_string">"ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789"</span>), <span class="jxr_string">"db:4b:fc:bd:4d:a0:cd:85:a6:0c:3c:37:d3:fb:d8:80:5c:77:f1:5f:c6:b1:fd:fe:61:4e:e0:a7:c8:fd:b4:c0"</span>),
+<a class="jxr_linenumber" name="L199" href="#L199">199</a>         t(<span class="jxr_string">"SHA-256"</span>, s(<span class="jxr_string">"12345678901234567890123456789012345678901234567890123456789012345678901234567890"</span>), <span class="jxr_string">"f3:71:bc:4a:31:1f:2b:00:9e:ef:95:2d:d8:3c:a8:0e:2b:60:02:6c:8e:93:55:92:d0:f9:c3:08:45:3c:81:3e"</span>),
+<a class="jxr_linenumber" name="L200" href="#L200">200</a>         t(<span class="jxr_string">"SHA-256"</span>, ALONG, <span class="jxr_string">"b4:4f:fb:72:fc:c2:59:67:6b:d8:04:95:fe:f1:b4:4b:80:8c:a8:f1:ff:e1:b1:70:6a:4d:79:11:b0:e3:1f:11"</span>),
+<a class="jxr_linenumber" name="L201" href="#L201">201</a>         t(<span class="jxr_string">"SHA-256"</span>, BLONG, <span class="jxr_string">"8b:88:9d:83:ff:6a:25:ca:66:de:33:7e:24:2d:74:b2:3f:25:33:ae:88:83:c9:79:1e:1f:7f:20:53:b1:60:63"</span>),
+<a class="jxr_linenumber" name="L202" href="#L202">202</a> 
+<a class="jxr_linenumber" name="L203" href="#L203">203</a>         t(<span class="jxr_string">"SHA-384"</span>, s(<span class="jxr_string">""</span>), <span class="jxr_string">"38:b0:60:a7:51:ac:96:38:4c:d9:32:7e:b1:b1:e3:6a:21:fd:b7:11:14:be:07:43:4c:0c:c7:bf:63:f6:e1:da:27:4e:de:bf:e7:6f:65:fb:d5:1a:d2:f1:48:98:b9:5b"</span>),
+<a class="jxr_linenumber" name="L204" href="#L204">204</a>         t(<span class="jxr_string">"SHA-384"</span>, s(<span class="jxr_string">"a"</span>), <span class="jxr_string">"54:a5:9b:9f:22:b0:b8:08:80:d8:42:7e:54:8b:7c:23:ab:d8:73:48:6e:1f:03:5d:ce:9c:d6:97:e8:51:75:03:3c:aa:88:e6:d5:7b:c3:5e:fa:e0:b5:af:d3:14:5f:31"</span>),
+<a class="jxr_linenumber" name="L205" href="#L205">205</a>         t(<span class="jxr_string">"SHA-384"</span>, s(<span class="jxr_string">"abc"</span>), <span class="jxr_string">"cb:00:75:3f:45:a3:5e:8b:b5:a0:3d:69:9a:c6:50:07:27:2c:32:ab:0e:de:d1:63:1a:8b:60:5a:43:ff:5b:ed:80:86:07:2b:a1:e7:cc:23:58:ba:ec:a1:34:c8:25:a7"</span>),
+<a class="jxr_linenumber" name="L206" href="#L206">206</a>         t(<span class="jxr_string">"SHA-384"</span>, s(<span class="jxr_string">"message digest"</span>), <span class="jxr_string">"47:3e:d3:51:67:ec:1f:5d:8e:55:03:68:a3:db:39:be:54:63:9f:82:88:68:e9:45:4c:23:9f:c8:b5:2e:3c:61:db:d0:d8:b4:de:13:90:c2:56:dc:bb:5d:5f:d9:9c:d5"</span>),
+<a class="jxr_linenumber" name="L207" href="#L207">207</a>         t(<span class="jxr_string">"SHA-384"</span>, s(<span class="jxr_string">"abcdefghijklmnopqrstuvwxyz"</span>), <span class="jxr_string">"fe:b6:73:49:df:3d:b6:f5:92:48:15:d6:c3:dc:13:3f:09:18:09:21:37:31:fe:5c:7b:5f:49:99:e4:63:47:9f:f2:87:7f:5f:29:36:fa:63:bb:43:78:4b:12:f3:eb:b4"</span>),
+<a class="jxr_linenumber" name="L208" href="#L208">208</a>         t(<span class="jxr_string">"SHA-384"</span>, s(<span class="jxr_string">"ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789"</span>), <span class="jxr_string">"17:61:33:6e:3f:7c:bf:e5:1d:eb:13:7f:02:6f:89:e0:1a:44:8e:3b:1f:af:a6:40:39:c1:46:4e:e8:73:2f:11:a5:34:1a:6f:41:e0:c2:02:29:47:36:ed:64:db:1a:84"</span>),
+<a class="jxr_linenumber" name="L209" href="#L209">209</a>         t(<span class="jxr_string">"SHA-384"</span>, s(<span class="jxr_string">"12345678901234567890123456789012345678901234567890123456789012345678901234567890"</span>), <span class="jxr_string">"b1:29:32:b0:62:7d:1c:06:09:42:f5:44:77:64:15:56:55:bd:4d:a0:c9:af:a6:dd:9b:9e:f5:31:29:af:1b:8f:b0:19:59:96:d2:de:9c:a0:df:9d:82:1f:fe:e6:70:26"</span>),
+<a class="jxr_linenumber" name="L210" href="#L210">210</a>         t(<span class="jxr_string">"SHA-384"</span>, ALONG, <span class="jxr_string">"ba:25:a4:25:1a:6c:69:f5:d7:4a:b2:b1:08:be:35:fb:6c:db:35:df:4f:17:c8:08:e7:cc:a2:cb:de:e7:7a:13:4b:35:90:50:10:bf:b9:26:78:65:cf:79:2e:09:79:1c"</span>),
+<a class="jxr_linenumber" name="L211" href="#L211">211</a>         t(<span class="jxr_string">"SHA-384"</span>, BLONG, <span class="jxr_string">"c9:95:d0:e3:d5:0c:bd:0b:bd:df:01:c5:bc:90:1c:fc:cd:2f:a3:4c:d5:a5:ad:fd:4f:5b:1e:fb:65:e1:f8:3b:6a:5c:2e:70:86:b0:75:7d:06:c9:05:8c:f7:7e:de:a7"</span>),
+<a class="jxr_linenumber" name="L212" href="#L212">212</a> 
+<a class="jxr_linenumber" name="L213" href="#L213">213</a>         t(<span class="jxr_string">"SHA-512"</span>, s(<span class="jxr_string">""</span>), <span class="jxr_string">"cf:83:e1:35:7e:ef:b8:bd:f1:54:28:50:d6:6d:80:07:d6:20:e4:05:0b:57:15:dc:83:f4:a9:21:d3:6c:e9:ce:47:d0:d1:3c:5d:85:f2:b0:ff:83:18:d2:87:7e:ec:2f:63:b9:31:bd:47:41:7a:81:a5:38:32:7a:f9:27:da:3e"</span>),
+<a class="jxr_linenumber" name="L214" href="#L214">214</a>         t(<span class="jxr_string">"SHA-512"</span>, s(<span class="jxr_string">"a"</span>), <span class="jxr_string">"1f:40:fc:92:da:24:16:94:75:09:79:ee:6c:f5:82:f2:d5:d7:d2:8e:18:33:5d:e0:5a:bc:54:d0:56:0e:0f:53:02:86:0c:65:2b:f0:8d:56:02:52:aa:5e:74:21:05:46:f3:69:fb:bb:ce:8c:12:cf:c7:95:7b:26:52:fe:9a:75"</span>),
+<a class="jxr_linenumber" name="L215" href="#L215">215</a>         t(<span class="jxr_string">"SHA-512"</span>, s(<span class="jxr_string">"abc"</span>), <span class="jxr_string">"dd:af:35:a1:93:61:7a:ba:cc:41:73:49:ae:20:41:31:12:e6:fa:4e:89:a9:7e:a2:0a:9e:ee:e6:4b:55:d3:9a:21:92:99:2a:27:4f:c1:a8:36:ba:3c:23:a3:fe:eb:bd:45:4d:44:23:64:3c:e8:0e:2a:9a:c9:4f:a5:4c:a4:9f"</span>),
+<a class="jxr_linenumber" name="L216" href="#L216">216</a>         t(<span class="jxr_string">"SHA-512"</span>, s(<span class="jxr_string">"message digest"</span>), <span class="jxr_string">"10:7d:bf:38:9d:9e:9f:71:a3:a9:5f:6c:05:5b:92:51:bc:52:68:c2:be:16:d6:c1:34:92:ea:45:b0:19:9f:33:09:e1:64:55:ab:1e:96:11:8e:8a:90:5d:55:97:b7:20:38:dd:b3:72:a8:98:26:04:6d:e6:66:87:bb:42:0e:7c"</span>),
+<a class="jxr_linenumber" name="L217" href="#L217">217</a>         t(<span class="jxr_string">"SHA-512"</span>, s(<span class="jxr_string">"abcdefghijklmnopqrstuvwxyz"</span>), <span class="jxr_string">"4d:bf:f8:6c:c2:ca:1b:ae:1e:16:46:8a:05:cb:98:81:c9:7f:17:53:bc:e3:61:90:34:89:8f:aa:1a:ab:e4:29:95:5a:1b:f8:ec:48:3d:74:21:fe:3c:16:46:61:3a:59:ed:54:41:fb:0f:32:13:89:f7:7f:48:a8:79:c7:b1:f1"</span>),
+<a class="jxr_linenumber" name="L218" href="#L218">218</a>         t(<span class="jxr_string">"SHA-512"</span>, s(<span class="jxr_string">"ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789"</span>), <span class="jxr_string">"1e:07:be:23:c2:6a:86:ea:37:ea:81:0c:8e:c7:80:93:52:51:5a:97:0e:92:53:c2:6f:53:6c:fc:7a:99:96:c4:5c:83:70:58:3e:0a:78:fa:4a:90:04:1d:71:a4:ce:ab:74:23:f1:9c:71:b9:d5:a3:e0:12:49:f0:be:bd:58:94"</span>),
+<a class="jxr_linenumber" name="L219" href="#L219">219</a>         t(<span class="jxr_string">"SHA-512"</span>, s(<span class="jxr_string">"12345678901234567890123456789012345678901234567890123456789012345678901234567890"</span>), <span class="jxr_string">"72:ec:1e:f1:12:4a:45:b0:47:e8:b7:c7:5a:93:21:95:13:5b:b6:1d:e2:4e:c0:d1:91:40:42:24:6e:0a:ec:3a:23:54:e0:93:d7:6f:30:48:b4:56:76:43:46:90:0c:b1:30:d2:a4:fd:5d:d1:6a:bb:5e:30:bc:b8:50:de:e8:43"</span>),
+<a class="jxr_linenumber" name="L220" href="#L220">220</a>         t(<span class="jxr_string">"SHA-512"</span>, ALONG, <span class="jxr_string">"20:ef:14:68:87:86:cd:1e:1f:ba:e1:0f:6f:83:f8:f0:66:d0:56:3c:94:f6:b4:e5:f4:7e:07:64:60:d0:70:c4:2e:3f:cc:82:4c:a2:ed:35:eb:11:10:7b:ee:70:82:01:99:b6:0c:37:af:12:d0:0f:17:36:b8:56:f4:1f:f7:bf"</span>),
+<a class="jxr_linenumber" name="L221" href="#L221">221</a>         t(<span class="jxr_string">"SHA-512"</span>, BLONG, <span class="jxr_string">"88:2c:05:65:86:c3:7f:15:3a:da:fe:41:d8:1b:6c:9a:af:fa:6f:ef:81:af:59:74:00:87:dc:5b:dc:78:be:f8:2d:a3:89:df:65:88:4d:7b:b5:94:55:fb:2e:d3:d6:2c:18:3b:29:dc:11:cf:10:b3:32:ac:dc:ee:a5:bc:fa:40"</span>),
+<a class="jxr_linenumber" name="L222" href="#L222">222</a> 
+<a class="jxr_linenumber" name="L223" href="#L223">223</a>     };
+<a class="jxr_linenumber" name="L224" href="#L224">224</a> 
+<a class="jxr_linenumber" name="L225" href="#L225">225</a>     <strong class="jxr_keyword">static</strong> <strong class="jxr_keyword">void</strong> runTests(Test[] tests) <strong class="jxr_keyword">throws</strong> Exception {
+<a class="jxr_linenumber" name="L226" href="#L226">226</a>         <strong class="jxr_keyword">long</strong> start = System.currentTimeMillis();
+<a class="jxr_linenumber" name="L227" href="#L227">227</a>         Provider p = Security.getProvider(<span class="jxr_string">"SUN"</span>);
+<a class="jxr_linenumber" name="L228" href="#L228">228</a>         System.out.println(<span class="jxr_string">"Testing provider "</span> + p.getName() + <span class="jxr_string">"..."</span>);
+<a class="jxr_linenumber" name="L229" href="#L229">229</a>         <strong class="jxr_keyword">for</strong> (<strong class="jxr_keyword">int</strong> i = 0; i &lt; tests.length; i++) {
+<a class="jxr_linenumber" name="L230" href="#L230">230</a>             Test test = tests[i];
+<a class="jxr_linenumber" name="L231" href="#L231">231</a>             test.run(p);
+<a class="jxr_linenumber" name="L232" href="#L232">232</a>         }
+<a class="jxr_linenumber" name="L233" href="#L233">233</a>         System.out.println(<span class="jxr_string">"All tests passed"</span>);
+<a class="jxr_linenumber" name="L234" href="#L234">234</a>         <strong class="jxr_keyword">long</strong> stop = System.currentTimeMillis();
+<a class="jxr_linenumber" name="L235" href="#L235">235</a>         System.out.println(<span class="jxr_string">"Done ("</span> + (stop - start) + <span class="jxr_string">" ms)."</span>);
+<a class="jxr_linenumber" name="L236" href="#L236">236</a>     }
+<a class="jxr_linenumber" name="L237" href="#L237">237</a> 
+<a class="jxr_linenumber" name="L238" href="#L238">238</a>     <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">static</strong> <strong class="jxr_keyword">void</strong> main(String[] args) <strong class="jxr_keyword">throws</strong> Exception {
+<a class="jxr_linenumber" name="L239" href="#L239">239</a>         runTests(tests);
+<a class="jxr_linenumber" name="L240" href="#L240">240</a>     }
+<a class="jxr_linenumber" name="L241" href="#L241">241</a> 
+<a class="jxr_linenumber" name="L242" href="#L242">242</a> }
+</pre>
+<hr/>
+<div id="footer"></div>
+</body>
+</html>

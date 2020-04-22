@@ -1,0 +1,3883 @@
+<html>
+	<head>
+		<title>checkstyle xml difference report</title>
+		<style type="text/css" media="all">@import url("./css/maven-base.css");@import url("./css/maven-theme.css"); );</style>
+		<link rel="stylesheet" href="./css/site.css">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<http-equiv http-equiv="Content-Language" content="en"></http-equiv>
+	</head>
+	<body class="composite">
+		<div id="contentBox">
+			<div class="section">
+				<h2 a="Checkstyle XML difference report">Checkstyle XML difference report</h2>
+				This is symmetric difference generated from two checkstyle-result.xml reports. <br/>
+				All matching records from each XML file are deleted, then remaining records are merged into single report. <br>
+		        <a href="https://github.com/checkstyle/contribution/tree/master/patch-diff-report-tool">Utility that generated this report.</a>
+			</div>
+
+			
+				<h2 a="Checkstyle configuration report">Checkstyle configuration report</h2>
+				<div class="section">
+					<table border="0" class="bodyTable">
+							<tr class="a">
+								<th>Module Name</th>
+								<th>Base properties</th>
+								<th>Patch properties</th>
+							</tr>
+							
+								
+									<tr>
+										<td class="c">Checker</td>
+										
+										<td class="c">
+											
+												severity
+												
+													<li>warning</li>
+												
+												<br/>
+											
+												charset
+												
+													<li>UTF-8</li>
+												
+												<br/>
+											
+												haltOnException
+												
+													<li>false</li>
+												
+												<br/>
+											
+										</td>
+										
+										
+										<td class="c">
+											
+												severity
+												
+													<li>warning</li>
+												
+												<br/>
+											
+												charset
+												
+													<li>UTF-8</li>
+												
+												<br/>
+											
+												haltOnException
+												
+													<li>false</li>
+												
+												<br/>
+											
+										</td>
+										
+									</tr>
+									
+										
+									<tr>
+										<td class="c">BeforeExecutionExclusionFileFilter</td>
+										
+										<td class="c">
+											
+												fileNamePattern
+												
+													<li>module\-info\.java$</li>
+												
+												<br/>
+											
+										</td>
+										
+										
+										<td class="c">
+											
+												fileNamePattern
+												
+													<li>module\-info\.java$</li>
+												
+												<br/>
+											
+										</td>
+										
+									</tr>
+									
+								
+									
+										
+									<tr>
+										<td class="c">TreeWalker</td>
+										
+										<td class="c">
+											
+										</td>
+										
+										
+										<td class="c">
+											
+										</td>
+										
+									</tr>
+									
+										
+									<tr>
+										<td class="c">CommentsIndentation</td>
+										
+										<td class="c">
+											
+										</td>
+										
+										
+										<td class="c">
+											
+										</td>
+										
+									</tr>
+									
+								
+									
+										
+									<tr>
+										<td class="c">SuppressionXpathSingleFilter</td>
+										
+										<td class="c">
+											
+												message
+												
+													<li>Javadoc comment at column \d+ has parse error</li>
+												
+												<br/>
+											
+										</td>
+										
+										
+										<td class="c">
+											
+												message
+												
+													<li>Javadoc comment at column \d+ has parse error</li>
+												
+												<br/>
+											
+										</td>
+										
+									</tr>
+									
+								
+									
+								
+									
+										
+									<tr>
+										<td class="c">SuppressionSingleFilter</td>
+										
+										<td class="c">
+											
+												checks
+												
+													<li>Checker</li>
+												
+												<br/>
+											
+												message
+												
+													<li>Exception occurred while parsing</li>
+												
+												<br/>
+											
+										</td>
+										
+										
+										<td class="c">
+											
+												checks
+												
+													<li>Checker</li>
+												
+												<br/>
+											
+												message
+												
+													<li>Exception occurred while parsing</li>
+												
+												<br/>
+											
+										</td>
+										
+									</tr>
+									
+								
+									
+								
+								
+					</table>	
+				</div>
+			
+
+			<div class="section">
+				<h2 a="Summary:">Summary:</h2>
+				<div class="section">
+					<table border="0" class="bodyTable">
+						<tr class="a">
+							<th>Report id</th>
+							<th>Files</th>
+							<th>Violations</th>
+							
+								<th>Severity-warning</th>
+							
+						</tr>
+						<tr class="b">
+							<td>base</td>
+							<td id="filesBase">2686</td>
+							<td id="totalBase">82</td>
+							
+								<td id="warningSeverityNumBase">82</td>
+							
+						</tr>
+						<tr class="a">
+							<td>patch</td>
+							<td id="filesPatch">2686</td>
+							<td id="totalPatch">82 (82 removed, 82 added)</td>
+							
+								<td id="warningSeverityStatisticsPatch">82 (82 removed, 82 added)</td>
+							
+						</tr>
+						<tr class="d">
+							<td/>
+							<td id="filesDiff">57 files with differences</td>
+							<td id="totalDiff">164 changes in violations</td>
+							
+								<td id="warningSeverityNumDiff">164 changes in violations</td>
+							
+						<tr>
+					</table>
+
+					
+						<br />
+						<table border="0" class="bodyTable">
+							<tr class="a">
+								<th>Report id</th>
+								
+									<th>com.puppycrawl.tools.checkstyle.checks.indentation.CommentsIndentationCheck</th>
+								
+							</tr>
+							<tr class="b">
+								<td>base</td>
+								
+									<td id="com.puppycrawl.tools.checkstyle.checks.indentation.CommentsIndentationCheckModuleNumBase">82</td>
+								
+							</tr>
+							<tr class="a">
+								<td>patch</td>
+								
+									<td id="com.puppycrawl.tools.checkstyle.checks.indentation.CommentsIndentationCheckModuleStatisticsPatch">82 (82 removed, 82 added)</td>
+								
+							</tr>
+							<tr class="d">
+								<td>changes in violations</td>
+								
+									<td id="com.puppycrawl.tools.checkstyle.checks.indentation.CommentsIndentationCheckModuleNumDiff">164</td>
+								
+							<tr>
+						</table>
+					
+
+					<br />
+					Number of unique base messages reported below: <span id="uniqueMessagesBase">82</span><br />
+					Number of unique patch messages reported below: <span id="uniqueMessagesPatch">82</span><br />
+				</div>
+			</div>
+
+			<div class="section">
+				<h2 a="Violations:">Violations:</h2>
+				<div class="section">
+					<h3>/home/shrey/Desktop/checkstyle-tester/checkstyle-tester/repositories/spotbugs-with-excldues/eclipsePlugin-test/src/de/tobject/findbugs/test/AbstractPluginTest.java</h3>
+					<tr class="b">
+					<table border="0" class="bodyTable">
+					        <th></th>
+							<th>Severity</th>
+							<th>Rule</th>
+							<th>Message</th>
+							<th>Line</th>
+							<th>Col</th>
+						</tr>
+						
+							
+								<tr class="b">
+								
+								<td class="keepWidth"><a name="A1" href = "#A1">#A1</a></td>
+								<td>warning</td>
+								<td>CommentsIndentation</td>
+								<td>Comment has incorrect indentation level 0, expected is 8, indentation should be the same level as line 172.</td>
+								
+									
+									<td class="keepWidth"><a href = "xref/home/shrey/Desktop/checkstyle-tester/checkstyle-tester/repositories/spotbugs-with-excldues/eclipsePlugin-test/src/de/tobject/findbugs/test/AbstractPluginTest.java.html#L173">173</a></td>
+								
+								
+									<td class="keepWidth"> </td>
+									
+								
+							</tr>
+						
+							
+								<tr class="a">
+							
+								<td class="keepWidth"><a name="A2" href = "#A2">#A2</a></td>
+								<td>warning</td>
+								<td>CommentsIndentation</td>
+								<td>Comment has incorrect indentation level 0, expected is 8, indentation should be the same level as line 172.</td>
+								
+									
+									<td class="keepWidth"><a href = "xref/home/shrey/Desktop/checkstyle-tester/checkstyle-tester/repositories/spotbugs-with-excldues/eclipsePlugin-test/src/de/tobject/findbugs/test/AbstractPluginTest.java.html#L173">173</a></td>
+								
+								
+									
+									<td class="keepWidth">1</td>
+								
+							</tr>
+						
+					</table>
+				</div>
+				<div class="section">
+					<h3>/home/shrey/Desktop/checkstyle-tester/checkstyle-tester/repositories/spotbugs-with-excldues/eclipsePlugin/src/de/tobject/findbugs/AnnotationClasspathInitializer.java</h3>
+					<tr class="b">
+					<table border="0" class="bodyTable">
+					        <th></th>
+							<th>Severity</th>
+							<th>Rule</th>
+							<th>Message</th>
+							<th>Line</th>
+							<th>Col</th>
+						</tr>
+						
+							
+								<tr class="b">
+								
+								<td class="keepWidth"><a name="A3" href = "#A3">#A3</a></td>
+								<td>warning</td>
+								<td>CommentsIndentation</td>
+								<td>Comment has incorrect indentation level 12, expected is 9, indentation should be the same level as line 55.</td>
+								
+									
+									<td class="keepWidth"><a href = "xref/home/shrey/Desktop/checkstyle-tester/checkstyle-tester/repositories/spotbugs-with-excldues/eclipsePlugin/src/de/tobject/findbugs/AnnotationClasspathInitializer.java.html#L54">54</a></td>
+								
+								
+									<td class="keepWidth"> </td>
+									
+								
+							</tr>
+						
+							
+								<tr class="a">
+							
+								<td class="keepWidth"><a name="A4" href = "#A4">#A4</a></td>
+								<td>warning</td>
+								<td>CommentsIndentation</td>
+								<td>Comment has incorrect indentation level 12, expected is 9, indentation should be the same level as line 55.</td>
+								
+									
+									<td class="keepWidth"><a href = "xref/home/shrey/Desktop/checkstyle-tester/checkstyle-tester/repositories/spotbugs-with-excldues/eclipsePlugin/src/de/tobject/findbugs/AnnotationClasspathInitializer.java.html#L54">54</a></td>
+								
+								
+									
+									<td class="keepWidth">13</td>
+								
+							</tr>
+						
+					</table>
+				</div>
+				<div class="section">
+					<h3>/home/shrey/Desktop/checkstyle-tester/checkstyle-tester/repositories/spotbugs-with-excldues/eclipsePlugin/src/de/tobject/findbugs/FindbugsPlugin.java</h3>
+					<tr class="b">
+					<table border="0" class="bodyTable">
+					        <th></th>
+							<th>Severity</th>
+							<th>Rule</th>
+							<th>Message</th>
+							<th>Line</th>
+							<th>Col</th>
+						</tr>
+						
+							
+								<tr class="b">
+								
+								<td class="keepWidth"><a name="A5" href = "#A5">#A5</a></td>
+								<td>warning</td>
+								<td>CommentsIndentation</td>
+								<td>Comment has incorrect indentation level 9, expected is 8, indentation should be the same level as line 216.</td>
+								
+									
+									<td class="keepWidth"><a href = "xref/home/shrey/Desktop/checkstyle-tester/checkstyle-tester/repositories/spotbugs-with-excldues/eclipsePlugin/src/de/tobject/findbugs/FindbugsPlugin.java.html#L215">215</a></td>
+								
+								
+									<td class="keepWidth"> </td>
+									
+								
+							</tr>
+						
+							
+								<tr class="a">
+							
+								<td class="keepWidth"><a name="A6" href = "#A6">#A6</a></td>
+								<td>warning</td>
+								<td>CommentsIndentation</td>
+								<td>Comment has incorrect indentation level 9, expected is 8, indentation should be the same level as line 216.</td>
+								
+									
+									<td class="keepWidth"><a href = "xref/home/shrey/Desktop/checkstyle-tester/checkstyle-tester/repositories/spotbugs-with-excldues/eclipsePlugin/src/de/tobject/findbugs/FindbugsPlugin.java.html#L215">215</a></td>
+								
+								
+									
+									<td class="keepWidth">10</td>
+								
+							</tr>
+						
+					</table>
+				</div>
+				<div class="section">
+					<h3>/home/shrey/Desktop/checkstyle-tester/checkstyle-tester/repositories/spotbugs-with-excldues/eclipsePlugin/src/de/tobject/findbugs/reporter/JdtUtils.java</h3>
+					<tr class="b">
+					<table border="0" class="bodyTable">
+					        <th></th>
+							<th>Severity</th>
+							<th>Rule</th>
+							<th>Message</th>
+							<th>Line</th>
+							<th>Col</th>
+						</tr>
+						
+							
+								<tr class="b">
+								
+								<td class="keepWidth"><a name="A7" href = "#A7">#A7</a></td>
+								<td>warning</td>
+								<td>CommentsIndentation</td>
+								<td>Comment has incorrect indentation level 0, expected is 16, 12, indentation should be the same level as line 169, 173.</td>
+								
+									
+									<td class="keepWidth"><a href = "xref/home/shrey/Desktop/checkstyle-tester/checkstyle-tester/repositories/spotbugs-with-excldues/eclipsePlugin/src/de/tobject/findbugs/reporter/JdtUtils.java.html#L172">172</a></td>
+								
+								
+									<td class="keepWidth"> </td>
+									
+								
+							</tr>
+						
+							
+								<tr class="a">
+							
+								<td class="keepWidth"><a name="A8" href = "#A8">#A8</a></td>
+								<td>warning</td>
+								<td>CommentsIndentation</td>
+								<td>Comment has incorrect indentation level 0, expected is 16, 12, indentation should be the same level as line 169, 173.</td>
+								
+									
+									<td class="keepWidth"><a href = "xref/home/shrey/Desktop/checkstyle-tester/checkstyle-tester/repositories/spotbugs-with-excldues/eclipsePlugin/src/de/tobject/findbugs/reporter/JdtUtils.java.html#L172">172</a></td>
+								
+								
+									
+									<td class="keepWidth">1</td>
+								
+							</tr>
+						
+							
+								<tr class="b">
+								
+								<td class="keepWidth"><a name="A9" href = "#A9">#A9</a></td>
+								<td>warning</td>
+								<td>CommentsIndentation</td>
+								<td>Comment has incorrect indentation level 0, expected is 16, indentation should be the same level as line 175.</td>
+								
+									
+									<td class="keepWidth"><a href = "xref/home/shrey/Desktop/checkstyle-tester/checkstyle-tester/repositories/spotbugs-with-excldues/eclipsePlugin/src/de/tobject/findbugs/reporter/JdtUtils.java.html#L178">178</a></td>
+								
+								
+									<td class="keepWidth"> </td>
+									
+								
+							</tr>
+						
+							
+								<tr class="a">
+							
+								<td class="keepWidth"><a name="A10" href = "#A10">#A10</a></td>
+								<td>warning</td>
+								<td>CommentsIndentation</td>
+								<td>Comment has incorrect indentation level 0, expected is 16, indentation should be the same level as line 175.</td>
+								
+									
+									<td class="keepWidth"><a href = "xref/home/shrey/Desktop/checkstyle-tester/checkstyle-tester/repositories/spotbugs-with-excldues/eclipsePlugin/src/de/tobject/findbugs/reporter/JdtUtils.java.html#L178">178</a></td>
+								
+								
+									
+									<td class="keepWidth">1</td>
+								
+							</tr>
+						
+							
+								<tr class="b">
+								
+								<td class="keepWidth"><a name="A11" href = "#A11">#A11</a></td>
+								<td>warning</td>
+								<td>CommentsIndentation</td>
+								<td>Comment has incorrect indentation level 0, expected is 8, indentation should be the same level as line 337.</td>
+								
+									
+									<td class="keepWidth"><a href = "xref/home/shrey/Desktop/checkstyle-tester/checkstyle-tester/repositories/spotbugs-with-excldues/eclipsePlugin/src/de/tobject/findbugs/reporter/JdtUtils.java.html#L341">341</a></td>
+								
+								
+									<td class="keepWidth"> </td>
+									
+								
+							</tr>
+						
+							
+								<tr class="a">
+							
+								<td class="keepWidth"><a name="A12" href = "#A12">#A12</a></td>
+								<td>warning</td>
+								<td>CommentsIndentation</td>
+								<td>Comment has incorrect indentation level 0, expected is 8, indentation should be the same level as line 337.</td>
+								
+									
+									<td class="keepWidth"><a href = "xref/home/shrey/Desktop/checkstyle-tester/checkstyle-tester/repositories/spotbugs-with-excldues/eclipsePlugin/src/de/tobject/findbugs/reporter/JdtUtils.java.html#L341">341</a></td>
+								
+								
+									
+									<td class="keepWidth">1</td>
+								
+							</tr>
+						
+							
+								<tr class="b">
+								
+								<td class="keepWidth"><a name="A13" href = "#A13">#A13</a></td>
+								<td>warning</td>
+								<td>CommentsIndentation</td>
+								<td>Comment has incorrect indentation level 22, expected is 12, indentation should be the same level as line 379.</td>
+								
+									
+									<td class="keepWidth"><a href = "xref/home/shrey/Desktop/checkstyle-tester/checkstyle-tester/repositories/spotbugs-with-excldues/eclipsePlugin/src/de/tobject/findbugs/reporter/JdtUtils.java.html#L380">380</a></td>
+								
+								
+									<td class="keepWidth"> </td>
+									
+								
+							</tr>
+						
+							
+								<tr class="a">
+							
+								<td class="keepWidth"><a name="A14" href = "#A14">#A14</a></td>
+								<td>warning</td>
+								<td>CommentsIndentation</td>
+								<td>Comment has incorrect indentation level 22, expected is 12, indentation should be the same level as line 379.</td>
+								
+									
+									<td class="keepWidth"><a href = "xref/home/shrey/Desktop/checkstyle-tester/checkstyle-tester/repositories/spotbugs-with-excldues/eclipsePlugin/src/de/tobject/findbugs/reporter/JdtUtils.java.html#L380">380</a></td>
+								
+								
+									
+									<td class="keepWidth">23</td>
+								
+							</tr>
+						
+							
+								<tr class="b">
+								
+								<td class="keepWidth"><a name="A15" href = "#A15">#A15</a></td>
+								<td>warning</td>
+								<td>CommentsIndentation</td>
+								<td>Comment has incorrect indentation level 26, expected is 16, indentation should be the same level as line 387.</td>
+								
+									
+									<td class="keepWidth"><a href = "xref/home/shrey/Desktop/checkstyle-tester/checkstyle-tester/repositories/spotbugs-with-excldues/eclipsePlugin/src/de/tobject/findbugs/reporter/JdtUtils.java.html#L388">388</a></td>
+								
+								
+									<td class="keepWidth"> </td>
+									
+								
+							</tr>
+						
+							
+								<tr class="a">
+							
+								<td class="keepWidth"><a name="A16" href = "#A16">#A16</a></td>
+								<td>warning</td>
+								<td>CommentsIndentation</td>
+								<td>Comment has incorrect indentation level 26, expected is 16, indentation should be the same level as line 387.</td>
+								
+									
+									<td class="keepWidth"><a href = "xref/home/shrey/Desktop/checkstyle-tester/checkstyle-tester/repositories/spotbugs-with-excldues/eclipsePlugin/src/de/tobject/findbugs/reporter/JdtUtils.java.html#L388">388</a></td>
+								
+								
+									
+									<td class="keepWidth">27</td>
+								
+							</tr>
+						
+					</table>
+				</div>
+				<div class="section">
+					<h3>/home/shrey/Desktop/checkstyle-tester/checkstyle-tester/repositories/spotbugs-with-excldues/eclipsePlugin/src/de/tobject/findbugs/reporter/MarkerUtil.java</h3>
+					<tr class="b">
+					<table border="0" class="bodyTable">
+					        <th></th>
+							<th>Severity</th>
+							<th>Rule</th>
+							<th>Message</th>
+							<th>Line</th>
+							<th>Col</th>
+						</tr>
+						
+							
+								<tr class="b">
+								
+								<td class="keepWidth"><a name="A17" href = "#A17">#A17</a></td>
+								<td>warning</td>
+								<td>CommentsIndentation</td>
+								<td>Comment has incorrect indentation level 0, expected is 8, indentation should be the same level as line 246.</td>
+								
+									
+									<td class="keepWidth"><a href = "xref/home/shrey/Desktop/checkstyle-tester/checkstyle-tester/repositories/spotbugs-with-excldues/eclipsePlugin/src/de/tobject/findbugs/reporter/MarkerUtil.java.html#L245">245</a></td>
+								
+								
+									<td class="keepWidth"> </td>
+									
+								
+							</tr>
+						
+							
+								<tr class="a">
+							
+								<td class="keepWidth"><a name="A18" href = "#A18">#A18</a></td>
+								<td>warning</td>
+								<td>CommentsIndentation</td>
+								<td>Comment has incorrect indentation level 0, expected is 8, indentation should be the same level as line 246.</td>
+								
+									
+									<td class="keepWidth"><a href = "xref/home/shrey/Desktop/checkstyle-tester/checkstyle-tester/repositories/spotbugs-with-excldues/eclipsePlugin/src/de/tobject/findbugs/reporter/MarkerUtil.java.html#L245">245</a></td>
+								
+								
+									
+									<td class="keepWidth">1</td>
+								
+							</tr>
+						
+							
+								<tr class="b">
+								
+								<td class="keepWidth"><a name="A19" href = "#A19">#A19</a></td>
+								<td>warning</td>
+								<td>CommentsIndentation</td>
+								<td>Comment has incorrect indentation level 0, expected is 8, indentation should be the same level as line 285.</td>
+								
+									
+									<td class="keepWidth"><a href = "xref/home/shrey/Desktop/checkstyle-tester/checkstyle-tester/repositories/spotbugs-with-excldues/eclipsePlugin/src/de/tobject/findbugs/reporter/MarkerUtil.java.html#L283">283</a></td>
+								
+								
+									<td class="keepWidth"> </td>
+									
+								
+							</tr>
+						
+							
+								<tr class="a">
+							
+								<td class="keepWidth"><a name="A20" href = "#A20">#A20</a></td>
+								<td>warning</td>
+								<td>CommentsIndentation</td>
+								<td>Comment has incorrect indentation level 0, expected is 8, indentation should be the same level as line 285.</td>
+								
+									
+									<td class="keepWidth"><a href = "xref/home/shrey/Desktop/checkstyle-tester/checkstyle-tester/repositories/spotbugs-with-excldues/eclipsePlugin/src/de/tobject/findbugs/reporter/MarkerUtil.java.html#L283">283</a></td>
+								
+								
+									
+									<td class="keepWidth">1</td>
+								
+							</tr>
+						
+					</table>
+				</div>
+				<div class="section">
+					<h3>/home/shrey/Desktop/checkstyle-tester/checkstyle-tester/repositories/spotbugs-with-excldues/eclipsePlugin/src/de/tobject/findbugs/reporter/Reporter.java</h3>
+					<tr class="b">
+					<table border="0" class="bodyTable">
+					        <th></th>
+							<th>Severity</th>
+							<th>Rule</th>
+							<th>Message</th>
+							<th>Line</th>
+							<th>Col</th>
+						</tr>
+						
+							
+								<tr class="b">
+								
+								<td class="keepWidth"><a name="A21" href = "#A21">#A21</a></td>
+								<td>warning</td>
+								<td>CommentsIndentation</td>
+								<td>Comment has incorrect indentation level 0, expected is 8, indentation should be the same level as line 242.</td>
+								
+									
+									<td class="keepWidth"><a href = "xref/home/shrey/Desktop/checkstyle-tester/checkstyle-tester/repositories/spotbugs-with-excldues/eclipsePlugin/src/de/tobject/findbugs/reporter/Reporter.java.html#L240">240</a></td>
+								
+								
+									<td class="keepWidth"> </td>
+									
+								
+							</tr>
+						
+							
+								<tr class="a">
+							
+								<td class="keepWidth"><a name="A22" href = "#A22">#A22</a></td>
+								<td>warning</td>
+								<td>CommentsIndentation</td>
+								<td>Comment has incorrect indentation level 0, expected is 8, indentation should be the same level as line 242.</td>
+								
+									
+									<td class="keepWidth"><a href = "xref/home/shrey/Desktop/checkstyle-tester/checkstyle-tester/repositories/spotbugs-with-excldues/eclipsePlugin/src/de/tobject/findbugs/reporter/Reporter.java.html#L240">240</a></td>
+								
+								
+									
+									<td class="keepWidth">1</td>
+								
+							</tr>
+						
+					</table>
+				</div>
+				<div class="section">
+					<h3>/home/shrey/Desktop/checkstyle-tester/checkstyle-tester/repositories/spotbugs-with-excldues/eclipsePlugin/src/de/tobject/findbugs/view/BugInfoView.java</h3>
+					<tr class="b">
+					<table border="0" class="bodyTable">
+					        <th></th>
+							<th>Severity</th>
+							<th>Rule</th>
+							<th>Message</th>
+							<th>Line</th>
+							<th>Col</th>
+						</tr>
+						
+							
+								<tr class="b">
+								
+								<td class="keepWidth"><a name="A23" href = "#A23">#A23</a></td>
+								<td>warning</td>
+								<td>CommentsIndentation</td>
+								<td>Comment has incorrect indentation level 0, expected is 16, indentation should be the same level as line 237.</td>
+								
+									
+									<td class="keepWidth"><a href = "xref/home/shrey/Desktop/checkstyle-tester/checkstyle-tester/repositories/spotbugs-with-excldues/eclipsePlugin/src/de/tobject/findbugs/view/BugInfoView.java.html#L235">235</a></td>
+								
+								
+									<td class="keepWidth"> </td>
+									
+								
+							</tr>
+						
+							
+								<tr class="a">
+							
+								<td class="keepWidth"><a name="A24" href = "#A24">#A24</a></td>
+								<td>warning</td>
+								<td>CommentsIndentation</td>
+								<td>Comment has incorrect indentation level 0, expected is 16, indentation should be the same level as line 237.</td>
+								
+									
+									<td class="keepWidth"><a href = "xref/home/shrey/Desktop/checkstyle-tester/checkstyle-tester/repositories/spotbugs-with-excldues/eclipsePlugin/src/de/tobject/findbugs/view/BugInfoView.java.html#L235">235</a></td>
+								
+								
+									
+									<td class="keepWidth">1</td>
+								
+							</tr>
+						
+					</table>
+				</div>
+				<div class="section">
+					<h3>/home/shrey/Desktop/checkstyle-tester/checkstyle-tester/repositories/spotbugs-with-excldues/eclipsePlugin/src/de/tobject/findbugs/view/explorer/FilterBugsDialog.java</h3>
+					<tr class="b">
+					<table border="0" class="bodyTable">
+					        <th></th>
+							<th>Severity</th>
+							<th>Rule</th>
+							<th>Message</th>
+							<th>Line</th>
+							<th>Col</th>
+						</tr>
+						
+							
+								<tr class="b">
+								
+								<td class="keepWidth"><a name="A25" href = "#A25">#A25</a></td>
+								<td>warning</td>
+								<td>CommentsIndentation</td>
+								<td>Comment has incorrect indentation level 8, expected is 16, indentation should be the same level as line 695.</td>
+								
+									
+									<td class="keepWidth"><a href = "xref/home/shrey/Desktop/checkstyle-tester/checkstyle-tester/repositories/spotbugs-with-excldues/eclipsePlugin/src/de/tobject/findbugs/view/explorer/FilterBugsDialog.java.html#L694">694</a></td>
+								
+								
+									<td class="keepWidth"> </td>
+									
+								
+							</tr>
+						
+							
+								<tr class="a">
+							
+								<td class="keepWidth"><a name="A26" href = "#A26">#A26</a></td>
+								<td>warning</td>
+								<td>CommentsIndentation</td>
+								<td>Comment has incorrect indentation level 8, expected is 16, indentation should be the same level as line 695.</td>
+								
+									
+									<td class="keepWidth"><a href = "xref/home/shrey/Desktop/checkstyle-tester/checkstyle-tester/repositories/spotbugs-with-excldues/eclipsePlugin/src/de/tobject/findbugs/view/explorer/FilterBugsDialog.java.html#L694">694</a></td>
+								
+								
+									
+									<td class="keepWidth">9</td>
+								
+							</tr>
+						
+					</table>
+				</div>
+				<div class="section">
+					<h3>/home/shrey/Desktop/checkstyle-tester/checkstyle-tester/repositories/spotbugs-with-excldues/spotbugs/src/gui/edu/umd/cs/findbugs/gui2/MainFrameTree.java</h3>
+					<tr class="b">
+					<table border="0" class="bodyTable">
+					        <th></th>
+							<th>Severity</th>
+							<th>Rule</th>
+							<th>Message</th>
+							<th>Line</th>
+							<th>Col</th>
+						</tr>
+						
+							
+								<tr class="b">
+								
+								<td class="keepWidth"><a name="A27" href = "#A27">#A27</a></td>
+								<td>warning</td>
+								<td>CommentsIndentation</td>
+								<td>Comment has incorrect indentation level 24, expected is 20, indentation should be the same level as line 231.</td>
+								
+									
+									<td class="keepWidth"><a href = "xref/home/shrey/Desktop/checkstyle-tester/checkstyle-tester/repositories/spotbugs-with-excldues/spotbugs/src/gui/edu/umd/cs/findbugs/gui2/MainFrameTree.java.html#L230">230</a></td>
+								
+								
+									<td class="keepWidth"> </td>
+									
+								
+							</tr>
+						
+							
+								<tr class="a">
+							
+								<td class="keepWidth"><a name="A28" href = "#A28">#A28</a></td>
+								<td>warning</td>
+								<td>CommentsIndentation</td>
+								<td>Comment has incorrect indentation level 24, expected is 20, indentation should be the same level as line 231.</td>
+								
+									
+									<td class="keepWidth"><a href = "xref/home/shrey/Desktop/checkstyle-tester/checkstyle-tester/repositories/spotbugs-with-excldues/spotbugs/src/gui/edu/umd/cs/findbugs/gui2/MainFrameTree.java.html#L230">230</a></td>
+								
+								
+									
+									<td class="keepWidth">25</td>
+								
+							</tr>
+						
+					</table>
+				</div>
+				<div class="section">
+					<h3>/home/shrey/Desktop/checkstyle-tester/checkstyle-tester/repositories/spotbugs-with-excldues/spotbugsTestCases/src/java/BadRegEx.java</h3>
+					<tr class="b">
+					<table border="0" class="bodyTable">
+					        <th></th>
+							<th>Severity</th>
+							<th>Rule</th>
+							<th>Message</th>
+							<th>Line</th>
+							<th>Col</th>
+						</tr>
+						
+							
+								<tr class="b">
+								
+								<td class="keepWidth"><a name="A29" href = "#A29">#A29</a></td>
+								<td>warning</td>
+								<td>CommentsIndentation</td>
+								<td>Comment has incorrect indentation level 82, expected is 8, indentation should be the same level as line 45.</td>
+								
+									
+									<td class="keepWidth"><a href = "xref/home/shrey/Desktop/checkstyle-tester/checkstyle-tester/repositories/spotbugs-with-excldues/spotbugsTestCases/src/java/BadRegEx.java.html#L47">47</a></td>
+								
+								
+									<td class="keepWidth"> </td>
+									
+								
+							</tr>
+						
+							
+								<tr class="a">
+							
+								<td class="keepWidth"><a name="A30" href = "#A30">#A30</a></td>
+								<td>warning</td>
+								<td>CommentsIndentation</td>
+								<td>Comment has incorrect indentation level 82, expected is 8, indentation should be the same level as line 45.</td>
+								
+									
+									<td class="keepWidth"><a href = "xref/home/shrey/Desktop/checkstyle-tester/checkstyle-tester/repositories/spotbugs-with-excldues/spotbugsTestCases/src/java/BadRegEx.java.html#L47">47</a></td>
+								
+								
+									
+									<td class="keepWidth">83</td>
+								
+							</tr>
+						
+					</table>
+				</div>
+				<div class="section">
+					<h3>/home/shrey/Desktop/checkstyle-tester/checkstyle-tester/repositories/spotbugs-with-excldues/spotbugsTestCases/src/java/CompareArrays.java</h3>
+					<tr class="b">
+					<table border="0" class="bodyTable">
+					        <th></th>
+							<th>Severity</th>
+							<th>Rule</th>
+							<th>Message</th>
+							<th>Line</th>
+							<th>Col</th>
+						</tr>
+						
+							
+								<tr class="b">
+								
+								<td class="keepWidth"><a name="A31" href = "#A31">#A31</a></td>
+								<td>warning</td>
+								<td>CommentsIndentation</td>
+								<td>Comment has incorrect indentation level 63, expected is 8, indentation should be the same level as line 13.</td>
+								
+									
+									<td class="keepWidth"><a href = "xref/home/shrey/Desktop/checkstyle-tester/checkstyle-tester/repositories/spotbugs-with-excldues/spotbugsTestCases/src/java/CompareArrays.java.html#L12">12</a></td>
+								
+								
+									<td class="keepWidth"> </td>
+									
+								
+							</tr>
+						
+							
+								<tr class="a">
+							
+								<td class="keepWidth"><a name="A32" href = "#A32">#A32</a></td>
+								<td>warning</td>
+								<td>CommentsIndentation</td>
+								<td>Comment has incorrect indentation level 63, expected is 8, indentation should be the same level as line 13.</td>
+								
+									
+									<td class="keepWidth"><a href = "xref/home/shrey/Desktop/checkstyle-tester/checkstyle-tester/repositories/spotbugs-with-excldues/spotbugsTestCases/src/java/CompareArrays.java.html#L12">12</a></td>
+								
+								
+									
+									<td class="keepWidth">64</td>
+								
+							</tr>
+						
+					</table>
+				</div>
+				<div class="section">
+					<h3>/home/shrey/Desktop/checkstyle-tester/checkstyle-tester/repositories/spotbugs-with-excldues/spotbugsTestCases/src/java/DeadStore.java</h3>
+					<tr class="b">
+					<table border="0" class="bodyTable">
+					        <th></th>
+							<th>Severity</th>
+							<th>Rule</th>
+							<th>Message</th>
+							<th>Line</th>
+							<th>Col</th>
+						</tr>
+						
+							
+								<tr class="b">
+								
+								<td class="keepWidth"><a name="A33" href = "#A33">#A33</a></td>
+								<td>warning</td>
+								<td>CommentsIndentation</td>
+								<td>Comment has incorrect indentation level 38, expected is 12, indentation should be the same level as line 120.</td>
+								
+									
+									<td class="keepWidth"><a href = "xref/home/shrey/Desktop/checkstyle-tester/checkstyle-tester/repositories/spotbugs-with-excldues/spotbugsTestCases/src/java/DeadStore.java.html#L119">119</a></td>
+								
+								
+									<td class="keepWidth"> </td>
+									
+								
+							</tr>
+						
+							
+								<tr class="a">
+							
+								<td class="keepWidth"><a name="A34" href = "#A34">#A34</a></td>
+								<td>warning</td>
+								<td>CommentsIndentation</td>
+								<td>Comment has incorrect indentation level 38, expected is 12, indentation should be the same level as line 120.</td>
+								
+									
+									<td class="keepWidth"><a href = "xref/home/shrey/Desktop/checkstyle-tester/checkstyle-tester/repositories/spotbugs-with-excldues/spotbugsTestCases/src/java/DeadStore.java.html#L119">119</a></td>
+								
+								
+									
+									<td class="keepWidth">39</td>
+								
+							</tr>
+						
+					</table>
+				</div>
+				<div class="section">
+					<h3>/home/shrey/Desktop/checkstyle-tester/checkstyle-tester/repositories/spotbugs-with-excldues/spotbugsTestCases/src/java/DefaultEncodingDetectorTest.java</h3>
+					<tr class="b">
+					<table border="0" class="bodyTable">
+					        <th></th>
+							<th>Severity</th>
+							<th>Rule</th>
+							<th>Message</th>
+							<th>Line</th>
+							<th>Col</th>
+						</tr>
+						
+							
+								<tr class="b">
+								
+								<td class="keepWidth"><a name="A35" href = "#A35">#A35</a></td>
+								<td>warning</td>
+								<td>CommentsIndentation</td>
+								<td>Comment has incorrect indentation level 0, expected is 8, indentation should be the same level as line 43.</td>
+								
+									
+									<td class="keepWidth"><a href = "xref/home/shrey/Desktop/checkstyle-tester/checkstyle-tester/repositories/spotbugs-with-excldues/spotbugsTestCases/src/java/DefaultEncodingDetectorTest.java.html#L42">42</a></td>
+								
+								
+									<td class="keepWidth"> </td>
+									
+								
+							</tr>
+						
+							
+								<tr class="a">
+							
+								<td class="keepWidth"><a name="A36" href = "#A36">#A36</a></td>
+								<td>warning</td>
+								<td>CommentsIndentation</td>
+								<td>Comment has incorrect indentation level 0, expected is 8, indentation should be the same level as line 43.</td>
+								
+									
+									<td class="keepWidth"><a href = "xref/home/shrey/Desktop/checkstyle-tester/checkstyle-tester/repositories/spotbugs-with-excldues/spotbugsTestCases/src/java/DefaultEncodingDetectorTest.java.html#L42">42</a></td>
+								
+								
+									
+									<td class="keepWidth">1</td>
+								
+							</tr>
+						
+							
+								<tr class="b">
+								
+								<td class="keepWidth"><a name="A37" href = "#A37">#A37</a></td>
+								<td>warning</td>
+								<td>CommentsIndentation</td>
+								<td>Comment has incorrect indentation level 0, expected is 8, indentation should be the same level as line 75.</td>
+								
+									
+									<td class="keepWidth"><a href = "xref/home/shrey/Desktop/checkstyle-tester/checkstyle-tester/repositories/spotbugs-with-excldues/spotbugsTestCases/src/java/DefaultEncodingDetectorTest.java.html#L74">74</a></td>
+								
+								
+									<td class="keepWidth"> </td>
+									
+								
+							</tr>
+						
+							
+								<tr class="a">
+							
+								<td class="keepWidth"><a name="A38" href = "#A38">#A38</a></td>
+								<td>warning</td>
+								<td>CommentsIndentation</td>
+								<td>Comment has incorrect indentation level 0, expected is 8, indentation should be the same level as line 75.</td>
+								
+									
+									<td class="keepWidth"><a href = "xref/home/shrey/Desktop/checkstyle-tester/checkstyle-tester/repositories/spotbugs-with-excldues/spotbugsTestCases/src/java/DefaultEncodingDetectorTest.java.html#L74">74</a></td>
+								
+								
+									
+									<td class="keepWidth">1</td>
+								
+							</tr>
+						
+					</table>
+				</div>
+				<div class="section">
+					<h3>/home/shrey/Desktop/checkstyle-tester/checkstyle-tester/repositories/spotbugs-with-excldues/spotbugsTestCases/src/java/FaultyPublicSemaphore.java</h3>
+					<tr class="b">
+					<table border="0" class="bodyTable">
+					        <th></th>
+							<th>Severity</th>
+							<th>Rule</th>
+							<th>Message</th>
+							<th>Line</th>
+							<th>Col</th>
+						</tr>
+						
+							
+								<tr class="b">
+								
+								<td class="keepWidth"><a name="A39" href = "#A39">#A39</a></td>
+								<td>warning</td>
+								<td>CommentsIndentation</td>
+								<td>Comment has incorrect indentation level 42, expected is 28, indentation should be the same level as line 26.</td>
+								
+									
+									<td class="keepWidth"><a href = "xref/home/shrey/Desktop/checkstyle-tester/checkstyle-tester/repositories/spotbugs-with-excldues/spotbugsTestCases/src/java/FaultyPublicSemaphore.java.html#L25">25</a></td>
+								
+								
+									<td class="keepWidth"> </td>
+									
+								
+							</tr>
+						
+							
+								<tr class="a">
+							
+								<td class="keepWidth"><a name="A40" href = "#A40">#A40</a></td>
+								<td>warning</td>
+								<td>CommentsIndentation</td>
+								<td>Comment has incorrect indentation level 42, expected is 28, indentation should be the same level as line 26.</td>
+								
+									
+									<td class="keepWidth"><a href = "xref/home/shrey/Desktop/checkstyle-tester/checkstyle-tester/repositories/spotbugs-with-excldues/spotbugsTestCases/src/java/FaultyPublicSemaphore.java.html#L25">25</a></td>
+								
+								
+									
+									<td class="keepWidth">43</td>
+								
+							</tr>
+						
+							
+								<tr class="b">
+								
+								<td class="keepWidth"><a name="A41" href = "#A41">#A41</a></td>
+								<td>warning</td>
+								<td>CommentsIndentation</td>
+								<td>Comment has incorrect indentation level 42, expected is 28, indentation should be the same level as line 47.</td>
+								
+									
+									<td class="keepWidth"><a href = "xref/home/shrey/Desktop/checkstyle-tester/checkstyle-tester/repositories/spotbugs-with-excldues/spotbugsTestCases/src/java/FaultyPublicSemaphore.java.html#L46">46</a></td>
+								
+								
+									<td class="keepWidth"> </td>
+									
+								
+							</tr>
+						
+							
+								<tr class="a">
+							
+								<td class="keepWidth"><a name="A42" href = "#A42">#A42</a></td>
+								<td>warning</td>
+								<td>CommentsIndentation</td>
+								<td>Comment has incorrect indentation level 42, expected is 28, indentation should be the same level as line 47.</td>
+								
+									
+									<td class="keepWidth"><a href = "xref/home/shrey/Desktop/checkstyle-tester/checkstyle-tester/repositories/spotbugs-with-excldues/spotbugsTestCases/src/java/FaultyPublicSemaphore.java.html#L46">46</a></td>
+								
+								
+									
+									<td class="keepWidth">43</td>
+								
+							</tr>
+						
+					</table>
+				</div>
+				<div class="section">
+					<h3>/home/shrey/Desktop/checkstyle-tester/checkstyle-tester/repositories/spotbugs-with-excldues/spotbugsTestCases/src/java/FormatString.java</h3>
+					<tr class="b">
+					<table border="0" class="bodyTable">
+					        <th></th>
+							<th>Severity</th>
+							<th>Rule</th>
+							<th>Message</th>
+							<th>Line</th>
+							<th>Col</th>
+						</tr>
+						
+							
+								<tr class="b">
+								
+								<td class="keepWidth"><a name="A43" href = "#A43">#A43</a></td>
+								<td>warning</td>
+								<td>CommentsIndentation</td>
+								<td>Comment has incorrect indentation level 83, expected is 8, indentation should be the same level as line 14.</td>
+								
+									
+									<td class="keepWidth"><a href = "xref/home/shrey/Desktop/checkstyle-tester/checkstyle-tester/repositories/spotbugs-with-excldues/spotbugsTestCases/src/java/FormatString.java.html#L13">13</a></td>
+								
+								
+									<td class="keepWidth"> </td>
+									
+								
+							</tr>
+						
+							
+								<tr class="a">
+							
+								<td class="keepWidth"><a name="A44" href = "#A44">#A44</a></td>
+								<td>warning</td>
+								<td>CommentsIndentation</td>
+								<td>Comment has incorrect indentation level 83, expected is 8, indentation should be the same level as line 14.</td>
+								
+									
+									<td class="keepWidth"><a href = "xref/home/shrey/Desktop/checkstyle-tester/checkstyle-tester/repositories/spotbugs-with-excldues/spotbugsTestCases/src/java/FormatString.java.html#L13">13</a></td>
+								
+								
+									
+									<td class="keepWidth">84</td>
+								
+							</tr>
+						
+							
+								<tr class="b">
+								
+								<td class="keepWidth"><a name="A45" href = "#A45">#A45</a></td>
+								<td>warning</td>
+								<td>CommentsIndentation</td>
+								<td>Comment has incorrect indentation level 90, expected is 8, indentation should be the same level as line 16.</td>
+								
+									
+									<td class="keepWidth"><a href = "xref/home/shrey/Desktop/checkstyle-tester/checkstyle-tester/repositories/spotbugs-with-excldues/spotbugsTestCases/src/java/FormatString.java.html#L15">15</a></td>
+								
+								
+									<td class="keepWidth"> </td>
+									
+								
+							</tr>
+						
+							
+								<tr class="a">
+							
+								<td class="keepWidth"><a name="A46" href = "#A46">#A46</a></td>
+								<td>warning</td>
+								<td>CommentsIndentation</td>
+								<td>Comment has incorrect indentation level 90, expected is 8, indentation should be the same level as line 16.</td>
+								
+									
+									<td class="keepWidth"><a href = "xref/home/shrey/Desktop/checkstyle-tester/checkstyle-tester/repositories/spotbugs-with-excldues/spotbugsTestCases/src/java/FormatString.java.html#L15">15</a></td>
+								
+								
+									
+									<td class="keepWidth">91</td>
+								
+							</tr>
+						
+							
+								<tr class="b">
+								
+								<td class="keepWidth"><a name="A47" href = "#A47">#A47</a></td>
+								<td>warning</td>
+								<td>CommentsIndentation</td>
+								<td>Comment has incorrect indentation level 86, expected is 8, indentation should be the same level as line 35.</td>
+								
+									
+									<td class="keepWidth"><a href = "xref/home/shrey/Desktop/checkstyle-tester/checkstyle-tester/repositories/spotbugs-with-excldues/spotbugsTestCases/src/java/FormatString.java.html#L34">34</a></td>
+								
+								
+									<td class="keepWidth"> </td>
+									
+								
+							</tr>
+						
+							
+								<tr class="a">
+							
+								<td class="keepWidth"><a name="A48" href = "#A48">#A48</a></td>
+								<td>warning</td>
+								<td>CommentsIndentation</td>
+								<td>Comment has incorrect indentation level 86, expected is 8, indentation should be the same level as line 35.</td>
+								
+									
+									<td class="keepWidth"><a href = "xref/home/shrey/Desktop/checkstyle-tester/checkstyle-tester/repositories/spotbugs-with-excldues/spotbugsTestCases/src/java/FormatString.java.html#L34">34</a></td>
+								
+								
+									
+									<td class="keepWidth">87</td>
+								
+							</tr>
+						
+							
+								<tr class="b">
+								
+								<td class="keepWidth"><a name="A49" href = "#A49">#A49</a></td>
+								<td>warning</td>
+								<td>CommentsIndentation</td>
+								<td>Comment has incorrect indentation level 97, expected is 8, indentation should be the same level as line 39.</td>
+								
+									
+									<td class="keepWidth"><a href = "xref/home/shrey/Desktop/checkstyle-tester/checkstyle-tester/repositories/spotbugs-with-excldues/spotbugsTestCases/src/java/FormatString.java.html#L38">38</a></td>
+								
+								
+									<td class="keepWidth"> </td>
+									
+								
+							</tr>
+						
+							
+								<tr class="a">
+							
+								<td class="keepWidth"><a name="A50" href = "#A50">#A50</a></td>
+								<td>warning</td>
+								<td>CommentsIndentation</td>
+								<td>Comment has incorrect indentation level 97, expected is 8, indentation should be the same level as line 39.</td>
+								
+									
+									<td class="keepWidth"><a href = "xref/home/shrey/Desktop/checkstyle-tester/checkstyle-tester/repositories/spotbugs-with-excldues/spotbugsTestCases/src/java/FormatString.java.html#L38">38</a></td>
+								
+								
+									
+									<td class="keepWidth">98</td>
+								
+							</tr>
+						
+							
+								<tr class="b">
+								
+								<td class="keepWidth"><a name="A51" href = "#A51">#A51</a></td>
+								<td>warning</td>
+								<td>CommentsIndentation</td>
+								<td>Comment has incorrect indentation level 55, expected is 8, indentation should be the same level as line 39.</td>
+								
+									
+									<td class="keepWidth"><a href = "xref/home/shrey/Desktop/checkstyle-tester/checkstyle-tester/repositories/spotbugs-with-excldues/spotbugsTestCases/src/java/FormatString.java.html#L41">41</a></td>
+								
+								
+									<td class="keepWidth"> </td>
+									
+								
+							</tr>
+						
+							
+								<tr class="a">
+							
+								<td class="keepWidth"><a name="A52" href = "#A52">#A52</a></td>
+								<td>warning</td>
+								<td>CommentsIndentation</td>
+								<td>Comment has incorrect indentation level 55, expected is 8, indentation should be the same level as line 39.</td>
+								
+									
+									<td class="keepWidth"><a href = "xref/home/shrey/Desktop/checkstyle-tester/checkstyle-tester/repositories/spotbugs-with-excldues/spotbugsTestCases/src/java/FormatString.java.html#L41">41</a></td>
+								
+								
+									
+									<td class="keepWidth">56</td>
+								
+							</tr>
+						
+					</table>
+				</div>
+				<div class="section">
+					<h3>/home/shrey/Desktop/checkstyle-tester/checkstyle-tester/repositories/spotbugs-with-excldues/spotbugsTestCases/src/java/StaticCalender.java</h3>
+					<tr class="b">
+					<table border="0" class="bodyTable">
+					        <th></th>
+							<th>Severity</th>
+							<th>Rule</th>
+							<th>Message</th>
+							<th>Line</th>
+							<th>Col</th>
+						</tr>
+						
+							
+								<tr class="b">
+								
+								<td class="keepWidth"><a name="A53" href = "#A53">#A53</a></td>
+								<td>warning</td>
+								<td>CommentsIndentation</td>
+								<td>Comment has incorrect indentation level 1, expected is 4, indentation should be the same level as line 24.</td>
+								
+									
+									<td class="keepWidth"><a href = "xref/home/shrey/Desktop/checkstyle-tester/checkstyle-tester/repositories/spotbugs-with-excldues/spotbugsTestCases/src/java/StaticCalender.java.html#L22">22</a></td>
+								
+								
+									<td class="keepWidth"> </td>
+									
+								
+							</tr>
+						
+							
+								<tr class="a">
+							
+								<td class="keepWidth"><a name="A54" href = "#A54">#A54</a></td>
+								<td>warning</td>
+								<td>CommentsIndentation</td>
+								<td>Comment has incorrect indentation level 1, expected is 4, indentation should be the same level as line 24.</td>
+								
+									
+									<td class="keepWidth"><a href = "xref/home/shrey/Desktop/checkstyle-tester/checkstyle-tester/repositories/spotbugs-with-excldues/spotbugsTestCases/src/java/StaticCalender.java.html#L22">22</a></td>
+								
+								
+									
+									<td class="keepWidth">2</td>
+								
+							</tr>
+						
+							
+								<tr class="b">
+								
+								<td class="keepWidth"><a name="A55" href = "#A55">#A55</a></td>
+								<td>warning</td>
+								<td>CommentsIndentation</td>
+								<td>Comment has incorrect indentation level 0, expected is 4, indentation should be the same level as line 24.</td>
+								
+									
+									<td class="keepWidth"><a href = "xref/home/shrey/Desktop/checkstyle-tester/checkstyle-tester/repositories/spotbugs-with-excldues/spotbugsTestCases/src/java/StaticCalender.java.html#L23">23</a></td>
+								
+								
+									<td class="keepWidth"> </td>
+									
+								
+							</tr>
+						
+							
+								<tr class="a">
+							
+								<td class="keepWidth"><a name="A56" href = "#A56">#A56</a></td>
+								<td>warning</td>
+								<td>CommentsIndentation</td>
+								<td>Comment has incorrect indentation level 0, expected is 4, indentation should be the same level as line 24.</td>
+								
+									
+									<td class="keepWidth"><a href = "xref/home/shrey/Desktop/checkstyle-tester/checkstyle-tester/repositories/spotbugs-with-excldues/spotbugsTestCases/src/java/StaticCalender.java.html#L23">23</a></td>
+								
+								
+									
+									<td class="keepWidth">1</td>
+								
+							</tr>
+						
+							
+								<tr class="b">
+								
+								<td class="keepWidth"><a name="A57" href = "#A57">#A57</a></td>
+								<td>warning</td>
+								<td>CommentsIndentation</td>
+								<td>Comment has incorrect indentation level 37, expected is 12, indentation should be the same level as line 56.</td>
+								
+									
+									<td class="keepWidth"><a href = "xref/home/shrey/Desktop/checkstyle-tester/checkstyle-tester/repositories/spotbugs-with-excldues/spotbugsTestCases/src/java/StaticCalender.java.html#L55">55</a></td>
+								
+								
+									<td class="keepWidth"> </td>
+									
+								
+							</tr>
+						
+							
+								<tr class="a">
+							
+								<td class="keepWidth"><a name="A58" href = "#A58">#A58</a></td>
+								<td>warning</td>
+								<td>CommentsIndentation</td>
+								<td>Comment has incorrect indentation level 37, expected is 12, indentation should be the same level as line 56.</td>
+								
+									
+									<td class="keepWidth"><a href = "xref/home/shrey/Desktop/checkstyle-tester/checkstyle-tester/repositories/spotbugs-with-excldues/spotbugsTestCases/src/java/StaticCalender.java.html#L55">55</a></td>
+								
+								
+									
+									<td class="keepWidth">38</td>
+								
+							</tr>
+						
+							
+								<tr class="b">
+								
+								<td class="keepWidth"><a name="A59" href = "#A59">#A59</a></td>
+								<td>warning</td>
+								<td>CommentsIndentation</td>
+								<td>Comment has incorrect indentation level 37, expected is 12, indentation should be the same level as line 90.</td>
+								
+									
+									<td class="keepWidth"><a href = "xref/home/shrey/Desktop/checkstyle-tester/checkstyle-tester/repositories/spotbugs-with-excldues/spotbugsTestCases/src/java/StaticCalender.java.html#L89">89</a></td>
+								
+								
+									<td class="keepWidth"> </td>
+									
+								
+							</tr>
+						
+							
+								<tr class="a">
+							
+								<td class="keepWidth"><a name="A60" href = "#A60">#A60</a></td>
+								<td>warning</td>
+								<td>CommentsIndentation</td>
+								<td>Comment has incorrect indentation level 37, expected is 12, indentation should be the same level as line 90.</td>
+								
+									
+									<td class="keepWidth"><a href = "xref/home/shrey/Desktop/checkstyle-tester/checkstyle-tester/repositories/spotbugs-with-excldues/spotbugsTestCases/src/java/StaticCalender.java.html#L89">89</a></td>
+								
+								
+									
+									<td class="keepWidth">38</td>
+								
+							</tr>
+						
+					</table>
+				</div>
+				<div class="section">
+					<h3>/home/shrey/Desktop/checkstyle-tester/checkstyle-tester/repositories/spotbugs-with-excldues/spotbugsTestCases/src/java/SwitchDup.java</h3>
+					<tr class="b">
+					<table border="0" class="bodyTable">
+					        <th></th>
+							<th>Severity</th>
+							<th>Rule</th>
+							<th>Message</th>
+							<th>Line</th>
+							<th>Col</th>
+						</tr>
+						
+							
+								<tr class="b">
+								
+								<td class="keepWidth"><a name="A61" href = "#A61">#A61</a></td>
+								<td>warning</td>
+								<td>CommentsIndentation</td>
+								<td>Comment has incorrect indentation level 8, expected is 12, indentation should be the same level as line 119.</td>
+								
+									
+									<td class="keepWidth"><a href = "xref/home/shrey/Desktop/checkstyle-tester/checkstyle-tester/repositories/spotbugs-with-excldues/spotbugsTestCases/src/java/SwitchDup.java.html#L120">120</a></td>
+								
+								
+									<td class="keepWidth"> </td>
+									
+								
+							</tr>
+						
+							
+								<tr class="a">
+							
+								<td class="keepWidth"><a name="A62" href = "#A62">#A62</a></td>
+								<td>warning</td>
+								<td>CommentsIndentation</td>
+								<td>Comment has incorrect indentation level 8, expected is 12, indentation should be the same level as line 119.</td>
+								
+									
+									<td class="keepWidth"><a href = "xref/home/shrey/Desktop/checkstyle-tester/checkstyle-tester/repositories/spotbugs-with-excldues/spotbugsTestCases/src/java/SwitchDup.java.html#L120">120</a></td>
+								
+								
+									
+									<td class="keepWidth">9</td>
+								
+							</tr>
+						
+					</table>
+				</div>
+				<div class="section">
+					<h3>/home/shrey/Desktop/checkstyle-tester/checkstyle-tester/repositories/spotbugs-with-excldues/spotbugsTestCases/src/java/UselessSCMethods.java</h3>
+					<tr class="b">
+					<table border="0" class="bodyTable">
+					        <th></th>
+							<th>Severity</th>
+							<th>Rule</th>
+							<th>Message</th>
+							<th>Line</th>
+							<th>Col</th>
+						</tr>
+						
+							
+								<tr class="b">
+								
+								<td class="keepWidth"><a name="A63" href = "#A63">#A63</a></td>
+								<td>warning</td>
+								<td>CommentsIndentation</td>
+								<td>Comment has incorrect indentation level 34, expected is 8, indentation should be the same level as line 40.</td>
+								
+									
+									<td class="keepWidth"><a href = "xref/home/shrey/Desktop/checkstyle-tester/checkstyle-tester/repositories/spotbugs-with-excldues/spotbugsTestCases/src/java/UselessSCMethods.java.html#L38">38</a></td>
+								
+								
+									<td class="keepWidth"> </td>
+									
+								
+							</tr>
+						
+							
+								<tr class="a">
+							
+								<td class="keepWidth"><a name="A64" href = "#A64">#A64</a></td>
+								<td>warning</td>
+								<td>CommentsIndentation</td>
+								<td>Comment has incorrect indentation level 34, expected is 8, indentation should be the same level as line 40.</td>
+								
+									
+									<td class="keepWidth"><a href = "xref/home/shrey/Desktop/checkstyle-tester/checkstyle-tester/repositories/spotbugs-with-excldues/spotbugsTestCases/src/java/UselessSCMethods.java.html#L38">38</a></td>
+								
+								
+									
+									<td class="keepWidth">35</td>
+								
+							</tr>
+						
+					</table>
+				</div>
+				<div class="section">
+					<h3>/home/shrey/Desktop/checkstyle-tester/checkstyle-tester/repositories/spotbugs-with-excldues/spotbugsTestCases/src/java/bugIdeas/Ideas_2009_05_06.java</h3>
+					<tr class="b">
+					<table border="0" class="bodyTable">
+					        <th></th>
+							<th>Severity</th>
+							<th>Rule</th>
+							<th>Message</th>
+							<th>Line</th>
+							<th>Col</th>
+						</tr>
+						
+							
+								<tr class="b">
+								
+								<td class="keepWidth"><a name="A65" href = "#A65">#A65</a></td>
+								<td>warning</td>
+								<td>CommentsIndentation</td>
+								<td>Comment has incorrect indentation level 46, expected is 8, indentation should be the same level as line 37.</td>
+								
+									
+									<td class="keepWidth"><a href = "xref/home/shrey/Desktop/checkstyle-tester/checkstyle-tester/repositories/spotbugs-with-excldues/spotbugsTestCases/src/java/bugIdeas/Ideas_2009_05_06.java.html#L36">36</a></td>
+								
+								
+									<td class="keepWidth"> </td>
+									
+								
+							</tr>
+						
+							
+								<tr class="a">
+							
+								<td class="keepWidth"><a name="A66" href = "#A66">#A66</a></td>
+								<td>warning</td>
+								<td>CommentsIndentation</td>
+								<td>Comment has incorrect indentation level 46, expected is 8, indentation should be the same level as line 37.</td>
+								
+									
+									<td class="keepWidth"><a href = "xref/home/shrey/Desktop/checkstyle-tester/checkstyle-tester/repositories/spotbugs-with-excldues/spotbugsTestCases/src/java/bugIdeas/Ideas_2009_05_06.java.html#L36">36</a></td>
+								
+								
+									
+									<td class="keepWidth">47</td>
+								
+							</tr>
+						
+							
+								<tr class="b">
+								
+								<td class="keepWidth"><a name="A67" href = "#A67">#A67</a></td>
+								<td>warning</td>
+								<td>CommentsIndentation</td>
+								<td>Comment has incorrect indentation level 44, expected is 8, indentation should be the same level as line 39.</td>
+								
+									
+									<td class="keepWidth"><a href = "xref/home/shrey/Desktop/checkstyle-tester/checkstyle-tester/repositories/spotbugs-with-excldues/spotbugsTestCases/src/java/bugIdeas/Ideas_2009_05_06.java.html#L38">38</a></td>
+								
+								
+									<td class="keepWidth"> </td>
+									
+								
+							</tr>
+						
+							
+								<tr class="a">
+							
+								<td class="keepWidth"><a name="A68" href = "#A68">#A68</a></td>
+								<td>warning</td>
+								<td>CommentsIndentation</td>
+								<td>Comment has incorrect indentation level 44, expected is 8, indentation should be the same level as line 39.</td>
+								
+									
+									<td class="keepWidth"><a href = "xref/home/shrey/Desktop/checkstyle-tester/checkstyle-tester/repositories/spotbugs-with-excldues/spotbugsTestCases/src/java/bugIdeas/Ideas_2009_05_06.java.html#L38">38</a></td>
+								
+								
+									
+									<td class="keepWidth">45</td>
+								
+							</tr>
+						
+							
+								<tr class="b">
+								
+								<td class="keepWidth"><a name="A69" href = "#A69">#A69</a></td>
+								<td>warning</td>
+								<td>CommentsIndentation</td>
+								<td>Comment has incorrect indentation level 65, expected is 8, indentation should be the same level as line 68.</td>
+								
+									
+									<td class="keepWidth"><a href = "xref/home/shrey/Desktop/checkstyle-tester/checkstyle-tester/repositories/spotbugs-with-excldues/spotbugsTestCases/src/java/bugIdeas/Ideas_2009_05_06.java.html#L71">71</a></td>
+								
+								
+									<td class="keepWidth"> </td>
+									
+								
+							</tr>
+						
+							
+								<tr class="a">
+							
+								<td class="keepWidth"><a name="A70" href = "#A70">#A70</a></td>
+								<td>warning</td>
+								<td>CommentsIndentation</td>
+								<td>Comment has incorrect indentation level 65, expected is 8, indentation should be the same level as line 68.</td>
+								
+									
+									<td class="keepWidth"><a href = "xref/home/shrey/Desktop/checkstyle-tester/checkstyle-tester/repositories/spotbugs-with-excldues/spotbugsTestCases/src/java/bugIdeas/Ideas_2009_05_06.java.html#L71">71</a></td>
+								
+								
+									
+									<td class="keepWidth">66</td>
+								
+							</tr>
+						
+					</table>
+				</div>
+				<div class="section">
+					<h3>/home/shrey/Desktop/checkstyle-tester/checkstyle-tester/repositories/spotbugs-with-excldues/spotbugsTestCases/src/java/bugIdeas/Ideas_2011_07_19.java</h3>
+					<tr class="b">
+					<table border="0" class="bodyTable">
+					        <th></th>
+							<th>Severity</th>
+							<th>Rule</th>
+							<th>Message</th>
+							<th>Line</th>
+							<th>Col</th>
+						</tr>
+						
+							
+								<tr class="b">
+								
+								<td class="keepWidth"><a name="A71" href = "#A71">#A71</a></td>
+								<td>warning</td>
+								<td>CommentsIndentation</td>
+								<td>Comment has incorrect indentation level 0, expected is 4, indentation should be the same level as line 114.</td>
+								
+									
+									<td class="keepWidth"><a href = "xref/home/shrey/Desktop/checkstyle-tester/checkstyle-tester/repositories/spotbugs-with-excldues/spotbugsTestCases/src/java/bugIdeas/Ideas_2011_07_19.java.html#L113">113</a></td>
+								
+								
+									<td class="keepWidth"> </td>
+									
+								
+							</tr>
+						
+							
+								<tr class="a">
+							
+								<td class="keepWidth"><a name="A72" href = "#A72">#A72</a></td>
+								<td>warning</td>
+								<td>CommentsIndentation</td>
+								<td>Comment has incorrect indentation level 0, expected is 4, indentation should be the same level as line 114.</td>
+								
+									
+									<td class="keepWidth"><a href = "xref/home/shrey/Desktop/checkstyle-tester/checkstyle-tester/repositories/spotbugs-with-excldues/spotbugsTestCases/src/java/bugIdeas/Ideas_2011_07_19.java.html#L113">113</a></td>
+								
+								
+									
+									<td class="keepWidth">1</td>
+								
+							</tr>
+						
+							
+								<tr class="b">
+								
+								<td class="keepWidth"><a name="A73" href = "#A73">#A73</a></td>
+								<td>warning</td>
+								<td>CommentsIndentation</td>
+								<td>Comment has incorrect indentation level 0, expected is 4, indentation should be the same level as line 144.</td>
+								
+									
+									<td class="keepWidth"><a href = "xref/home/shrey/Desktop/checkstyle-tester/checkstyle-tester/repositories/spotbugs-with-excldues/spotbugsTestCases/src/java/bugIdeas/Ideas_2011_07_19.java.html#L143">143</a></td>
+								
+								
+									<td class="keepWidth"> </td>
+									
+								
+							</tr>
+						
+							
+								<tr class="a">
+							
+								<td class="keepWidth"><a name="A74" href = "#A74">#A74</a></td>
+								<td>warning</td>
+								<td>CommentsIndentation</td>
+								<td>Comment has incorrect indentation level 0, expected is 4, indentation should be the same level as line 144.</td>
+								
+									
+									<td class="keepWidth"><a href = "xref/home/shrey/Desktop/checkstyle-tester/checkstyle-tester/repositories/spotbugs-with-excldues/spotbugsTestCases/src/java/bugIdeas/Ideas_2011_07_19.java.html#L143">143</a></td>
+								
+								
+									
+									<td class="keepWidth">1</td>
+								
+							</tr>
+						
+					</table>
+				</div>
+				<div class="section">
+					<h3>/home/shrey/Desktop/checkstyle-tester/checkstyle-tester/repositories/spotbugs-with-excldues/spotbugsTestCases/src/java/bugIdeas/Ideas_2011_08_07.java</h3>
+					<tr class="b">
+					<table border="0" class="bodyTable">
+					        <th></th>
+							<th>Severity</th>
+							<th>Rule</th>
+							<th>Message</th>
+							<th>Line</th>
+							<th>Col</th>
+						</tr>
+						
+							
+								<tr class="b">
+								
+								<td class="keepWidth"><a name="A75" href = "#A75">#A75</a></td>
+								<td>warning</td>
+								<td>CommentsIndentation</td>
+								<td>Comment has incorrect indentation level 0, expected is 4, indentation should be the same level as line 70.</td>
+								
+									
+									<td class="keepWidth"><a href = "xref/home/shrey/Desktop/checkstyle-tester/checkstyle-tester/repositories/spotbugs-with-excldues/spotbugsTestCases/src/java/bugIdeas/Ideas_2011_08_07.java.html#L112">112</a></td>
+								
+								
+									<td class="keepWidth"> </td>
+									
+								
+							</tr>
+						
+							
+								<tr class="a">
+							
+								<td class="keepWidth"><a name="A76" href = "#A76">#A76</a></td>
+								<td>warning</td>
+								<td>CommentsIndentation</td>
+								<td>Comment has incorrect indentation level 0, expected is 4, indentation should be the same level as line 70.</td>
+								
+									
+									<td class="keepWidth"><a href = "xref/home/shrey/Desktop/checkstyle-tester/checkstyle-tester/repositories/spotbugs-with-excldues/spotbugsTestCases/src/java/bugIdeas/Ideas_2011_08_07.java.html#L112">112</a></td>
+								
+								
+									
+									<td class="keepWidth">1</td>
+								
+							</tr>
+						
+					</table>
+				</div>
+				<div class="section">
+					<h3>/home/shrey/Desktop/checkstyle-tester/checkstyle-tester/repositories/spotbugs-with-excldues/spotbugsTestCases/src/java/com/google/errorprone/bugpatterns/CheckReturnValuePositiveCases.java</h3>
+					<tr class="b">
+					<table border="0" class="bodyTable">
+					        <th></th>
+							<th>Severity</th>
+							<th>Rule</th>
+							<th>Message</th>
+							<th>Line</th>
+							<th>Col</th>
+						</tr>
+						
+							
+								<tr class="b">
+								
+								<td class="keepWidth"><a name="A77" href = "#A77">#A77</a></td>
+								<td>warning</td>
+								<td>CommentsIndentation</td>
+								<td>Comment has incorrect indentation level 6, expected is 5, indentation should be the same level as line 70.</td>
+								
+									
+									<td class="keepWidth"><a href = "xref/home/shrey/Desktop/checkstyle-tester/checkstyle-tester/repositories/spotbugs-with-excldues/spotbugsTestCases/src/java/com/google/errorprone/bugpatterns/CheckReturnValuePositiveCases.java.html#L69">69</a></td>
+								
+								
+									<td class="keepWidth"> </td>
+									
+								
+							</tr>
+						
+							
+								<tr class="a">
+							
+								<td class="keepWidth"><a name="A78" href = "#A78">#A78</a></td>
+								<td>warning</td>
+								<td>CommentsIndentation</td>
+								<td>Comment has incorrect indentation level 6, expected is 5, indentation should be the same level as line 70.</td>
+								
+									
+									<td class="keepWidth"><a href = "xref/home/shrey/Desktop/checkstyle-tester/checkstyle-tester/repositories/spotbugs-with-excldues/spotbugsTestCases/src/java/com/google/errorprone/bugpatterns/CheckReturnValuePositiveCases.java.html#L69">69</a></td>
+								
+								
+									
+									<td class="keepWidth">7</td>
+								
+							</tr>
+						
+					</table>
+				</div>
+				<div class="section">
+					<h3>/home/shrey/Desktop/checkstyle-tester/checkstyle-tester/repositories/spotbugs-with-excldues/spotbugsTestCases/src/java/com/google/errorprone/bugpatterns/InvalidStringEqualityPositiveCases.java</h3>
+					<tr class="b">
+					<table border="0" class="bodyTable">
+					        <th></th>
+							<th>Severity</th>
+							<th>Rule</th>
+							<th>Message</th>
+							<th>Line</th>
+							<th>Col</th>
+						</tr>
+						
+							
+								<tr class="b">
+								
+								<td class="keepWidth"><a name="A79" href = "#A79">#A79</a></td>
+								<td>warning</td>
+								<td>CommentsIndentation</td>
+								<td>Comment has incorrect indentation level 5, expected is 4, indentation should be the same level as line 42.</td>
+								
+									
+									<td class="keepWidth"><a href = "xref/home/shrey/Desktop/checkstyle-tester/checkstyle-tester/repositories/spotbugs-with-excldues/spotbugsTestCases/src/java/com/google/errorprone/bugpatterns/InvalidStringEqualityPositiveCases.java.html#L41">41</a></td>
+								
+								
+									<td class="keepWidth"> </td>
+									
+								
+							</tr>
+						
+							
+								<tr class="a">
+							
+								<td class="keepWidth"><a name="A80" href = "#A80">#A80</a></td>
+								<td>warning</td>
+								<td>CommentsIndentation</td>
+								<td>Comment has incorrect indentation level 5, expected is 4, indentation should be the same level as line 42.</td>
+								
+									
+									<td class="keepWidth"><a href = "xref/home/shrey/Desktop/checkstyle-tester/checkstyle-tester/repositories/spotbugs-with-excldues/spotbugsTestCases/src/java/com/google/errorprone/bugpatterns/InvalidStringEqualityPositiveCases.java.html#L41">41</a></td>
+								
+								
+									
+									<td class="keepWidth">6</td>
+								
+							</tr>
+						
+					</table>
+				</div>
+				<div class="section">
+					<h3>/home/shrey/Desktop/checkstyle-tester/checkstyle-tester/repositories/spotbugs-with-excldues/spotbugsTestCases/src/java/dynamicany/DynAnyImpl.java</h3>
+					<tr class="b">
+					<table border="0" class="bodyTable">
+					        <th></th>
+							<th>Severity</th>
+							<th>Rule</th>
+							<th>Message</th>
+							<th>Line</th>
+							<th>Col</th>
+						</tr>
+						
+							
+								<tr class="b">
+								
+								<td class="keepWidth"><a name="A81" href = "#A81">#A81</a></td>
+								<td>warning</td>
+								<td>CommentsIndentation</td>
+								<td>Comment has incorrect indentation level 0, expected is 8, indentation should be the same level as line 12.</td>
+								
+									
+									<td class="keepWidth"><a href = "xref/home/shrey/Desktop/checkstyle-tester/checkstyle-tester/repositories/spotbugs-with-excldues/spotbugsTestCases/src/java/dynamicany/DynAnyImpl.java.html#L11">11</a></td>
+								
+								
+									<td class="keepWidth"> </td>
+									
+								
+							</tr>
+						
+							
+								<tr class="a">
+							
+								<td class="keepWidth"><a name="A82" href = "#A82">#A82</a></td>
+								<td>warning</td>
+								<td>CommentsIndentation</td>
+								<td>Comment has incorrect indentation level 0, expected is 8, indentation should be the same level as line 12.</td>
+								
+									
+									<td class="keepWidth"><a href = "xref/home/shrey/Desktop/checkstyle-tester/checkstyle-tester/repositories/spotbugs-with-excldues/spotbugsTestCases/src/java/dynamicany/DynAnyImpl.java.html#L11">11</a></td>
+								
+								
+									
+									<td class="keepWidth">1</td>
+								
+							</tr>
+						
+					</table>
+				</div>
+				<div class="section">
+					<h3>/home/shrey/Desktop/checkstyle-tester/checkstyle-tester/repositories/spotbugs-with-excldues/spotbugsTestCases/src/java/equals/GetClassAndClassConstant.java</h3>
+					<tr class="b">
+					<table border="0" class="bodyTable">
+					        <th></th>
+							<th>Severity</th>
+							<th>Rule</th>
+							<th>Message</th>
+							<th>Line</th>
+							<th>Col</th>
+						</tr>
+						
+							
+								<tr class="b">
+								
+								<td class="keepWidth"><a name="A83" href = "#A83">#A83</a></td>
+								<td>warning</td>
+								<td>CommentsIndentation</td>
+								<td>Comment has incorrect indentation level 21, expected is 8, indentation should be the same level as line 90.</td>
+								
+									
+									<td class="keepWidth"><a href = "xref/home/shrey/Desktop/checkstyle-tester/checkstyle-tester/repositories/spotbugs-with-excldues/spotbugsTestCases/src/java/equals/GetClassAndClassConstant.java.html#L89">89</a></td>
+								
+								
+									<td class="keepWidth"> </td>
+									
+								
+							</tr>
+						
+							
+								<tr class="a">
+							
+								<td class="keepWidth"><a name="A84" href = "#A84">#A84</a></td>
+								<td>warning</td>
+								<td>CommentsIndentation</td>
+								<td>Comment has incorrect indentation level 21, expected is 8, indentation should be the same level as line 90.</td>
+								
+									
+									<td class="keepWidth"><a href = "xref/home/shrey/Desktop/checkstyle-tester/checkstyle-tester/repositories/spotbugs-with-excldues/spotbugsTestCases/src/java/equals/GetClassAndClassConstant.java.html#L89">89</a></td>
+								
+								
+									
+									<td class="keepWidth">22</td>
+								
+							</tr>
+						
+					</table>
+				</div>
+				<div class="section">
+					<h3>/home/shrey/Desktop/checkstyle-tester/checkstyle-tester/repositories/spotbugs-with-excldues/spotbugsTestCases/src/java/gcUnrelatedTypes/ParameterizedAgainstPlain.java</h3>
+					<tr class="b">
+					<table border="0" class="bodyTable">
+					        <th></th>
+							<th>Severity</th>
+							<th>Rule</th>
+							<th>Message</th>
+							<th>Line</th>
+							<th>Col</th>
+						</tr>
+						
+							
+								<tr class="b">
+								
+								<td class="keepWidth"><a name="A85" href = "#A85">#A85</a></td>
+								<td>warning</td>
+								<td>CommentsIndentation</td>
+								<td>Comment has incorrect indentation level 50, expected is 8, indentation should be the same level as line 16.</td>
+								
+									
+									<td class="keepWidth"><a href = "xref/home/shrey/Desktop/checkstyle-tester/checkstyle-tester/repositories/spotbugs-with-excldues/spotbugsTestCases/src/java/gcUnrelatedTypes/ParameterizedAgainstPlain.java.html#L15">15</a></td>
+								
+								
+									<td class="keepWidth"> </td>
+									
+								
+							</tr>
+						
+							
+								<tr class="a">
+							
+								<td class="keepWidth"><a name="A86" href = "#A86">#A86</a></td>
+								<td>warning</td>
+								<td>CommentsIndentation</td>
+								<td>Comment has incorrect indentation level 50, expected is 8, indentation should be the same level as line 16.</td>
+								
+									
+									<td class="keepWidth"><a href = "xref/home/shrey/Desktop/checkstyle-tester/checkstyle-tester/repositories/spotbugs-with-excldues/spotbugsTestCases/src/java/gcUnrelatedTypes/ParameterizedAgainstPlain.java.html#L15">15</a></td>
+								
+								
+									
+									<td class="keepWidth">51</td>
+								
+							</tr>
+						
+					</table>
+				</div>
+				<div class="section">
+					<h3>/home/shrey/Desktop/checkstyle-tester/checkstyle-tester/repositories/spotbugs-with-excldues/spotbugsTestCases/src/java/infiniteLoop/InfiniteLoop.java</h3>
+					<tr class="b">
+					<table border="0" class="bodyTable">
+					        <th></th>
+							<th>Severity</th>
+							<th>Rule</th>
+							<th>Message</th>
+							<th>Line</th>
+							<th>Col</th>
+						</tr>
+						
+							
+								<tr class="b">
+								
+								<td class="keepWidth"><a name="A87" href = "#A87">#A87</a></td>
+								<td>warning</td>
+								<td>CommentsIndentation</td>
+								<td>Comment has incorrect indentation level 25, expected is 12, indentation should be the same level as line 24.</td>
+								
+									
+									<td class="keepWidth"><a href = "xref/home/shrey/Desktop/checkstyle-tester/checkstyle-tester/repositories/spotbugs-with-excldues/spotbugsTestCases/src/java/infiniteLoop/InfiniteLoop.java.html#L23">23</a></td>
+								
+								
+									<td class="keepWidth"> </td>
+									
+								
+							</tr>
+						
+							
+								<tr class="a">
+							
+								<td class="keepWidth"><a name="A88" href = "#A88">#A88</a></td>
+								<td>warning</td>
+								<td>CommentsIndentation</td>
+								<td>Comment has incorrect indentation level 25, expected is 12, indentation should be the same level as line 24.</td>
+								
+									
+									<td class="keepWidth"><a href = "xref/home/shrey/Desktop/checkstyle-tester/checkstyle-tester/repositories/spotbugs-with-excldues/spotbugsTestCases/src/java/infiniteLoop/InfiniteLoop.java.html#L23">23</a></td>
+								
+								
+									
+									<td class="keepWidth">26</td>
+								
+							</tr>
+						
+					</table>
+				</div>
+				<div class="section">
+					<h3>/home/shrey/Desktop/checkstyle-tester/checkstyle-tester/repositories/spotbugs-with-excldues/spotbugsTestCases/src/java/npe/EclipseNullReferenceTestCases.java</h3>
+					<tr class="b">
+					<table border="0" class="bodyTable">
+					        <th></th>
+							<th>Severity</th>
+							<th>Rule</th>
+							<th>Message</th>
+							<th>Line</th>
+							<th>Col</th>
+						</tr>
+						
+							
+								<tr class="b">
+								
+								<td class="keepWidth"><a name="A89" href = "#A89">#A89</a></td>
+								<td>warning</td>
+								<td>CommentsIndentation</td>
+								<td>Comment has incorrect indentation level 40, expected is 24, indentation should be the same level as line 1,811.</td>
+								
+									
+									<td class="keepWidth"><a href = "xref/home/shrey/Desktop/checkstyle-tester/checkstyle-tester/repositories/spotbugs-with-excldues/spotbugsTestCases/src/java/npe/EclipseNullReferenceTestCases.java.html#L1810">1810</a></td>
+								
+								
+									<td class="keepWidth"> </td>
+									
+								
+							</tr>
+						
+							
+								<tr class="a">
+							
+								<td class="keepWidth"><a name="A90" href = "#A90">#A90</a></td>
+								<td>warning</td>
+								<td>CommentsIndentation</td>
+								<td>Comment has incorrect indentation level 40, expected is 24, indentation should be the same level as line 1,811.</td>
+								
+									
+									<td class="keepWidth"><a href = "xref/home/shrey/Desktop/checkstyle-tester/checkstyle-tester/repositories/spotbugs-with-excldues/spotbugsTestCases/src/java/npe/EclipseNullReferenceTestCases.java.html#L1810">1810</a></td>
+								
+								
+									
+									<td class="keepWidth">41</td>
+								
+							</tr>
+						
+					</table>
+				</div>
+				<div class="section">
+					<h3>/home/shrey/Desktop/checkstyle-tester/checkstyle-tester/repositories/spotbugs-with-excldues/spotbugsTestCases/src/java/npe/ErrorInFinallyClause.java</h3>
+					<tr class="b">
+					<table border="0" class="bodyTable">
+					        <th></th>
+							<th>Severity</th>
+							<th>Rule</th>
+							<th>Message</th>
+							<th>Line</th>
+							<th>Col</th>
+						</tr>
+						
+							
+								<tr class="b">
+								
+								<td class="keepWidth"><a name="A91" href = "#A91">#A91</a></td>
+								<td>warning</td>
+								<td>CommentsIndentation</td>
+								<td>Comment has incorrect indentation level 24, expected is 12, indentation should be the same level as line 27.</td>
+								
+									
+									<td class="keepWidth"><a href = "xref/home/shrey/Desktop/checkstyle-tester/checkstyle-tester/repositories/spotbugs-with-excldues/spotbugsTestCases/src/java/npe/ErrorInFinallyClause.java.html#L26">26</a></td>
+								
+								
+									<td class="keepWidth"> </td>
+									
+								
+							</tr>
+						
+							
+								<tr class="a">
+							
+								<td class="keepWidth"><a name="A92" href = "#A92">#A92</a></td>
+								<td>warning</td>
+								<td>CommentsIndentation</td>
+								<td>Comment has incorrect indentation level 24, expected is 12, indentation should be the same level as line 27.</td>
+								
+									
+									<td class="keepWidth"><a href = "xref/home/shrey/Desktop/checkstyle-tester/checkstyle-tester/repositories/spotbugs-with-excldues/spotbugsTestCases/src/java/npe/ErrorInFinallyClause.java.html#L26">26</a></td>
+								
+								
+									
+									<td class="keepWidth">25</td>
+								
+							</tr>
+						
+							
+								<tr class="b">
+								
+								<td class="keepWidth"><a name="A93" href = "#A93">#A93</a></td>
+								<td>warning</td>
+								<td>CommentsIndentation</td>
+								<td>Comment has incorrect indentation level 25, expected is 12, indentation should be the same level as line 27.</td>
+								
+									
+									<td class="keepWidth"><a href = "xref/home/shrey/Desktop/checkstyle-tester/checkstyle-tester/repositories/spotbugs-with-excldues/spotbugsTestCases/src/java/npe/ErrorInFinallyClause.java.html#L28">28</a></td>
+								
+								
+									<td class="keepWidth"> </td>
+									
+								
+							</tr>
+						
+							
+								<tr class="a">
+							
+								<td class="keepWidth"><a name="A94" href = "#A94">#A94</a></td>
+								<td>warning</td>
+								<td>CommentsIndentation</td>
+								<td>Comment has incorrect indentation level 25, expected is 12, indentation should be the same level as line 27.</td>
+								
+									
+									<td class="keepWidth"><a href = "xref/home/shrey/Desktop/checkstyle-tester/checkstyle-tester/repositories/spotbugs-with-excldues/spotbugsTestCases/src/java/npe/ErrorInFinallyClause.java.html#L28">28</a></td>
+								
+								
+									
+									<td class="keepWidth">26</td>
+								
+							</tr>
+						
+					</table>
+				</div>
+				<div class="section">
+					<h3>/home/shrey/Desktop/checkstyle-tester/checkstyle-tester/repositories/spotbugs-with-excldues/spotbugsTestCases/src/java/nullnessAnnotations/packageDefault/Interface1.java</h3>
+					<tr class="b">
+					<table border="0" class="bodyTable">
+					        <th></th>
+							<th>Severity</th>
+							<th>Rule</th>
+							<th>Message</th>
+							<th>Line</th>
+							<th>Col</th>
+						</tr>
+						
+							
+								<tr class="b">
+								
+								<td class="keepWidth"><a name="A95" href = "#A95">#A95</a></td>
+								<td>warning</td>
+								<td>CommentsIndentation</td>
+								<td>Comment has incorrect indentation level 24, expected is 4, indentation should be the same level as line 7.</td>
+								
+									
+									<td class="keepWidth"><a href = "xref/home/shrey/Desktop/checkstyle-tester/checkstyle-tester/repositories/spotbugs-with-excldues/spotbugsTestCases/src/java/nullnessAnnotations/packageDefault/Interface1.java.html#L5">5</a></td>
+								
+								
+									<td class="keepWidth"> </td>
+									
+								
+							</tr>
+						
+							
+								<tr class="a">
+							
+								<td class="keepWidth"><a name="A96" href = "#A96">#A96</a></td>
+								<td>warning</td>
+								<td>CommentsIndentation</td>
+								<td>Comment has incorrect indentation level 24, expected is 4, indentation should be the same level as line 7.</td>
+								
+									
+									<td class="keepWidth"><a href = "xref/home/shrey/Desktop/checkstyle-tester/checkstyle-tester/repositories/spotbugs-with-excldues/spotbugsTestCases/src/java/nullnessAnnotations/packageDefault/Interface1.java.html#L5">5</a></td>
+								
+								
+									
+									<td class="keepWidth">25</td>
+								
+							</tr>
+						
+							
+								<tr class="b">
+								
+								<td class="keepWidth"><a name="A97" href = "#A97">#A97</a></td>
+								<td>warning</td>
+								<td>CommentsIndentation</td>
+								<td>Comment has incorrect indentation level 24, expected is 4, indentation should be the same level as line 7.</td>
+								
+									
+									<td class="keepWidth"><a href = "xref/home/shrey/Desktop/checkstyle-tester/checkstyle-tester/repositories/spotbugs-with-excldues/spotbugsTestCases/src/java/nullnessAnnotations/packageDefault/Interface1.java.html#L8">8</a></td>
+								
+								
+									<td class="keepWidth"> </td>
+									
+								
+							</tr>
+						
+							
+								<tr class="a">
+							
+								<td class="keepWidth"><a name="A98" href = "#A98">#A98</a></td>
+								<td>warning</td>
+								<td>CommentsIndentation</td>
+								<td>Comment has incorrect indentation level 24, expected is 4, indentation should be the same level as line 7.</td>
+								
+									
+									<td class="keepWidth"><a href = "xref/home/shrey/Desktop/checkstyle-tester/checkstyle-tester/repositories/spotbugs-with-excldues/spotbugsTestCases/src/java/nullnessAnnotations/packageDefault/Interface1.java.html#L8">8</a></td>
+								
+								
+									
+									<td class="keepWidth">25</td>
+								
+							</tr>
+						
+					</table>
+				</div>
+				<div class="section">
+					<h3>/home/shrey/Desktop/checkstyle-tester/checkstyle-tester/repositories/spotbugs-with-excldues/spotbugsTestCases/src/java/nullnessAnnotations/packageDefault_JDT/Interface1.java</h3>
+					<tr class="b">
+					<table border="0" class="bodyTable">
+					        <th></th>
+							<th>Severity</th>
+							<th>Rule</th>
+							<th>Message</th>
+							<th>Line</th>
+							<th>Col</th>
+						</tr>
+						
+							
+								<tr class="b">
+								
+								<td class="keepWidth"><a name="A99" href = "#A99">#A99</a></td>
+								<td>warning</td>
+								<td>CommentsIndentation</td>
+								<td>Comment has incorrect indentation level 24, expected is 4, indentation should be the same level as line 7.</td>
+								
+									
+									<td class="keepWidth"><a href = "xref/home/shrey/Desktop/checkstyle-tester/checkstyle-tester/repositories/spotbugs-with-excldues/spotbugsTestCases/src/java/nullnessAnnotations/packageDefault_JDT/Interface1.java.html#L5">5</a></td>
+								
+								
+									<td class="keepWidth"> </td>
+									
+								
+							</tr>
+						
+							
+								<tr class="a">
+							
+								<td class="keepWidth"><a name="A100" href = "#A100">#A100</a></td>
+								<td>warning</td>
+								<td>CommentsIndentation</td>
+								<td>Comment has incorrect indentation level 24, expected is 4, indentation should be the same level as line 7.</td>
+								
+									
+									<td class="keepWidth"><a href = "xref/home/shrey/Desktop/checkstyle-tester/checkstyle-tester/repositories/spotbugs-with-excldues/spotbugsTestCases/src/java/nullnessAnnotations/packageDefault_JDT/Interface1.java.html#L5">5</a></td>
+								
+								
+									
+									<td class="keepWidth">25</td>
+								
+							</tr>
+						
+							
+								<tr class="b">
+								
+								<td class="keepWidth"><a name="A101" href = "#A101">#A101</a></td>
+								<td>warning</td>
+								<td>CommentsIndentation</td>
+								<td>Comment has incorrect indentation level 24, expected is 4, indentation should be the same level as line 7.</td>
+								
+									
+									<td class="keepWidth"><a href = "xref/home/shrey/Desktop/checkstyle-tester/checkstyle-tester/repositories/spotbugs-with-excldues/spotbugsTestCases/src/java/nullnessAnnotations/packageDefault_JDT/Interface1.java.html#L8">8</a></td>
+								
+								
+									<td class="keepWidth"> </td>
+									
+								
+							</tr>
+						
+							
+								<tr class="a">
+							
+								<td class="keepWidth"><a name="A102" href = "#A102">#A102</a></td>
+								<td>warning</td>
+								<td>CommentsIndentation</td>
+								<td>Comment has incorrect indentation level 24, expected is 4, indentation should be the same level as line 7.</td>
+								
+									
+									<td class="keepWidth"><a href = "xref/home/shrey/Desktop/checkstyle-tester/checkstyle-tester/repositories/spotbugs-with-excldues/spotbugsTestCases/src/java/nullnessAnnotations/packageDefault_JDT/Interface1.java.html#L8">8</a></td>
+								
+								
+									
+									<td class="keepWidth">25</td>
+								
+							</tr>
+						
+					</table>
+				</div>
+				<div class="section">
+					<h3>/home/shrey/Desktop/checkstyle-tester/checkstyle-tester/repositories/spotbugs-with-excldues/spotbugsTestCases/src/java/obligation/CompareToNull.java</h3>
+					<tr class="b">
+					<table border="0" class="bodyTable">
+					        <th></th>
+							<th>Severity</th>
+							<th>Rule</th>
+							<th>Message</th>
+							<th>Line</th>
+							<th>Col</th>
+						</tr>
+						
+							
+								<tr class="b">
+								
+								<td class="keepWidth"><a name="A103" href = "#A103">#A103</a></td>
+								<td>warning</td>
+								<td>CommentsIndentation</td>
+								<td>Comment has incorrect indentation level 32, expected is 16, indentation should be the same level as line 42.</td>
+								
+									
+									<td class="keepWidth"><a href = "xref/home/shrey/Desktop/checkstyle-tester/checkstyle-tester/repositories/spotbugs-with-excldues/spotbugsTestCases/src/java/obligation/CompareToNull.java.html#L41">41</a></td>
+								
+								
+									<td class="keepWidth"> </td>
+									
+								
+							</tr>
+						
+							
+								<tr class="a">
+							
+								<td class="keepWidth"><a name="A104" href = "#A104">#A104</a></td>
+								<td>warning</td>
+								<td>CommentsIndentation</td>
+								<td>Comment has incorrect indentation level 32, expected is 16, indentation should be the same level as line 42.</td>
+								
+									
+									<td class="keepWidth"><a href = "xref/home/shrey/Desktop/checkstyle-tester/checkstyle-tester/repositories/spotbugs-with-excldues/spotbugsTestCases/src/java/obligation/CompareToNull.java.html#L41">41</a></td>
+								
+								
+									
+									<td class="keepWidth">33</td>
+								
+							</tr>
+						
+					</table>
+				</div>
+				<div class="section">
+					<h3>/home/shrey/Desktop/checkstyle-tester/checkstyle-tester/repositories/spotbugs-with-excldues/spotbugsTestCases/src/java/sfBugs/Bug1551726.java</h3>
+					<tr class="b">
+					<table border="0" class="bodyTable">
+					        <th></th>
+							<th>Severity</th>
+							<th>Rule</th>
+							<th>Message</th>
+							<th>Line</th>
+							<th>Col</th>
+						</tr>
+						
+							
+								<tr class="b">
+								
+								<td class="keepWidth"><a name="A105" href = "#A105">#A105</a></td>
+								<td>warning</td>
+								<td>CommentsIndentation</td>
+								<td>Comment has incorrect indentation level 26, expected is 8, indentation should be the same level as line 12.</td>
+								
+									
+									<td class="keepWidth"><a href = "xref/home/shrey/Desktop/checkstyle-tester/checkstyle-tester/repositories/spotbugs-with-excldues/spotbugsTestCases/src/java/sfBugs/Bug1551726.java.html#L11">11</a></td>
+								
+								
+									<td class="keepWidth"> </td>
+									
+								
+							</tr>
+						
+							
+								<tr class="a">
+							
+								<td class="keepWidth"><a name="A106" href = "#A106">#A106</a></td>
+								<td>warning</td>
+								<td>CommentsIndentation</td>
+								<td>Comment has incorrect indentation level 26, expected is 8, indentation should be the same level as line 12.</td>
+								
+									
+									<td class="keepWidth"><a href = "xref/home/shrey/Desktop/checkstyle-tester/checkstyle-tester/repositories/spotbugs-with-excldues/spotbugsTestCases/src/java/sfBugs/Bug1551726.java.html#L11">11</a></td>
+								
+								
+									
+									<td class="keepWidth">27</td>
+								
+							</tr>
+						
+							
+								<tr class="b">
+								
+								<td class="keepWidth"><a name="A107" href = "#A107">#A107</a></td>
+								<td>warning</td>
+								<td>CommentsIndentation</td>
+								<td>Comment has incorrect indentation level 26, expected is 8, indentation should be the same level as line 27.</td>
+								
+									
+									<td class="keepWidth"><a href = "xref/home/shrey/Desktop/checkstyle-tester/checkstyle-tester/repositories/spotbugs-with-excldues/spotbugsTestCases/src/java/sfBugs/Bug1551726.java.html#L26">26</a></td>
+								
+								
+									<td class="keepWidth"> </td>
+									
+								
+							</tr>
+						
+							
+								<tr class="a">
+							
+								<td class="keepWidth"><a name="A108" href = "#A108">#A108</a></td>
+								<td>warning</td>
+								<td>CommentsIndentation</td>
+								<td>Comment has incorrect indentation level 26, expected is 8, indentation should be the same level as line 27.</td>
+								
+									
+									<td class="keepWidth"><a href = "xref/home/shrey/Desktop/checkstyle-tester/checkstyle-tester/repositories/spotbugs-with-excldues/spotbugsTestCases/src/java/sfBugs/Bug1551726.java.html#L26">26</a></td>
+								
+								
+									
+									<td class="keepWidth">27</td>
+								
+							</tr>
+						
+					</table>
+				</div>
+				<div class="section">
+					<h3>/home/shrey/Desktop/checkstyle-tester/checkstyle-tester/repositories/spotbugs-with-excldues/spotbugsTestCases/src/java/sfBugs/Bug1816258.java</h3>
+					<tr class="b">
+					<table border="0" class="bodyTable">
+					        <th></th>
+							<th>Severity</th>
+							<th>Rule</th>
+							<th>Message</th>
+							<th>Line</th>
+							<th>Col</th>
+						</tr>
+						
+							
+								<tr class="b">
+								
+								<td class="keepWidth"><a name="A109" href = "#A109">#A109</a></td>
+								<td>warning</td>
+								<td>CommentsIndentation</td>
+								<td>Comment has incorrect indentation level 109, expected is 8, indentation should be the same level as line 17.</td>
+								
+									
+									<td class="keepWidth"><a href = "xref/home/shrey/Desktop/checkstyle-tester/checkstyle-tester/repositories/spotbugs-with-excldues/spotbugsTestCases/src/java/sfBugs/Bug1816258.java.html#L16">16</a></td>
+								
+								
+									<td class="keepWidth"> </td>
+									
+								
+							</tr>
+						
+							
+								<tr class="a">
+							
+								<td class="keepWidth"><a name="A110" href = "#A110">#A110</a></td>
+								<td>warning</td>
+								<td>CommentsIndentation</td>
+								<td>Comment has incorrect indentation level 109, expected is 8, indentation should be the same level as line 17.</td>
+								
+									
+									<td class="keepWidth"><a href = "xref/home/shrey/Desktop/checkstyle-tester/checkstyle-tester/repositories/spotbugs-with-excldues/spotbugsTestCases/src/java/sfBugs/Bug1816258.java.html#L16">16</a></td>
+								
+								
+									
+									<td class="keepWidth">110</td>
+								
+							</tr>
+						
+							
+								<tr class="b">
+								
+								<td class="keepWidth"><a name="A111" href = "#A111">#A111</a></td>
+								<td>warning</td>
+								<td>CommentsIndentation</td>
+								<td>Comment has incorrect indentation level 109, expected is 8, indentation should be the same level as line 37.</td>
+								
+									
+									<td class="keepWidth"><a href = "xref/home/shrey/Desktop/checkstyle-tester/checkstyle-tester/repositories/spotbugs-with-excldues/spotbugsTestCases/src/java/sfBugs/Bug1816258.java.html#L36">36</a></td>
+								
+								
+									<td class="keepWidth"> </td>
+									
+								
+							</tr>
+						
+							
+								<tr class="a">
+							
+								<td class="keepWidth"><a name="A112" href = "#A112">#A112</a></td>
+								<td>warning</td>
+								<td>CommentsIndentation</td>
+								<td>Comment has incorrect indentation level 109, expected is 8, indentation should be the same level as line 37.</td>
+								
+									
+									<td class="keepWidth"><a href = "xref/home/shrey/Desktop/checkstyle-tester/checkstyle-tester/repositories/spotbugs-with-excldues/spotbugsTestCases/src/java/sfBugs/Bug1816258.java.html#L36">36</a></td>
+								
+								
+									
+									<td class="keepWidth">110</td>
+								
+							</tr>
+						
+					</table>
+				</div>
+				<div class="section">
+					<h3>/home/shrey/Desktop/checkstyle-tester/checkstyle-tester/repositories/spotbugs-with-excldues/spotbugsTestCases/src/java/sfBugs/Bug1816258a.java</h3>
+					<tr class="b">
+					<table border="0" class="bodyTable">
+					        <th></th>
+							<th>Severity</th>
+							<th>Rule</th>
+							<th>Message</th>
+							<th>Line</th>
+							<th>Col</th>
+						</tr>
+						
+							
+								<tr class="b">
+								
+								<td class="keepWidth"><a name="A113" href = "#A113">#A113</a></td>
+								<td>warning</td>
+								<td>CommentsIndentation</td>
+								<td>Comment has incorrect indentation level 109, expected is 8, indentation should be the same level as line 17.</td>
+								
+									
+									<td class="keepWidth"><a href = "xref/home/shrey/Desktop/checkstyle-tester/checkstyle-tester/repositories/spotbugs-with-excldues/spotbugsTestCases/src/java/sfBugs/Bug1816258a.java.html#L16">16</a></td>
+								
+								
+									<td class="keepWidth"> </td>
+									
+								
+							</tr>
+						
+							
+								<tr class="a">
+							
+								<td class="keepWidth"><a name="A114" href = "#A114">#A114</a></td>
+								<td>warning</td>
+								<td>CommentsIndentation</td>
+								<td>Comment has incorrect indentation level 109, expected is 8, indentation should be the same level as line 17.</td>
+								
+									
+									<td class="keepWidth"><a href = "xref/home/shrey/Desktop/checkstyle-tester/checkstyle-tester/repositories/spotbugs-with-excldues/spotbugsTestCases/src/java/sfBugs/Bug1816258a.java.html#L16">16</a></td>
+								
+								
+									
+									<td class="keepWidth">110</td>
+								
+							</tr>
+						
+					</table>
+				</div>
+				<div class="section">
+					<h3>/home/shrey/Desktop/checkstyle-tester/checkstyle-tester/repositories/spotbugs-with-excldues/spotbugsTestCases/src/java/sfBugs/Bug1911620.java</h3>
+					<tr class="b">
+					<table border="0" class="bodyTable">
+					        <th></th>
+							<th>Severity</th>
+							<th>Rule</th>
+							<th>Message</th>
+							<th>Line</th>
+							<th>Col</th>
+						</tr>
+						
+							
+								<tr class="b">
+								
+								<td class="keepWidth"><a name="A115" href = "#A115">#A115</a></td>
+								<td>warning</td>
+								<td>CommentsIndentation</td>
+								<td>Comment has incorrect indentation level 21, expected is 8, indentation should be the same level as line 40.</td>
+								
+									
+									<td class="keepWidth"><a href = "xref/home/shrey/Desktop/checkstyle-tester/checkstyle-tester/repositories/spotbugs-with-excldues/spotbugsTestCases/src/java/sfBugs/Bug1911620.java.html#L39">39</a></td>
+								
+								
+									<td class="keepWidth"> </td>
+									
+								
+							</tr>
+						
+							
+								<tr class="a">
+							
+								<td class="keepWidth"><a name="A116" href = "#A116">#A116</a></td>
+								<td>warning</td>
+								<td>CommentsIndentation</td>
+								<td>Comment has incorrect indentation level 21, expected is 8, indentation should be the same level as line 40.</td>
+								
+									
+									<td class="keepWidth"><a href = "xref/home/shrey/Desktop/checkstyle-tester/checkstyle-tester/repositories/spotbugs-with-excldues/spotbugsTestCases/src/java/sfBugs/Bug1911620.java.html#L39">39</a></td>
+								
+								
+									
+									<td class="keepWidth">22</td>
+								
+							</tr>
+						
+					</table>
+				</div>
+				<div class="section">
+					<h3>/home/shrey/Desktop/checkstyle-tester/checkstyle-tester/repositories/spotbugs-with-excldues/spotbugsTestCases/src/java/sfBugs/Bug1933922.java</h3>
+					<tr class="b">
+					<table border="0" class="bodyTable">
+					        <th></th>
+							<th>Severity</th>
+							<th>Rule</th>
+							<th>Message</th>
+							<th>Line</th>
+							<th>Col</th>
+						</tr>
+						
+							
+								<tr class="b">
+								
+								<td class="keepWidth"><a name="A117" href = "#A117">#A117</a></td>
+								<td>warning</td>
+								<td>CommentsIndentation</td>
+								<td>Comment has incorrect indentation level 43, expected is 20, indentation should be the same level as line 62.</td>
+								
+									
+									<td class="keepWidth"><a href = "xref/home/shrey/Desktop/checkstyle-tester/checkstyle-tester/repositories/spotbugs-with-excldues/spotbugsTestCases/src/java/sfBugs/Bug1933922.java.html#L66">66</a></td>
+								
+								
+									<td class="keepWidth"> </td>
+									
+								
+							</tr>
+						
+							
+								<tr class="a">
+							
+								<td class="keepWidth"><a name="A118" href = "#A118">#A118</a></td>
+								<td>warning</td>
+								<td>CommentsIndentation</td>
+								<td>Comment has incorrect indentation level 43, expected is 20, indentation should be the same level as line 62.</td>
+								
+									
+									<td class="keepWidth"><a href = "xref/home/shrey/Desktop/checkstyle-tester/checkstyle-tester/repositories/spotbugs-with-excldues/spotbugsTestCases/src/java/sfBugs/Bug1933922.java.html#L66">66</a></td>
+								
+								
+									
+									<td class="keepWidth">44</td>
+								
+							</tr>
+						
+					</table>
+				</div>
+				<div class="section">
+					<h3>/home/shrey/Desktop/checkstyle-tester/checkstyle-tester/repositories/spotbugs-with-excldues/spotbugsTestCases/src/java/sfBugs/Bug2003243.java</h3>
+					<tr class="b">
+					<table border="0" class="bodyTable">
+					        <th></th>
+							<th>Severity</th>
+							<th>Rule</th>
+							<th>Message</th>
+							<th>Line</th>
+							<th>Col</th>
+						</tr>
+						
+							
+								<tr class="b">
+								
+								<td class="keepWidth"><a name="A119" href = "#A119">#A119</a></td>
+								<td>warning</td>
+								<td>CommentsIndentation</td>
+								<td>Comment has incorrect indentation level 38, expected is 12, indentation should be the same level as line 14.</td>
+								
+									
+									<td class="keepWidth"><a href = "xref/home/shrey/Desktop/checkstyle-tester/checkstyle-tester/repositories/spotbugs-with-excldues/spotbugsTestCases/src/java/sfBugs/Bug2003243.java.html#L15">15</a></td>
+								
+								
+									<td class="keepWidth"> </td>
+									
+								
+							</tr>
+						
+							
+								<tr class="a">
+							
+								<td class="keepWidth"><a name="A120" href = "#A120">#A120</a></td>
+								<td>warning</td>
+								<td>CommentsIndentation</td>
+								<td>Comment has incorrect indentation level 38, expected is 12, indentation should be the same level as line 14.</td>
+								
+									
+									<td class="keepWidth"><a href = "xref/home/shrey/Desktop/checkstyle-tester/checkstyle-tester/repositories/spotbugs-with-excldues/spotbugsTestCases/src/java/sfBugs/Bug2003243.java.html#L15">15</a></td>
+								
+								
+									
+									<td class="keepWidth">39</td>
+								
+							</tr>
+						
+					</table>
+				</div>
+				<div class="section">
+					<h3>/home/shrey/Desktop/checkstyle-tester/checkstyle-tester/repositories/spotbugs-with-excldues/spotbugsTestCases/src/java/sfBugs/Bug2311502.java</h3>
+					<tr class="b">
+					<table border="0" class="bodyTable">
+					        <th></th>
+							<th>Severity</th>
+							<th>Rule</th>
+							<th>Message</th>
+							<th>Line</th>
+							<th>Col</th>
+						</tr>
+						
+							
+								<tr class="b">
+								
+								<td class="keepWidth"><a name="A121" href = "#A121">#A121</a></td>
+								<td>warning</td>
+								<td>CommentsIndentation</td>
+								<td>Comment has incorrect indentation level 58, expected is 16, indentation should be the same level as line 38.</td>
+								
+									
+									<td class="keepWidth"><a href = "xref/home/shrey/Desktop/checkstyle-tester/checkstyle-tester/repositories/spotbugs-with-excldues/spotbugsTestCases/src/java/sfBugs/Bug2311502.java.html#L39">39</a></td>
+								
+								
+									<td class="keepWidth"> </td>
+									
+								
+							</tr>
+						
+							
+								<tr class="a">
+							
+								<td class="keepWidth"><a name="A122" href = "#A122">#A122</a></td>
+								<td>warning</td>
+								<td>CommentsIndentation</td>
+								<td>Comment has incorrect indentation level 58, expected is 16, indentation should be the same level as line 38.</td>
+								
+									
+									<td class="keepWidth"><a href = "xref/home/shrey/Desktop/checkstyle-tester/checkstyle-tester/repositories/spotbugs-with-excldues/spotbugsTestCases/src/java/sfBugs/Bug2311502.java.html#L39">39</a></td>
+								
+								
+									
+									<td class="keepWidth">59</td>
+								
+							</tr>
+						
+					</table>
+				</div>
+				<div class="section">
+					<h3>/home/shrey/Desktop/checkstyle-tester/checkstyle-tester/repositories/spotbugs-with-excldues/spotbugsTestCases/src/java/sfBugs/Bug2487936.java</h3>
+					<tr class="b">
+					<table border="0" class="bodyTable">
+					        <th></th>
+							<th>Severity</th>
+							<th>Rule</th>
+							<th>Message</th>
+							<th>Line</th>
+							<th>Col</th>
+						</tr>
+						
+							
+								<tr class="b">
+								
+								<td class="keepWidth"><a name="A123" href = "#A123">#A123</a></td>
+								<td>warning</td>
+								<td>CommentsIndentation</td>
+								<td>Comment has incorrect indentation level 40, expected is 12, indentation should be the same level as line 67.</td>
+								
+									
+									<td class="keepWidth"><a href = "xref/home/shrey/Desktop/checkstyle-tester/checkstyle-tester/repositories/spotbugs-with-excldues/spotbugsTestCases/src/java/sfBugs/Bug2487936.java.html#L66">66</a></td>
+								
+								
+									<td class="keepWidth"> </td>
+									
+								
+							</tr>
+						
+							
+								<tr class="a">
+							
+								<td class="keepWidth"><a name="A124" href = "#A124">#A124</a></td>
+								<td>warning</td>
+								<td>CommentsIndentation</td>
+								<td>Comment has incorrect indentation level 40, expected is 12, indentation should be the same level as line 67.</td>
+								
+									
+									<td class="keepWidth"><a href = "xref/home/shrey/Desktop/checkstyle-tester/checkstyle-tester/repositories/spotbugs-with-excldues/spotbugsTestCases/src/java/sfBugs/Bug2487936.java.html#L66">66</a></td>
+								
+								
+									
+									<td class="keepWidth">41</td>
+								
+							</tr>
+						
+					</table>
+				</div>
+				<div class="section">
+					<h3>/home/shrey/Desktop/checkstyle-tester/checkstyle-tester/repositories/spotbugs-with-excldues/spotbugsTestCases/src/java/sfBugs/Bug2983950.java</h3>
+					<tr class="b">
+					<table border="0" class="bodyTable">
+					        <th></th>
+							<th>Severity</th>
+							<th>Rule</th>
+							<th>Message</th>
+							<th>Line</th>
+							<th>Col</th>
+						</tr>
+						
+							
+								<tr class="b">
+								
+								<td class="keepWidth"><a name="A125" href = "#A125">#A125</a></td>
+								<td>warning</td>
+								<td>CommentsIndentation</td>
+								<td>Comment has incorrect indentation level 71, expected is 4, indentation should be the same level as line 24.</td>
+								
+									
+									<td class="keepWidth"><a href = "xref/home/shrey/Desktop/checkstyle-tester/checkstyle-tester/repositories/spotbugs-with-excldues/spotbugsTestCases/src/java/sfBugs/Bug2983950.java.html#L22">22</a></td>
+								
+								
+									<td class="keepWidth"> </td>
+									
+								
+							</tr>
+						
+							
+								<tr class="a">
+							
+								<td class="keepWidth"><a name="A126" href = "#A126">#A126</a></td>
+								<td>warning</td>
+								<td>CommentsIndentation</td>
+								<td>Comment has incorrect indentation level 71, expected is 4, indentation should be the same level as line 24.</td>
+								
+									
+									<td class="keepWidth"><a href = "xref/home/shrey/Desktop/checkstyle-tester/checkstyle-tester/repositories/spotbugs-with-excldues/spotbugsTestCases/src/java/sfBugs/Bug2983950.java.html#L22">22</a></td>
+								
+								
+									
+									<td class="keepWidth">72</td>
+								
+							</tr>
+						
+					</table>
+				</div>
+				<div class="section">
+					<h3>/home/shrey/Desktop/checkstyle-tester/checkstyle-tester/repositories/spotbugs-with-excldues/spotbugsTestCases/src/java/sfBugs/Bug3107916.java</h3>
+					<tr class="b">
+					<table border="0" class="bodyTable">
+					        <th></th>
+							<th>Severity</th>
+							<th>Rule</th>
+							<th>Message</th>
+							<th>Line</th>
+							<th>Col</th>
+						</tr>
+						
+							
+								<tr class="b">
+								
+								<td class="keepWidth"><a name="A127" href = "#A127">#A127</a></td>
+								<td>warning</td>
+								<td>CommentsIndentation</td>
+								<td>Comment has incorrect indentation level 39, expected is 12, indentation should be the same level as line 24.</td>
+								
+									
+									<td class="keepWidth"><a href = "xref/home/shrey/Desktop/checkstyle-tester/checkstyle-tester/repositories/spotbugs-with-excldues/spotbugsTestCases/src/java/sfBugs/Bug3107916.java.html#L26">26</a></td>
+								
+								
+									<td class="keepWidth"> </td>
+									
+								
+							</tr>
+						
+							
+								<tr class="a">
+							
+								<td class="keepWidth"><a name="A128" href = "#A128">#A128</a></td>
+								<td>warning</td>
+								<td>CommentsIndentation</td>
+								<td>Comment has incorrect indentation level 39, expected is 12, indentation should be the same level as line 24.</td>
+								
+									
+									<td class="keepWidth"><a href = "xref/home/shrey/Desktop/checkstyle-tester/checkstyle-tester/repositories/spotbugs-with-excldues/spotbugsTestCases/src/java/sfBugs/Bug3107916.java.html#L26">26</a></td>
+								
+								
+									
+									<td class="keepWidth">40</td>
+								
+							</tr>
+						
+							
+								<tr class="b">
+								
+								<td class="keepWidth"><a name="A129" href = "#A129">#A129</a></td>
+								<td>warning</td>
+								<td>CommentsIndentation</td>
+								<td>Comment has incorrect indentation level 39, expected is 12, indentation should be the same level as line 42.</td>
+								
+									
+									<td class="keepWidth"><a href = "xref/home/shrey/Desktop/checkstyle-tester/checkstyle-tester/repositories/spotbugs-with-excldues/spotbugsTestCases/src/java/sfBugs/Bug3107916.java.html#L44">44</a></td>
+								
+								
+									<td class="keepWidth"> </td>
+									
+								
+							</tr>
+						
+							
+								<tr class="a">
+							
+								<td class="keepWidth"><a name="A130" href = "#A130">#A130</a></td>
+								<td>warning</td>
+								<td>CommentsIndentation</td>
+								<td>Comment has incorrect indentation level 39, expected is 12, indentation should be the same level as line 42.</td>
+								
+									
+									<td class="keepWidth"><a href = "xref/home/shrey/Desktop/checkstyle-tester/checkstyle-tester/repositories/spotbugs-with-excldues/spotbugsTestCases/src/java/sfBugs/Bug3107916.java.html#L44">44</a></td>
+								
+								
+									
+									<td class="keepWidth">40</td>
+								
+							</tr>
+						
+					</table>
+				</div>
+				<div class="section">
+					<h3>/home/shrey/Desktop/checkstyle-tester/checkstyle-tester/repositories/spotbugs-with-excldues/spotbugsTestCases/src/java/sfBugs/Bug3118278.java</h3>
+					<tr class="b">
+					<table border="0" class="bodyTable">
+					        <th></th>
+							<th>Severity</th>
+							<th>Rule</th>
+							<th>Message</th>
+							<th>Line</th>
+							<th>Col</th>
+						</tr>
+						
+							
+								<tr class="b">
+								
+								<td class="keepWidth"><a name="A131" href = "#A131">#A131</a></td>
+								<td>warning</td>
+								<td>CommentsIndentation</td>
+								<td>Comment has incorrect indentation level 0, expected is 8, indentation should be the same level as line 9.</td>
+								
+									
+									<td class="keepWidth"><a href = "xref/home/shrey/Desktop/checkstyle-tester/checkstyle-tester/repositories/spotbugs-with-excldues/spotbugsTestCases/src/java/sfBugs/Bug3118278.java.html#L8">8</a></td>
+								
+								
+									<td class="keepWidth"> </td>
+									
+								
+							</tr>
+						
+							
+								<tr class="a">
+							
+								<td class="keepWidth"><a name="A132" href = "#A132">#A132</a></td>
+								<td>warning</td>
+								<td>CommentsIndentation</td>
+								<td>Comment has incorrect indentation level 0, expected is 8, indentation should be the same level as line 9.</td>
+								
+									
+									<td class="keepWidth"><a href = "xref/home/shrey/Desktop/checkstyle-tester/checkstyle-tester/repositories/spotbugs-with-excldues/spotbugsTestCases/src/java/sfBugs/Bug3118278.java.html#L8">8</a></td>
+								
+								
+									
+									<td class="keepWidth">1</td>
+								
+							</tr>
+						
+					</table>
+				</div>
+				<div class="section">
+					<h3>/home/shrey/Desktop/checkstyle-tester/checkstyle-tester/repositories/spotbugs-with-excldues/spotbugsTestCases/src/java/sfBugs/Bug3408935.java</h3>
+					<tr class="b">
+					<table border="0" class="bodyTable">
+					        <th></th>
+							<th>Severity</th>
+							<th>Rule</th>
+							<th>Message</th>
+							<th>Line</th>
+							<th>Col</th>
+						</tr>
+						
+							
+								<tr class="b">
+								
+								<td class="keepWidth"><a name="A133" href = "#A133">#A133</a></td>
+								<td>warning</td>
+								<td>CommentsIndentation</td>
+								<td>Block comment has incorrect indentation level 4, expected is 5, indentation should be the same level as line 16.</td>
+								
+									
+									<td class="keepWidth"><a href = "xref/home/shrey/Desktop/checkstyle-tester/checkstyle-tester/repositories/spotbugs-with-excldues/spotbugsTestCases/src/java/sfBugs/Bug3408935.java.html#L15">15</a></td>
+								
+								
+									<td class="keepWidth"> </td>
+									
+								
+							</tr>
+						
+							
+								<tr class="a">
+							
+								<td class="keepWidth"><a name="A134" href = "#A134">#A134</a></td>
+								<td>warning</td>
+								<td>CommentsIndentation</td>
+								<td>Block comment has incorrect indentation level 4, expected is 5, indentation should be the same level as line 16.</td>
+								
+									
+									<td class="keepWidth"><a href = "xref/home/shrey/Desktop/checkstyle-tester/checkstyle-tester/repositories/spotbugs-with-excldues/spotbugsTestCases/src/java/sfBugs/Bug3408935.java.html#L15">15</a></td>
+								
+								
+									
+									<td class="keepWidth">5</td>
+								
+							</tr>
+						
+					</table>
+				</div>
+				<div class="section">
+					<h3>/home/shrey/Desktop/checkstyle-tester/checkstyle-tester/repositories/spotbugs-with-excldues/spotbugsTestCases/src/java/sfBugs/Bug3442048.java</h3>
+					<tr class="b">
+					<table border="0" class="bodyTable">
+					        <th></th>
+							<th>Severity</th>
+							<th>Rule</th>
+							<th>Message</th>
+							<th>Line</th>
+							<th>Col</th>
+						</tr>
+						
+							
+								<tr class="b">
+								
+								<td class="keepWidth"><a name="A135" href = "#A135">#A135</a></td>
+								<td>warning</td>
+								<td>CommentsIndentation</td>
+								<td>Comment has incorrect indentation level 0, expected is 12, 8, indentation should be the same level as line 60, 64.</td>
+								
+									
+									<td class="keepWidth"><a href = "xref/home/shrey/Desktop/checkstyle-tester/checkstyle-tester/repositories/spotbugs-with-excldues/spotbugsTestCases/src/java/sfBugs/Bug3442048.java.html#L63">63</a></td>
+								
+								
+									<td class="keepWidth"> </td>
+									
+								
+							</tr>
+						
+							
+								<tr class="a">
+							
+								<td class="keepWidth"><a name="A136" href = "#A136">#A136</a></td>
+								<td>warning</td>
+								<td>CommentsIndentation</td>
+								<td>Comment has incorrect indentation level 0, expected is 12, 8, indentation should be the same level as line 60, 64.</td>
+								
+									
+									<td class="keepWidth"><a href = "xref/home/shrey/Desktop/checkstyle-tester/checkstyle-tester/repositories/spotbugs-with-excldues/spotbugsTestCases/src/java/sfBugs/Bug3442048.java.html#L63">63</a></td>
+								
+								
+									
+									<td class="keepWidth">1</td>
+								
+							</tr>
+						
+							
+								<tr class="b">
+								
+								<td class="keepWidth"><a name="A137" href = "#A137">#A137</a></td>
+								<td>warning</td>
+								<td>CommentsIndentation</td>
+								<td>Comment has incorrect indentation level 0, expected is 8, indentation should be the same level as line 99.</td>
+								
+									
+									<td class="keepWidth"><a href = "xref/home/shrey/Desktop/checkstyle-tester/checkstyle-tester/repositories/spotbugs-with-excldues/spotbugsTestCases/src/java/sfBugs/Bug3442048.java.html#L98">98</a></td>
+								
+								
+									<td class="keepWidth"> </td>
+									
+								
+							</tr>
+						
+							
+								<tr class="a">
+							
+								<td class="keepWidth"><a name="A138" href = "#A138">#A138</a></td>
+								<td>warning</td>
+								<td>CommentsIndentation</td>
+								<td>Comment has incorrect indentation level 0, expected is 8, indentation should be the same level as line 99.</td>
+								
+									
+									<td class="keepWidth"><a href = "xref/home/shrey/Desktop/checkstyle-tester/checkstyle-tester/repositories/spotbugs-with-excldues/spotbugsTestCases/src/java/sfBugs/Bug3442048.java.html#L98">98</a></td>
+								
+								
+									
+									<td class="keepWidth">1</td>
+								
+							</tr>
+						
+					</table>
+				</div>
+				<div class="section">
+					<h3>/home/shrey/Desktop/checkstyle-tester/checkstyle-tester/repositories/spotbugs-with-excldues/spotbugsTestCases/src/java/sfBugs/Bug3460234.java</h3>
+					<tr class="b">
+					<table border="0" class="bodyTable">
+					        <th></th>
+							<th>Severity</th>
+							<th>Rule</th>
+							<th>Message</th>
+							<th>Line</th>
+							<th>Col</th>
+						</tr>
+						
+							
+								<tr class="b">
+								
+								<td class="keepWidth"><a name="A139" href = "#A139">#A139</a></td>
+								<td>warning</td>
+								<td>CommentsIndentation</td>
+								<td>Comment has incorrect indentation level 39, expected is 16, indentation should be the same level as line 10.</td>
+								
+									
+									<td class="keepWidth"><a href = "xref/home/shrey/Desktop/checkstyle-tester/checkstyle-tester/repositories/spotbugs-with-excldues/spotbugsTestCases/src/java/sfBugs/Bug3460234.java.html#L9">9</a></td>
+								
+								
+									<td class="keepWidth"> </td>
+									
+								
+							</tr>
+						
+							
+								<tr class="a">
+							
+								<td class="keepWidth"><a name="A140" href = "#A140">#A140</a></td>
+								<td>warning</td>
+								<td>CommentsIndentation</td>
+								<td>Comment has incorrect indentation level 39, expected is 16, indentation should be the same level as line 10.</td>
+								
+									
+									<td class="keepWidth"><a href = "xref/home/shrey/Desktop/checkstyle-tester/checkstyle-tester/repositories/spotbugs-with-excldues/spotbugsTestCases/src/java/sfBugs/Bug3460234.java.html#L9">9</a></td>
+								
+								
+									
+									<td class="keepWidth">40</td>
+								
+							</tr>
+						
+					</table>
+				</div>
+				<div class="section">
+					<h3>/home/shrey/Desktop/checkstyle-tester/checkstyle-tester/repositories/spotbugs-with-excldues/spotbugsTestCases/src/java/sfBugs/Bug3470297.java</h3>
+					<tr class="b">
+					<table border="0" class="bodyTable">
+					        <th></th>
+							<th>Severity</th>
+							<th>Rule</th>
+							<th>Message</th>
+							<th>Line</th>
+							<th>Col</th>
+						</tr>
+						
+							
+								<tr class="b">
+								
+								<td class="keepWidth"><a name="A141" href = "#A141">#A141</a></td>
+								<td>warning</td>
+								<td>CommentsIndentation</td>
+								<td>Comment has incorrect indentation level 30, expected is 8, indentation should be the same level as line 18.</td>
+								
+									
+									<td class="keepWidth"><a href = "xref/home/shrey/Desktop/checkstyle-tester/checkstyle-tester/repositories/spotbugs-with-excldues/spotbugsTestCases/src/java/sfBugs/Bug3470297.java.html#L20">20</a></td>
+								
+								
+									<td class="keepWidth"> </td>
+									
+								
+							</tr>
+						
+							
+								<tr class="a">
+							
+								<td class="keepWidth"><a name="A142" href = "#A142">#A142</a></td>
+								<td>warning</td>
+								<td>CommentsIndentation</td>
+								<td>Comment has incorrect indentation level 30, expected is 8, indentation should be the same level as line 18.</td>
+								
+									
+									<td class="keepWidth"><a href = "xref/home/shrey/Desktop/checkstyle-tester/checkstyle-tester/repositories/spotbugs-with-excldues/spotbugsTestCases/src/java/sfBugs/Bug3470297.java.html#L20">20</a></td>
+								
+								
+									
+									<td class="keepWidth">31</td>
+								
+							</tr>
+						
+					</table>
+				</div>
+				<div class="section">
+					<h3>/home/shrey/Desktop/checkstyle-tester/checkstyle-tester/repositories/spotbugs-with-excldues/spotbugsTestCases/src/java/sfBugs/Bug3553542.java</h3>
+					<tr class="b">
+					<table border="0" class="bodyTable">
+					        <th></th>
+							<th>Severity</th>
+							<th>Rule</th>
+							<th>Message</th>
+							<th>Line</th>
+							<th>Col</th>
+						</tr>
+						
+							
+								<tr class="b">
+								
+								<td class="keepWidth"><a name="A143" href = "#A143">#A143</a></td>
+								<td>warning</td>
+								<td>CommentsIndentation</td>
+								<td>Comment has incorrect indentation level 0, expected is 8, indentation should be the same level as line 37.</td>
+								
+									
+									<td class="keepWidth"><a href = "xref/home/shrey/Desktop/checkstyle-tester/checkstyle-tester/repositories/spotbugs-with-excldues/spotbugsTestCases/src/java/sfBugs/Bug3553542.java.html#L40">40</a></td>
+								
+								
+									<td class="keepWidth"> </td>
+									
+								
+							</tr>
+						
+							
+								<tr class="a">
+							
+								<td class="keepWidth"><a name="A144" href = "#A144">#A144</a></td>
+								<td>warning</td>
+								<td>CommentsIndentation</td>
+								<td>Comment has incorrect indentation level 0, expected is 8, indentation should be the same level as line 37.</td>
+								
+									
+									<td class="keepWidth"><a href = "xref/home/shrey/Desktop/checkstyle-tester/checkstyle-tester/repositories/spotbugs-with-excldues/spotbugsTestCases/src/java/sfBugs/Bug3553542.java.html#L40">40</a></td>
+								
+								
+									
+									<td class="keepWidth">1</td>
+								
+							</tr>
+						
+					</table>
+				</div>
+				<div class="section">
+					<h3>/home/shrey/Desktop/checkstyle-tester/checkstyle-tester/repositories/spotbugs-with-excldues/spotbugsTestCases/src/java/sfBugs/Bug3559113.java</h3>
+					<tr class="b">
+					<table border="0" class="bodyTable">
+					        <th></th>
+							<th>Severity</th>
+							<th>Rule</th>
+							<th>Message</th>
+							<th>Line</th>
+							<th>Col</th>
+						</tr>
+						
+							
+								<tr class="b">
+								
+								<td class="keepWidth"><a name="A145" href = "#A145">#A145</a></td>
+								<td>warning</td>
+								<td>CommentsIndentation</td>
+								<td>Comment has incorrect indentation level 0, expected is 9, indentation should be the same level as line 121.</td>
+								
+									
+									<td class="keepWidth"><a href = "xref/home/shrey/Desktop/checkstyle-tester/checkstyle-tester/repositories/spotbugs-with-excldues/spotbugsTestCases/src/java/sfBugs/Bug3559113.java.html#L119">119</a></td>
+								
+								
+									<td class="keepWidth"> </td>
+									
+								
+							</tr>
+						
+							
+								<tr class="a">
+							
+								<td class="keepWidth"><a name="A146" href = "#A146">#A146</a></td>
+								<td>warning</td>
+								<td>CommentsIndentation</td>
+								<td>Comment has incorrect indentation level 0, expected is 9, indentation should be the same level as line 121.</td>
+								
+									
+									<td class="keepWidth"><a href = "xref/home/shrey/Desktop/checkstyle-tester/checkstyle-tester/repositories/spotbugs-with-excldues/spotbugsTestCases/src/java/sfBugs/Bug3559113.java.html#L119">119</a></td>
+								
+								
+									
+									<td class="keepWidth">1</td>
+								
+							</tr>
+						
+							
+								<tr class="b">
+								
+								<td class="keepWidth"><a name="A147" href = "#A147">#A147</a></td>
+								<td>warning</td>
+								<td>CommentsIndentation</td>
+								<td>Comment has incorrect indentation level 0, expected is 7, indentation should be the same level as line 209.</td>
+								
+									
+									<td class="keepWidth"><a href = "xref/home/shrey/Desktop/checkstyle-tester/checkstyle-tester/repositories/spotbugs-with-excldues/spotbugsTestCases/src/java/sfBugs/Bug3559113.java.html#L208">208</a></td>
+								
+								
+									<td class="keepWidth"> </td>
+									
+								
+							</tr>
+						
+							
+								<tr class="a">
+							
+								<td class="keepWidth"><a name="A148" href = "#A148">#A148</a></td>
+								<td>warning</td>
+								<td>CommentsIndentation</td>
+								<td>Comment has incorrect indentation level 0, expected is 7, indentation should be the same level as line 209.</td>
+								
+									
+									<td class="keepWidth"><a href = "xref/home/shrey/Desktop/checkstyle-tester/checkstyle-tester/repositories/spotbugs-with-excldues/spotbugsTestCases/src/java/sfBugs/Bug3559113.java.html#L208">208</a></td>
+								
+								
+									
+									<td class="keepWidth">1</td>
+								
+							</tr>
+						
+					</table>
+				</div>
+				<div class="section">
+					<h3>/home/shrey/Desktop/checkstyle-tester/checkstyle-tester/repositories/spotbugs-with-excldues/spotbugsTestCases/src/java/sfBugs/Bug3599765.java</h3>
+					<tr class="b">
+					<table border="0" class="bodyTable">
+					        <th></th>
+							<th>Severity</th>
+							<th>Rule</th>
+							<th>Message</th>
+							<th>Line</th>
+							<th>Col</th>
+						</tr>
+						
+							
+								<tr class="b">
+								
+								<td class="keepWidth"><a name="A149" href = "#A149">#A149</a></td>
+								<td>warning</td>
+								<td>CommentsIndentation</td>
+								<td>Comment has incorrect indentation level 53, expected is 8, indentation should be the same level as line 20.</td>
+								
+									
+									<td class="keepWidth"><a href = "xref/home/shrey/Desktop/checkstyle-tester/checkstyle-tester/repositories/spotbugs-with-excldues/spotbugsTestCases/src/java/sfBugs/Bug3599765.java.html#L19">19</a></td>
+								
+								
+									<td class="keepWidth"> </td>
+									
+								
+							</tr>
+						
+							
+								<tr class="a">
+							
+								<td class="keepWidth"><a name="A150" href = "#A150">#A150</a></td>
+								<td>warning</td>
+								<td>CommentsIndentation</td>
+								<td>Comment has incorrect indentation level 53, expected is 8, indentation should be the same level as line 20.</td>
+								
+									
+									<td class="keepWidth"><a href = "xref/home/shrey/Desktop/checkstyle-tester/checkstyle-tester/repositories/spotbugs-with-excldues/spotbugsTestCases/src/java/sfBugs/Bug3599765.java.html#L19">19</a></td>
+								
+								
+									
+									<td class="keepWidth">54</td>
+								
+							</tr>
+						
+					</table>
+				</div>
+				<div class="section">
+					<h3>/home/shrey/Desktop/checkstyle-tester/checkstyle-tester/repositories/spotbugs-with-excldues/spotbugsTestCases/src/java/sfBugs/Bug3600398.java</h3>
+					<tr class="b">
+					<table border="0" class="bodyTable">
+					        <th></th>
+							<th>Severity</th>
+							<th>Rule</th>
+							<th>Message</th>
+							<th>Line</th>
+							<th>Col</th>
+						</tr>
+						
+							
+								<tr class="b">
+								
+								<td class="keepWidth"><a name="A151" href = "#A151">#A151</a></td>
+								<td>warning</td>
+								<td>CommentsIndentation</td>
+								<td>Comment has incorrect indentation level 0, expected is 16, 12, indentation should be the same level as line 79, 82.</td>
+								
+									
+									<td class="keepWidth"><a href = "xref/home/shrey/Desktop/checkstyle-tester/checkstyle-tester/repositories/spotbugs-with-excldues/spotbugsTestCases/src/java/sfBugs/Bug3600398.java.html#L81">81</a></td>
+								
+								
+									<td class="keepWidth"> </td>
+									
+								
+							</tr>
+						
+							
+								<tr class="a">
+							
+								<td class="keepWidth"><a name="A152" href = "#A152">#A152</a></td>
+								<td>warning</td>
+								<td>CommentsIndentation</td>
+								<td>Comment has incorrect indentation level 0, expected is 16, 12, indentation should be the same level as line 79, 82.</td>
+								
+									
+									<td class="keepWidth"><a href = "xref/home/shrey/Desktop/checkstyle-tester/checkstyle-tester/repositories/spotbugs-with-excldues/spotbugsTestCases/src/java/sfBugs/Bug3600398.java.html#L81">81</a></td>
+								
+								
+									
+									<td class="keepWidth">1</td>
+								
+							</tr>
+						
+					</table>
+				</div>
+				<div class="section">
+					<h3>/home/shrey/Desktop/checkstyle-tester/checkstyle-tester/repositories/spotbugs-with-excldues/spotbugsTestCases/src/java/sfBugs/NBug1167.java</h3>
+					<tr class="b">
+					<table border="0" class="bodyTable">
+					        <th></th>
+							<th>Severity</th>
+							<th>Rule</th>
+							<th>Message</th>
+							<th>Line</th>
+							<th>Col</th>
+						</tr>
+						
+							
+								<tr class="b">
+								
+								<td class="keepWidth"><a name="A153" href = "#A153">#A153</a></td>
+								<td>warning</td>
+								<td>CommentsIndentation</td>
+								<td>Comment has incorrect indentation level 0, expected is 1, indentation should be the same level as line 48.</td>
+								
+									
+									<td class="keepWidth"><a href = "xref/home/shrey/Desktop/checkstyle-tester/checkstyle-tester/repositories/spotbugs-with-excldues/spotbugsTestCases/src/java/sfBugs/NBug1167.java.html#L46">46</a></td>
+								
+								
+									<td class="keepWidth"> </td>
+									
+								
+							</tr>
+						
+							
+								<tr class="a">
+							
+								<td class="keepWidth"><a name="A154" href = "#A154">#A154</a></td>
+								<td>warning</td>
+								<td>CommentsIndentation</td>
+								<td>Comment has incorrect indentation level 0, expected is 1, indentation should be the same level as line 48.</td>
+								
+									
+									<td class="keepWidth"><a href = "xref/home/shrey/Desktop/checkstyle-tester/checkstyle-tester/repositories/spotbugs-with-excldues/spotbugsTestCases/src/java/sfBugs/NBug1167.java.html#L46">46</a></td>
+								
+								
+									
+									<td class="keepWidth">1</td>
+								
+							</tr>
+						
+					</table>
+				</div>
+				<div class="section">
+					<h3>/home/shrey/Desktop/checkstyle-tester/checkstyle-tester/repositories/spotbugs-with-excldues/spotbugsTestCases/src/java/sfBugs/RF3284474E.java</h3>
+					<tr class="b">
+					<table border="0" class="bodyTable">
+					        <th></th>
+							<th>Severity</th>
+							<th>Rule</th>
+							<th>Message</th>
+							<th>Line</th>
+							<th>Col</th>
+						</tr>
+						
+							
+								<tr class="b">
+								
+								<td class="keepWidth"><a name="A155" href = "#A155">#A155</a></td>
+								<td>warning</td>
+								<td>CommentsIndentation</td>
+								<td>Block comment has incorrect indentation level 3, expected is 4, indentation should be the same level as line 15.</td>
+								
+									
+									<td class="keepWidth"><a href = "xref/home/shrey/Desktop/checkstyle-tester/checkstyle-tester/repositories/spotbugs-with-excldues/spotbugsTestCases/src/java/sfBugs/RF3284474E.java.html#L7">7</a></td>
+								
+								
+									<td class="keepWidth"> </td>
+									
+								
+							</tr>
+						
+							
+								<tr class="a">
+							
+								<td class="keepWidth"><a name="A156" href = "#A156">#A156</a></td>
+								<td>warning</td>
+								<td>CommentsIndentation</td>
+								<td>Block comment has incorrect indentation level 3, expected is 4, indentation should be the same level as line 15.</td>
+								
+									
+									<td class="keepWidth"><a href = "xref/home/shrey/Desktop/checkstyle-tester/checkstyle-tester/repositories/spotbugs-with-excldues/spotbugsTestCases/src/java/sfBugs/RF3284474E.java.html#L7">7</a></td>
+								
+								
+									
+									<td class="keepWidth">4</td>
+								
+							</tr>
+						
+					</table>
+				</div>
+				<div class="section">
+					<h3>/home/shrey/Desktop/checkstyle-tester/checkstyle-tester/repositories/spotbugs-with-excldues/spotbugsTestCases/src/java/sfBugsNew/Bug1181.java</h3>
+					<tr class="b">
+					<table border="0" class="bodyTable">
+					        <th></th>
+							<th>Severity</th>
+							<th>Rule</th>
+							<th>Message</th>
+							<th>Line</th>
+							<th>Col</th>
+						</tr>
+						
+							
+								<tr class="b">
+								
+								<td class="keepWidth"><a name="A157" href = "#A157">#A157</a></td>
+								<td>warning</td>
+								<td>CommentsIndentation</td>
+								<td>Comment has incorrect indentation level 5, expected is 8, indentation should be the same level as line 113.</td>
+								
+									
+									<td class="keepWidth"><a href = "xref/home/shrey/Desktop/checkstyle-tester/checkstyle-tester/repositories/spotbugs-with-excldues/spotbugsTestCases/src/java/sfBugsNew/Bug1181.java.html#L112">112</a></td>
+								
+								
+									<td class="keepWidth"> </td>
+									
+								
+							</tr>
+						
+							
+								<tr class="a">
+							
+								<td class="keepWidth"><a name="A158" href = "#A158">#A158</a></td>
+								<td>warning</td>
+								<td>CommentsIndentation</td>
+								<td>Comment has incorrect indentation level 5, expected is 8, indentation should be the same level as line 113.</td>
+								
+									
+									<td class="keepWidth"><a href = "xref/home/shrey/Desktop/checkstyle-tester/checkstyle-tester/repositories/spotbugs-with-excldues/spotbugsTestCases/src/java/sfBugsNew/Bug1181.java.html#L112">112</a></td>
+								
+								
+									
+									<td class="keepWidth">6</td>
+								
+							</tr>
+						
+					</table>
+				</div>
+				<div class="section">
+					<h3>/home/shrey/Desktop/checkstyle-tester/checkstyle-tester/repositories/spotbugs-with-excldues/spotbugsTestCases/src/java/sfBugsNew/Bug1248.java</h3>
+					<tr class="b">
+					<table border="0" class="bodyTable">
+					        <th></th>
+							<th>Severity</th>
+							<th>Rule</th>
+							<th>Message</th>
+							<th>Line</th>
+							<th>Col</th>
+						</tr>
+						
+							
+								<tr class="b">
+								
+								<td class="keepWidth"><a name="A159" href = "#A159">#A159</a></td>
+								<td>warning</td>
+								<td>CommentsIndentation</td>
+								<td>Comment has incorrect indentation level 0, expected is 4, indentation should be the same level as line 12.</td>
+								
+									
+									<td class="keepWidth"><a href = "xref/home/shrey/Desktop/checkstyle-tester/checkstyle-tester/repositories/spotbugs-with-excldues/spotbugsTestCases/src/java/sfBugsNew/Bug1248.java.html#L60">60</a></td>
+								
+								
+									<td class="keepWidth"> </td>
+									
+								
+							</tr>
+						
+							
+								<tr class="a">
+							
+								<td class="keepWidth"><a name="A160" href = "#A160">#A160</a></td>
+								<td>warning</td>
+								<td>CommentsIndentation</td>
+								<td>Comment has incorrect indentation level 0, expected is 4, indentation should be the same level as line 12.</td>
+								
+									
+									<td class="keepWidth"><a href = "xref/home/shrey/Desktop/checkstyle-tester/checkstyle-tester/repositories/spotbugs-with-excldues/spotbugsTestCases/src/java/sfBugsNew/Bug1248.java.html#L60">60</a></td>
+								
+								
+									
+									<td class="keepWidth">1</td>
+								
+							</tr>
+						
+					</table>
+				</div>
+				<div class="section">
+					<h3>/home/shrey/Desktop/checkstyle-tester/checkstyle-tester/repositories/spotbugs-with-excldues/spotbugsTestCases/src/java/sfBugsNew/Bug1272.java</h3>
+					<tr class="b">
+					<table border="0" class="bodyTable">
+					        <th></th>
+							<th>Severity</th>
+							<th>Rule</th>
+							<th>Message</th>
+							<th>Line</th>
+							<th>Col</th>
+						</tr>
+						
+							
+								<tr class="b">
+								
+								<td class="keepWidth"><a name="A161" href = "#A161">#A161</a></td>
+								<td>warning</td>
+								<td>CommentsIndentation</td>
+								<td>Comment has incorrect indentation level 0, expected is 4, indentation should be the same level as line 12.</td>
+								
+									
+									<td class="keepWidth"><a href = "xref/home/shrey/Desktop/checkstyle-tester/checkstyle-tester/repositories/spotbugs-with-excldues/spotbugsTestCases/src/java/sfBugsNew/Bug1272.java.html#L11">11</a></td>
+								
+								
+									<td class="keepWidth"> </td>
+									
+								
+							</tr>
+						
+							
+								<tr class="a">
+							
+								<td class="keepWidth"><a name="A162" href = "#A162">#A162</a></td>
+								<td>warning</td>
+								<td>CommentsIndentation</td>
+								<td>Comment has incorrect indentation level 0, expected is 4, indentation should be the same level as line 12.</td>
+								
+									
+									<td class="keepWidth"><a href = "xref/home/shrey/Desktop/checkstyle-tester/checkstyle-tester/repositories/spotbugs-with-excldues/spotbugsTestCases/src/java/sfBugsNew/Bug1272.java.html#L11">11</a></td>
+								
+								
+									
+									<td class="keepWidth">1</td>
+								
+							</tr>
+						
+					</table>
+				</div>
+				<div class="section">
+					<h3>/home/shrey/Desktop/checkstyle-tester/checkstyle-tester/repositories/spotbugs-with-excldues/spotbugsTestCases/src/java/sfBugsNew/Bug1282.java</h3>
+					<tr class="b">
+					<table border="0" class="bodyTable">
+					        <th></th>
+							<th>Severity</th>
+							<th>Rule</th>
+							<th>Message</th>
+							<th>Line</th>
+							<th>Col</th>
+						</tr>
+						
+							
+								<tr class="b">
+								
+								<td class="keepWidth"><a name="A163" href = "#A163">#A163</a></td>
+								<td>warning</td>
+								<td>CommentsIndentation</td>
+								<td>Comment has incorrect indentation level 7, expected is 8, indentation should be the same level as line 49.</td>
+								
+									
+									<td class="keepWidth"><a href = "xref/home/shrey/Desktop/checkstyle-tester/checkstyle-tester/repositories/spotbugs-with-excldues/spotbugsTestCases/src/java/sfBugsNew/Bug1282.java.html#L48">48</a></td>
+								
+								
+									<td class="keepWidth"> </td>
+									
+								
+							</tr>
+						
+							
+								<tr class="a">
+							
+								<td class="keepWidth"><a name="A164" href = "#A164">#A164</a></td>
+								<td>warning</td>
+								<td>CommentsIndentation</td>
+								<td>Comment has incorrect indentation level 7, expected is 8, indentation should be the same level as line 49.</td>
+								
+									
+									<td class="keepWidth"><a href = "xref/home/shrey/Desktop/checkstyle-tester/checkstyle-tester/repositories/spotbugs-with-excldues/spotbugsTestCases/src/java/sfBugsNew/Bug1282.java.html#L48">48</a></td>
+								
+								
+									
+									<td class="keepWidth">8</td>
+								
+							</tr>
+						
+					</table>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>
