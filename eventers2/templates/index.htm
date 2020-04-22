@@ -26,13 +26,6 @@
 
   <!-- Template Main CSS File -->
   <link href="static/css/style.css" rel="stylesheet">
-
-  <!-- =======================================================
-  * Template Name: BizPage - v2.0.0
-  * Template URL: https://bootstrapmade.com/bizpage-bootstrap-business-template/
-  * Author: BootstrapMade.com
-  * License: https://bootstrapmade.com/license/
-  ======================================================== -->
 </head>
 
 <body>
@@ -55,6 +48,7 @@
           <li><a href="#handsOn">Hands On</a></li>
           <li><a href="#team">Team</a></li>
           <li><a href="#contact">Contact</a></li>
+          <li><a href="addEntries.htm"><button type="submit">APPLET</button></a></li>
         </ul>
       </nav><!-- #nav-menu-container -->
     </div>
@@ -213,7 +207,7 @@
         </div>
 
       </div>
-    </section><!-- End Services Section -->
+    </section><!-- End Features Section -->
 
     <!-- ======= handsOn Section ======= -->
     <section id="handsOn" class="section-bg">
@@ -229,8 +223,9 @@
         </header>
 
         <div class="row handsOn-container">
-        <div id="main_query_container">
-          <div class="col-lg-3 col-md-6 my-auto">
+          
+        <div class="col-lg-3 col-md-6 my-auto">
+          <div id="main_query_container">
             <h6>Main Event</h6>
             <select id="main_event" class="form-control">{% for item in main_event_list%}
               <option id="ME_{{item[0]}}">{{item[1]}}</option>
@@ -239,9 +234,9 @@
           </div>
         </div>
 
-	     	<div align="center"><button type="submit">Fetch Results</button></div>
-
         </div>
+
+        <div align="center"><button type="submit">Fetch Results</button></div>
 
       </div>
     </section><!-- End handsOn Section -->
@@ -448,7 +443,7 @@
         Licensing information: https://bootstrapmade.com/license/
         Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/buy/?theme=BizPage
       -->
-        Designed by <a href="mailto:shrey18266@iiit.ac.in">Shrey</a>
+        Designed by <a href="mailto:shrey18266@iiitd.ac.in">Shrey</a> and <a href="mailto:isha18040@iiitd.ac.in">Isha</a>
       </div>
     </div>
   </footer><!-- End Footer -->
